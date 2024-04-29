@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 </head>
 
 <body>
@@ -93,7 +95,7 @@
             </li>
         </ul>
     </div>
-    <div id="container" >
+    <div id="container">
         <div id="title-header">
             <a href="#">Đăng Nhập</a>
             <a href="#">Đăng Kí</a>
@@ -101,14 +103,17 @@
         <hr style="width: 35%;border: 1px solid rgb(0, 0, 0);margin: auto; margin-top: 1vw;opacity: 1;">
         <div id="infor-customer">
             <form action="#home">
+                <p>Họ và tên</p>
+                <input type="text" id="name-customer" placeholder="Hãy nhập đầy đủ Họ và Tên của bạn"><br>
+                <p>Ngày sinh</p>
+                <input type="date" id="birthday-time" name="birthday-time" pattern="\d{2}-\d{2}-\d{4}">
+                <p>Số điện thoại</p>
+                <input type="tel" id="tel-customer" placeholder="Hãy nhập số điện thoại của bạn"><br>
                 <p>Email</p>
-                <input type="email" id="email-customer" placeholder="Hãy nhập địa chỉ email tài khoản của bạn"><br>
+                <input type="email" id="email-customer" placeholder="Hãy nhập email của bạn">
                 <p>Mật Khẩu</p>
                 <input type="password" id="password-customer" placeholder="Hãy nhập mật khẩu của bạn">
-                <div id="forgot-password">
-                    <a href="#">Quên mật khẩu</a>
-                </div>
-                <input type="submit" name="submit" id="submit" value="Đăng Nhập">
+                <input type="submit" name="submit" id="submit" value="Đăng ký">
             </form>
         </div>
     </div>
@@ -144,5 +149,4 @@
     </div>
 </body>
 <?php include("css/styleSignin.php"); ?>
-
 </html>

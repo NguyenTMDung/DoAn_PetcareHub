@@ -165,17 +165,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/best_seller2.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    45.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 101</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -186,17 +186,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/best_seller3.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Quần Áo Mùa Hè 4599 Teddy ins Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    50.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 200</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -207,17 +207,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/best_seller4.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Đồ chơi gặm nhai phát ra âm thanh kiểu dáng ngộ nghĩnh dành cho thú cưng</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    20.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 500</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -228,17 +228,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/best_seller5.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Thú Cưng Vui Halloween Mũ Mèo Chó Gấu Trúc Gấu Lợn Mũ Đội Đầu</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    69.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 150</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -249,17 +249,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/best_seller6.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Xúc Xích Cho Chó Thức Ăn Cho Chó Thú Cưng Mèo Xúc Xích Điều Trị Cho Thú Cưng Chó Ăn Nhẹ</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    3.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 1000</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -294,17 +294,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro1.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Khăn Cho Chó Tay Đan Ins Phong Cách Yếm Mèo Cổ Dễ Thương Thú Cưng Đan Nước Bọt Khăn Đồ Dùng Cho Thú Cưng</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    20.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 10</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -316,17 +316,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro2.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Khô miếng gà mèo chó đồ ăn nhẹ răng hàm làm sạch răng thơm giòn gà khô đồ ăn nhẹ</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    8.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 5 </p>
                                                 </div>
                                             </a>
                                         </div>
@@ -337,17 +337,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro3.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Lá bạc hà mèo bóng lông làm tăng sự thèm ăn lá bạc hà mèo tự nhiên</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    20.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 3</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -358,17 +358,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro4.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Thức ăn chủ yếu cho chó đóng hộp thức ăn ướt đồ ăn nhẹ mousse thịt bùn thành chó con đóng hộp chung</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    13.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 7</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -379,17 +379,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro5.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Gel tắm cho thú cưng khử mùi chống ngứa lâu dài gel tắm đặc biệt cho thú cưng 500m</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    50.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 11</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -400,17 +400,17 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/new_pro6.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>✨Tám phong cách✨Độ đàn hồi cao mèo móng vuốt đồ chơi, mini palm kéo, đá, tát găng tay, khéo léo và ngộ nghĩnh cao su mềm</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    6.000 VND
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 17</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -442,18 +442,18 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/promotion1.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Bánh thưởng cho chó Bone Appétit by Sumiho (gói 100gr) bánh snack thưởng ăn vặt cho cún</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
+                                                    <p class="old-price">35.000 VND</p>
+                                                    <p class="new-price">25.000 VND</p>
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
+                                                    Lượt bán: <p class="number-of-sales"> 99</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -465,15 +465,81 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/promotion2.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Bánh Thưởng Snack Smartheart Cho Chó 100g</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
+                                                    <p class="old-price">30.000 VND</p>
+                                                    <p class="new-price">17.000 VND</p>
+                                                </div>
+                                                <div class="sales">
+                                                    Lượt bán: <p class="number-of-sales"> 350</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="img-products">
+                                                    <img src="image/promotion3.png" alt=""
+                                                        style="width: 15vw;">
+                                                </div>
+                                                <div class="text-truncate-container">
+                                                    <p>Bánh thưởng cho chó mèo (Nhiều vị) 100gr/túi Đồ ăn cho chó mèo thú cưng</p>
+                                                </div>
+                                                <div class="pro-price">
+                                                    <p class="old-price">15.000 VND</p>
+                                                    <p class="new-price">12.000 VND</p>
+                                                </div>
+                                                <div class="sales">
+                                                    Lượt bán: <p class="number-of-sales"> 800</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="img-products">
+                                                    <img src="image/promotion4.png" alt=""
+                                                        style="width: 15vw;">
+                                                </div>
+                                                <div class="text-truncate-container">
+                                                    <p>KẸO SỮA CANXI cho Chó Mèo Gói 100g Thơm ngon, Bổ sung canxi, dinh dưỡng, tốt cho tiêu hóa Thú Cưng</p>
+                                                </div>
+                                                <div class="pro-price">
+                                                    <p class="old-price">30.000 VND</p>
+                                                    <p class="new-price">16.000 VND</p>
+                                                </div>
+                                                <div class="sales">
+                                                    Lượt bán: <p class="number-of-sales"> 450</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-md-3">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="img-products">
+                                                    <img src="image/promotion5.png" alt=""
+                                                        style="width: 15vw;">
+                                                </div>
+                                                <div class="text-truncate-container">
+                                                    <p>Xương gặm sạch răng bổ sung canxi cho chó YAHO (25gr/cây 7cm) vị bò-gà nướng</p>
+                                                </div>
+                                                <div class="pro-price">
+                                                    <p class="old-price">10.000 VND</p>
+                                                    <p class="new-price">5.000 VND</p>
                                                 </div>
                                                 <div class="sales">
                                                     Lượt bán: <p class="number-of-sales"> 100</p>
@@ -487,81 +553,15 @@
                                         <div class="item">
                                             <a href="">
                                                 <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    <img src="image/promotion6.png" alt=""
                                                         style="width: 15vw;">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                                    <p>Hạt Captain cho chó kén ăn 500g - 2.5kg, trộn bò - cá hồi - phô mai bò</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="item">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
-                                                        style="width: 15vw;">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="item">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
-                                                        style="width: 15vw;">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="item">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
-                                                        style="width: 15vw;">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    <p class="old-price">179.000 VND</p>
-                                                    <p class="new-price">179.000 VND</p>
+                                                    <p class="old-price">110.000 VND</p>
+                                                    <p class="new-price">79.000 VND</p>
                                                 </div>
                                                 <div class="sales">
                                                     Lượt bán: <p class="number-of-sales"> 100</p>
@@ -684,6 +684,25 @@
                 next = next.nextElementSibling
             }
         })
+        function convertToK(number) {
+                if (number == 1000000) {
+                    return (number / 1000000).toFixed(0) + "M";
+                }if (number > 1000000) {
+                    return (number / 1000000).toFixed(1) + "M";
+                } else if (number == 1000) {
+                    return (number / 1000).toFixed(0) + "K";
+                } else if (number > 1000) {
+                    return (number / 1000).toFixed(1) + "K";
+                } else {
+                    return number.toString();
+                }
+            }
+            const elements = document.getElementsByClassName('number-of-sales');
+            for (let i = 0; i < elements.length; i++) {
+                const originalValue = parseInt(elements[i].textContent);
+                const convertedValue = convertToK(originalValue); 
+                elements[i].textContent = convertedValue;
+            }
     </script>
     <?php include("css/styleHome.php"); ?>
 </body>

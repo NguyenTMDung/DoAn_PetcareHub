@@ -112,11 +112,11 @@
                                         <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
                                     </div>
                                     <select class="select-kind">
-                                        <option selected class="kind-customer-choose">Size XXL</option>
                                         <option value="1">Size S</option>
                                         <option value="2">Size M</option>
                                         <option value="3">Size L</option>
                                         <option value="4">Size XL</option>
+                                        <option value="4" selected>Size XXL</option>
                                     </select>
                                     <div class="pro-price">
                                         50000
@@ -149,11 +149,11 @@
                                         <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
                                     </div>
                                     <select class="select-kind">
-                                        <option selected class="kind-customer-choose">Size XXL</option>
                                         <option value="1">Size S</option>
                                         <option value="2">Size M</option>
                                         <option value="3">Size L</option>
                                         <option value="4">Size XL</option>
+                                        <option value="4" selected>Size XXL</option>
                                     </select>
                                     <div class="pro-price">
                                         40000 

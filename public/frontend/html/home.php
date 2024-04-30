@@ -706,5 +706,4 @@
     </script>
     <?php include("css/styleHome.php"); ?>
 </body>
-
 </html>

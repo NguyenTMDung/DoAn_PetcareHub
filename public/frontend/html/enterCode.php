@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="javascript/jsHome.php">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>Gửi mã xác nhận</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="library/font-awesome/fontawesome-free-6.5.2-web/css/all.css">
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
@@ -115,7 +115,7 @@
                 <td id="infor-shop">
                     <h3>Liên hệ</h3>
                     CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB
-                    Địa chỉ: 116 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam <br>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam. <br>
                     <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
                     <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
                     <div id="connect_shop">

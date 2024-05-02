@@ -87,7 +87,7 @@
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
                         style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="class = bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
             </li>
         </ul>
     </div>

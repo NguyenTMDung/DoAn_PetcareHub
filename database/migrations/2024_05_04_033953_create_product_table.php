@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('name')->unique;
-            $table->integer ('category_id')->references('id')->on('category')->onDelete('cascade');
+            $table->integer ('typeProduct_id')->references('id')->on('typeProduct')->onDelete('set null');
             $table->integer('price');
             $table->integer ('discount_price');
             $table->integer ('inventory');
             $table->string('avatar');
             $table->string('size');
             $table->string('type');
-            $table->string('short_description');
-            $table->longtext('long_description');
+            $table->longtext('description');
             $table->integer('id_user_created')->references('id')->on('users')->onDelete('set null');
             $table->integer('id_user_updated')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();

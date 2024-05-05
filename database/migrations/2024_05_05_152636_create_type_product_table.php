@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('typeProduct', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('name');
+            $table->integer('category_id')->references('id')->on('category')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('typeProduct');
     }
 };

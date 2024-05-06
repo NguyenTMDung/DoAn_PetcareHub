@@ -148,7 +148,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" style="text-align: center;" class="logo"><img src="image/logo.png" alt="logo"></td>
+                <td colspan="3" style="text-align: center;" class="logo"><img src="{{('public/frontend/image/logo.png')}}" alt="logo"></td>
             </tr>
         </table>
     </div>

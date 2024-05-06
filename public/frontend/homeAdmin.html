@@ -166,6 +166,158 @@
                     <canvas id="venueChart"></canvas>
                 </div>
             </div>
+            <div class="chartTarget">
+                <div style="display: flex;justify-content: space-between;">
+                    <h5 class="title">Mục tiêu và thực tế</h5>
+                    <div style="display: flex;margin-right: 8vw;">
+                        <h5>Năm: </h5>
+                        <h5 id="current-year"></h5>
+                    </div>
+                </div>
+                <p style="color: #96A5B8;">(Triệu đồng)</p>
+                <div class="chartBox">
+                    <canvas id="targetChart"></canvas>
+                </div>
+                <form action="">
+                    <button type="button" name="add-target" id="add-target" data-bs-toggle="modal"
+                        data-bs-target="#addTarget">
+                        <i class="fas fa-plus-square" style="margin: auto;padding: 6px 10px 6px 8px;"></i>
+                        Thêm, sửa mục tiêu
+                    </button>
+                </form>
+                <div class="modal fade" id="addTarget" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true" style="max-height: 95%;">
+                    <div class="modal-dialog" style="padding: 0 1vw;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" style="color: #003459;margin-left: 1vw;">Thêm, sửa mục tiêu</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div style="margin-left: 1vw;">
+                                        <label for="years">
+                                            <h5>Năm:</h5>
+                                        </label>
+                                        <select name="years" id="years">
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                            <option value="2031">2031</option>
+                                            <option value="2032">2032</option>
+                                            <option value="2033">2033</option>
+                                        </select>
+                                    </div>
+                                    <table>
+                                        <tr>
+                                            <td colspan="2">
+                                                <p style="font-size: 12px;color: #ff0000;display: flex;justify-content: end;">( Đơn vị: triệu đồng)</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 20%;">
+                                                <p>Tháng 1</p>
+                                            </td>
+                                            <td><input type="number" id="month-1" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 2</p>
+                                            </td>
+                                            <td><input type="number" id="month-2" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 3</p>
+                                            </td>
+                                            <td><input type="number" id="month-3" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 4</p>
+                                            </td>
+                                            <td>
+                                                <input type="number" id="month-4" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 5</p>
+                                            </td>
+                                            <td><input type="number" id="month-5" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 6</p>
+                                            </td>
+                                            <td> <input type="number" id="month-6" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 7</p>
+                                            </td>
+                                            <td> <input type="number" id="month-7" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 8</p>
+                                            </td>
+                                            <td> <input type="number" id="month-8" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 9</p>
+                                            </td>
+                                            <td> <input type="number" id="month-9" value="" placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 10</p>
+                                            </td>
+                                            <td> <input type="number" id="month-10" value=""
+                                                    placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 11</p>
+                                            </td>
+                                            <td> <input type="number" id="month-11" value=""
+                                                    placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Tháng 12</p>
+                                            </td>
+                                            <td> <input type="number" id="month-12" value=""
+                                                    placeholder="Nhập mục tiêu">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+                                <button type="button" class="btn btn-primary" id="save">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -183,6 +335,7 @@
         const todayDate = `${year}-${month}-${day}`;
 
         document.getElementById("current-time").value = todayDate;
+        document.getElementById("current-year").innerHTML = year;
     });
     // Seller
     const dataRevenue = {
@@ -217,33 +370,89 @@
     // config 
     const config1 = {
         type: 'bar',
-        data : dataRevenue,
+        data: dataRevenue,
         options: {
             scales: {
                 y: {
                     beginAtZero: true,
-                    grace : '5%',
-                    height : '5%'
+                    grace: '5%',
+                    height: '5%'
                 }
             },
-            plugins:{
+            plugins: {
                 legend: {
-                    position : 'right',
-                    align :'start',
+                    position: 'right',
+                    align: 'start',
                 }
             }
         }
     };
 
     // render init block
-    const  venueChart = new Chart(
+    const venueChart = new Chart(
         document.getElementById('venueChart'),
         config1
+    );
+    // Service
+    const dataTarget = {
+        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+        datasets: [{
+            label: 'Mục tiêu',
+            data: [2, 5, 6, 7, 1, 10, 9, 4, 9, 2, 3, 7],
+            backgroundColor: [
+                '#cd0000'
+            ],
+            borderColor: [
+                '#cd0000'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        }, {
+            label: 'Thực tế',
+            data: [4, 1, 7, 10, 3, 6, 14, 4, 5, 9, 11, 8],
+            backgroundColor: [
+                '#0094fe'
+            ],
+            borderColor: [
+                '#0094fe'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        },]
+    };
+
+    // config 
+    const config2 = {
+        type: 'line',
+        data: dataTarget,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grace: '5%',
+                    height: '5%'
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                }
+            }
+        }
+    };
+
+    // render init block
+    const serviceChart = new Chart(
+        document.getElementById('targetChart'),
+        config2
     );
     // Instantly assign Chart.js version
     const chartVersion2 = document.getElementById('chartVersion');
     chartVersion.innerText = Chart.version;
-    
+
 </script>
 
 

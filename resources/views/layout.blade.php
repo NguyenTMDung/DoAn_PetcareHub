@@ -119,7 +119,6 @@
         </div>
 
         @yield('content')
-
     </div>
     <div id="footer">
         <table>

@@ -223,14 +223,26 @@ table, th, td {
     text-align: center;
     height: 10%;
 }
+.add-employee-button {
+    background-color:#103559;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15vw;
+    height: 4vw;
+    margin-left: -3vw;
+  }
 .search-container {
     display: flex;
     justify-content:right;
+    height: fit-content;
 }
 .search-box {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 20vw;
     font-size: 14px;
 }
 .search-button {

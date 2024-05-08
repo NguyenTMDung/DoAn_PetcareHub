@@ -81,7 +81,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Giới Thiệu</a>
+                <a class="nav-link" href="{{URL::to('/gioi-thieu')}}">Giới Thiệu</a>
             </li>
         </ul>
         <ul id="sty-user" style="flex-grow: 1;">

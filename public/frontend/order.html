@@ -25,7 +25,6 @@
             <p>PET CARE HUB</p>
             </a>
         </div>
-
         <a href="#cart" id="cart" style="text-align: right;width: 10%;margin-top: -0.5vw;"><i class="bi bi-cart4 fa-2x"
                 style="color: #003459;"></i></a>
     </div>
@@ -35,12 +34,12 @@
                 <h2 class="title">Vận chuyển</h2>
                 <div id="location" onclick="choose(this)">
                     <div class="options ship">
-                        <input type="radio" id="address" name="loca" value="1">
+                        <input type="checkbox" id="address" name="loca" value="1">
                         <p>Giao đến địa chỉ của bạn</p>
                         <i class="bi bi-truck"></i>
                     </div>
                     <div class="options ship">
-                        <input type="radio" id="store" name="loca" value="2">
+                        <input type="checkbox" id="store" name="loca" value="2">
                         <p>Nhận tại cửa hàng</p>
                         <i class="bi bi-shop"></i>
                     </div>
@@ -69,10 +68,8 @@
 
                         </div>
                     </div>
-
                 </div>
                 <div id="error-message">
-
                 </div>
                 <input type="submit" name="complete" id="complete" value="Hoàn tất đơn hàng">
             </form>
@@ -154,9 +151,9 @@
             }
         });
     }
-    document.querySelectorAll('input[type=radio]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            if (radio.id === 'address' && radio.checked) {
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.id === 'address' && checkbox.checked) {
                 document.getElementById('infor-customer').innerHTML = `<p>Họ và Tên*</p>
                     <input type="text" id="name" placeholder="Nguyễn Văn A">
                     <p>Địa chỉ giao hàng* <br>(Số nhà, Đường, Phường/Xã, Quận/Huyện, Tỉnh/Thành Phố)</p>
@@ -166,11 +163,22 @@
                     <div id="error-message2">
                     </div>`
             }
-            else if (radio.id === 'store' && radio.checked) {
+            else if (checkbox.id === 'store' && checkbox.checked) {
                 document.getElementById('infor-customer').innerHTML = `<p style="font-size: 20px;font-weight: 500;margin-top: 1.5vw;">Địa điểm nhận hàng</p>
                     <div style="border: 1px solid #AFAFAF;border-radius: 10px;padding: 1vw 0 0 1vw ;">
                         <h5>Pet Care Hub</h5>
                     <p style="margin-top: -1px;color: #353535;">Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh</p></div>`
+            }
+            if (checkbox.id === 'address' && checkbox.id === 'store' && checkbox.checked) {
+                document.getElementById('infor-customer').innerHTML = `<p>Họ và Tên*</p>
+                    <input type="text" id="name" placeholder="Nguyễn Văn A">
+                    <p>Địa chỉ giao hàng* <br>(Số nhà, Đường, Phường/Xã, Quận/Huyện, Tỉnh/Thành Phố)</p>
+                    <input type="text" id="address" placeholder="Số 34, Tân Lập, Đông Hòa, Dĩ An, Bình Dương">
+                    <p>Điện thoại*</p>
+                    <input type="tel" id="tel" placeholder="098xxxxxxx">
+                    <div id="error-message2">
+                    </div>
+                    <input type="tel" id="tel" placeholder="098xxxxxxx">`
             }
             else if (radio.id === 'banking' && radio.checked) {
                 document.getElementById('bank').innerHTML = `<h6>Chuyển Khoản Ngân Hàng</h6>
@@ -178,6 +186,7 @@
                             <p>Số Tài Khoản: 0987654321</p>
                             <p style="margin-bottom: 1vw;">Nội Dung: Tên Người Mua Hàng + Số Điện Thoại</p>`
             }
+
             else if (radio.id === 'cash' && radio.checked) {
                 document.getElementById('bank').innerHTML = ``
             }

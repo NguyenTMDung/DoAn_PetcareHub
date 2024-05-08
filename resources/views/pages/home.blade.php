@@ -1,5 +1,30 @@
 @extends('layout')
 @section('content')
+    {{-- banner --}}
+    <div id="slide-show" class="carousel slide" data-bs-ride="carousel" style="margin: 2vw 0;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{('public/frontend/image/Pet Care Hub (1).png')}}" class="d-block w-100" alt="..."
+                    style="max-width: 90vw;border-radius: 10px">
+            </div>
+            <div class="carousel-item">
+                <img src="{{('public/frontend/image/banner2.png')}}" class="d-block w-100" alt="..."
+                    style="max-width: 90vw;border-radius: 10px">
+            </div>
+            <div class="carousel-item">
+                <img src="{{('public/frontend/image/slide-show-3.png')}}" class="d-block w-100" alt="..."
+                    style="max-width: 90vw;border-radius: 10px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slide-show" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slide-show" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     {{-- mua sắm theo giống thú cưng --}}
     <p class="title">Mua sắm theo giống thú cưng</p>
     <div id="shopify-section">

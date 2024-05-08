@@ -257,11 +257,12 @@ tr:nth-child(even) {
   .search-contain {
     display: flex;
     justify-content:center;
+
 }
 .sbox {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 100%;
     font-size: 14px;
 }
 .sbutton {

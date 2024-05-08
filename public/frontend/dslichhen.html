@@ -100,14 +100,89 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
+                                        <h4>Thông tin đặt lịch</h4>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p><strong>Ảnh</strong></p>
+                                        <p><strong>Tên khách hàng</strong></p>
                                         <div class="search-contain">
-                                            <button class="sbutton"><strong>Chọn tệp</strong></button>
-                                            <input type="search" class="sbox">
+                                            <input type="text" class="sbox" placeholder="Nhập tên khách hàng">
+                                        </div>
+                                        <p><strong>Số điện thoại</strong></p>
+                                        <div class="search-contain">
+                                            <input type="tel" class="sbox" placeholder="Nhập số điện thoại">
+                                        </div>
+                                        <p><strong>Chọn ngày</strong></p>
+                                        <div class="search-contain">
+                                            <input type="date" class="sbox">
+                                        </div>
+                                        <div style="display: flex;">
+                                            <div>
+                                                <p style="margin-top: 1vw;"><strong>Chọn khung giờ</strong></p>
+                                                <label for="time">Chọn ca :</label>
+                                                <select name="time" id="time">
+                                                    <option value="ca1">Ca1: 7h - 8h30</option>
+                                                    <option value="ca2">Ca2: 8h30 -10h</option>
+                                                    <option value="ca3">Ca3: 10h - 11h30</option>
+                                                    <option value="ca4">Ca4: 1h - 2h30</option>
+                                                    <option value="ca5">Ca5: 2h30 - 4h</option>
+                                                </select>
+                                            </div>
+                                            <div style="margin-left: 4vw;">
+                                                <p style="margin-top: 1vw;"><strong>Chọn loại thú cưng</strong></p>
+                                                <label for="pet">Thú cưng :</label>
+                                                <select name="pet" id="pet">
+                                                    <option value="pet1">Chó</option>
+                                                    <option value="pet2">Mèo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p style="margin-top: 1vw;"><strong>Chọn dịch vụ :</strong></p>
+                                        <div style="display: flex;">
+                                            <div>
+                                                <label for="spa">Spa:</label>
+                                                <select name="spa" id="spa">
+                                                    <option value="1">Spa tắm, vệ sinh</option>
+                                                    <option value="2">Spa, cắt tỉa trọn gói</option>
+                                                    <option value="3">Cắt tỉa, nhuộm lông</option>
+                                                    <option value="4">Cạo lông toàn thân</option>
+                                                </select>
+                                            </div>
+                                            <div style="margin-left: 0vw;">
+                                                <label for="hotel">Khách sạn:</label>
+                                                <select name="hotel" id="hotel">
+                                                    <option value="hotel1">Khách sạn bình thường</option>
+                                                    <option value="hotel2">Khách sạn phòng vip A</option>
+                                                    <option value="hotel3">Khách sạn phòng vip B</option>
+                                                    <option value="hotel4">Khách sạn phòng vip C</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p style="margin-top: 1vw;"><strong>Kích thước thú cưng :</strong></p>
+                                        <div style="display: flex;">
+                                            <div>
+                                                <label for="size">Spa:</label>
+                                                <select name="size" id="size">
+                                                    <option value="size1">Dưới 2kg</option>
+                                                    <option value="size2">Dưới 5kg</option>
+                                                    <option value="size3">Dưới 10kg</option>
+                                                    <option value="size4">Dưới 20kg</option>
+                                                    <option value="size5">Trên 20kg</option>
+                                                </select>
+                                            </div>
+                                            <div style="margin-left: 8vw;">
+                                                <label for="hotel">Khách sạn:</label>
+                                                <select name="sz" id="sz">
+                                                    <option value="sz1">Dưới 10kg</option>
+                                                    <option value="sz2">Dưới 20kg</option>
+                                                    <option value="sz3">Dưới 40kg</option>
+                                                </select>
+                                                <form >
+                                                     Chọn số ngày:
+                                                    <input style="width: 50px;" type="number" name="quantity" min="1" placeholder="1" >
+                                                  </form> 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -120,41 +195,7 @@
                         </div>
                         </td>
                     </tr>
-                    <tr >
-                        <td>02</td>
-                        <td>nbjdcjsxd</td>
-                        <td>Banner Trang chủ</td>
-                        <td>22/03/2024</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" style="background-color:green">
-                                <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p><strong>Ảnh</strong></p>
-                                            <div class="search-contain">
-                                                <button class="sbutton"><strong>Chọn tệp</strong></button>
-                                                <input type="search" class="sbox">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Hủy</button>
-                                            <button type="button" class="btn btn-primary">Lưu</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    
                 </table>
                 <nav aria-label="Page navigation example"
                     style="margin-top: 3vw; display: flex;justify-content: end; margin-right: 2vw; border: none;">

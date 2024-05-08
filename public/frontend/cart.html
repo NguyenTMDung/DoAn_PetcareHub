@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleCart.css">
 </head>
 
 <body>
@@ -263,6 +264,18 @@
                 document.getElementById("button-addon2").disabled = true;
             }
         }
+        function plusQuan() {
+            if (document.getElementById("quantity").max - document.getElementById("quantity").value > 0) {
+                document.getElementById("quantity").value++;
+                document.getElementById("button-addon1").disabled = false;
+                if (document.getElementById("quantity").max - document.getElementById("quantity").value === 0) {
+                    document.getElementById("button-addon2").disabled = true;
+                }
+
+            } else {
+                document.getElementById("button-addon2").disabled = true;
+            }
+        }
         const proPrice = document.getElementsByClassName('pro-price');
         const totalProcducts = document.getElementsByClassName('total_procducts');
         function formatPrice(price) {
@@ -284,6 +297,5 @@
         }
         </script>
 </body>
-<?php include("css/styleCart.php"); ?>
 
 </html>

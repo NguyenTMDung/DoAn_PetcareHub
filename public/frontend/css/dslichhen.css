@@ -60,13 +60,13 @@
 }
 
 #menu {
-    width: max-content ;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
+    width: 19%;
 }
 
 #action {
@@ -218,43 +218,49 @@ table {
     width: 100%;
     margin: 1vw 1vw;
 }
-table, th, td {
+table,th,td {
     padding: 5px;
     text-align: center;
     height: 10%;
 }
+
 .add-employee-button {
-    background-color:#103559;
+    background-color: #103559;
     color: #fff;
     border: none;
     padding: 5px 5px;
     border-radius: 1vw;
-    cursor: pointer;
     width: 15vw;
     height: 4vw;
-    margin-left: -3vw;
-  }
-.search-container {
-    display: flex;
-    justify-content:right;
-    height: fit-content;
+    font-size: 20px;
 }
+
+.search {
+    display: flex;
+    justify-content: right;
+    height: fit-content;
+    margin-right: 1vw;
+}
+
 .search-box {
     border: 1px solid #ccc;
     padding: 10px;
     width: 20vw;
     font-size: 14px;
 }
+
 .search-button {
-    color:darkblue;
+    color: darkblue;
     background-color: white;
     padding: 10px;
     border: 1px solid #ccc;
     font-size: 18px;
 }
+
 .search-button:hover {
     text-decoration: underline;
 }
+
 .head {
     background-color:#FFF4DE;
     height: 4vw;
@@ -296,4 +302,8 @@ tr:nth-child(even) {
 }
 #style-link a:hover {
     text-decoration-line: underline;
+}
+#myTable
+{
+    width: 98%;
 }

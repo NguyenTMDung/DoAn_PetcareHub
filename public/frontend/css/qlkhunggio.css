@@ -60,13 +60,13 @@
 }
 
 #menu {
-    width: max-content ;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
+    width: 19%;
 }
 
 #action {
@@ -218,6 +218,7 @@ table {
     width: 100%;
     margin: 1vw 1vw;
 }
+
 table, th, td {
     padding: 5px;
     text-align: center;
@@ -232,12 +233,12 @@ table, th, td {
     cursor: pointer;
     width: 15vw;
     height: 4vw;
-    margin-left: -3vw;
+    font-size: 20;
   }
-.search-container {
+#head-container {
     display: flex;
-    justify-content:right;
-    height: fit-content;
+    justify-content: space-between;
+    padding: 1vw;
 }
 .search-box {
     border: 1px solid #ccc;
@@ -286,4 +287,8 @@ tr:nth-child(even) {
 }
 #style-link a:hover {
     text-decoration-line: underline;
+}
+#myTable
+{
+    width: 98%;
 }

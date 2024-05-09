@@ -63,13 +63,13 @@ body {
 }
 
 #menu {
-    width: max-content;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
+    width: 19%;
 }
 
 #action {
@@ -124,11 +124,11 @@ body {
 }
 
 #container {
-    width: 80%;
-    margin-left: 1vw;
-    margin-top: 2vw;
+    width: 79%;
+    margin-left:   1vw;
+    margin-top: 1vw;
     background-color: white;
-    
+    padding-top: 10px;
 }
 
 #style-1 {
@@ -218,18 +218,22 @@ body {
     margin: auto;
     width: 100%;
 }
-
+table {
+    width: 98%;
+    margin: 1vw 1vw;
+}
 table,th,td {
     padding: 5px;
     text-align: center;
     height: 10%;
 }
 
-.search-container {
+.search {
     display: flex;
     justify-content:right;
     height: fit-content;
     margin-top: 2vw;
+    margin-right: 1vw;
 }
 .search-box {
     border: 1px solid #ccc;
@@ -258,8 +262,9 @@ table,th,td {
 #myTable img {
     height: 7vw;
 }
-#myTable {
-    margin-top: 1vw;
+#myTable
+{
+    width: 98%;
 }
 tr:nth-child(even) {
     background-color: #00345944

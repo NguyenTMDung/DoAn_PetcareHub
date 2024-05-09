@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/qlkhunggio.css">
-    <title>Danh sách lịch hẹn</title>
+    <title>Quản lý khung giờ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="library/font-awesome/fontawesome-free-6.5.2-web/css/all.css">
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
@@ -68,57 +68,58 @@
                 <a href="" style="margin-left: 1vw;">Quản lý khung giờ</a>
             </div>
             <div id="container">
-                <table>
-                    <tr>
-                        <td><button class="add-employee-button" data-bs-toggle="modal"
-                            data-bs-target="#insertModal"><i class="bi bi-plus-square-fill"></i> Thêm khung giờ</button></td>
-                        <td class="search-container" >
-                            <p style="margin-top: 6px;"><strong>Chọn ngày:</strong></p>
-                            <input  type="date" class="box">
-                        </td>
-                        <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4>Thêm khung giờ</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div style="display: flex;">
-                                            <p><strong>Khung giờ: </strong></p>
-                                                <select name="time" id="time" style="margin-left: 2vw;">
-                                                    <option value="ca1">Ca1: 7h - 8h30</option>
-                                                    <option value="ca2">Ca2: 8h30 -10h</option>
-                                                    <option value="ca3">Ca3: 10h - 11h30</option>
-                                                    <option value="ca4">Ca4: 1h - 2h30</option>
-                                                    <option value="ca5">Ca5: 2h30 - 4h</option>
-                                                    <option value="ca6">Ca6: 4h - 5h30</option>
-                                                    <option value="ca7">Ca7: 5h30 - 7h</option>
-                                                </select>
-                                        </div>
-                                        <form >
-                                            <div style="display: flex;">
-                                                <p style="margin-top: 2vw; "><strong>Số lượng :</strong></p>
-                                                <input style="margin-left:2vw; margin-top: 2vw; width: 15% " type="number" name="quantity" min="1" placeholder="1">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="infor-customer">
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Hủy</button>
-                                        <button type="button" class="btn btn-primary">Thêm</button>
-                                    </div>
+                <div id="head-container">
+                    <div id="add-time">
+                        <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#insertModal"><i
+                                class="bi bi-plus-square-fill" style="margin-right: 1vw;"></i> Thêm lịch
+                            hẹn</button>
+                    </div>
+                    <div class="time" style="display: flex;">
+                        <p style="margin-top: 6px;"><strong>Chọn ngày:</strong></p>
+                        <input type="date" class="box">
+                    </div>
+                </div>
+                <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Thêm khung giờ</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div style="display: flex;">
+                                    <p><strong>Khung giờ: </strong></p>
+                                    <select name="time" id="time" style="margin-left: 2vw;">
+                                        <option value="ca1">Ca1: 7h - 8h30</option>
+                                        <option value="ca2">Ca2: 8h30 -10h</option>
+                                        <option value="ca3">Ca3: 10h - 11h30</option>
+                                        <option value="ca4">Ca4: 1h - 2h30</option>
+                                        <option value="ca5">Ca5: 2h30 - 4h</option>
+                                        <option value="ca6">Ca6: 4h - 5h30</option>
+                                        <option value="ca7">Ca7: 5h30 - 7h</option>
+                                    </select>
                                 </div>
+                                <form>
+                                    <div style="display: flex;">
+                                        <p style="margin-top: 2vw; "><strong>Số lượng :</strong></p>
+                                        <input style="margin-left:2vw; margin-top: 2vw; width: 15% " type="number"
+                                            name="quantity" min="1" placeholder="1">
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="infor-customer">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                <button type="button" class="btn btn-primary">Thêm</button>
                             </div>
                         </div>
-                    </tr>
-                </table>
-                
+                    </div>
+                </div>
+
                 <table id="myTable">
                     <tr class="head">
                         <th style="width:20%;">Số thứ tự</th>
@@ -149,20 +150,21 @@
                                     <div class="modal-body">
                                         <div style="display: flex;">
                                             <p><strong>Khung giờ: </strong></p>
-                                                <select name="time" id="time" style="margin-left: 2vw;">
-                                                    <option value="ca1">Ca1: 7h - 8h30</option>
-                                                    <option value="ca2">Ca2: 8h30 -10h</option>
-                                                    <option value="ca3">Ca3: 10h - 11h30</option>
-                                                    <option value="ca4">Ca4: 1h - 2h30</option>
-                                                    <option value="ca5">Ca5: 2h30 - 4h</option>
-                                                    <option value="ca6">Ca6: 4h - 5h30</option>
-                                                    <option value="ca7">Ca7: 5h30 - 7h</option>
-                                                </select>
+                                            <select name="time" id="time" style="margin-left: 2vw;">
+                                                <option value="ca1">Ca1: 7h - 8h30</option>
+                                                <option value="ca2">Ca2: 8h30 -10h</option>
+                                                <option value="ca3">Ca3: 10h - 11h30</option>
+                                                <option value="ca4">Ca4: 1h - 2h30</option>
+                                                <option value="ca5">Ca5: 2h30 - 4h</option>
+                                                <option value="ca6">Ca6: 4h - 5h30</option>
+                                                <option value="ca7">Ca7: 5h30 - 7h</option>
+                                            </select>
                                         </div>
-                                        <form >
+                                        <form>
                                             <div style="display: flex;">
                                                 <p style="margin-top: 2vw; "><strong>Số lượng :</strong></p>
-                                                <input style="margin-left:2vw; margin-top: 2vw; width: 15% " type="number" name="quantity" min="1" placeholder="1">
+                                                <input style="margin-left:2vw; margin-top: 2vw; width: 15% "
+                                                    type="number" name="quantity" min="1" placeholder="1">
                                             </div>
                                         </form>
                                     </div>

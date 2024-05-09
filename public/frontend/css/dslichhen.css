@@ -216,7 +216,7 @@
 
 table {
     width: 100%;
-    margin: 8px 10px;
+    margin: 1vw 1vw;
 }
 table, th, td {
     padding: 5px;
@@ -228,7 +228,7 @@ table, th, td {
     color: #fff;
     border: none;
     padding: 5px 5px;
-    border-radius: 10px;
+    border-radius: 1vw;
     cursor: pointer;
     width: 15vw;
     height: 4vw;
@@ -257,7 +257,7 @@ table, th, td {
 }
 .head {
     background-color:#FFF4DE;
-    height: 50px;
+    height: 4vw;
 }
 tr:nth-child(even) {
     background-color: #00345944

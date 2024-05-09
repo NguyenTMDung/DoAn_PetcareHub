@@ -128,6 +128,7 @@ body {
     margin-left: 1vw;
     margin-top: 2vw;
     background-color: white;
+    
 }
 
 #style-1 {
@@ -218,14 +219,7 @@ body {
     width: 100%;
 }
 
-table {
-    width: 100%;
-    margin: 8px 10px;
-}
-
-table,
-th,
-td {
+table,th,td {
     padding: 5px;
     text-align: center;
     height: 10%;
@@ -235,6 +229,7 @@ td {
     display: flex;
     justify-content:right;
     height: fit-content;
+    margin-top: 2vw;
 }
 .search-box {
     border: 1px solid #ccc;
@@ -257,13 +252,15 @@ td {
 
 .head {
     background-color: #FFF4DE;
-    height: 50px;
+    height: 4vw;
 }
 
 #myTable img {
-    height: 90px;
+    height: 7vw;
 }
-
+#myTable {
+    margin-top: 1vw;
+}
 tr:nth-child(even) {
     background-color: #00345944
 }
@@ -280,7 +277,7 @@ tr:nth-child(even) {
 .sbox {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 24vw;
     font-size: 14px;
 }
 

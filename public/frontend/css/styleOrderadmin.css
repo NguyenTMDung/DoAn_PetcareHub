@@ -1,0 +1,122 @@
+body {
+    background-color: #F9FAFB;
+}
+
+.header {
+    height: fit-content;
+    padding: 2% 3% 0 2%;
+    display: flex;
+    background-color: #fefefe;
+    border-bottom: 1px solid #D9D7D7;
+}
+
+.logo {
+    width: 10vw;
+    text-align: center;
+}
+.logo img {
+    width: 4vw;
+    max-width: 70px;
+}
+.header #search-container {
+    position: relative;
+    background-color: #ffffffea;
+    flex-direction: row;
+    display: flex;
+    width: 35vw;
+    border-radius: 10px;
+    border: 1px solid #D9D7D7;
+    margin-top: 0.6vw;
+}
+
+.header #submit {
+    padding: 1.5% 2%;
+    margin-left: 1%;
+    background-color: white;
+}
+
+.header #input_search {
+    width: 90%;
+    border: none;
+    margin: 1% 1%;
+
+}
+
+#status {
+    color: #003459;
+    margin-left: 9vw;
+    margin-top: 0.5vw;
+    width: 30%;
+}
+
+#account-admin {
+    margin-left: 8vw;
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+#name-admin {
+    margin-left: 7px;
+}
+#menu {
+    width: max-content;
+    background-color: #ffffff;
+    max-height: max-content;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-right: 1px solid #D9D7D7;
+    margin-top: -1px;
+}
+#action {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    font-weight: 700;
+}
+#action a {
+    font-size: 22px;
+}
+#menu li {
+    list-style: none;
+    margin-bottom: 1vw;
+    font-size: 20px;
+    padding: 1vw 2vw 1vw 0;
+}
+
+#menu li:hover {
+    text-decoration-line: underline;
+}
+
+#menu a {
+    text-decoration-line: none;
+    color: #003459;
+    margin-left: 1vw;
+}
+
+#menu ul li {
+    position: relative;
+}
+.sub-menu li {
+    margin-left: -2vw;
+
+}
+
+#menu .sub-menu {
+    position: absolute;
+    margin-left: 195px;
+    margin-top: -43px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px rgb(134, 134, 134);
+    border: 1px solid #D9D7D7;
+    display: none;
+}
+
+#menu li:hover .sub-menu {
+    display: block;
+}
+
+#container {
+    width: 90%;
+    margin-left: 1vw;
+    margin-top: 2vw;
+    background-color: #ffffff;
+}

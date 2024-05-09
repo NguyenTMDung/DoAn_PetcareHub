@@ -60,7 +60,7 @@
 }
 
 #menu {
-    width: max-content ;
+    width: 17% ;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
@@ -232,12 +232,14 @@ table, th, td {
     cursor: pointer;
     width: 15vw;
     height: 4vw;
+    font-size: 20px;
     margin-left: -3vw;
   }
 .search-container {
     display: flex;
     justify-content:right;
     height: fit-content;
+    margin-right: 1vw;
 }
 .search-box {
     border: 1px solid #ccc;
@@ -296,4 +298,8 @@ tr:nth-child(even) {
 }
 #style-link a:hover {
     text-decoration-line: underline;
+}
+#myTable
+{
+    width: 99%;
 }

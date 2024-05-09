@@ -63,7 +63,7 @@ body {
 }
 
 #menu {
-    width: max-content;
+    width: 17%;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
@@ -124,13 +124,11 @@ body {
 }
 
 #container {
-    width: 80%;
+    width: 83%;
     margin-left: 1vw;
     margin-top: 2vw;
     background-color: white;
-    
 }
-
 #style-1 {
     display: flex;
     margin-top: 2vw;

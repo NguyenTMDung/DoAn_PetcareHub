@@ -10,5 +10,5 @@ Route::get('/trang-chu', [HomeController::class,'index']);
 
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
-Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+Route::get('/gioi-thieu', [GioithieuController::class,'index']);
 

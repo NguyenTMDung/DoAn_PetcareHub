@@ -231,9 +231,9 @@ table, th, td {
     padding: 5px 5px;
     border-radius: 1vw;
     cursor: pointer;
-    width: 15vw;
+    width: 17vw;
     height: 4vw;
-    font-size: 20;
+    font-size: 20px;
   }
 #head-container {
     display: flex;

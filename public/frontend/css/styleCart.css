@@ -480,3 +480,13 @@ tr
     margin-bottom: 5vw;
     margin-left: 40%;
 }
+.quantitys input[type=number]
+{
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    width: 5vw;
+    text-align: center;
+    border: 1px solid rgb(168, 168, 168);
+    padding: 5px;
+}

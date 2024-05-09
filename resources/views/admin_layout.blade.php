@@ -16,6 +16,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/qlynvien.css')}}">
+
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                 <li><a href="">Hóa đơn</a></li>
                 <li><a href="">Khách hàng</a></li>
                 <li><a href="">Đơn hàng</a></li>
-                <li><a href="">Quản lý nhân viên</a></li>
+                <li><a href="{{URL::to('/admin-quan-ly-nhan-vien')}}">Quản lý nhân viên</a></li>
                 <li><a href="">Sản phẩm</a></li>
                 <li><a href="">Quản lý slider</a></li>
                 <li>
@@ -64,7 +66,7 @@
         </div>
 
         <div id="container">
-            @yield('admin_home')
+            @yield('admin_content')
         </div>
     </div>
 </body>

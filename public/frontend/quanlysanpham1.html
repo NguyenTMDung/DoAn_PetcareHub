@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
 </head>
 <!---------------------------------------------------------------------------------------------------------------->
 
@@ -25,7 +26,7 @@
             <img src="image/logo.png" alt="logo">
         </div>
         <div id="status">
-            <h3>Trang chủ</h3>
+
         </div>
         <form>
             <div id="search-container">
@@ -63,12 +64,13 @@
                 <li><a href="">Sign out</a></li>
             </ul>
         </div>
+
         <!------------------------------------------------------------------------------------------------------------------------>
         <div id="container">
             <div class="link-pickeat">
                 <a href="" class="text-link" style="margin-right: 1vw;">Sản Phẩm</a> >
-                <a href="" class="text-link " style="margin-right: 1vw;">Danh sách sản phẩm</a> 
-                
+                <a href="" class="text-link " style="margin-right: 1vw;">Danh sách sản phẩm</a>
+
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 1vw;">
                 <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
@@ -250,6 +252,8 @@
         </div>
     </div>
 </body>
-
+    <script>
+        document.getElementById('status').innerHTML = '<h3>Đơn hàng</h3>'
+    </script>
 
 </html>

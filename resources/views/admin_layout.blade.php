@@ -17,6 +17,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/qlynvien.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/quanlysanpham2.css')}}">
 
 </head>
 
@@ -49,16 +50,20 @@
                 <li><a href="">Hóa đơn</a></li>
                 <li><a href="">Khách hàng</a></li>
                 <li><a href="">Đơn hàng</a></li>
-                <li><a href="{{URL::to('/admin-quan-ly-nhan-vien')}}">Quản lý nhân viên</a></li>
-                <li><a href="">Sản phẩm</a></li>
+                <li><a href="{{URL::to('/quan-ly-nhan-vien')}}">Quản lý nhân viên</a></li>
+                <li><a href="">Sản phẩm</a>
+                    <ul class="sub-menu" style="width: max-content;">
+                        <li><a href="{{URL::to('/admin-quan-ly-danh-muc-sp')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
+                    </ul>
+                </li>
                 <li><a href="">Quản lý slider</a></li>
                 <li>
                     <a href="">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
                         <li><a href="#" style="margin-left: 1vw;">Danh sách lịch hẹn</a></li>
-                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
-                                khung
-                                giờ</a></li>
+                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Quản lý khung giờ</a></li>
                     </ul>
                 </li>
                 <li><a href="">Sign out</a></li>

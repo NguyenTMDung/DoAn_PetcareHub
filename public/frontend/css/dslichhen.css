@@ -228,11 +228,12 @@ table,th,td {
     background-color: #103559;
     color: #fff;
     border: none;
-    padding: 5px 5px;
+    padding: 10px 5px;
     border-radius: 1vw;
     width: 15vw;
-    height: 4vw;
     font-size: 20px;
+    margin-top: 1vw;
+    margin-left: 1vw;
 }
 
 .search {

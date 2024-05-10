@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/styleHome.php">
+    <link rel="stylesheet" href="javascript/jsHome.php">
+    <link rel="stylesheet" href="css/datlich.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/js/bootstrap.js">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="image/logo.png" alt="logo">
+        </div>
+        <form>
+            <div id="search-container">
+                <div type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></div>
+                <input type="search" name="search" id="input_search" placeholder="Search...">
+            </div>
+        </form>
+        <div id="infor">
+            <div id="phone">
+                <p id="sty_phone">Phone</p>
+                <p id="phone_number">0987654321</p>
+            </div>
+            <div id="email">
+                <p id="sty_email">Email</p>
+                <p id="email_addr">abc@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <ul class="nav al-center ju-center" style="flex-grow: 3;">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="btn btn-secondary dropdown-toggle nav-link" aria-expanded="false"
+                    style="background-color: #FCEED5; border: none;color: #003459;">
+                    <a href="">Sản Phẩm</a>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Chó</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Thức ăn</a></li>
+                            <li><a href="#">Đồ dùng thú cưng</a></li>
+                            <li><a href="#">Thời trang</a></li>
+                            <li><a href="#">Sản Phẩm làm đẹp</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Mèo</a>
+                        <ul class="sub-menu" style="margin-top: 26%;">
+                            <li><a href="#">Thức ăn</a></li>
+                            <li><a href="#">Đồ dùng thú cưng</a></li>
+                            <li><a href="#">Thời trang</a></li>
+                            <li><a href="#">Sản Phẩm làm đẹp</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="btn btn-secondary dropdown-toggle nav-link" aria-expanded="false"
+                    style="background-color: #FCEED5; border: none;color: #003459;">
+                    <a href="">Dịch Vụ</a>
+                </div>
+                <ul class="dropdown-menu" style="width: 200px;">
+                    <li><a class="dropdown-item" href="#">Dịch vụ Spa</a></li>
+                    <li><a class="dropdown-item" href="#">Dịch vụ khách sạn</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Giới Thiệu</a>
+            </li>
+        </ul>
+        <ul id="sty-user" style="flex-grow: 1;">
+            <li>
+                <a href="#account" id="account"><i class="fas fa-user fa-2x"
+                        style="color: #003459;padding: 2vw;"></i></a>
+                <a href="#cart" id="cart"><i class="class = bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+            </li>
+        </ul>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h3>THÔNG TIN CÁ NHÂN</h3>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <p><b>Họ Tên Khách Hàng:</b></p>
+                        <input type="text" name="fullname" placeholder="Vui lòng nhập đầy đủ Họ và Tên">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Email:</b></p>
+                        <input type="email" name="email" placeholder="Vui lòng nhập địa chỉ email">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Địa chỉ:</b></p>
+                        <input type="text" name="address" placeholder="Vui lòng nhập địa chỉ">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <p><b>Ngày sinh:</b></p>
+                        <input type="date" name="birthdate">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Email xác nhận:</b></p>
+                        <input type="email" name="confirm_email" placeholder="Vui lòng nhập lại địa chỉ email">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Số điện thoại:</b></p>
+                        <input type="tel" name="phone" placeholder="Vui lòng nhập số điện thoại">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="form-container">
+            <div class="form-head">
+                <h3>THÔNG TIN ĐẶT LỊCH</h3>
+            </div>
+            <table id="myTable">
+                <tr class="head">
+                    <th style="width:10%">&nbsp;</th>
+                    <th style="width:18%;">Mã đặt lịch</th>
+                    <th style="width:22%;">Số lượng dịch vụ</th>
+                    <th style="width:23%;">Thành tiền</th>
+                    <th style="width:17%">&nbsp;</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ma" value="A0001"></td>
+                    <td>A0001</td>
+                    <td>2</td>
+                    <td>300000</td>
+                    <td>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="form-button">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="form-button"><i class="bi bi-dash-circle"></i></button>
+                    </td>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>Thay đổi thông tin</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div style="display: flex; margin-top: 1vw;">
+                                    <div style="margin-left: 1.5vw;">
+                                        <p><strong>Thú cưng</strong></p>
+                                        <input type="radio" id="pet1" name="group-radio" /><label
+                                            for="pet1">Chó</label>&nbsp;
+                                        <input type="radio" id="pet" name="group-radio" /><label
+                                            for="pet2">Mèo</label><br>
+                                    </div>
+                                    <div style="margin-left: 3vw;">
+                                        <p><strong>Ngày đặt lịch</strong></p>
+                                        <div class="search-date">
+                                            <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 3vw;">
+                                        <p><strong>Chọn khung giờ</strong></p>
+                                        <select name="time" id="time">
+                                            <option value="ca1">Ca1: 7h - 8h30</option>
+                                            <option value="ca2">Ca2: 8h30 -10h</option>
+                                            <option value="ca3">Ca3: 10h - 11h30</option>
+                                            <option value="ca4">Ca4: 1h - 2h30</option>
+                                            <option value="ca5">Ca5: 2h30 - 4h</option>
+                                            <option value="ca6">Ca6: 4h - 5h30</option>
+                                            <option value="ca7">Ca7: 5h30 - 7h</option>
+                                        </select>
+                                        <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
+                                <div style="display: flex;">
+                                    <div style="margin-left: 3vw;">
+                                        <p><strong>Spa :</strong></p>
+                                        <form>
+                                            <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ
+                                            sinh<br>
+                                            <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa
+                                            trọn gói<br>
+                                            <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm
+                                            lông<br>
+                                            <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn
+                                            thân<br>
+                                        </form>
+                                    </div>
+                                    <div style="margin-left: 6vw;">
+                                        <p><strong>Khách sạn :</strong></p>
+                                        <form>
+                                            <input type="checkbox" name="hotel" value="Khách sạn bình thường">Khách sạn
+                                            bình thường<br>
+                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip A">Khách sạn
+                                            phòng vip A<br>
+                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip B">Khách sạn
+                                            phòng vip A<br>
+                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip C">Khách sạn
+                                            phòng vip A<br>
+                                        </form>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng :</strong>
+                                </p>
+                                <div style="display: flex;">
+                                    <div style="margin-left: 3vw;">
+                                        <p><strong>Spa :</strong></p>
+                                        <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                            <option value="size1">Dưới 2kg</option>
+                                            <option value="size2">Dưới 5kg</option>
+                                            <option value="size3">Dưới 10kg</option>
+                                            <option value="size4">Dưới 20kg</option>
+                                            <option value="size5">Trên 20kg</option>
+                                        </select>
+                                    </div>
+                                    <div style="margin-left: 8vw;">
+                                        <p><strong>Khách sạn :</strong></p>
+                                        <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                            <option value="sz1">Dưới 10kg</option>
+                                            <option value="sz2">Dưới 20kg</option>
+                                            <option value="sz3">Dưới 40kg</option>
+                                        </select>
+                                        <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
+                                        <input style=" width: 10vw " type="number" name="quantity" min="1"
+                                            placeholder="1">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-primary">Lưu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ma" value="A0001"></td>
+                    <td>A0002</td>
+                    <td>1</td>
+                    <td>150000</td>
+                    <td>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="form-button">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button class="form-button"><i class="bi bi-dash-circle"></i></button>
+                    </td>
+                </tr>
+            </table>
+            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
+            <div style="margin-left: 2vw;">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="form-add">
+                <i class="bi bi-plus-circle"></i> Thêm lịch
+            </button>
+            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
+            <table>
+                <tr>
+                    <td><p><strong>Tổng số dịch vụ:</strong></p></td>
+                    <td><p><strong>1</strong></p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Giảm giá(...%):</strong></p></td>
+                    <td><p><strong>&nbsp</strong></p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Tổng tiền:</strong></p></td>
+                    <td>
+                        <p><strong>150.000Đ</strong></p>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            
+            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Ngày/Giờ/Nội dung mong muốn</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div style="display: flex; margin-top: 1vw;">
+                            <div style="margin-left: 1.5vw;">
+                                <p><strong>Thú cưng</strong></p>
+                                <input type="radio" id="pet1" name="group-radio" /><label for="pet1">Chó</label>&nbsp;
+                                <input type="radio" id="pet" name="group-radio" /><label for="pet2">Mèo</label><br>
+                            </div>
+                            <div style="margin-left: 3vw;">
+                                <p><strong>Ngày đặt lịch</strong></p>
+                                <div class="search-date">
+                                    <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                </div>
+                            </div>
+                            <div style="margin-left: 3vw;">
+                                <p><strong>Chọn khung giờ</strong></p>
+                                <select name="time" id="time">
+                                    <option value="ca1">Ca1: 7h - 8h30</option>
+                                    <option value="ca2">Ca2: 8h30 -10h</option>
+                                    <option value="ca3">Ca3: 10h - 11h30</option>
+                                    <option value="ca4">Ca4: 1h - 2h30</option>
+                                    <option value="ca5">Ca5: 2h30 - 4h</option>
+                                    <option value="ca6">Ca6: 4h - 5h30</option>
+                                    <option value="ca7">Ca7: 5h30 - 7h</option>
+                                </select>
+                                <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
+                        <div style="display: flex;">
+                            <div style="margin-left: 3vw;">
+                                <p><strong>Spa :</strong></p>
+                                <form>
+                                    <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ
+                                    sinh<br>
+                                    <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa
+                                    trọn gói<br>
+                                    <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm
+                                    lông<br>
+                                    <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn
+                                    thân<br>
+                                </form>
+                            </div>
+                            <div style="margin-left: 6vw;">
+                                <p><strong>Khách sạn :</strong></p>
+                                <form>
+                                    <input type="checkbox" name="hotel" value="Khách sạn bình thường">Khách sạn
+                                    bình thường<br>
+                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip A">Khách sạn
+                                    phòng vip A<br>
+                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip B">Khách sạn
+                                    phòng vip A<br>
+                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip C">Khách sạn
+                                    phòng vip A<br>
+                                </form>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng :</strong>
+                        </p>
+                        <div style="display: flex;">
+                            <div style="margin-left: 3vw;">
+                                <p><strong>Spa :</strong></p>
+                                <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                    <option value="size1">Dưới 2kg</option>
+                                    <option value="size2">Dưới 5kg</option>
+                                    <option value="size3">Dưới 10kg</option>
+                                    <option value="size4">Dưới 20kg</option>
+                                    <option value="size5">Trên 20kg</option>
+                                </select>
+                            </div>
+                            <div style="margin-left: 8vw;">
+                                <p><strong>Khách sạn :</strong></p>
+                                <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                    <option value="sz1">Dưới 10kg</option>
+                                    <option value="sz2">Dưới 20kg</option>
+                                    <option value="sz3">Dưới 40kg</option>
+                                </select>
+                                <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
+                                <input style=" width: 10vw " type="number" name="quantity" min="1" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Thêm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="sub">
+            <input type="button" data-bs-toggle="modal" data-bs-target="#bookModal" value="Đặt lịch ngay"
+                name="datlich">
+        </div>
+        <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel" style="margin-left: 6vw;">PET CARE HUB</h4>
+                        <a href="#cart" id="cart" style="margin-left: 65vw;font-size: 2.5vw;"><i
+                                class="class = bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="left">
+                            <h5><strong>Thông tin khách hàng</strong></h5>
+                            <p><strong>Họ và Tên</strong></p>
+                            <div class="search-contain">
+                                <input type="text" class="sbox" placeholder="Nguyễn Văn A">
+                            </div>
+                            <p><strong>Số điện thoại</strong></p>
+                            <div class="search-contain">
+                                <input type="tel" class="sbox" placeholder="098xxxxxxx">
+                            </div>
+                            <p><strong>Địa chỉ giao hàng</strong></p>
+                            <div class="search-contain">
+                                <input type="text" class="sbox" placeholder="Số nhà,Đường,Phường/Xã,Quận/Huyện,Tỉnh/Thành phố">
+                            </div>
+                            <h5><strong>Thanh toán</strong></h5>
+                            <p style="color: #747171;">*Toàn bộ các giao dịch được bảo mật và mã hóa.</p>
+                            <div class="thanhtoan">
+                                <table id="pay">
+                                    <tr>
+                                        <td><input type="radio" id="pt1" name="group-radio" class="radio"/></td>
+                                        <td>Thanh toán tại cửa hàng</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="radio" id="pt2" name="group-radio" class="radio" /></td>
+                                        <td>Thanh toán trước qua ngân hàng</td>
+                                    </tr>
+                                </table>
+                                <div id="infor-customer">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h5><strong>Lịch hẹn</strong></h5>
+                            <table>
+                                <tr>
+                                    <th style="width: 50%;">&nbsp;</th>
+                                    <th style="width: 50%;">&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><strong>Mã lịch: A0002</strong></p>
+                                        <p>Số lượng dịch vụ: 1</p>
+                                    </td>
+                                    <td><p>150.000Đ</p></td>
+                                </tr>
+                            </table>
+                            <hr style="border: 1px solid rgb(83, 81, 81);opacity: 1;">
+                            <table>
+                                <tr>
+                                    <th style="width: 50%;">&nbsp;</th>
+                                    <th style="width: 50%;">&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td><p><strong>Số lượng dịch vụ:</strong></p></td>
+                                    <td><p><strong>1</strong></p></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><strong>Tổng tiền:</strong></h5></td>
+                                    <td>
+                                        <h5><strong>150.000Đ</strong></h5>
+                                        <p>(Một trăm năm mươi nghìn đồng)</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br><br>
+                            <div id="sub">
+                                <input type="button" value="Hoàn thành đặt lịch" name="finish">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-primary">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+    </div>
+    <div id="footer">
+        <table>
+            <tr>
+                <td id="infor-shop">
+                    <h3>Liên hệ</h3>
+                    CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB <br>
+                    Địa chỉ: 116 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam <br>
+                    <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
+                    <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                    <div id="connect_shop">
+                        <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </td>
+                <td style="width: 30%;"> &nbsp;</td>
+                <td id="policy">
+                    <h3>Chính sách khách hàng</h3>
+                    <a href="#">Chính sách đổi trả.</a><br>
+                    <a href="#">Chính sách bảo mật.</a><br>
+                    <a href="#">Phương thức thanh toán.</a><br>
+                    <a href="#">Chính sách hoàn tiền</a><br>
+                    <p>&nbsp;</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;" class="logo"><img src="image/logo.png" alt="logo"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    document.querySelectorAll('input[type=radio]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.id === 'pt2' && radio.checked) {
+                document.getElementById('infor-customer').innerHTML = `
+                <div>
+                    <h6>Chuyển khoản ngân hàng</h6>
+                    <p><strong>Qúy khách hàng vui lòng chuyển khoản theo thông tin sau:</strong></p>
+                    <p><strong>Số tài khoản:</strong>08836573752</p>
+                    <p><strong>Tên tài khoản:</strong>PET CARE HUB SHOP</p>
+                    <p><strong>Nội dung:</strong>Tên khách hàng + Số điện thoại</p>
+
+                </div>
+                `
+            }
+        });
+    });
+</script>
+</html>

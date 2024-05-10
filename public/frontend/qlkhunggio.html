@@ -24,7 +24,7 @@
             <img src="image/logo.png" alt="logo">
         </div>
         <div id="status">
-            <h3>Lịch hẹn</h3>
+
         </div>
         <form>
             <div id="search-container">
@@ -275,6 +275,7 @@
     </div>
 </body>
 <script>
+    document.getElementById('status').innerHTML= '<h3>Lịch hẹn</h3>'
     document.querySelectorAll('input[type=radio]').forEach(radio => {
         radio.addEventListener('change', () => {
             if (radio.id === 'radio1' && radio.checked) {

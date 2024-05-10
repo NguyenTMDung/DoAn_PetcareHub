@@ -298,7 +298,7 @@ tr:nth-child(even) {
     background-color: #D9D7D7;
     padding: 10px;
     border: 1px solid #ccc;
-    font-size: 1.8vw;
+    font-size: 18px;
 }
 
 .sbutton:hover {
@@ -308,8 +308,8 @@ tr:nth-child(even) {
     background-color:#103559;
     color: #fff;
     border: none;
-    padding: 1vw 1vw;
-    border-radius: 1vw;
+    padding: 5px 5px;
+    border-radius: 10px;
     cursor: pointer;
     width: 15vw;
     height: 4vw;

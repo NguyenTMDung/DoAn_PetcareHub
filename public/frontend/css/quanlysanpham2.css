@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFB;
+    background-color: #FAFBFC;
 }
 
 .header {
@@ -8,6 +8,11 @@ body {
     display: flex;
     background-color: #fefefe;
     border-bottom: 1px solid #D9D7D7;
+}
+#container {
+    width: 100vw;
+    margin-left: 1vw;
+    margin-top: 2vw;
 }
 
 .logo {
@@ -266,6 +271,7 @@ td {
 #myTable
 {
     margin-top: 1vw;
+    width: 99%;
 }
 tr:nth-child(even) {
     background-color: #00345944
@@ -318,11 +324,7 @@ tr:nth-child(even) {
     margin: 0 1vw;
     padding: 1vw;
   }
-  #container {
-    width: 80%;
-    margin-left: 1vw;
-    margin-top: 2vw;
-}
+  
   .text-link {
     font-size: 1vw;
     font-weight: 500;

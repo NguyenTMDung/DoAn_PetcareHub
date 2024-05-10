@@ -10,10 +10,11 @@ body {
     border-bottom: 1px solid #D9D7D7;
 }
 #container {
-    width: 80%;
+    width: 100vw;
     margin-left: 1vw;
     margin-top: 2vw;
 }
+
 .logo {
     width: 10vw;
     text-align: center;
@@ -223,7 +224,7 @@ body {
 }
 
 table {
-    width: 100%;
+    width: 98%;
     margin: 8px 10px;
 }
 
@@ -270,6 +271,7 @@ td {
 #myTable
 {
     margin-top: 1vw;
+    width: 99%;
 }
 tr:nth-child(even) {
     background-color: #00345944

@@ -24,7 +24,7 @@
             <img src="image/logo.png" alt="logo">
         </div>
         <div id="status">
-            <h3>Hóa đơn</h3>
+            
         </div>
         <form>
             <div id="search-container">
@@ -44,9 +44,9 @@
         <div id="menu">
             <ul id="nav">
                 <li><a href="">Trang chủ</a></li>
-                <li id="action"><a href="">Hóa đơn</a></li>
+                <li ><a href="">Hóa đơn</a></li>
                 <li><a href="">Khách hàng</a></li>
-                <li><a href="">Đơn hàng</a></li>
+                <li id="action"><a href="">Đơn hàng</a></li>
                 <li><a href="">Quản lý nhân viên</a></li>
                 <li><a href="">Sản phẩm</a></li>
                 <li><a href="">Quản lý slider</a></li>
@@ -357,15 +357,15 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div id="detai">
-                                    <div id="detail-infor" style="display: flex;justify-content: space-between;">
+                                    <div id="detail-infor">
                                         <ul>
                                             <li>
                                                 <h5>Mã đơn hàng: </h5>
                                                 <p id="deatil-orderid">001</p>
                                             </li>
                                             <li>
-                                                <h5>Mã khách hàng: </h5>
-                                                <p id="detai-customerid">KH01</p>
+                                                <h5>Tên khách hàng: </h5>
+                                                <p id="name-customer">Nguyễn Dương Tùng</p>
                                             </li>
                                             <li>
                                                 <h5>Ngày đặt: </h5>
@@ -391,7 +391,8 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <h4 style="margin-left: 2vw;">Chi tiết đơn hàng</h4>
+                                    <hr style="border:1px solid rgb(64, 64, 64);">
+                                    <h4 id="title-table">Chi tiết đơn hàng</h4>
                                     <table id="detail-product">
                                         <tr>
                                             <th style="width: 30%;">
@@ -483,7 +484,7 @@
                                                 <table id="style-table" style="width: 50%;float: right; border: none;">
                                                     <tr>
                                                         <td>
-                                                            <p>Tổng</p>
+                                                            <p>Tổng cộng</p>
                                                         </td>
                                                         <td>
                                                             <p id="total">960000</p>
@@ -499,10 +500,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <h2>Phải trả</h2>
+                                                            <h3>Tổng</h3>
                                                         </td>
                                                         <td>
-                                                            <h2 class="total-pay">1000000</h2>
+                                                            <h3 class="total-pay">1000000</h3>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -570,6 +571,8 @@
         const fee = TransFee.textContent;
         const formatted = Number(fee).toLocaleString();
         TransFee.textContent = formatted;
+       
+        document.getElementById('status').innerHTML= '<h3>Đơn hàng</h3>'
     </script>
 
 </html>

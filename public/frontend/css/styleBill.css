@@ -269,15 +269,14 @@ td {
     display: flex;
     margin-bottom: -5px;
 }
+
+#detail-infor p {
+    margin-left: 10px;
+}
+
 #detail-infor h5 {
     font-size: 18px;
-    margin-top: 2px;
-    margin-right: 1vw;
-}
-#detail-infor
-{
-    display: flex;
-    justify-content: space-between;
+    margin-top: 1px;
 }
 
 #title-table {
@@ -335,6 +334,7 @@ td {
 .search {
     display: flex;
     height: fit-content;
+    justify-content: end;
     margin-right: 1vw;
     margin-top: 1vw;
 }

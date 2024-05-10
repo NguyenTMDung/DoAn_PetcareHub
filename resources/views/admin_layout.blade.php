@@ -24,7 +24,7 @@
             <img src="{{asset('public/frontend/image/logo.png')}}" alt="logo">
         </div>
         <div id="status">
-            <h3>Trang chủ</h3>
+
         </div>
         <form>
             <div id="search-container">

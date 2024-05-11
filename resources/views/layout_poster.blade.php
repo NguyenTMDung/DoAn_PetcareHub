@@ -17,7 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
 
 </head>
@@ -95,6 +94,32 @@
                 <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
             </li>
         </ul>
+    </div>
+    <div class="container">
+        <div id="slide-show" class="carousel slide" data-bs-ride="carousel" style="margin: 2vw 0;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{('public/frontend/image/Pet Care Hub (1).png')}}" class="d-block w-100" alt="..."
+                        style="max-width: 90vw;border-radius: 10px">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{('public/frontend/image/banner2.png')}}" class="d-block w-100" alt="..."
+                        style="max-width: 90vw;border-radius: 10px">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{('public/frontend/image/slide-show-3.png')}}" class="d-block w-100" alt="..."
+                        style="max-width: 90vw;border-radius: 10px">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slide-show" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slide-show" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
     <div class="container">
 

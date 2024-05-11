@@ -368,9 +368,9 @@
   .star-rating {
     color: rgb(225, 225, 0);
   }
-  .number-of-sales {
+  .number_of_sales {
     display: inline;
-    margin-left: 5vw;
+    margin-left: 35px;
   }
     @media only screen and (max-width: 768px) {
     }

@@ -7,10 +7,18 @@ use App\Http\Controllers\TrangphuController;
 use App\Http\Controllers\QLNVController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HotelServiceController;
+
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
 
+//Page SP
+Route::get('/san-pham',[ProductController::class,'index']);
+
+//Page Dịch vụ
+Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
 
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
@@ -37,7 +45,7 @@ Route::delete('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'destroy']);
 
 //customer
 Route::resource('/quan-ly-khach-hang',CustomerController::class);
-Route::put('/quan-ly-khach-hang/{id}', [QLNVController::class, 'update']);
-Route::delete('/quan-ly-khach-hang/{id}', [QLNVController::class, 'destroy']);
+Route::put('/quan-ly-khach-hang/{id}', [CustomerController::class, 'update']);
+Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']);
 
 

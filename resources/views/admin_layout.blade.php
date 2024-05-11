@@ -80,8 +80,7 @@
     </div>
 </body>
 <script>
-        const currentUrl = window.location.href;
-
+const currentUrl = window.location.href;
 // Lấy danh sách các menu
 const menuItems = document.querySelectorAll('#nav li a');
 

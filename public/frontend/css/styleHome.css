@@ -276,7 +276,12 @@
             text-align: left;
             font-weight: 500;
         }
-
+        .product-list
+        {
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            border-radius: 10px;
+        }
         .product-list .item {
             width: 17vw;
             text-align: center;
@@ -311,7 +316,7 @@
             font-weight: 600;
             line-height: 5px;
             text-align: left;
-            margin: 0 2vw 1vw 2vw;
+            margin: 0 2vw 1vw 1.7vw;
         }
 
         .pro-price .old-price {
@@ -359,10 +364,6 @@
         #shop-address .img-shop {
             display: flex;
             justify-content: space-between;
-        }
-
-        #shop-address {
-            margin: 2vw 2vw;
         }
 
         #shop-address hr {

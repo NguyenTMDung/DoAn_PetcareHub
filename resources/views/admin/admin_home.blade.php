@@ -104,4 +104,144 @@
         <canvas id="venueChart"></canvas>
     </div>
 </div>
+{{--Biểu đồ khách hàng đơn hàng--}}
+<div class="chartOrder">
+                <h5 class="title">Đơn hàng và lượng truy cập website</h5>
+                <div class="chartBox">
+                    <canvas id="orderChart"></canvas>
+                </div>
+            </div>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+<script>
+    window.onload = (function loadDate() {
+        let date = new Date(),
+            day = date.getDate(),
+            month = date.getMonth() + 1,
+            year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        const todayDate = `${year}-${month}-${day}`;
+
+        document.getElementById("current-time").value = todayDate;
+        document.getElementById("current-year").innerHTML = year;
+    });
+    // Seller
+    const dataRevenue = {
+        labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
+        datasets: [{
+            label: 'Sản phẩm',
+            data: [17, 12, 6, 9, 12, 3, 9],
+            backgroundColor: [
+                '#9bd5ff'
+            ],
+            borderColor: [
+                '#003459'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        }, {
+            label: 'Dịch vụ',
+            data: [4, 8, 10, 6, 11, 7, 11],
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 26, 104, 1)'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        },]
+    };
+
+    // config 
+    const config1 = {
+        type: 'bar',
+        data: dataRevenue,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grace: '5%',
+                    height: '5%'
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                }
+            }
+        }
+    };
+
+    // render init block
+    const venueChart = new Chart(
+        document.getElementById('venueChart'),
+        config1
+    );
+    // Order
+    const dataOrder = {
+        labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
+        datasets: [
+        {
+            label: 'Lượng khách truy cập mới',
+            data: [14, 1, 10, 20, 15, 9, 22],
+            backgroundColor: [
+                'rgb(139, 139, 139)'
+            ],
+            borderColor: [
+                'black'
+            ],
+            barPercentage: 0.9,
+            categoryPercentage: 0.5,
+            type :'line',
+        },{
+            label: 'Đơn hàng',
+            data: [17, 12, 6, 9, 12, 3, 9],
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 26, 104, 1)'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        }]
+    };
+    // config 
+    const config2 = {
+        data: dataOrder,
+        type :'bar',
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grace: '5%',
+                    height: '5%'
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                }
+            },
+        }
+    };
+    // render init block
+    const serviceChart = new Chart(
+        document.getElementById('orderChart'),
+        config2
+    );
+    // Instantly assign Chart.js version
+    const chartVersion = document.getElementById('chartVersion');
+    chartVersion.innerText = Chart.version;
+    //
+    document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
+</script>
 @endsection

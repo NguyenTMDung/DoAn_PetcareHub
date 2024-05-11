@@ -17,12 +17,24 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <style>
-        .active, li:hover, a:active{
+    .active, li:hover, a:active{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    font-weight: 700;
+    }
+
+    #nav li.active a{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    font-weight: 700;
+    }
+    #nav li.active
+    {
         background-color: antiquewhite;
         border-radius: 10px;
-        font-weight: 700;
-        }
-        </style>
+    }
+    
+    </style>
 </head>
 
 <body>
@@ -49,23 +61,23 @@
     <div style="display: flex;">
         <div id="menu">
             <ul id="nav">
-                <li class="action"><a href="{{URL::to('/admin-trang-chu')}}" class="action">Trang chủ</a></li>
-                <li ><a href="" class="action">Hóa đơn</a></li>
-                <li ><a href="" class="action">Khách hàng</a></li>
-                <li ><a href="" class="action">Đơn hàng</a></li>
-                <li ><a href="" class="action">Quản lý nhân viên</a></li>
-                <li ><a href="" class="action">Sản phẩm</a></li>
-                <li ><a href="" class="action">Quản lý slider</a></li>
-                <li >
-                    <a href="" class="action">Lịch hẹn</a>
+                <li class="action active"><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
+                <li class="action"><a href="{{URL::to('/a')}}" >Hóa đơn</a></li>
+                <li class="action"><a href="{{URL::to('/b')}}" >Khách hàng</a></li>
+                <li class="action"><a href="{{URL::to('c')}}" >Đơn hàng</a></li>
+                <li class="action"><a href="{{URL::to('d')}}" >Quản lý nhân viên</a></li>
+                <li class="action"><a href="{{URL::to('e')}}" >Sản phẩm</a></li>
+                <li class="action"><a href="{{URL::to('f')}}">Quản lý slider</a></li>
+                <li class="action">
+                    <a href="{{URL::to('f')}}">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="#" style="margin-left: 1vw;">Danh sách lịch hẹn</a></li>
-                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
+                        <li><a href="{{URL::to('f')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
+                        <li style="margin-bottom: 0;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
                                 khung
                                 giờ</a></li>
                     </ul>
                 </li>
-                <li ><a href="" class="action">Sign out</a></li>
+                <li class="action"><a href="{{URL::to('f')}}" >Sign out</a></li>
             </ul>
         </div>
 
@@ -75,17 +87,24 @@
     </div>
 </body>
 <script>
-        document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
-        var header = document.getElementById("menu");
-        var btns = header.getElementsByClassName("action");
-        for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        if (current.length > 0) { 
-            current[0].className = current[0].className.replace(" active", "");
-        }
-        this.className += " active";
+const currentUrl = window.location.href;
+// Lấy danh sách các menu
+const menuItems = document.querySelectorAll('#nav li a');
+
+// Kiểm tra và thêm lớp "active" cho menu đang được truy cập
+menuItems.forEach(item => {
+    if (item.href === currentUrl) {
+        item.parentElement.classList.add('active');
+    }
+});
+const menuItems1 = document.querySelectorAll('#nav li');
+        // Tìm menu có class "active"
+        menuItems1.forEach(item => {
+            if (item.classList.contains('active')) {
+                const menuText = item.textContent.trim();
+                document.getElementById('status').innerHTML = `<h3>${menuText}</h3>`;
+            }
         });
-        }
+
 </script>
 </html>

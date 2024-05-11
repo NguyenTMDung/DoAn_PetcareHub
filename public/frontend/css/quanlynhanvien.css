@@ -63,7 +63,7 @@ body {
 }
 
 #menu {
-    width: max-content ;
+    width: max-content;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
@@ -90,7 +90,7 @@ body {
 }
 
 #menu li:hover {
-   text-decoration-line: underline;
+    text-decoration-line: underline;
 }
 
 #menu a {
@@ -105,7 +105,7 @@ body {
 
 .sub-menu li {
     margin-left: -2vw;
-    
+
 }
 
 #menu .sub-menu {
@@ -122,6 +122,7 @@ body {
 #menu li:hover .sub-menu {
     display: block;
 }
+
 #container {
     width: 80%;
     margin-left: 1vw;
@@ -201,8 +202,9 @@ body {
     background-color: #ffffff;
     padding: 1vw 3vw;
 }
+
 .text-truncate-container p {
--webkit-line-clamp: 1;
+    -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -217,72 +219,93 @@ body {
 }
 
 table {
-    width: 100%;
+    width: 98%;
     margin: 8px 10px;
 }
-table, th, td {
+
+table,
+th,
+td {
     padding: 5px;
     text-align: center;
     height: 10%;
 }
+
 .search-container {
     display: flex;
     justify-content:right;
+    height: fit-content;
 }
 .search-box {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 20vw;
     font-size: 14px;
 }
+
 .search-button {
-    color:darkblue;
+    color: darkblue;
     background-color: white;
     padding: 10px;
     border: 1px solid #ccc;
     font-size: 18px;
 }
+
 .search-button:hover {
     text-decoration: underline;
 }
+
 .head {
-    background-color:#FFF4DE;
+    background-color: #FFF4DE;
     height: 50px;
 }
 
-.banner {
-    background-color: rgb(137, 165, 221);
-    padding: 10px;
-    color: black;
-    text-align: center;
-    height: 100px;
-  }
-  .banner img {
-    height: 90px; 
-  }
-  .bannerc {
-    background-color:#ffffff;
-    padding: 10px;
-    color: black;
-    text-align: center;
-    height: 100px;
-  }
-  .bannerc img {
-    height: 90px; 
-  }
-  .pagination a
-  {
+#myTable img {
+    height: 90px;
+}
+#myTable
+{
+    margin-top: 1vw;
+}
+tr:nth-child(even) {
+    background-color: #00345944
+}
+
+.pagination a {
     border: none;
-  }
-  .add-employee-button {
+}
+
+.search-contain {
+    display: flex;
+    justify-content: center;
+}
+
+.sbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.sbutton {
+    color: darkblue;
+    background-color: #D9D7D7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.sbutton:hover {
+    text-decoration: underline;
+}
+.add-employee-button {
     background-color:#103559;
     color: #fff;
     border: none;
-    padding: 5px 20px;
+    padding: 5px 5px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 20px auto;
-    width: 200px;
-    height: 50px;
-    display: center;
+    width: 15vw;
+    height: 4vw;
+    margin-left: 1vw;
   }

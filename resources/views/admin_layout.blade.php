@@ -17,14 +17,12 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <style>
-    .active, li:hover, a:active{
-    background-color: antiquewhite;
-    border-radius: 10px;
-    font-weight: 700;
-    }
-
-    
-    </style>
+        .active, li:hover, a:active{
+        background-color: antiquewhite;
+        border-radius: 10px;
+        font-weight: 700;
+        }
+        </style>
 </head>
 
 <body>
@@ -72,7 +70,7 @@
         </div>
 
         <div id="container">
-            @yield('admin_home')
+            @yield('admin_content')
         </div>
     </div>
 </body>

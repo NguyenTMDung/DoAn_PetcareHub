@@ -21,13 +21,11 @@
     .active, li:hover, a:active{
     background-color: antiquewhite;
     border-radius: 10px;
-    font-weight: 700;
     }
 
     #nav li.active a{
     background-color: antiquewhite;
     border-radius: 10px;
-    font-weight: 700;
     }
     #nav li.active
     {
@@ -60,7 +58,7 @@
         </a>
     </div>
     <div style="display: flex;">
-        <div id="menu">
+        <div id="menu" style="width: 23%">
             <ul id="nav">
                 <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>

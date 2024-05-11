@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrangphuController;
 use App\Http\Controllers\QLNVController;
 use App\Http\Controllers\CategoryProductController;
-
+use App\Http\Controllers\CustomerController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
@@ -30,10 +30,14 @@ Route::get('/phuong-thuc-thanh-toan', [TrangphuController::class,'PhuongThucThan
 Route::get('/chinh-sach-bao-mat', [TrangphuController::class,'ChinhSachBaoMat']);
 
 //employee
-Route::get('/quan-ly-nhan-vien',[QLNVController::class,'index']);
-Route::get('/them-nhan-vien',[QLNVController::class,'store']);
+Route::resource('/quan-ly-nhan-vien',QLNVController::class);
+Route::post('/them-nhan-vien',[QLNVController::class,'store']);
+Route::put('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'update']);
+Route::delete('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'destroy']);
 
-
-
+//customer
+Route::resource('/quan-ly-khach-hang',CustomerController::class);
+Route::put('/quan-ly-khach-hang/{id}', [QLNVController::class, 'update']);
+Route::delete('/quan-ly-khach-hang/{id}', [QLNVController::class, 'destroy']);
 
 

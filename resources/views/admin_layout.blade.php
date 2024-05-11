@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/qlynvien.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/quanlysanpham2.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -48,7 +50,7 @@
             <ul id="nav">
                 <li id="action"><a href="{{URL::to('/admin-trang-chu')}}">Trang chủ</a></li>
                 <li><a href="">Hóa đơn</a></li>
-                <li><a href="">Khách hàng</a></li>
+                <li><a href="{{URL::to('/quan-ly-khach-hang')}}">Khách hàng</a></li>
                 <li><a href="">Đơn hàng</a></li>
                 <li><a href="{{URL::to('/quan-ly-nhan-vien')}}">Quản lý nhân viên</a></li>
                 <li><a href="">Sản phẩm</a>

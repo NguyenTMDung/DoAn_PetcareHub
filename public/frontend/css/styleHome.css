@@ -278,9 +278,9 @@
         }
         .product-list
         {
-            border-top: 1px solid gray;
-            border-bottom: 1px solid gray;
+            border: 1px solid #003459;
             border-radius: 10px;
+            background-color: #FCEED5;
         }
         .product-list .item {
             width: 17vw;

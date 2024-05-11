@@ -14,12 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-<<<<<<< HEAD
-            $table->string('avatar');
-            $table->date('date_of_birth');
-=======
             $table->string('code');
->>>>>>> task2
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('role')->default('Customer');

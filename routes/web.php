@@ -18,8 +18,6 @@ Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
 
 //ad_min category_sanpham
 Route::get('/admin-quan-ly-danh-muc-sp', [CategoryProductController::class,'show_cagetoryProduct']);
-// Route::get('/chinh-sua-danh-muc-sp/{id}', [CategoryProductController::class, 'edit_cagetoryProduct']);
-// Route::get('/xoa-danh-muc-sp/{id}', [CategoryProductController::class,'delete_cagetoryProduct']);
 Route::post('/luu-danh-muc-sp', [CategoryProductController::class,'save_cagetoryProduct']);
 
 
@@ -36,7 +34,7 @@ Route::put('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'update']);
 Route::delete('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'destroy']);
 
 //customer
-Route::resource('/quan-ly-khach-hang',CustomerController::class);
+Route::resource('/quan-ly-khach-hang', CustomerController::class);
 Route::put('/quan-ly-khach-hang/{id}', [QLNVController::class, 'update']);
 Route::delete('/quan-ly-khach-hang/{id}', [QLNVController::class, 'destroy']);
 

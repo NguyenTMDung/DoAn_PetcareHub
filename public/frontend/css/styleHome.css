@@ -426,3 +426,7 @@
             display: block;
             margin: 0 3vw;
         }
+        #map
+        {
+            margin-bottom: 3vw;
+        }

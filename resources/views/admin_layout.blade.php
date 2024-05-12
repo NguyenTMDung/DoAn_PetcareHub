@@ -69,9 +69,9 @@
                 <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>
                 <li class="action"><a href="{{URL::to('e')}}" >Sản phẩm</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('f')}}" style="margin-left: 1vw;" >Danh mục sản phẩm</a></li>
-                        <li style="margin-bottom: 5;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
+                        <li><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
                     </ul>
                 </li>
                 <li class="action"><a href="{{URL::to('f')}}">Quản lý slider</a></li>

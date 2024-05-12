@@ -7,17 +7,29 @@ use App\Http\Controllers\QLNVController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HotelServiceController;
+
+
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
 
+//Page SP
+Route::get('/san-pham',[ProductController::class,'index']);
+
+//Page Dịch vụ
+Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
 
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
 Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
 
 //ad_min category_sanpham
-Route::get('/admin-quan-ly-danh-muc-sp', [CategoryProductController::class,'show_cagetoryProduct']);
-Route::post('/luu-danh-muc-sp', [CategoryProductController::class,'save_cagetoryProduct']);
+
+Route::resource('/danh-muc-san-pham', CategoryProductController::class);
+Route::post('/danh-muc-san-pham',[CategoryProductController::class,'store']);
+Route::put('/danh-muc-san-pham/{id}', [CategoryProductController::class, 'update']);
+Route::delete('/danh-muc-san-pham/{id}', [CategoryProductController::class, 'destroy']);
 
 
 //doitra
@@ -32,10 +44,10 @@ Route::post('/them-nhan-vien',[QLNVController::class,'store']);
 Route::put('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'update']);
 Route::delete('/quan-ly-nhan-vien/{id}', [QLNVController::class, 'destroy']);
 
-//admin customer
-Route::resource('/quan-ly-khach-hang', CustomerController::class);
-Route::put('/quan-ly-khach-hang/{id}', [QLNVController::class, 'update']);
-Route::delete('/quan-ly-khach-hang/{id}', [QLNVController::class, 'destroy']);
+//customer
+Route::resource('/quan-ly-khach-hang',CustomerController::class);
+Route::put('/quan-ly-khach-hang/{id}', [CustomerController::class, 'update']);
+Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']);
 
 //admin order
 Route::resource('/quan-ly-hoa-don',OrderController::class);

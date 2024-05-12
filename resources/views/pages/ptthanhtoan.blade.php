@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/phuongthucthanhtoan.css')}}">
 <div id="contain">
     <h1 style="text-align: center; margin: 20px;">Phương thức thanh toán</h1>
     <ul>

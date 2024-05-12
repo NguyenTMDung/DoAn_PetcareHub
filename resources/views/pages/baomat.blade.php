@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/chinhsachquyenriengtu.css')}}">
 <div id="contain">
     <h1 style="text-align: center;  margin: 20px;">Chính sách bảo mật thông tin người dùng</h1>
     <ul>

@@ -1,5 +1,5 @@
 @extends('admin_layout')
-@section('admin_order')
+@section('admin_content')
 <div id="head-container">
                 <div id="arrange">
                     <label for="arrange-price">Sắp xếp theo tổng tiền: </label>

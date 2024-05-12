@@ -285,7 +285,6 @@ tr:nth-child(even) {
 }
 .box {
     border: 1px solid #ccc;
-    height: 3vw;
     font-size: 19px;
 }
 .sbutton {

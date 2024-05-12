@@ -73,9 +73,10 @@
                         <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#insertModal"><i
                                 class="bi bi-plus-square-fill" style="margin-right: 1vw;"></i>Thêm khung giờ </button>
                     </div>
-                    <div class="time" style="display: flex;">
-                        <p style="margin-top: 6px;"><strong>Chọn ngày:</strong></p>
+                    <div class="time" style="display: flex; margin-top: 1vw;">
+                        <p style="margin-top: 8px;"><strong>Chọn ngày:</strong></p>
                         <input type="date" class="box">
+                        <input type="button" class="seen" value="Xem">
                     </div>
                 </div>
                 <div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -88,6 +89,10 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <div class="choose-time">
+                                    <p style="margin-top: 8px;"><strong>Chọn ngày:</strong></p>
+                                    <input type="date" class="box">
+                                </div>
                                 <div style="display: flex;">
                                     <p><strong>Khung giờ: </strong></p>
                                     <select name="time" id="time" style="margin-left: 2vw;">

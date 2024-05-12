@@ -235,6 +235,21 @@ table, th, td {
     margin-top: 1vw;
     margin-left: 1vw;
 }
+.seen {
+    background-color: #103559;
+    color: #fff;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 1vw;
+    width: 6vw;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-right: 2vw;
+}
+.choose-time {
+    display: flex; 
+    margin-bottom: 1vw;
+}
 #head-container {
     display: flex;
     justify-content: space-between;

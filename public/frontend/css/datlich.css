@@ -260,7 +260,9 @@ td {
 body {
     font-family: Arial, sans-serif;
 }
-
+.form-column {
+    width: 45%;
+}
 .form-container {
     background-color: white;
     border-radius: 1vw;
@@ -287,7 +289,7 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="tel"] {
-    width: 28vw;
+    width: 100%;
     padding: 1vw;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -316,6 +318,7 @@ table {
     text-align: center;
     padding: 5px;
     height: 10%;
+    width: 100%;
 }
 
 #myTable tr:nth-child(even) {
@@ -326,8 +329,8 @@ table {
     background-color: #ddd;
 }
 
-#myTable {
-    width: 100%;
+#myTable tr {
+    height: 4vw;
 }
 
 .form-add {
@@ -346,7 +349,13 @@ table {
 
 #sub {
     text-align: center;
-    font-size: 17px;
+}
+#sub input
+{
+    width: 18vw;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 30px;
 }
 
 input[type=button] {

@@ -158,14 +158,14 @@
                     </td>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5>Thay đổi thông tin</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div style="display: flex; margin-top: 1vw;">
+                                <div class="modal-body" style="display: flex; margin-top: 1vw;">
                                     <div style="margin-left: 1.5vw;">
                                         <p><strong>Thú cưng</strong></p>
                                         <input type="radio" id="pet1" name="group-radio" /><label
@@ -271,41 +271,43 @@
             <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
             <div style="margin-left: 2vw;">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="form-add">
-                <i class="bi bi-plus-circle"></i> Thêm lịch
-            </button>
-            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
-            <table>
-                <tr>
-                    <td><p><strong>Tổng số dịch vụ:</strong></p></td>
-                    <td><p><strong>3</strong></p></td>
-                </tr>
-                <tr>
-                    <td><p><strong>Giảm giá(...%):</strong></p></td>
-                    <td><p><strong>&nbsp</strong></p></td>
-                </tr>
-                <tr>
-                    <td><p><strong>Tổng tiền:</strong></p></td>
-                    <td>
-                        <p><strong>150.000Đ</strong></p>
-                    </td>
-                </tr>
-            </table>
+                    <i class="bi bi-plus-circle"></i> Thêm lịch
+                </button>
+                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
+                <table>
+                    <tr>
+                        <td>
+                            <p><strong>Tổng số dịch vụ:</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>3</strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Tổng tiền:</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>150.000Đ</strong></p>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            
+
             <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5>Ngày/Giờ/Nội dung mong muốn</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div style="display: flex">
+                        <div class="modal-body" style="display: flex">
                             <div>
                                 <p><strong>Thú cưng</strong></p>
                                 <input type="radio" id="pet1" name="group-radio" /><label for="pet1">Chó</label>&nbsp;
                                 <input type="radio" id="pet" name="group-radio" /><label for="pet2">Mèo</label><br>
                             </div>
-                            <div >
+                            <div>
                                 <p><strong>Ngày đặt lịch</strong></p>
                                 <div class="search-date">
                                     <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
@@ -413,14 +415,15 @@
                             </div>
                             <p><strong>Địa chỉ giao hàng</strong></p>
                             <div class="search-contain">
-                                <input type="text" class="sbox" placeholder="Số nhà,Đường,Phường/Xã,Quận/Huyện,Tỉnh/Thành phố">
+                                <input type="text" class="sbox"
+                                    placeholder="Số nhà,Đường,Phường/Xã,Quận/Huyện,Tỉnh/Thành phố">
                             </div>
                             <h5><strong>Thanh toán</strong></h5>
                             <p style="color: #747171;">*Toàn bộ các giao dịch được bảo mật và mã hóa.</p>
                             <div class="thanhtoan">
                                 <table id="pay">
                                     <tr>
-                                        <td><input type="radio" id="pt1" name="group-radio" class="radio"/></td>
+                                        <td><input type="radio" id="pt1" name="group-radio" class="radio" /></td>
                                         <td>Thanh toán tại cửa hàng</td>
                                     </tr>
                                     <tr>
@@ -445,7 +448,9 @@
                                         <p><strong>Mã lịch: A0002</strong></p>
                                         <p>Số lượng dịch vụ: 1</p>
                                     </td>
-                                    <td><p>150.000Đ</p></td>
+                                    <td>
+                                        <p>150.000Đ</p>
+                                    </td>
                                 </tr>
                             </table>
                             <hr style="border: 1px solid rgb(83, 81, 81);opacity: 1;">
@@ -455,11 +460,17 @@
                                     <th style="width: 50%;">&nbsp;</th>
                                 </tr>
                                 <tr>
-                                    <td><p><strong>Số lượng dịch vụ:</strong></p></td>
-                                    <td><p><strong>1</strong></p></td>
+                                    <td>
+                                        <p><strong>Số lượng dịch vụ:</strong></p>
+                                    </td>
+                                    <td>
+                                        <p><strong>1</strong></p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><h5><strong>Tổng tiền:</strong></h5></td>
+                                    <td>
+                                        <h5><strong>Tổng tiền:</strong></h5>
+                                    </td>
                                     <td>
                                         <h5><strong>150.000Đ</strong></h5>
                                         <p>(Một trăm năm mươi nghìn đồng)</p>
@@ -470,7 +481,7 @@
                             <div id="sub">
                                 <input type="button" value="Hoàn thành đặt lịch" name="finish">
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -527,4 +538,5 @@
         });
     });
 </script>
+
 </html>

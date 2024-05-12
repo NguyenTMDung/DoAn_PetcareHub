@@ -16,6 +16,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
     <style>
     #nav li.active a{
     background-color: antiquewhite;
@@ -55,7 +56,7 @@
         <div id="menu">
             <ul id="nav">
                 <li class="action active"><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
-                <li class="action"><a href="{{URL::to('/a')}}" >Hóa đơn</a></li>
+                <li class="action"><a href="{{URL::to('/admin-trang-chu')}}" >Hóa đơn</a></li>
                 <li class="action"><a href="{{URL::to('/b')}}" >Khách hàng</a></li>
                 <li class="action"><a href="{{URL::to('c')}}" >Đơn hàng</a></li>
                 <li class="action"><a href="{{URL::to('d')}}" >Quản lý nhân viên</a></li>

@@ -291,3 +291,9 @@ td {
     margin-left: 10vw;
     margin-right: 10vw;
 }
+.contain p{
+    font-size: 18px;
+}
+.contain li {
+    font-size: 18px;
+}

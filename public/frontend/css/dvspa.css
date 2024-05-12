@@ -280,7 +280,11 @@ td {
     font-family: 'inter';
     font-style: normal;
 }
-
+.title {
+    color: #024c81;
+    text-align: center;
+    margin-bottom: 3vw;
+}
 .form-container {
     background-color: #f2f2f2;
     border-radius: 8px;
@@ -306,6 +310,7 @@ img {
     background-color: #003459;
     color: #f0f0f0;
     padding-bottom: 200px;
+    border-radius: 8px;
 }
 
 .commitment {
@@ -326,6 +331,7 @@ img {
 .contain {
     background-color: #f2f2f2;
     padding: 20px;
+    border-radius: 8px;
 }
 
 .contain p {

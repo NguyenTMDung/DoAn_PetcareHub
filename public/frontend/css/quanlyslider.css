@@ -277,14 +277,17 @@ tr:nth-child(even) {
     display: flex;
     justify-content: center;
 }
-
 .sbox {
     border: 1px solid #ccc;
     padding: 10px;
     width: 24vw;
     font-size: 14px;
 }
-
+.box {
+    border: 1px solid #ccc;
+    height: 3vw;
+    font-size: 19px;
+}
 .sbutton {
     color: darkblue;
     background-color: #D9D7D7;

@@ -16,6 +16,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function chooseFile(fileInput) {
+            if(fileInput.files && fileInput.files[0])
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                  $('#image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+        }
+    </script>
 </head>
 
 <body style="background-color: #FAFBFC;">
@@ -93,9 +105,9 @@
                                 <div class="modal-body">
                                   <p><strong>Ảnh</strong></p>
                                   <div class="search-contain">
-                                    <button class="sbutton"><strong>Chọn tệp</strong></button>
-                                    <input type="search" class="sbox" >
-                                </div>
+                                    <input type="file" class="box" id="iamgeFile" onchange="chooseFile(this)"
+                                        accept="image/gif, image/png, image/jpeg">
+                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
@@ -162,29 +174,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td >07</td>
-                    <td ><img src="image/img_shop1.webp" alt="Hình Ảnh"></td>
-                    <td >Banner Cửa hàng</td>
-                    <td >22/03/2024</td>
-                    <td >
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:green">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr >
-                    <td >08</td>
-                    <td ><img src="image/img_shop2.webp" alt="Hình Ảnh"></td>
-                    <td >Banner Cửa hàng</td>
-                    <td >22/03/2024</td>
-                    <td >
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:green">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr >
-                    <td>09</td>
+                    <td>07</td>
                     <td><img src="image/Pet Care Hub (1).png" alt="Hình Ảnh"></td>
                     <td>Banner giới thiệu</td>
                     <td>22/03/2024</td>
@@ -195,7 +185,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>10</td>
+                    <td>08</td>
                     <td><img src="image/Pet Care Hub (1).png" alt="Hình Ảnh"></td>
                     <td>Banner Sản phẩm</td>
                     <td>22/03/2024</td>
@@ -206,7 +196,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>11</td>
+                    <td>09</td>
                     <td><img src="image/grooming1.webp" alt="Hình Ảnh"></td>
                     <td>Banner Dịch vụ Spa</td>
                     <td>22/03/2024</td>
@@ -217,9 +207,9 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>12</td>
+                    <td>10</td>
                     <td><img src="image/grooming2.webp" alt="Hình Ảnh"></td>
-                    <td></td>
+                    <td>Banner Dịch vụ Spa</td>
                     <td>22/03/2024</td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:green">
@@ -228,7 +218,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>13</td>
+                    <td>11</td>
                     <td><img src="image/grooming3.webp" alt="Hình Ảnh"></td>
                     <td>Banner Dịch vụ Spa</td>
                     <td>22/03/2024</td>
@@ -238,7 +228,7 @@
                         </button>
                     </td>
                 <tr >
-                    <td>15</td>
+                    <td>12</td>
                     <td><img src="image/bannerks2.jpg" alt="Hình Ảnh"></td>
                     <td>Banner Dịch vụ Khách sạn</td>
                     <td>22/03/2024</td>
@@ -249,7 +239,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>16</td>
+                    <td>13</td>
                     <td><img src="image/bannerks3.jpg" alt="Hình Ảnh"></td>
                     <td>Banner Dịch vụ Khách sạn</td>
                     <td>22/03/2024</td>
@@ -260,7 +250,7 @@
                     </td>
                 </tr>
                 <tr >
-                    <td>17</td>
+                    <td>14</td>
                     <td><img src="image/bannerks4.jpg" alt="Hình Ảnh"></td>
                     <td>Banner Dịch vụ Khách sạn</td>
                     <td>22/03/2024</td>

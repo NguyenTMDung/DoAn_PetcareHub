@@ -15,9 +15,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
     <style>
+    .active, li:hover, a:active{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    font-weight: 700;
+    }
+
     #nav li.active a{
     background-color: antiquewhite;
     border-radius: 10px;
@@ -28,6 +35,7 @@
         background-color: antiquewhite;
         border-radius: 10px;
     }
+    
     </style>
 </head>
 
@@ -56,11 +64,17 @@
         <div id="menu">
             <ul id="nav">
                 <li class="action active"><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
-                <li class="action"><a href="{{URL::to('/admin-trang-chu')}}" >Hóa đơn</a></li>
-                <li class="action"><a href="{{URL::to('/b')}}" >Khách hàng</a></li>
+                <li class="action"><a href="{{URL::to('/a')}}" >Hóa đơn</a></li>
+                <li class="action"><a href="{{URL::to('/quan-ly-khach-hang')}}" >Khách hàng</a></li>
                 <li class="action"><a href="{{URL::to('c')}}" >Đơn hàng</a></li>
-                <li class="action"><a href="{{URL::to('d')}}" >Quản lý nhân viên</a></li>
-                <li class="action"><a href="{{URL::to('e')}}" >Sản phẩm</a></li>
+                <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>
+                <li class="action"><a href="{{URL::to('e')}}" >Sản phẩm</a>
+                    <ul class="sub-menu" style="width: max-content;">
+                        <li><a href="{{URL::to('f')}}" style="margin-left: 1vw;" >Danh mục sản phẩm</a></li>
+                        <li style="margin-bottom: 5;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
+                    </ul>
+                </li>
                 <li class="action"><a href="{{URL::to('f')}}">Quản lý slider</a></li>
                 <li class="action">
                     <a href="{{URL::to('f')}}">Lịch hẹn</a>
@@ -76,7 +90,7 @@
         </div>
 
         <div id="container">
-            @yield('admin_home')
+            @yield('admin_content')
         </div>
     </div>
 </body>

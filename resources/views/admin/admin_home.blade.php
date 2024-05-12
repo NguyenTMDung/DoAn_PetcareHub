@@ -1,5 +1,5 @@
 @extends('admin_layout')
-@section('admin_home')
+@section('admin_content')
 <div id="part-1">
     <div id="statistic">
         <div id="date">

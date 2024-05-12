@@ -96,7 +96,7 @@
             text-decoration: underline;
         }
 
-        .menu a:active {
+        .menu a.active {
             text-decoration: underline;
             font-weight: bolder;
         }

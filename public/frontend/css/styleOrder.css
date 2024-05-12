@@ -42,7 +42,7 @@
             background-color: white;
             width: 50%;
             border: 1px solid #CCD1D2;
-            padding: 3vw 8vw;
+            padding: 3vw 6vw;
         }
 
         .title {
@@ -70,7 +70,7 @@
         }
 
         .options i {
-            width: 20%;
+            width: 19%;
             margin: 1vw 0;
             text-align: center;
         }
@@ -129,7 +129,7 @@
             width: 50%;
             border: 1px solid #CCD1D2;
             max-height: max-content;
-            padding: 3vw 1vw;
+            padding: 3vw 4vw 3vw 1vw;
         }
 
         .text-truncate-container {

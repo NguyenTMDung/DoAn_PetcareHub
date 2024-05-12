@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
 <div id="container"  style="width: 90%;>
     <div style="display: flex; justify-content: space-between; margin-top: 1vw;">
         <!--------------------------------------------------------------------------->

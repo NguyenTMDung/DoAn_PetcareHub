@@ -17,7 +17,6 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
     <style>
     .active, li:hover, a:active{
     background-color: antiquewhite;

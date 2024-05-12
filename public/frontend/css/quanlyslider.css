@@ -14,10 +14,12 @@ body {
     width: 10vw;
     text-align: center;
 }
+
 .logo img {
     width: 4vw;
     max-width: 70px;
 }
+
 .header #search-container {
     position: relative;
     background-color: #ffffffea;
@@ -55,12 +57,13 @@ body {
     margin-top: 1vw;
     margin-bottom: 2vw;
 }
+
 #name-admin {
     margin-left: 7px;
 }
+
 #menu {
-    width: 19%;
-    width: 19%;
+    width: max-content;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
@@ -68,14 +71,17 @@ body {
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
 }
+
 #action {
     background-color: antiquewhite;
     border-radius: 10px;
     font-weight: 700;
 }
+
 #action a {
     font-size: 22px;
 }
+
 #menu li {
     list-style: none;
     margin-bottom: 1vw;
@@ -96,6 +102,7 @@ body {
 #menu ul li {
     position: relative;
 }
+
 .sub-menu li {
     margin-left: -2vw;
 
@@ -105,6 +112,7 @@ body {
     position: absolute;
     margin-left: 195px;
     margin-top: -43px;
+    width: 17vw;
     background-color: #ffffff;
     box-shadow: 5px 5px 5px rgb(134, 134, 134);
     border: 1px solid #D9D7D7;
@@ -116,10 +124,11 @@ body {
 }
 
 #container {
-    width: 79%;
-    width: 79%;
+    width: 80%;
     margin-left: 1vw;
     margin-top: 2vw;
+    background-color: white;
+    
 }
 
 #style-1 {
@@ -132,22 +141,24 @@ body {
 #total-order,
 #new-customer {
     padding: 0.8vw 1vw;
-    width: 30%;
 }
 
 #total-revenue {
     background-color: #FFE2E5;
     border-radius: 10px;
+    width: 9vw;
 }
 
 #total-order {
     background-color: #FFF4DE;
     border-radius: 10px;
+    width: 9vw;
 }
 
 #new-customer {
     background-color: #F3E8FF;
     border-radius: 10px;
+    width: 9vw;
 }
 
 #detail-revenue,
@@ -158,7 +169,7 @@ body {
 
 #statistic {
     background-color: #ffffff;
-    width: 50%;
+    width: 47%;
     padding: 2vw;
     border-radius: 10px;
 }
@@ -187,181 +198,97 @@ body {
 }
 
 #best-seller {
-    width: 50%;
+    width: 47%;
     margin-left: 3%;
     background-color: #ffffff;
     padding: 1vw 3vw;
 }
 
-.text-truncate-container {
+.text-truncate-container p {
     -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 18px;
     text-align: left;
+    font-weight: 500;
 }
 
-#ratio-1,
-#ratio-2,
-#ratio-3,
-#ratio-4,
-#ratio-5 {
-    text-align: center;
-    width: 40px;
-    border-radius: 10px;
-}
-
-#ratio-1 {
-    border: 1px solid #0095FF;
-    background-color: #F0F9FF;
-    color: #0095FF;
-}
-
-#ratio-2 {
-    border: 1px solid #884DFF;
-    background-color: #FBF1FF;
-    color: #884DFF;
-}
-
-#ratio-3 {
-    border: 1px solid #00900a;
-    background-color: #F1FFF2;
-    color: #00900a;
-}
-
-#ratio-4 {
-    border: 1px solid #FF8900;
-    background-color: #FEF6E6;
-    color: #FF8900;
-}
-
-#ratio-1 {
-    border: 1px solid #0095FF;
-    background-color: #F0F9FF;
-    color: #0095FF;
-}
-
-#ratio-5 {
-    border: 1px solid #ab005e;
-    background-color: #fff7fb;
-    color: #ab005e;
-}
-
-table th,
-td {
-    padding: 3px 10px 0 10px;
-    text-align: center;
-    border-bottom: 1px solid #EDF2F6;
+.text-truncate-container {
     margin: auto;
-
+    width: 100%;
 }
 
-table th {
-    color: #96A5B8;
-    font-weight: 400;
+table,th,td {
+    padding: 5px;
+    text-align: center;
+    height: 10%;
 }
 
-table td {
+.search-container {
+    display: flex;
+    justify-content:right;
+    height: fit-content;
+    margin-top: 2vw;
+}
+.search-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 20vw;
     font-size: 14px;
 }
 
-table p {
-    margin: 7px 0;
-}
-.chartRevenue, .chartOrder
-.chartRevenue, .chartOrder
-{
-width: 100%;
-width: 100%;
-background-color: rgb(255, 255, 255);
-align-items: center;
-justify-content: center;
-margin-top: 2vw;
-border-radius: 10px;
-padding: 2vw;
-}
-#current-year
-{
-    margin-left: 10px;
-}
-#years
-{
-    padding: 5px;
+.search-button {
+    color: darkblue;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
     font-size: 18px;
-    font-weight: 500;
-    margin-left: 1vw;
-    width: 20%;
-    text-align: center;
+}
+
+.search-button:hover {
+    text-decoration: underline;
+}
+
+.head {
+    background-color: #FFF4DE;
+    height: 4vw;
+}
+
+#myTable img {
+    height: 7vw;
+}
+#myTable {
+    margin-top: 1vw;
+}
+tr:nth-child(even) {
+    background-color: #00345944
+}
+
+.pagination a {
     border: none;
 }
-.modal-body input[type=number]
-{
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
+
+.search-contain {
+    display: flex;
+    justify-content: center;
 }
-.modal-body table
-{
-    width: 100%;
-    margin-top: -1vw;
+
+.sbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 24vw;
+    font-size: 14px;
 }
-table p
-{
-    font-size: 15px;
-    text-align: left;
-}
-#close
-{
-    background-color: #FEF6E6;
-    color: #003459;
-    font-weight: 600;
-}
-#save
-{
-    background-color: #003459;
-    color: #FEF6E6;
-    font-weight: 600;
-}
-#current-year
-{
-    margin-left: 10px;
-}
-#years
-{
-    padding: 5px;
+
+.sbutton {
+    color: darkblue;
+    background-color: #D9D7D7;
+    padding: 10px;
+    border: 1px solid #ccc;
     font-size: 18px;
-    font-weight: 500;
-    margin-left: 1vw;
-    width: 20%;
-    text-align: center;
-    border: none;
 }
-.modal-body input[type=number]
-{
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-}
-.modal-body table
-{
-    width: 100%;
-    margin-top: -1vw;
-}
-table p
-{
-    font-size: 15px;
-    text-align: left;
-}
-#close
-{
-    background-color: #FEF6E6;
-    color: #003459;
-    font-weight: 600;
-}
-#save
-{
-    background-color: #003459;
-    color: #FEF6E6;
-    font-weight: 600;
+
+.sbutton:hover {
+    text-decoration: underline;
 }

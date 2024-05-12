@@ -62,8 +62,8 @@
     <div style="display: flex;">
         <div id="menu">
             <ul id="nav">
-                <li class="action active"><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
-                <li class="action"><a href="{{URL::to('/a')}}" >Hóa đơn</a></li>
+                <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
+                <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-khach-hang')}}" >Khách hàng</a></li>
                 <li class="action"><a href="{{URL::to('c')}}" >Đơn hàng</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>

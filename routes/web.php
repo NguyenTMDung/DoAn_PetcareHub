@@ -25,10 +25,10 @@ Route::get('/admin', [AdminController::class,'trangchu']);
 Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
 
 //ad_min category_sanpham
-Route::get('/admin-quan-ly-danh-muc-sp', [CategoryProductController::class,'show_cagetoryProduct']);
-// Route::get('/chinh-sua-danh-muc-sp/{id}', [CategoryProductController::class, 'edit_cagetoryProduct']);
-// Route::get('/xoa-danh-muc-sp/{id}', [CategoryProductController::class,'delete_cagetoryProduct']);
-Route::post('/luu-danh-muc-sp', [CategoryProductController::class,'save_cagetoryProduct']);
+Route::resource('/danh-muc-san-pham', CategoryProductController::class);
+Route::post('/danh-muc-san-pham',[CategoryProductController::class,'store']);
+Route::put('/danh-muc-san-pham/{id}', [CategoryProductController::class, 'update']);
+Route::delete('/danh-muc-san-pham/{id}', [CategoryProductController::class, 'destroy']);
 
 
 //doitra

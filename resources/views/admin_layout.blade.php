@@ -15,11 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/qlynvien.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/quanlysanpham2.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
 
 </head>
 
@@ -55,7 +52,7 @@
                 <li><a href="{{URL::to('/quan-ly-nhan-vien')}}">Quản lý nhân viên</a></li>
                 <li><a href="">Sản phẩm</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('/admin-quan-ly-danh-muc-sp')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                        <li><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
                         <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
                         <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
                     </ul>

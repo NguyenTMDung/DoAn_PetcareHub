@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/chinhsachhoantien.css')}}">
 <div id="contain">
     <h1 style="text-align: center;  margin: 20px;" >Chính sách hoàn tiền tại Pet Care Hub Shop</h1>
     <ul>

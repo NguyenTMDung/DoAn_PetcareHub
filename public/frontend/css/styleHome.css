@@ -263,7 +263,7 @@
 
 
         .text-truncate-container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
 
@@ -289,7 +289,7 @@
             border-radius: 12px;
             background: var(--Neutral-Color-00, #FDFDFD);
             box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-            padding: 0.4vw 0;
+            padding: 1.5vw 1.5vw 0.5vw 1.5vw;
         }
 
         .product-list .item a {
@@ -298,8 +298,9 @@
         }
 
         .product-list .item img {
-            margin: 0.5vw 0;
             border-radius: 12px;
+            margin-bottom: 1vw;
+            width: 100%;
         }
 
         .product-list .item img:hover {
@@ -317,19 +318,11 @@
             font-weight: 600;
             line-height: 5px;
             text-align: left;
-            margin: 0 2vw 1vw 1.7vw;
+            margin-top: 1vw;
         }
-
-        .pro-price .old-price {
-            font-size: 16px;
-            font-weight: 100;
-            color: #000;
-            text-decoration-line: line-through;
-        }
-
         .sales {
             text-align: end;
-            margin: 1vw 1.5vw;
+            margin-top: 1vw;
         }
 
         .number-of-sales {

@@ -309,6 +309,7 @@ tr:nth-child(even) {
 #myTable img {
     width: 50%;
 }
+/* css datatable */
 .row, .mt-2, .justify-content-between
 {
     width: 98%;

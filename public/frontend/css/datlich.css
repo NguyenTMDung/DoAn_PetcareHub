@@ -324,12 +324,11 @@ input[type=button] {
 
 table {
     width: 98%;
-    margin: 1vw 1vw;
 }
 
 #myTable  {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     height: 10%;
     width: 100%;
 }
@@ -370,7 +369,14 @@ table {
     font-size: 20px;
     border-radius: 30px;
 }
-
+.modal-body1 {
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+.modal-body2 {
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
 .top {
     height: fit-content;
     padding: 2% 3% 0 10%;

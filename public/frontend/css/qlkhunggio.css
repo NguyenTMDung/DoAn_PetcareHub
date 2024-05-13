@@ -308,3 +308,6 @@ tr:nth-child(even) {
 {
     width: 98%;
 }
+.modal-body {
+    margin-left: 3vw;
+}

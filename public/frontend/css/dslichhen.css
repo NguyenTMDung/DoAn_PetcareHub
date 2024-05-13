@@ -284,6 +284,7 @@ tr:nth-child(even) {
     padding: 10px;
     width: 100%;
     font-size: 14px;
+    border-radius: 10px;
 }
 .sbutton {
     color:darkblue;

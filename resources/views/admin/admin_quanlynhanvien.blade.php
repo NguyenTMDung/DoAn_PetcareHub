@@ -114,13 +114,13 @@
     <table id="myTable">
         <thead>
             <tr class="head">
-                <th style="width:5%;">Id</th>
-                <th style="width:20%;">Nhân viên </th>
+                <th style="width:3%;">Id</th>
+                <th style="width:15%;">Nhân viên </th>
                 <th style="width:20%;">Email</th>
-                <th style="width:10%;">Số điện thoại</th>
+                <th style="width:15%;">Số điện thoại</th>
                 <th style="width:10%;">Vị trí</th>
                 <th style="width:15%;">Ngày vào làm</th>
-                <th style="width:20%;">Chi tiết</th>
+                <th style="width:15%;">Chi tiết</th>
             </tr>
         </thead>
         <tfoot>

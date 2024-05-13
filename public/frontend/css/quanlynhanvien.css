@@ -213,7 +213,7 @@
 
 table {
     width: 100%;
-    margin: 1vw 1vw;
+    margin: 1vw 0vw;
 }
 table,th,td {
     padding: 5px;
@@ -308,4 +308,64 @@ tr:nth-child(even) {
 }
 #myTable img {
     width: 50%;
+}
+.row, .mt-2, .justify-content-between
+{
+    width: 98%;
+    margin-left: 0.3vw;
+}
+.dt-search
+{
+    display: flex;
+}
+.dt-search label
+{
+    margin-right: 1vw;
+    font-size: 20px;
+    font-weight: 600;
+    color: #103559;
+}
+.dt-length
+{
+    display: flex;
+}
+.form-select ,.form-select-sm
+{
+    width: 10vw;
+    margin-right: 1vw;
+}
+.col-md-auto , .me-auto
+{
+    width: 20vw;
+}
+.dt-length
+{
+    color: #667479;
+}
+thead .dt-column-title
+{
+    font-size: 19px;
+    font-weight: 600;
+    color: black;
+}
+tbody td
+{
+    font-size: 18px;
+}
+.pagination
+{
+    margin-left: 10vw;
+}
+.active>.page-link, .page-link.active
+{
+    background-color: #ffe9bd;
+    color: black;
+}
+.disabled>.page-link, .page-link.disabled
+{
+    background-color: #fffaf1;
+}
+#myTable_info
+{
+    visibility: hidden;
 }

@@ -291,7 +291,7 @@ input[type="date"],
 input[type="tel"] {
     width: 100%;
     padding: 1vw;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     margin-bottom: 1vw;
 }
@@ -302,6 +302,12 @@ input[type="checkbox"] {
 input[type="radio"] {
     margin-top: 1vw;
     margin-bottom: 1vw;
+}
+input[type=button] {
+    border-radius: 1vw;
+    background-color: #003366;
+    padding: 8px;
+    color: white;
 }
 .form-row {
     display: flex;
@@ -365,51 +371,116 @@ table {
     border-radius: 30px;
 }
 
-input[type=button] {
-    border-radius: 1vw;
-    background-color: #003366;
-    padding: 8px;
-    color: white;
+.top {
+    height: fit-content;
+    padding: 2% 3% 0 10%;
+    display: flex;
+    background-color: #FCEED5;
+    width: 100%;
+    display: flex;
+    height: 7vw;
 }
 
-.modal-header {
-    background-color: #FCEED5;
-    color: #003366;
+.icon {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--Primary-Color-Dark-Blue, #003459);
+    width: 80%;
 }
-.modal-body {
-    margin-left: 7vw; 
-    margin-right: 7vw;
+
+#complete {
+    background-color: #003459;
+    color: #FCEED5;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-top: 2vw;
+    padding: 0.5vw 1vw;
+    margin-left: 23%;
 }
-.right {
-    display: inline;
-    float: left;
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.booking {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+#detail-customer {
+    background-color: white;
     width: 50%;
-    height: 150%;
-    background: #D9D7D7;
-    padding: 1vw;
-   }
-   .left {
-    display: inline;
-    float: left;
+    border: 1px solid #CCD1D2;
+    padding: 3vw 6vw;
+}
+
+.title {
+    margin-top: 1vw;
+}
+
+#location,
+#pay {
+    margin-top: 2vw;
+    border: 1px solid #AFAFAF;
+    border-radius: 10px;
+}
+
+.options input[type=radio] {
+    width: 3%;
+    margin: 1vw 2vw;
+}
+
+.options p {
+    margin: 1vw 0;
+    font-size: 18px;
+    font-weight: 400;
+    width: 65%;
+}
+
+.options i {
+    width: 19%;
+    margin: 1vw 0;
+    text-align: center;
+}
+
+#bank p {
+    line-height: 0px;
+    width: 100%;
+    padding: 2vw 1vw 2vw 5vw;
+    margin-bottom: -3vw;
+    font-size: 16px;
+    font-weight: 400;
+    color: #656565;
+}
+
+#bank h6 {
+    padding: 0 0 0 5vw;
+    margin-bottom: -1vw;
+}
+
+#detail-booking {
+    background-color: #F5F5F5;
     width: 50%;
-    height: 150%;
-    background: white;
-    padding: 1vw;
-   }
-.search-contain {
+    border: 1px solid #CCD1D2;
+    max-height: max-content;
+    padding: 3vw 6vw;
+}
+
+.detail-product {
+    width: 100%;
+    text-align: left;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+.product {
     display: flex;
 }
 
-.sbox {
-    font-size: 14px;
+#error-message {
+    color: red;
+    margin-left: 1vw;
 }
-.thanhtoan {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 30vw;
-}
-#pay tr:hover {
-    background-color: #ddd;
-}
-
-

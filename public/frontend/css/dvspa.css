@@ -299,11 +299,16 @@ td {
     width: 50%;
     margin-right: 2vw;
 }
+.form-column1 p {
+    font-size: 1.2vw;
+}
 .form-column2
 {
     width: 50%;
 }
-
+.form-column2 p {
+    font-size: 1.2vw;
+}
 img {
     max-width: 100%;
     height: auto;
@@ -337,15 +342,16 @@ img {
     float: left;
     padding: 1vw;
 }
-
+.commitment p {
+    font-size: 1.2vw;
+}
 .contain {
     background-color: #f2f2f2;
     padding: 2vw;
     border-radius: 8px;
 }
-
 .contain p {
-    font-size: 1em;
+    font-size: 1.2vw;
 }
 .info-img {
     display: flex;
@@ -371,7 +377,6 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 1em;
     margin-bottom: 2vw;
 }
 
@@ -410,9 +415,8 @@ img {
 #sub {
     text-align: center;
     color: #f0f0f0;
-    font-size: 1.2em;
     font-weight: bold;
-
+    font-size: 1.7vw;
 }
 
 input[type=submit] {
@@ -421,7 +425,6 @@ input[type=submit] {
     padding: 8px;
     width: 18vw;
     font-weight: 700;
-    font-size: 1.2em;
     border-radius: 30px;
 }
 
@@ -461,7 +464,7 @@ input[type=submit] {
 }
 
 .pro-price .old-price {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 100;
     color: #000;
     text-decoration-line: line-through;
@@ -505,7 +508,9 @@ input[type=submit] {
     padding: 2vw;
     width: 100%;
 }
-
+review-section p {
+    font-size: 1.2vw;
+}
 .review {
     margin-bottom: 20px;
 }
@@ -519,6 +524,6 @@ input[type=submit] {
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    font-size: 1em;
+    font-size: 1.2vw;
     margin-bottom: 2vw;
 }

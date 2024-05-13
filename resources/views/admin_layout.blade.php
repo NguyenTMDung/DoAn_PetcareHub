@@ -58,7 +58,7 @@
         </a>
     </div>
     <div style="display: flex;">
-        <div id="menu" style="width: 23%">
+        <div id="menu">
             <ul id="nav">
                 <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>

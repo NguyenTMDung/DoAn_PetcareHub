@@ -149,7 +149,7 @@
                     <td><input type="checkbox" name="ma" value="A0001"></td>
                     <td>A0001</td>
                     <td>2</td>
-                    <td>300000</td>
+                    <td class="into-money">300000</td>
                     <td>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="form-button">
                             <i class="bi bi-pencil-square"></i>
@@ -161,94 +161,95 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5>Thay đổi thông tin</h5>
+                                    <h4>Thay đổi thông tin</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body" style="display: flex; margin-top: 1vw;">
-                                    <div style="margin-left: 1.5vw;">
-                                        <p><strong>Thú cưng</strong></p>
-                                        <input type="radio" id="pet1" name="group-radio" /><label
-                                            for="pet1">Chó</label>&nbsp;
-                                        <input type="radio" id="pet" name="group-radio" /><label
-                                            for="pet2">Mèo</label><br>
-                                    </div>
-                                    <div style="margin-left: 3vw;">
-                                        <p><strong>Ngày đặt lịch</strong></p>
-                                        <div class="search-date">
-                                            <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                <div class="modal-body" >
+                                    <div style="display: flex;">
+                                        <div >
+                                            <p><strong>Thú cưng</strong></p>
+                                            <input type="radio" id="pet1" name="group-radio" /><label
+                                                for="pet1">&nbsp;Chó</label>&nbsp;
+                                            <input type="radio" id="pet" name="group-radio" /><label
+                                                for="pet2">&nbsp;Mèo</label><br>
+                                        </div>
+                                        <div style="margin-left: 8vw;">
+                                            <p><strong>Ngày đặt lịch</strong></p>
+                                            <div class="search-date">
+                                                <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                            </div>
+                                        </div>
+                                        <div style="margin-left: 8vw;">
+                                            <p><strong>Chọn khung giờ</strong></p>
+                                            <select name="time" id="time">
+                                                <option value="ca1">Ca1: 7h - 8h30</option>
+                                                <option value="ca2">Ca2: 8h30 -10h</option>
+                                                <option value="ca3">Ca3: 10h - 11h30</option>
+                                                <option value="ca4">Ca4: 1h - 2h30</option>
+                                                <option value="ca5">Ca5: 2h30 - 4h</option>
+                                                <option value="ca6">Ca6: 4h - 5h30</option>
+                                                <option value="ca7">Ca7: 5h30 - 7h</option>
+                                            </select>
+                                            <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
                                         </div>
                                     </div>
-                                    <div style="margin-left: 3vw;">
-                                        <p><strong>Chọn khung giờ</strong></p>
-                                        <select name="time" id="time">
-                                            <option value="ca1">Ca1: 7h - 8h30</option>
-                                            <option value="ca2">Ca2: 8h30 -10h</option>
-                                            <option value="ca3">Ca3: 10h - 11h30</option>
-                                            <option value="ca4">Ca4: 1h - 2h30</option>
-                                            <option value="ca5">Ca5: 2h30 - 4h</option>
-                                            <option value="ca6">Ca6: 4h - 5h30</option>
-                                            <option value="ca7">Ca7: 5h30 - 7h</option>
-                                        </select>
-                                        <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                                    <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
+                                    <div style="display: flex;">
+                                        <div>
+                                            <p><strong>Spa :</strong></p>
+                                            <form>
+                                                <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
+                                                <input type="checkbox" name="spa2" value="Spa, cắt tỉa trọn gói">Spa,
+                                                cắt tỉa trọn gói<br>
+                                                <input type="checkbox" name="spa3" value="Cắt tỉa, nhuộm lông">Cắt tỉa,
+                                                nhuộm lông<br>
+                                                <input type="checkbox" name="spa4" value="Cạo lông toàn thân">Cạo lông
+                                                toàn thân<br>
+                                            </form>
+                                        </div>
+                                        <div style="margin-left: 20vw;">
+                                            <p><strong>Khách sạn :</strong></p>
+                                            <form>
+                                                <input type="radio" name="group-hotel" id="hotel1"><label
+                                                    for="hotel1">Khách sạn bình thường</label><br>
+                                                <input type="radio" name="group-hotel" id="hotel2"><label
+                                                    for="hotel2">Khách sạn phòng VIP A</label><br>
+                                                <input type="radio" name="group-hotel" id="hotel3"><label
+                                                    for="hotel3">Khách sạn phòng VIP B</label><br>
+                                                <input type="radio" name="group-hotel" id="hotel4"><label
+                                                    for="hotel4">Khách sạn phòng VIP C</label><br>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
-                                <div style="display: flex;">
-                                    <div style="margin-left: 3vw;">
-                                        <p><strong>Spa :</strong></p>
-                                        <form>
-                                            <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ
-                                            sinh<br>
-                                            <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa
-                                            trọn gói<br>
-                                            <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm
-                                            lông<br>
-                                            <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn
-                                            thân<br>
-                                        </form>
-                                    </div>
-                                    <div style="margin-left: 6vw;">
-                                        <p><strong>Khách sạn :</strong></p>
-                                        <form>
-                                            <input type="checkbox" name="hotel" value="Khách sạn bình thường">Khách sạn
-                                            bình thường<br>
-                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip A">Khách sạn
-                                            phòng vip A<br>
-                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip B">Khách sạn
-                                            phòng vip A<br>
-                                            <input type="checkbox" name="hotel" value="Khách sạn phòng vip C">Khách sạn
-                                            phòng vip A<br>
-                                        </form>
-                                    </div>
-                                </div>
-                                <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng :</strong>
-                                </p>
-                                <div style="display: flex;">
-                                    <div style="margin-left: 3vw;">
-                                        <p><strong>Spa :</strong></p>
-                                        <select name="size" id="size" style="width: 10vw; height: 3vw;">
-                                            <option value="size1">Dưới 2kg</option>
-                                            <option value="size2">Dưới 5kg</option>
-                                            <option value="size3">Dưới 10kg</option>
-                                            <option value="size4">Dưới 20kg</option>
-                                            <option value="size5">Trên 20kg</option>
-                                        </select>
-                                    </div>
-                                    <div style="margin-left: 8vw;">
-                                        <p><strong>Khách sạn :</strong></p>
-                                        <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
-                                            <option value="sz1">Dưới 10kg</option>
-                                            <option value="sz2">Dưới 20kg</option>
-                                            <option value="sz3">Dưới 40kg</option>
-                                        </select>
-                                        <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
-                                        <input style=" width: 10vw " type="number" name="quantity" min="1"
-                                            placeholder="1">
+                                    <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng:</strong></p>
+                                    <div style="display: flex;">
+                                        <div>
+                                            <p><strong>Spa :</strong></p>
+                                            <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                                <option value="size1">Dưới 2kg</option>
+                                                <option value="size2">Dưới 5kg</option>
+                                                <option value="size3">Dưới 10kg</option>
+                                                <option value="size4">Dưới 20kg</option>
+                                                <option value="size5">Trên 20kg</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-left: 23vw;">
+                                            <p><strong>Khách sạn :</strong></p>
+                                            <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                                <option value="sz1">Dưới 10kg</option>
+                                                <option value="sz2">Dưới 20kg</option>
+                                                <option value="sz3">Dưới 40kg</option>
+                                            </select>
+                                            <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
+                                            <input style=" width: 10vw " type="number" name="quantity" min="1"
+                                                placeholder="1"><br>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Hủy</button>
                                     <button type="button" class="btn btn-primary">Lưu</button>
                                 </div>
                             </div>
@@ -259,7 +260,7 @@
                     <td><input type="checkbox" name="ma" value="A0001"></td>
                     <td>A0002</td>
                     <td>1</td>
-                    <td>150000</td>
+                    <td class="into-money">150000</td>
                     <td>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="form-button">
                             <i class="bi bi-pencil-square"></i>
@@ -273,8 +274,8 @@
                 <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="form-add">
                     <i class="bi bi-plus-circle"></i> Thêm lịch
                 </button>
-                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
-                <table>
+                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1; margin-left: -2vw;">
+                <table style="margin-left: 1.5vw;">
                     <tr>
                         <td>
                             <p><strong>Tổng số dịch vụ:</strong></p>
@@ -288,96 +289,98 @@
                             <p><strong>Tổng tiền:</strong></p>
                         </td>
                         <td>
-                            <p><strong>150.000Đ</strong></p>
+                            <p><strong class="total-price">150000</strong></p>
                         </td>
                     </tr>
                 </table>
             </div>
-
             <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5>Ngày/Giờ/Nội dung mong muốn</h5>
+                            <h4>Ngày/Giờ/Nội dung mong muốn</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body" style="display: flex">
-                            <div>
-                                <p><strong>Thú cưng</strong></p>
-                                <input type="radio" id="pet1" name="group-radio" /><label for="pet1">Chó</label>&nbsp;
-                                <input type="radio" id="pet" name="group-radio" /><label for="pet2">Mèo</label><br>
-                            </div>
-                            <div>
-                                <p><strong>Ngày đặt lịch</strong></p>
-                                <div class="search-date">
-                                    <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                        <div class="modal-body">
+                            <div style="display: flex;">
+                                <div >
+                                    <p><strong>Thú cưng</strong></p>
+                                    <input type="radio" id="pet1" name="group-radio" /><label
+                                        for="pet1">&nbsp;Chó</label>&nbsp;
+                                    <input type="radio" id="pet" name="group-radio" /><label
+                                        for="pet2">&nbsp;Mèo</label><br>
+                                </div>
+                                <div style="margin-left: 8vw;">
+                                    <p><strong>Ngày đặt lịch</strong></p>
+                                    <div class="search-date">
+                                        <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                    </div>
+                                </div>
+                                <div style="margin-left: 8vw;">
+                                    <p><strong>Chọn khung giờ</strong></p>
+                                    <select name="time" id="time">
+                                        <option value="ca1">Ca1: 7h - 8h30</option>
+                                        <option value="ca2">Ca2: 8h30 -10h</option>
+                                        <option value="ca3">Ca3: 10h - 11h30</option>
+                                        <option value="ca4">Ca4: 1h - 2h30</option>
+                                        <option value="ca5">Ca5: 2h30 - 4h</option>
+                                        <option value="ca6">Ca6: 4h - 5h30</option>
+                                        <option value="ca7">Ca7: 5h30 - 7h</option>
+                                    </select>
+                                    <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
                                 </div>
                             </div>
-                            <div>
-                                <p><strong>Chọn khung giờ</strong></p>
-                                <select name="time" id="time">
-                                    <option value="ca1">Ca1: 7h - 8h30</option>
-                                    <option value="ca2">Ca2: 8h30 -10h</option>
-                                    <option value="ca3">Ca3: 10h - 11h30</option>
-                                    <option value="ca4">Ca4: 1h - 2h30</option>
-                                    <option value="ca5">Ca5: 2h30 - 4h</option>
-                                    <option value="ca6">Ca6: 4h - 5h30</option>
-                                    <option value="ca7">Ca7: 5h30 - 7h</option>
-                                </select>
-                                <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                            <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
+                            <div style="display: flex;">
+                                <div>
+                                    <p><strong>Spa :</strong></p>
+                                    <form>
+                                        <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
+                                        <input type="checkbox" name="spa2" value="Spa, cắt tỉa trọn gói">Spa,
+                                        cắt tỉa trọn gói<br>
+                                        <input type="checkbox" name="spa3" value="Cắt tỉa, nhuộm lông">Cắt tỉa,
+                                        nhuộm lông<br>
+                                        <input type="checkbox" name="spa4" value="Cạo lông toàn thân">Cạo lông
+                                        toàn thân<br>
+                                    </form>
+                                </div>
+                                <div style="margin-left: 20vw;">
+                                    <p><strong>Khách sạn :</strong></p>
+                                    <form>
+                                        <input type="radio" name="group-hotel" id="hotel1"><label
+                                            for="hotel1">Khách sạn bình thường</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel2"><label
+                                            for="hotel2">Khách sạn phòng VIP A</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel3"><label
+                                            for="hotel3">Khách sạn phòng VIP B</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel4"><label
+                                            for="hotel4">Khách sạn phòng VIP C</label><br>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <p style="text-align: center;"><strong>Chọn dịch vụ :</strong></p>
-                        <div style="display: flex;">
-                            <div>
-                                <p><strong>Spa :</strong></p>
-                                <form>
-                                    <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ
-                                    sinh<br>
-                                    <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa
-                                    trọn gói<br>
-                                    <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm
-                                    lông<br>
-                                    <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn
-                                    thân<br>
-                                </form>
-                            </div>
-                            <div>
-                                <p><strong>Khách sạn :</strong></p>
-                                <form>
-                                    <input type="checkbox" name="hotel" value="Khách sạn bình thường">Khách sạn
-                                    bình thường<br>
-                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip A">Khách sạn
-                                    phòng vip A<br>
-                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip B">Khách sạn
-                                    phòng vip B<br>
-                                    <input type="checkbox" name="hotel" value="Khách sạn phòng vip C">Khách sạn
-                                    phòng vip C<br>
-                                </form>
-                            </div>
-                        </div>
-                        <p style=" text-align: center;"><strong>Kích thước thú cưng :</strong>
-                        </p>
-                        <div style="display: flex;">
-                            <div>
-                                <p><strong>Spa :</strong></p>
-                                <select name="size" id="size" style="width: 10vw; height: 3vw;">
-                                    <option value="size1">Dưới 2kg</option>
-                                    <option value="size2">Dưới 5kg</option>
-                                    <option value="size3">Dưới 10kg</option>
-                                    <option value="size4">Dưới 20kg</option>
-                                    <option value="size5">Trên 20kg</option>
-                                </select>
-                            </div>
-                            <div>
-                                <p><strong>Khách sạn :</strong></p>
-                                <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
-                                    <option value="sz1">Dưới 10kg</option>
-                                    <option value="sz2">Dưới 20kg</option>
-                                    <option value="sz3">Dưới 40kg</option>
-                                </select>
-                                <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
-                                <input style=" width: 10vw " type="number" name="quantity" min="1" placeholder="1">
+                            <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng:</strong></p>
+                            <div style="display: flex;">
+                                <div>
+                                    <p><strong>Spa :</strong></p>
+                                    <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                        <option value="size1">Dưới 2kg</option>
+                                        <option value="size2">Dưới 5kg</option>
+                                        <option value="size3">Dưới 10kg</option>
+                                        <option value="size4">Dưới 20kg</option>
+                                        <option value="size5">Trên 20kg</option>
+                                    </select>
+                                </div>
+                                <div style="margin-left: 23vw;">
+                                    <p><strong>Khách sạn :</strong></p>
+                                    <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                        <option value="sz1">Dưới 10kg</option>
+                                        <option value="sz2">Dưới 20kg</option>
+                                        <option value="sz3">Dưới 40kg</option>
+                                    </select>
+                                    <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
+                                    <input style=" width: 10vw " type="number" name="quantity" min="1"
+                                        placeholder="1"><br>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -449,7 +452,7 @@
                                         <p>Số lượng dịch vụ: 1</p>
                                     </td>
                                     <td>
-                                        <p>150.000Đ</p>
+                                        <p class="total-price">150000</p>
                                     </td>
                                 </tr>
                             </table>
@@ -472,7 +475,7 @@
                                         <h5><strong>Tổng tiền:</strong></h5>
                                     </td>
                                     <td>
-                                        <h5><strong>150.000Đ</strong></h5>
+                                        <h5 class="total-price"><strong>150000</strong></h5>
                                         <p>(Một trăm năm mươi nghìn đồng)</p>
                                     </td>
                                 </tr>
@@ -537,6 +540,24 @@
             }
         });
     });
+    const totalPrice = document.getElementsByClassName('total-price');
+    const intoMoney = document.getElementsByClassName('into-money');
+        function formatPrice(price) {
+            return price.toLocaleString('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            });
+        }
+        for (let i = 0; i < totalPrice.length; i++) {
+            const originalValue = parseInt(totalPrice[i].textContent);
+            const price = formatPrice(originalValue);
+            totalPrice[i].textContent = price;
+        }
+        for (let i = 0; i < intoMoney.length; i++) {
+            const originalValue = parseInt(intoMoney[i].textContent);
+            const price = formatPrice(originalValue);
+            intoMoney[i].textContent = price;
+        }
 </script>
 
 </html>

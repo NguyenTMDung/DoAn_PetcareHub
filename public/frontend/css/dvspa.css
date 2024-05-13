@@ -288,16 +288,20 @@ td {
 .form-container {
     background-color: #f2f2f2;
     border-radius: 8px;
-    padding: 20px;
+    padding: 2vw;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.form-column {
+.form-column1 {
     width: 50%;
-    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.form-column2
+{
+    width: 50%;
 }
 
 img {
@@ -311,6 +315,10 @@ img {
     color: #f0f0f0;
     padding-bottom: 3vw;
     border-radius: 8px;
+}
+.banner h4
+{
+    margin: 0 2vw ;
 }
 #banner-body {
     display: flex;
@@ -332,7 +340,7 @@ img {
 
 .contain {
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 2vw;
     border-radius: 8px;
 }
 
@@ -360,41 +368,43 @@ img {
 .column {
     background-color: #f2f2f2;
     border-radius: 8px;
-    padding: 20px;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-size: 16px;
+    margin-bottom: 2vw;
 }
 
-.column .col {
+.column .gia{
     background: rgb(237, 237, 187);
     border-radius: 8px;
-    margin: 10px;
     display: inline-block;
     border: 1px solid black;
-    padding: 10px;
-    height: 24vw;
+    width: 32%;
+    padding: 2vw;
 }
 
-.column .comn {
+.chitiet .comn {
     background-color: #003459;
     color: #f0f0f0;
     border-radius: 8px;
-    margin: 10px;
+    margin-left: 1vw;
     display: inline-block;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2vw;
 }
 
-.column .conner {
+.chitiet .conner {
     background: rgb(237, 237, 187);
     border-radius: 8px;
-    margin: 10px;
     display: inline-block;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2vw;
+    width: 100%;
+}
+.chitiet .column
+{
+    margin-bottom: 0;
 }
 
 #sub {
@@ -409,15 +419,20 @@ input[type=submit] {
     border-radius: 10px;
     background-color: #003459;
     padding: 8px;
+    width: 18vw;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 30px;
 }
 
 .item {
-    width: 17vw;
+    width: 20vw;
     text-align: center;
     border: 0.5px solid gainsboro;
     border-radius: 12px;
     background: var(--Neutral-Color-00, #FDFDFD);
     box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+    padding: 2vw 2vw 0 2vw;
 }
 
 .item a {
@@ -426,8 +441,8 @@ input[type=submit] {
 }
 
 .item img {
-    margin: 0.5vw 0;
     border-radius: 12px;
+    margin-bottom: 1vw;
 }
 
 .item img:hover {
@@ -443,7 +458,6 @@ input[type=submit] {
     font-weight: 600;
     line-height: 5px;
     text-align: left;
-    margin: 0 2vw 1vw 2vw;
 }
 
 .pro-price .old-price {
@@ -455,16 +469,11 @@ input[type=submit] {
 
 .sales {
     text-align: end;
-    margin: 1vw 1.5vw;
+    margin: 1.5vw 0;
 }
 
 .number-of-sales {
     display: inline;
-}
-
-.text-truncate-container {
-    width: 80%;
-    margin: auto;
 }
 
 .text-truncate-container p {
@@ -493,7 +502,7 @@ input[type=submit] {
     color: black;
     border: 1px solid gainsboro;
     border-radius: 10px;
-    padding: 20px;
+    padding: 2vw;
     width: 100%;
 }
 
@@ -502,5 +511,14 @@ input[type=submit] {
 }
 
 .star-rating {
-    color: yellow;
+    color: #ffce1b;
+}
+.chitiet
+{
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-bottom: 2vw;
 }

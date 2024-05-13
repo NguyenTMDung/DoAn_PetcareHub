@@ -295,7 +295,14 @@ input[type="tel"] {
     border: 1px solid #ccc;
     margin-bottom: 1vw;
 }
-
+input[type="checkbox"] {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+input[type="radio"] {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
 .form-row {
     display: flex;
     justify-content: space-between;
@@ -369,7 +376,10 @@ input[type=button] {
     background-color: #FCEED5;
     color: #003366;
 }
-
+.modal-body {
+    margin-left: 7vw; 
+    margin-right: 7vw;
+}
 .right {
     display: inline;
     float: left;

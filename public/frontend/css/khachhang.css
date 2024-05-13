@@ -266,26 +266,15 @@ table,th,td {
     border: none;
   }
 
-#style-link {
-    margin-left: 2vw;
-}
-#style-link a {
-    text-decoration-line: none;
-    color: #667479;
-}
-#style-link a:hover {
-    text-decoration-line: underline;
-}
 .first {
     background-color:#FFF4DE;
     height: 2vw;
 }
-#info-detail1 table {
+#info-detail table {
     border:1px solid black;
+    margin-left: 0;
 }
-#info-detail2 table, th, td{
-    border:1px solid black;
-}
+
 .modal-content
 {
     padding: 1vw 2vw;

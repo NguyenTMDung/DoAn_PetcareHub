@@ -45,7 +45,7 @@
             <ul id="nav">
                 <li><a href="">Trang chủ</a></li>
                 <li><a href="">Hóa đơn</a></li>
-                <li id="action"><a href="">Khách hàng</a></li>
+                <li><a href="">Khách hàng</a></li>
                 <li><a href="">Đơn hàng</a></li>
                 <li><a href="">Quản lý nhân viên</a></li>
                 <li><a href="">Sản phẩm</a></li>
@@ -63,260 +63,280 @@
         </div>
         <div style="width: 80%;">
             <div id="style-link">
-                <a href="" style="margin-right: 1vw;">Sản phẩm</a>
-                >
-                <a href="" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
-            </div>
-            <div id="container">
-                <div class="search">
-                    <button class="search-button" style="height: fit-content;"><strong>Search</strong></button>
-                    <input type="search" class="search-box" placeholder="Search...">
-                </div>
-                <div id="listtable">
-                    <table id="myTable">
-                        <tr class="head">
-                            <th style="width:15%;">Mã khách hàng</th>
-                            <th style="width:25%;">Tên khách hàng</th>
-                            <th style="width:20%;">Số điện thoại</th>
-                            <th style="width:15%;">Tổng doanh thu</th>
-                            <th style="width:20%;">Chi tiết</th>
-                        </tr>
-                        <tr>
-                            <td>KH001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>0356273345</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#customerModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH002</td>
-                            <td>Nguyễn Văn B</td>
-                            <td>0982323668</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH003</td>
-                            <td>Nguyễn Văn C</td>
-                            <td>0123987823</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH004</td>
-                            <td>Nguyễn Văn D</td>
-                            <td>0781221980</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH005</td>
-                            <td>Nguyễn Văn E</td>
-                            <td>0321879655</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH006</td>
-                            <td>Nguyễn Văn H</td>
-                            <td>0894685510</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH007</td>
-                            <td>Nguyễn Văn G</td>
-                            <td>09818182002</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH008</td>
-                            <td>Nguyễn Văn I</td>
-                            <td>0326790301</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH009</td>
-                            <td>Nguyễn Văn K</td>
-                            <td>0354246909</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>KH010</td>
-                            <td>Nguyễn Văn J</td>
-                            <td>0781212789</td>
-                            <td>100.00VNĐ</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" style="background-color:green">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-lg ">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4>Chi tiết khách hàng</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                <div id="container">
+                    <div class="search">
+                        <button class="search-button" style="height: fit-content;"><strong>Search</strong></button>
+                        <input type="search" class="search-box" placeholder="Search...">
+                    </div>
+                    <div id="listtable">
+                        <table id="myTable">
+                            <tr class="head">
+                                <th style="width:15%;">Mã khách hàng</th>
+                                <th style="width:25%;">Tên khách hàng</th>
+                                <th style="width:20%;">Số điện thoại</th>
+                                <th style="width:15%;">Tổng doanh thu</th>
+                                <th style="width:20%;">Chi tiết</th>
+                            </tr>
+                            <tr>
+                                <td>KH001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>0356273345</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#customerModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH002</td>
+                                <td>Nguyễn Văn B</td>
+                                <td>0982323668</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH003</td>
+                                <td>Nguyễn Văn C</td>
+                                <td>0123987823</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH004</td>
+                                <td>Nguyễn Văn D</td>
+                                <td>0781221980</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH005</td>
+                                <td>Nguyễn Văn E</td>
+                                <td>0321879655</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH006</td>
+                                <td>Nguyễn Văn H</td>
+                                <td>0894685510</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH007</td>
+                                <td>Nguyễn Văn G</td>
+                                <td>09818182002</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH008</td>
+                                <td>Nguyễn Văn I</td>
+                                <td>0326790301</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH009</td>
+                                <td>Nguyễn Văn K</td>
+                                <td>0354246909</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH010</td>
+                                <td>Nguyễn Văn J</td>
+                                <td>0781212789</td>
+                                <td class="total-revenue">100000</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color:green">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn btn-block btn-danger"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Chi tiết khách hàng</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Tên khách hàng: Nguyễn Văn A</p>
+                                    <p>Địa chỉ : Số 6, Tân Lập, Đông Hòa, Dĩ An, Bình Dương</p>
+                                    <p>Số điện thoại: 0356273345</p>
+                                    <p>Tổng doanh thu : 100000</p>
+                                    <p>Tổng đơn hàng: 2</p>
+                                    <p>Tổng dịch vụ : 2</p>
+                                    <hr style="border: 1px solid rgb(83, 81, 81);opacity: 1;">
+                                    <h5 style="margin-top: 3vw;"><strong>Chi tiết đơn hàng</strong></h5>
+                                    <div id="info-detail">
+                                        <table>
+                                            <tr class="first">
+                                                <th style="width: 15%;">Mã đơn hàng</th>
+                                                <th style="width: 20%;">Ngày mua</th>
+                                                <th style="width: 15%;">Số lượng</th>
+                                                <th style="width: 20%;">Tổng tiền</th>
+                                            </tr>
+                                            <tr>
+                                                <td>KH001</td>
+                                                <td>22/03/2024</td>
+                                                <td>2</td>
+                                                <td class="total-price">100000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>KH002</td>
+                                                <td>24/03/2024</td>
+                                                <td>2</td>
+                                                <td class="total-price">100000</td>
+                                            </tr>
+                                        </table>
                                     </div>
-                                    <div class="modal-body">
-                                        <p>Tên khách hàng: Nguyễn Văn A</p>
-                                        <p>Địa chỉ : Số 6, Tân Lập, Đông Hòa, Dĩ An, Bình Dương</p>
-                                        <p>Số điện thoại: 0356273345</p>
-                                        <p>Tổng doanh thu : 100.00VNĐ</p>
-                                        <p>Tổng đơn hàng: 2</p>
-                                        <p>Tổng dịch vụ : 2</p>
-                                        <hr style="border: 1px solid rgb(83, 81, 81);opacity: 1;">
-                                        <h5 style="margin-top: 3vw;"><strong>Chi tiết đơn hàng</strong></h5>
-                                        <div id="info-detail1">
-                                            <table>
-                                                <tr class="first">
-                                                    <th style="width: 15%;">Mã đơn hàng</th>
-                                                    <th style="width: 20%;">Ngày mua</th>
-                                                    <th style="width: 15%;">Số lượng</th>
-                                                    <th style="width: 20%;">Tổng tiền</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>KH001</td>
-                                                    <td>22/03/2024</td>
-                                                    <td>2</td>
-                                                    <td>100.000Đ</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>KH002</td>
-                                                    <td>24/03/2024</td>
-                                                    <td>2</td>
-                                                    <td>100.000Đ</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div style="display: flex;">
-                                            <p style="margin-left: 60%;"><strong>Tổng:</strong></p>
-                                            <p style="margin-left: 11vw;"><strong>200.000Đ</strong></p>
-                                        </div>
-                                        <h5 style="margin-top: 3vw;"><strong>Chi tiết dịch vụ</strong></h5>
-                                        <div id="info-detail2">
-                                            <table>
-                                                <tr class="first">
-                                                    <th style="width: 15%;">Mã đặt lịch</th>
-                                                    <th style="width: 20%;">Ngày đặt</th>
-                                                    <th style="width: 15%;">Số lượng</th>
-                                                    <th style="width: 20%;">Tổng tiền</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>A001</td>
-                                                    <td>20/03/2024</td>
-                                                    <td>2</td>
-                                                    <td>100.000Đ</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>KH002</td>
-                                                    <td>22/03/2024</td>
-                                                    <td>2</td>
-                                                    <td>100.000Đ</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div style="display: flex;">
-                                            <p style="margin-left: 60%;"><strong>Tổng:</strong></p>
-                                            <p style="margin-left: 11vw;"><strong>200.000Đ</strong></p>
-                                        </div>
+                                    <div style="display: flex;">
+                                        <p style="margin-left: 58%;"><strong>Tổng:</strong></p>
+                                        <p style="margin-left: 10vw;" class="total"><strong>200000</strong></p>
                                     </div>
-                                
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Hủy</button>
-                                        <button type="button" class="btn btn-primary">Lưu</button>
+                                    <h5 style="margin-top: 3vw;"><strong>Chi tiết dịch vụ</strong></h5>
+                                    <div id="info-detail">
+                                        <table>
+                                            <tr class="first">
+                                                <th style="width: 15%;">Mã đặt lịch</th>
+                                                <th style="width: 20%;">Ngày đặt</th>
+                                                <th style="width: 15%;">Số lượng</th>
+                                                <th style="width: 20%;">Tổng tiền</th>
+                                            </tr>
+                                            <tr>
+                                                <td>A001</td>
+                                                <td>20/03/2024</td>
+                                                <td>2</td>
+                                                <td class="total-price">100000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>KH002</td>
+                                                <td>22/03/2024</td>
+                                                <td>2</td>
+                                                <td class="total-price">100000</td>
+                                            </tr>
+                                        </table>
                                     </div>
+                                    <div style="display: flex;">
+                                        <p style="margin-left: 58%;"><strong>Tổng:</strong></p>
+                                        <p style="margin-left: 10vw;" class="total"><strong>200000</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-primary">Lưu</button>
                                 </div>
                             </div>
                         </div>
-                <nav aria-label="Page navigation example"
-                    style="margin-top: 3vw; display: flex;justify-content: end; margin-right: 2vw; border: none;">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                    </div>
+                    <nav aria-label="Page navigation example"
+                        style="margin-top: 3vw; display: flex;justify-content: end; margin-right: 2vw; border: none;">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 <script>
-    document.getElementById('status').innerHTML= '<h3>Khách hàng</h3>'
+    document.getElementById('status').innerHTML = '<h3>Khách hàng</h3>'
+    const totalPrice = document.getElementsByClassName('total-price');
+    const totalRevenue = document.getElementsByClassName('total-revenue');
+    const total = document.getElementsByClassName('total');
+        function formatPrice(price) {
+            return price.toLocaleString('en-US', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            });
+        }
+        for (let i = 0; i < totalPrice.length; i++) {
+            const originalValue = parseInt(totalPrice[i].textContent);
+            const price = formatPrice(originalValue);
+            totalPrice[i].textContent = price;
+        }
+        for (let i = 0; i < totalRevenue.length; i++) {
+            const originalValue = parseInt(totalRevenue[i].textContent);
+            const price = formatPrice(originalValue);
+            totalRevenue[i].textContent = price;
+        }
+        for (let i = 0; i < total.length; i++) {
+            const originalValue = parseInt(total[i].textContent);
+            const price = formatPrice(originalValue);
+            total[i].textContent = price;
+        }
 </script>
+
 </html>

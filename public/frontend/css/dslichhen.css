@@ -1,6 +1,3 @@
-body {
-    background-color: #F9FAFB;
-}
 
 .header {
     height: fit-content;
@@ -123,10 +120,11 @@ body {
     display: block;
 }
 #container {
-    width: 80%;
-    margin-left: 1vw;
-    margin-top: 2vw;
+    width: 100%;
+    margin-left:   1vw;
+    margin-top: 1vw;
     background-color: white;
+    padding-top: 10px;
 }
 
 #style-1 {
@@ -202,7 +200,7 @@ body {
     padding: 1vw 3vw;
 }
 .text-truncate-container p {
--webkit-line-clamp: 1;
+    -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -218,21 +216,33 @@ body {
 
 table {
     width: 100%;
-    margin: 8px 10px;
+    margin: 1vw 1vw;
 }
 table, th, td {
     padding: 5px;
     text-align: center;
     height: 10%;
 }
+.add-employee-button {
+    background-color:#103559;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 1vw;
+    cursor: pointer;
+    width: 15vw;
+    height: 4vw;
+    margin-left: -3vw;
+  }
 .search-container {
     display: flex;
     justify-content:right;
+    height: fit-content;
 }
 .search-box {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 20vw;
     font-size: 14px;
 }
 .search-button {
@@ -247,42 +257,43 @@ table, th, td {
 }
 .head {
     background-color:#FFF4DE;
-    height: 50px;
+    height: 4vw;
 }
-
-.banner {
-    background-color: rgb(137, 165, 221);
-    padding: 10px;
-    color: black;
-    text-align: center;
-    height: 100px;
-  }
-  .banner img {
-    height: 90px; 
-  }
-  .bannerc {
-    background-color:#ffffff;
-    padding: 10px;
-    color: black;
-    text-align: center;
-    height: 100px;
-  }
-  .bannerc img {
-    height: 90px; 
-  }
+tr:nth-child(even) {
+    background-color: #00345944
+}
   .pagination a
   {
     border: none;
   }
-  .add-employee-button {
-    background-color:#103559;
-    color: #fff;
-    border: none;
-    padding: 5px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 20px auto;
-    width: 200px;
-    height: 50px;
-    display: center;
-  }
+  .search-contain {
+    display: flex;
+    justify-content:center;
+
+}
+.sbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+.sbutton {
+    color:darkblue;
+    background-color:#D9D7D7;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+.sbutton:hover {
+    text-decoration: underline;
+}
+#style-link {
+    margin-left: 2vw;
+}
+#style-link a {
+    text-decoration-line: none;
+    color: #667479;
+}
+#style-link a:hover {
+    text-decoration-line: underline;
+}

@@ -24,7 +24,7 @@
             <img src="image/logo.png" alt="logo">
         </div>
         <div id="status">
-            <h3>Trang chủ</h3>
+
         </div>
         <form>
             <div id="search-container">
@@ -62,7 +62,6 @@
                 <li><a href="">Sign out</a></li>
             </ul>
         </div>
-
         <div id="container">
             <div id="part-1">
                 <div id="statistic">
@@ -166,8 +165,13 @@
                     <canvas id="venueChart"></canvas>
                 </div>
             </div>
+            <div class="chartOrder">
+                <h5 class="title">Đơn hàng và lượng truy cập website</h5>
+                <div class="chartBox">
+                    <canvas id="orderChart"></canvas>
+                </div>
+            </div>
         </div>
-    </div>
 </body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 <script>
@@ -183,6 +187,7 @@
         const todayDate = `${year}-${month}-${day}`;
 
         document.getElementById("current-time").value = todayDate;
+        document.getElementById("current-year").innerHTML = year;
     });
     // Seller
     const dataRevenue = {
@@ -217,33 +222,89 @@
     // config 
     const config1 = {
         type: 'bar',
-        data : dataRevenue,
+        data: dataRevenue,
         options: {
             scales: {
                 y: {
                     beginAtZero: true,
-                    grace : '5%',
-                    height : '5%'
+                    grace: '5%',
+                    height: '5%'
                 }
             },
-            plugins:{
+            plugins: {
                 legend: {
-                    position : 'right',
-                    align :'start',
+                    position: 'right',
+                    align: 'start',
                 }
             }
         }
     };
 
     // render init block
-    const  venueChart = new Chart(
+    const venueChart = new Chart(
         document.getElementById('venueChart'),
         config1
     );
+    // Order
+    const dataOrder = {
+        labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
+        datasets: [
+        {
+            label: 'Lượng khách truy cập mới',
+            data: [14, 1, 10, 20, 15, 9, 22],
+            backgroundColor: [
+                'rgb(139, 139, 139)'
+            ],
+            borderColor: [
+                'black'
+            ],
+            barPercentage: 0.9,
+            categoryPercentage: 0.5,
+            type :'line',
+        },{
+            label: 'Đơn hàng',
+            data: [17, 12, 6, 9, 12, 3, 9],
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 26, 104, 1)'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        }]
+    };
+    // config 
+    const config2 = {
+        data: dataOrder,
+        type :'bar',
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grace: '5%',
+                    height: '5%'
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                }
+            },
+        }
+    };
+    // render init block
+    const serviceChart = new Chart(
+        document.getElementById('orderChart'),
+        config2
+    );
     // Instantly assign Chart.js version
-    const chartVersion2 = document.getElementById('chartVersion');
+    const chartVersion = document.getElementById('chartVersion');
     chartVersion.innerText = Chart.version;
-    
+    //
+    document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
 </script>
 
 

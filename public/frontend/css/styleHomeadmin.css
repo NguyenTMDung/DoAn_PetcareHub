@@ -14,12 +14,10 @@ body {
     width: 10vw;
     text-align: center;
 }
-
 .logo img {
     width: 4vw;
     max-width: 70px;
 }
-
 .header #search-container {
     position: relative;
     background-color: #ffffffea;
@@ -57,31 +55,26 @@ body {
     margin-top: 1vw;
     margin-bottom: 2vw;
 }
-
 #name-admin {
     margin-left: 7px;
 }
-
 #menu {
-    width: max-content;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
+    width: 23%;
 }
-
 #action {
     background-color: antiquewhite;
     border-radius: 10px;
     font-weight: 700;
 }
-
 #action a {
     font-size: 22px;
 }
-
 #menu li {
     list-style: none;
     margin-bottom: 1vw;
@@ -102,7 +95,6 @@ body {
 #menu ul li {
     position: relative;
 }
-
 .sub-menu li {
     margin-left: -2vw;
 
@@ -123,9 +115,8 @@ body {
 }
 
 #container {
-    width: 80%;
-    margin-left: 1vw;
-    margin-top: 2vw;
+    width: 100%;
+    margin-left:   1vw;
 }
 
 #style-1 {
@@ -275,13 +266,99 @@ table td {
 table p {
     margin: 7px 0;
 }
-.chartRevenue, .chartSevice
+.chartRevenue, .chartOrder
+.chartRevenue, .chartOrder
 {
-width: 80vw;
+width: 100%;
+width: 100%;
 background-color: rgb(255, 255, 255);
 align-items: center;
 justify-content: center;
 margin-top: 2vw;
 border-radius: 10px;
 padding: 2vw;
+}
+#current-year
+{
+    margin-left: 10px;
+}
+#years
+{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1vw;
+    width: 20%;
+    text-align: center;
+    border: none;
+}
+.modal-body input[type=number]
+{
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+.modal-body table
+{
+    width: 100%;
+    margin-top: -1vw;
+}
+table p
+{
+    font-size: 15px;
+    text-align: left;
+}
+#close
+{
+    background-color: #FEF6E6;
+    color: #003459;
+    font-weight: 600;
+}
+#save
+{
+    background-color: #003459;
+    color: #FEF6E6;
+    font-weight: 600;
+}
+#current-year
+{
+    margin-left: 10px;
+}
+#years
+{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1vw;
+    width: 20%;
+    text-align: center;
+    border: none;
+}
+.modal-body input[type=number]
+{
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+.modal-body table
+{
+    width: 100%;
+    margin-top: -1vw;
+}
+table p
+{
+    font-size: 15px;
+    text-align: left;
+}
+#close
+{
+    background-color: #FEF6E6;
+    color: #003459;
+    font-weight: 600;
+}
+#save
+{
+    background-color: #003459;
+    color: #FEF6E6;
+    font-weight: 600;
 }

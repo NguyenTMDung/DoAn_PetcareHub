@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Chủ</title>
-    <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{asset('public/frontend/library/font-awesome/fontawesome-free-6.5.2-web/css/all.css')}}">
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
@@ -16,8 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
 
+
+</head>
 <body>
     <div class="header">
         <div class="logo">
@@ -48,7 +50,7 @@
             <li class="nav-item dropdown">
                 <div class="btn btn-secondary dropdown-toggle nav-link"
                     aria-expanded="false" style="background-color: #FCEED5; border: none;color: #003459;">
-                    <a href="">Sản Phẩm</a>
+                    <a href="{{URL::to('/san-pham')}}">Sản Phẩm</a>
                 </div>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Chó</a>
@@ -73,11 +75,11 @@
             <li class="nav-item dropdown">
                 <div class="btn btn-secondary dropdown-toggle nav-link"
                     aria-expanded="false" style="background-color: #FCEED5; border: none;color: #003459;">
-                    <a href="">Dịch Vụ</a>
+                    <a href="{{URL::to('/dich-vu-khach-san')}}">Dịch Vụ</a>
                 </div>
                 <ul class="dropdown-menu" style="width: 200px;">
                     <li><a class="dropdown-item" href="#">Dịch vụ Spa</a></li>
-                    <li><a class="dropdown-item" href="#">Dịch vụ khách sạn</a></li>
+                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}">Dịch vụ khách sạn</a></li>
                 </ul>
             </li>
             <li class="nav-item">

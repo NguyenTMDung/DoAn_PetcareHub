@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleHome.css">
 </head>
 
 <body>
@@ -280,7 +281,7 @@
             </div>
         </div>
         <div id="banner">
-            <img src="image/banner3.png" alt="banner" style="border-radius: 10px;border: 10px solid #003459;">
+            <img src="image/banner3.png" alt="banner" style="border-radius: 10px;border: 10px solid #003459;width: 100%;">
         </div>
         <div id="new-products">
             <p class="title">Sản Phẩm Mới Nhất</p>
@@ -603,10 +604,10 @@
             <div id="shop-address-detail">
                 <h3>Pet Care Shop</h3>
                 <p>Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.</p>
-                <a
-                    href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%C3%B4ng+ngh%E1%BB%87+Th%C3%B4ng+tin+-+%C4%90HQG+TP.HCM/@10.8700089,106.8004738,17z/data=!3m1!4b1!4m6!3m5!1s0x317527587e9ad5bf:0xafa66f9c8be3c91!8m2!3d10.8700089!4d106.8030541!16s%2Fm%2F02qqlmm?hl=vi-VN&entry=ttu">
-                    <input type="submit" value="Chỉ Đường">
-                </a>
+                    <input type="submit" value="Chỉ Đường" onclick="ggmap()">
+            </div>
+            <div id="map">
+
             </div>
         </div>
     </div>
@@ -702,6 +703,10 @@
                 const originalValue = parseInt(elements[i].textContent);
                 const convertedValue = convertToK(originalValue); 
                 elements[i].textContent = convertedValue;
+            }
+            function ggmap()
+            {
+                document.getElementById('map').innerHTML =`<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.555835745229!2d106.80202446500843!3d10.870610263566327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527e7e8abb0eb%3A0xec43e4b99472c18a!2zVUlUIC0gQ-G7lW5nIEE!5e0!3m2!1svi!2s!4v1715435890137!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
             }
     </script>
     <?php include("css/styleHome.php"); ?>

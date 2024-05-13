@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    {{-- banner --}}
+{{-- banner --}}
     <div id="slide-show" class="carousel slide" data-bs-ride="carousel" style="margin: 2vw 0;">
         <div class="carousel-inner">
             <div class="carousel-item active">

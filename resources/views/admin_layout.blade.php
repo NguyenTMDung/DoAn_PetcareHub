@@ -21,13 +21,13 @@
     .active, li:hover, a:active{
     background-color: antiquewhite;
     border-radius: 10px;
-    font-weight: 700;
+    font-weight: 500;
     }
 
     #nav li.active a{
     background-color: antiquewhite;
     border-radius: 10px;
-    font-weight: 700;
+    font-weight: 500;
     }
     #nav li.active
     {

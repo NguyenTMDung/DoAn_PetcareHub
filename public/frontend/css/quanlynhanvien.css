@@ -66,7 +66,7 @@
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
-    width: 19%;
+    width: 23%;
 }
 
 #action {
@@ -309,6 +309,7 @@ tr:nth-child(even) {
 #myTable img {
     width: 50%;
 }
+/* css datatable */
 .row, .mt-2, .justify-content-between
 {
     width: 98%;

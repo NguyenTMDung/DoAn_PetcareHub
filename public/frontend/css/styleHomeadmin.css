@@ -59,13 +59,13 @@ body {
     margin-left: 7px;
 }
 #menu {
-    width: 23%;
     background-color: #ffffff;
     max-height: max-content;
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-right: 1px solid #D9D7D7;
     margin-top: -1px;
+    width: 23%;
 }
 #action {
     background-color: antiquewhite;
@@ -115,10 +115,8 @@ body {
 }
 
 #container {
-    width: 79%;
-    width: 79%;
-    margin-left: 1vw;
-    margin-top: 2vw;
+    width: 100%;
+    margin-left:   1vw;
 }
 
 #style-1 {

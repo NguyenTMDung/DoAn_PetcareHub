@@ -250,7 +250,7 @@
         }
 
         .title {
-            font-size: 20px;
+            font-size: 1.4vw;
             font-weight: 600;
             color: var(--Primary-Color-Dark-Blue, #003459);
         }
@@ -272,7 +272,7 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            font-size: 18px;
+            font-size: 1.15vw;
             text-align: left;
             font-weight: 500;
         }
@@ -313,7 +313,7 @@
         .pro-price {
             color: #FF0E0E;
             font-family: 'Inter';
-            font-size: 20px;
+            font-size: 1.3vw;
             font-style: normal;
             font-weight: 600;
             line-height: 5px;
@@ -323,6 +323,7 @@
         .sales {
             text-align: end;
             margin-top: 1vw;
+            font-size: 1vw;
         }
 
         .number-of-sales {
@@ -374,7 +375,7 @@
         }
 
         #shop-address p {
-            font-size: 18px;
+            font-size: 1.2vw;
         }
 
         #shop-address input {
@@ -391,7 +392,10 @@
             text-align: center;
             margin: 2vw;
         }
-
+        #shop-address-detail h3
+        {
+            font-size: 1.6vw;
+        }
         .product-list .carousel-inner .carousel-item.active,
         .product-list .carousel-inner .carousel-item-next,
         .product-list .carousel-inner .carousel-item-prev {

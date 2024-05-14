@@ -24,7 +24,6 @@
     margin-top: 2vw;
     padding: 0.5vw 1vw;
     margin-left: 23%;
-    width: 20vw;
 }
 
 .options {
@@ -214,4 +213,24 @@ h5 {
 h3 {
     font-size: 1.5vw;
     padding: 0.5vw 0;
+}
+#city, #district, #ward
+{
+    width: 100%;
+    padding: 1vw;
+    border: 1px solid #AFAFAF;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+#detail-pay
+{
+    margin: 4vw;
+    margin-top: 2vw; 
+    color: #003459;
+}
+#detail-order p
+{
+    font-size: 1.2vw;
+    margin-right: 1.5vw;
+    margin-bottom: 1.5vw;
 }

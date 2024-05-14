@@ -97,30 +97,25 @@
         </ul>
     </div>
     <div class="container">
-        <form action="">
-            <div id="profile">
-                <div id="profile-head">
-                    <h4>Thông tin cá nhân</h4>
-                </div>
-                <div id="profile-detail">
-                    <div class="sty-profile">
-                        <h5>Họ và Tên khách hàng</h5>
-                        <input type="button" id="name" name="name" value="Nguyễn Văn A">
-                        <h5>Email</h5>
-                        <input type="button" id="emailc" name="emailc" value="abc@gmail.com">
-                    </div>
-                    <div class="sty-profile">
-                        <h5>Ngày Sinh</h5>
-                        <input type="button" id="date-birth" name="date-birth" value="">
-                        <h5>Số điện thoại</h5>
-                        <input type="button" id="tel" name="tel" value="09875453">
-                    </div>
-                </div>
-            </div>
-            <div style="width: 15vw;margin: auto;">
-                <input type="submit" id="submit" name="submit" value="Chỉnh sửa thông tin">
-            </div>
-        </form>
+        <div id="greeting">
+            <h4>Xin Chào</h4>
+            <h4 id="name-customer">Nguyễn Văn A</h4>
+        </div>
+        <div id="detail-account">
+            <a href="">Thông tin cá nhân</a>
+            <hr>
+            <a href="">Tài khoản & Bảo mật</a>
+            <hr>
+            <a href="">Địa chỉ</a>
+            <hr>
+            <a href="">Lịch sử mua hàng</a>
+            <hr>
+        </div>
+        <div id="btn-signout">
+            <form action="">
+                <input type="submit" id="sign-out" name="sign-out" value="Đăng xuất">
+            </form>
+        </div>
     </div>
     <div id="footer">
         <table>
@@ -153,5 +148,4 @@
         </table>
     </div>
 </body>
-
 </html>

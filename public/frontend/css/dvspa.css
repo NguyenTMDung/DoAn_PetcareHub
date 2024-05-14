@@ -286,13 +286,14 @@ td {
     margin-bottom: 3vw;
 }
 .form-container {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 2vw;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid grey;
 }
 
 .form-column1 {
@@ -346,11 +347,22 @@ img {
     font-size: 1.2vw;
 }
 .contain {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     padding: 2vw;
     border-radius: 8px;
+    border: 1px solid grey;
 }
 .contain p {
+    font-size: 1vw;
+}
+
+.contain1 {
+    background-color: #ffffff;
+    padding: 2vw;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+.contain1 p {
     font-size: 1.2vw;
 }
 .info-img {
@@ -369,10 +381,10 @@ img {
 
 .mau {
     color: red;
+    font-size: 1.4vw;
 }
 
 .column {
-    background-color: #f2f2f2;
     border-radius: 8px;
     width: 100%;
     display: flex;
@@ -407,9 +419,16 @@ img {
     padding: 2vw;
     width: 100%;
 }
+.conner p {
+    font-size: 1.2vw;
+}
 .chitiet .column
 {
     margin-bottom: 0;
+}
+.comn  p
+{
+    font-size: 1.2vw;
 }
 
 #sub {
@@ -429,7 +448,7 @@ input[type=submit] {
 }
 
 .item {
-    width: 20vw;
+    width: 24%;
     text-align: center;
     border: 0.5px solid gainsboro;
     border-radius: 12px;
@@ -473,6 +492,9 @@ input[type=submit] {
 .sales {
     text-align: end;
     margin: 1.5vw 0;
+    display: flex;
+    font-size: 1.2vw;
+    justify-content: end;
 }
 
 .number-of-sales {
@@ -484,7 +506,7 @@ input[type=submit] {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 1.3em;
+    font-size: 1.3vw;
     text-align: left;
     font-weight: 500;
 }
@@ -520,10 +542,25 @@ review-section p {
 }
 .chitiet
 {
-    background-color: #f2f2f2;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    font-size: 1.2vw;
+    font-size: 1vw;
     margin-bottom: 2vw;
+}
+.panel-group a
+{
+    font-size: 1.2vw;;
+}
+.panel-group p
+{
+    font-size: 1.1vw;
+}
+.anh p
+{
+    font-size: 1.1vw;
+}
+body h4
+{
+    font-size: 1.5vw;
 }

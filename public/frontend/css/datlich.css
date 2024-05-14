@@ -370,12 +370,10 @@ table {
     border-radius: 30px;
 }
 .modal-body1 {
-    margin-left: 8vw;
-    margin-right: 8vw;
+    padding: 1vw 6vw;
 }
 .modal-body2 {
-    margin-left: 8vw;
-    margin-right: 8vw;
+    padding: 1vw 6vw;
 }
 .top {
     height: fit-content;
@@ -489,4 +487,49 @@ table {
 #error-message {
     color: red;
     margin-left: 1vw;
+}
+.modal-body1 #head
+{
+    display: flex;
+    margin-top: 2vw;
+    justify-content: space-between;
+}
+.modal-body1 #body
+{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-body1 #foot
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+.modal-body2 #head
+{
+    display: flex;
+    margin-top: 2vw;
+    justify-content: space-between;
+}
+.modal-body2 #body
+{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-body2 #foot
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+.modal-body1 input[type=checkbox]
+{
+    margin-top: 1.3vw;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+.ksan input[type="radio"] {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
 }

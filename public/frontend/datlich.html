@@ -133,7 +133,7 @@
             </div>
         </div>
         <br><br><br>
-        
+
         <div class="form-container">
             <div class="form-head">
                 <h3>THÔNG TIN ĐẶT LỊCH</h3>
@@ -167,21 +167,21 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body1">
-                                    <div style="display: flex; margin-top: 2vw;">
-                                        <div>
+                                    <div id="head">
+                                        <div class="pet">
                                             <p><strong>Thú cưng</strong></p>
                                             <input type="radio" id="pet1" name="group-radio" /><label
                                                 for="pet1">&nbsp;Chó</label>&nbsp;
                                             <input type="radio" id="pet" name="group-radio" /><label
                                                 for="pet2">&nbsp;Mèo</label><br>
                                         </div>
-                                        <div style="margin-left: 8vw;">
+                                        <div>
                                             <p><strong>Ngày đặt lịch</strong></p>
                                             <div class="search-date">
                                                 <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
                                             </div>
                                         </div>
-                                        <div style="margin-left: 8vw;">
+                                        <div>
                                             <p><strong>Chọn khung giờ</strong></p>
                                             <select name="time" id="time">
                                                 <option value="ca1">Ca1: 7h - 8h30</option>
@@ -195,8 +195,9 @@
                                             <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
                                         </div>
                                     </div>
-                                    <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
-                                    <div style="display: flex;">
+                                    <h5 style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong>
+                                    </h5>
+                                    <div id="body">
                                         <div>
                                             <p><strong>Spa :</strong></p>
                                             <form>
@@ -210,7 +211,7 @@
                                                 toàn thân<br>
                                             </form>
                                         </div>
-                                        <div style="margin-left: 20vw;">
+                                        <div class="ksan">
                                             <p><strong>Khách sạn :</strong></p>
                                             <form>
                                                 <input type="radio" name="group-hotel" id="hotel1"><label
@@ -224,9 +225,9 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú
-                                            cưng:</strong></p>
-                                    <div style="display: flex;">
+                                    <h5 style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú
+                                            cưng:</strong></h5>
+                                    <div id="foot">
                                         <div>
                                             <p><strong>Spa :</strong></p>
                                             <select name="size" id="size" style="width: 10vw; height: 3vw;">
@@ -237,16 +238,20 @@
                                                 <option value="size5">Trên 20kg</option>
                                             </select>
                                         </div>
-                                        <div style="margin-left: 23vw;">
-                                            <p><strong>Khách sạn :</strong></p>
-                                            <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
-                                                <option value="sz1">Dưới 10kg</option>
-                                                <option value="sz2">Dưới 20kg</option>
-                                                <option value="sz3">Dưới 40kg</option>
-                                            </select>
-                                            <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
-                                            <input style=" width: 10vw " type="number" name="quantity" min="1"
-                                                placeholder="1">
+                                        <div style="display: flex;">
+                                            <div style="margin-right: 2vw;">
+                                                <p><strong>Khách sạn :</strong></p>
+                                                <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                                    <option value="sz1">Dưới 10kg</option>
+                                                    <option value="sz2">Dưới 20kg</option>
+                                                    <option value="sz3">Dưới 40kg</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <p><strong>Chọn số ngày :</strong></p>
+                                                <input style=" width: 10vw; height: 3vw; " type="number" name="quantity" min="1"
+                                                    placeholder="1">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -271,19 +276,19 @@
                     </td>
                 </tr>
             </table>
-            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;">
-            <div style="margin-left: 1vw;">
+            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;width: 97%;margin: auto;">
+            <div style="padding: 1vw;">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="form-add">
                     <i class="bi bi-plus-circle"></i> Thêm lịch
                 </button>
-                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1; margin-left: -2vw;">
-                <table style="margin-left: 1.5vw;">
+                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;margin: auto;margin: 2vw 0;">
+                <table style="width: 95%;margin: auto;">
                     <tr>
                         <td>
                             <p><strong>Tổng số dịch vụ:</strong></p>
                         </td>
                         <td>
-                            <p><strong>3</strong></p>
+                            <p><strong style="float: right;">3</strong></p>
                         </td>
                     </tr>
                     <tr>
@@ -291,7 +296,7 @@
                             <p><strong>Tổng tiền:</strong></p>
                         </td>
                         <td>
-                            <p><strong class="total-price">150000</strong></p>
+                            <p><strong class="total-price" style="float: right;">150000</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -304,21 +309,21 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body2">
-                            <div style="display: flex; margin-top: 2vw;">
-                                <div>
+                            <div id="head">
+                                <div class="pet">
                                     <p><strong>Thú cưng</strong></p>
                                     <input type="radio" id="pet1" name="group-radio" /><label
                                         for="pet1">&nbsp;Chó</label>&nbsp;
                                     <input type="radio" id="pet" name="group-radio" /><label
                                         for="pet2">&nbsp;Mèo</label><br>
                                 </div>
-                                <div style="margin-left: 8vw;">
+                                <div>
                                     <p><strong>Ngày đặt lịch</strong></p>
                                     <div class="search-date">
                                         <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
                                     </div>
                                 </div>
-                                <div style="margin-left: 8vw;">
+                                <div>
                                     <p><strong>Chọn khung giờ</strong></p>
                                     <select name="time" id="time">
                                         <option value="ca1">Ca1: 7h - 8h30</option>
@@ -332,12 +337,14 @@
                                     <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
                                 </div>
                             </div>
-                            <p style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong></p>
-                            <div style="display: flex;">
+                            <h5 style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong>
+                            </h5>
+                            <div id="body">
                                 <div>
                                     <p><strong>Spa :</strong></p>
                                     <form>
-                                        <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
+                                        <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ
+                                        sinh<br>
                                         <input type="checkbox" name="spa2" value="Spa, cắt tỉa trọn gói">Spa,
                                         cắt tỉa trọn gói<br>
                                         <input type="checkbox" name="spa3" value="Cắt tỉa, nhuộm lông">Cắt tỉa,
@@ -346,22 +353,23 @@
                                         toàn thân<br>
                                     </form>
                                 </div>
-                                <div style="margin-left: 20vw;">
+                                <div class="ksan">
                                     <p><strong>Khách sạn :</strong></p>
                                     <form>
-                                        <input type="radio" name="group-hotel" id="hotel1"><label for="hotel1">Khách sạn
-                                            bình thường</label><br>
-                                        <input type="radio" name="group-hotel" id="hotel2"><label for="hotel2">Khách sạn
-                                            phòng VIP A</label><br>
-                                        <input type="radio" name="group-hotel" id="hotel3"><label for="hotel3">Khách sạn
-                                            phòng VIP B</label><br>
-                                        <input type="radio" name="group-hotel" id="hotel4"><label for="hotel4">Khách sạn
-                                            phòng VIP C</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel1"><label
+                                            for="hotel1">Khách sạn bình thường</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel2"><label
+                                            for="hotel2">Khách sạn phòng VIP A</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel3"><label
+                                            for="hotel3">Khách sạn phòng VIP B</label><br>
+                                        <input type="radio" name="group-hotel" id="hotel4"><label
+                                            for="hotel4">Khách sạn phòng VIP C</label><br>
                                     </form>
                                 </div>
                             </div>
-                            <p style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú cưng:</strong></p>
-                            <div style="display: flex;">
+                            <h5 style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú
+                                    cưng:</strong></h5>
+                            <div id="foot">
                                 <div>
                                     <p><strong>Spa :</strong></p>
                                     <select name="size" id="size" style="width: 10vw; height: 3vw;">
@@ -372,16 +380,20 @@
                                         <option value="size5">Trên 20kg</option>
                                     </select>
                                 </div>
-                                <div style="margin-left: 23vw;">
-                                    <p><strong>Khách sạn :</strong></p>
-                                    <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
-                                        <option value="sz1">Dưới 10kg</option>
-                                        <option value="sz2">Dưới 20kg</option>
-                                        <option value="sz3">Dưới 40kg</option>
-                                    </select>
-                                    <p style="margin-top: 1vw;"><strong>Chọn số ngày :</strong></p>
-                                    <input style=" width: 10vw " type="number" name="quantity" min="1"
-                                        placeholder="1"><br>
+                                <div style="display: flex;">
+                                    <div style="margin-right: 2vw;">
+                                        <p><strong>Khách sạn :</strong></p>
+                                        <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                            <option value="sz1">Dưới 10kg</option>
+                                            <option value="sz2">Dưới 20kg</option>
+                                            <option value="sz3">Dưới 40kg</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <p><strong>Chọn số ngày :</strong></p>
+                                        <input style=" width: 10vw; height: 3vw; " type="number" name="quantity" min="1"
+                                            placeholder="1">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -397,94 +409,6 @@
         <div id="sub">
             <input type="button" data-bs-toggle="modal" data-bs-target="#bookModal" value="Đặt lịch ngay"
                 name="datlich">
-        </div>
-        <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                    <div class="modal-header" style="padding: 0;">
-                        <div class="top">
-                            <div class="icon">
-                                <a href="#" style="text-decoration-line: none;"></a>
-                                <p>PET CARE HUB</p>
-                                </a>
-                            </div>
-                    
-                            <a href="#cart" id="cart" style="text-align: right;width: 10%;margin-top: -0.5vw; font-size: 3vw;"><i class="bi bi-cart4 fa-2x"
-                                    style="color: #003459;"></i></a>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" style="padding: 0;">
-                        <div class="booking">
-                            <div id="detail-customer">
-                                <form>
-                                    <h3>Thông tin khách hàng</h3>
-                                    <p class="title"><strong>Họ và Tên</strong></p>
-                                    <div class="search-contain">
-                                        <input type="text" class="sbox" id="hoVaTen" placeholder="Nguyễn Văn A">
-                                    </div>
-                                    <p class="title"><strong>Số điện thoại</strong></p>
-                                    <div class="search-contain">
-                                        <input type="tel" class="sbox" id="soDienThoai" placeholder="098xxxxxxx">
-                                    </div>
-                                    <h4 style="margin-top: 2vw;">Thanh toán</h4>
-                                    <p style="font-size: 15px; font-weight: 400;color: #656565;">* Toàn bộ các giao dịch
-                                        được bảo mật và mã
-                                        hóa.</p>
-                                    <div id="pay" onclick="choose(this)">
-                                        <div class="options pay" onclick="bg">
-                                            <input type="radio" id="cash" name="method" value="1">
-                                            <p>Thanh toán khi nhận hàng</p>
-                                            <i class="bi bi-cash-coin"></i>
-                                        </div>
-                                        <div class="options pay">
-                                            <input type="radio" id="banking" name="method" value="2">
-                                            <p>Thanh toán qua ngân hàng</p>
-                                            <i class="bi bi-bank"></i>
-                                            <div id="bank">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="error-message">
-
-                                    </div>
-                                    <input type="submit" name="complete" id="complete" value="Hoàn tất đơn hàng">
-                                </form>
-                            </div>
-                            <div id="detail-booking">
-                                <h3>Lịch hẹn</h3>
-                                <div class="product">
-                                    <div class="detail-product">
-                                        <div style="display: flex;">
-                                            <p><strong>Mã lịch:</strong></p>
-                                            <p class="classify" style="margin-left:2vw ;">A0002</p>
-                                        </div>
-                                        <div style="display: flex;">
-                                            <p><strong>Số lượng dịch vụ:</strong></p>
-                                            <p class="quantity" style="margin-left:2vw ;">1</p>
-                                        </div>
-                                    </div>
-                                    <div class="total-price" style="margin-top: 2vw;">
-                                        150000
-                                    </div>
-                                </div>
-                                <hr style="border: 1px solid #656565;width: 100%;margin: auto;margin-bottom: 1vw;">
-                                <div style="margin-top: 2vw; color: #003459;">
-                                    <div style="display: flex;">
-                                        <h5>Số lượng dịch vụ: </h5>
-                                        <h5 id="quantity" style="text-align: end;width:50% ;">1</h5>
-                                    </div>
-                                    <div style="display: flex;">
-                                        <h3 style="width: 75%;">Tổng tiền</h3>
-                                        <h3 class="pro-price" style="text-align: end;width:25%  ;">150000</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <br><br>
         <div id="footer">
@@ -519,34 +443,8 @@
         </div>
 </body>
 <script>
-    function choose(a) {
-        a.querySelectorAll('input[type=radio]').forEach(radio => {
-            const divOptions = radio.parentNode;
-            if (radio.checked) {
-                divOptions.style.backgroundColor = '#FCEED5';
-                divOptions.style.borderRadius = '10px';
-            } else {
-                divOptions.style.backgroundColor = 'white';
-                divOptions.style.borderRadius = '10px';
-            }
-        });
-    }
-    document.querySelectorAll('input[type=radio]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            if (radio.id === 'banking' && radio.checked) {
-                document.getElementById('bank').innerHTML = `<h6>Chuyển Khoản Ngân Hàng</h6>
-                            <p>Ngân Hàng : TP bank</p>
-                            <p>Số Tài Khoản: 0987654321</p>
-                            <p style="margin-bottom: 1vw;">Nội Dung: Tên Người Mua Hàng + Số Điện Thoại</p>`
-            }
-            else if (radio.id === 'cash' && radio.checked) {
-                document.getElementById('bank').innerHTML = ``
-            }
-        });
-    });
     const totalPrice = document.getElementsByClassName('total-price');
     const intoMoney = document.getElementsByClassName('into-money');
-    const proPrice = document.getElementsByClassName('pro-price');
     function formatPrice(price) {
         return price.toLocaleString('en-US', {
             minimumFractionDigits: 0,
@@ -563,23 +461,6 @@
         const price = formatPrice(originalValue);
         intoMoney[i].textContent = price;
     }
-    for (let i = 0; i < proPrice.length; i++) {
-        const originalValue = parseInt(proPrice[i].textContent);
-        const price = formatPrice(originalValue);
-        proPrice[i].textContent = price;
-    }
-    const cashOption = document.getElementById('cash');
-    const bankingOption = document.getElementById('banking');
-    const errorMessage = document.getElementById('error-message');
-    const completeButton = document.getElementById('complete');
-    completeButton.addEventListener('click', (event) => {
-        if (!cashOption.checked && !bankingOption.checked) {
-            errorMessage.textContent = '*Vui lòng chọn một tùy chọn thanh toán!';
-            event.preventDefault();
-        } else {
-            errorMessage.textContent = '';
-        }
-    });
 
 </script>
 

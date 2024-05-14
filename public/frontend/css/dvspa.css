@@ -270,7 +270,6 @@ td {
     background-color: #d0e0f0;
     padding: 20px;
 }
-
 .footer {
     text-align: center;
     padding: 10px;
@@ -301,14 +300,14 @@ td {
     margin-right: 2vw;
 }
 .form-column1 p {
-    font-size: 1.2vw;
+    font-size: 1.05vw;
 }
 .form-column2
 {
     width: 50%;
 }
 .form-column2 p {
-    font-size: 1.2vw;
+    font-size: 1.05vw;
 }
 img {
     max-width: 100%;
@@ -344,7 +343,7 @@ img {
     padding: 1vw;
 }
 .commitment p {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
 }
 .contain {
     background-color: #ffffff;

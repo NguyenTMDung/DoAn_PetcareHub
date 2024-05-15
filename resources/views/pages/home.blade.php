@@ -47,14 +47,13 @@
             <div class="text-center my-3">
                 <div class="row mx-auto my-auto justify-content-center">
                     <div id="productCarousel1" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" role="listbox" style="width: 100%;margin-left: 1vw;">
+                        <div class="carousel-inner" role="listbox" >
                             <div class="carousel-item active">
                                 <div class="col-md-3">
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg')}}" alt="">
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
@@ -78,8 +77,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/best_seller2.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/best_seller2.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
@@ -102,8 +101,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/best_seller3.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/best_seller3.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Quần Áo Mùa Hè 4599 Teddy ins Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
@@ -126,8 +125,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/best_seller4.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/best_seller4.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Đồ chơi gặm nhai phát ra âm thanh kiểu dáng ngộ nghĩnh dành cho thú cưng</p>
@@ -150,8 +149,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/best_seller5.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/best_seller5.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Thú Cưng Vui Halloween Mũ Mèo Chó Gấu Trúc Gấu Lợn Mũ Đội Đầu</p>
@@ -174,8 +173,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/best_seller6.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/best_seller6.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Xúc Xích Cho Chó Thức Ăn Cho Chó Thú Cưng Mèo Xúc Xích Điều Trị Cho Thú Cưng Chó Ăn Nhẹ</p>
@@ -217,14 +216,14 @@
             <div class="text-center my-3">
                 <div class="row mx-auto my-auto justify-content-center">
                     <div id="productCarousel2" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" role="listbox" style="width: 100%;margin-left: 1vw;">
+                        <div class="carousel-inner" role="listbox" >
                             <div class="carousel-item active">
                                 <div class="col-md-3">
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro1.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro1.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Khăn Cho Chó Tay Đan Ins Phong Cách Yếm Mèo Cổ Dễ Thương Thú Cưng Đan Nước Bọt Khăn Đồ Dùng Cho Thú Cưng</p>
@@ -248,8 +247,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro2.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro2.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Khô miếng gà mèo chó đồ ăn nhẹ răng hàm làm sạch răng thơm giòn gà khô đồ ăn nhẹ</p>
@@ -272,8 +271,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro3.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro3.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Lá bạc hà mèo bóng lông làm tăng sự thèm ăn lá bạc hà mèo tự nhiên</p>
@@ -296,8 +295,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro4.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro4.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Thức ăn chủ yếu cho chó đóng hộp thức ăn ướt đồ ăn nhẹ mousse thịt bùn thành chó con đóng hộp chung</p>
@@ -320,8 +319,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro5.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro5.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>Gel tắm cho thú cưng khử mùi chống ngứa lâu dài gel tắm đặc biệt cho thú cưng 500m</p>
@@ -344,8 +343,8 @@
                                     <div class="item">
                                         <a href="">
                                             <div class="img-products">
-                                                <img src="image/new_pro6.png" alt=""
-                                                    style="width: 15vw;">
+                                                <img src="{{('public/frontend/image/new_pro6.png')}}" alt=""
+                                                    >
                                             </div>
                                             <div class="text-truncate-container">
                                                 <p>✨Tám phong cách✨Độ đàn hồi cao mèo móng vuốt đồ chơi, mini palm kéo, đá, tát găng tay, khéo léo và ngộ nghĩnh cao su mềm</p>
@@ -396,10 +395,15 @@
         <div id="shop-address-detail">
             <h3>Pet Care Hub</h3>
             <p>Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.</p>
-            <a
-                href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%C3%B4ng+ngh%E1%BB%87+Th%C3%B4ng+tin+-+%C4%90HQG+TP.HCM/@10.8700089,106.8004738,17z/data=!3m1!4b1!4m6!3m5!1s0x317527587e9ad5bf:0xafa66f9c8be3c91!8m2!3d10.8700089!4d106.8030541!16s%2Fm%2F02qqlmm?hl=vi-VN&entry=ttu">
-                <input type="submit" value="Chỉ Đường">
-            </a>
+            <input type="submit" value="Chỉ Đường" onclick="ggmap()">
+        </div>
+        <div id="map">
+
         </div>
     </div>
+    <script>
+        function ggmap() {
+            document.getElementById('map').innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231240417278!2d106.80047381139414!3d10.870008889239834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1715785879974!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+        }
+    </script>
 @endsection

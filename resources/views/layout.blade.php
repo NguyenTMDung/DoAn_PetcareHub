@@ -27,7 +27,7 @@
         </div>
         <form>
             <div id="search-container">
-                <div type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></div>
+                <button type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></button>
                 <input type="search" name="search" id="input_search" placeholder="Search...">
             </div>
         </form>
@@ -100,35 +100,33 @@
 
     </div>
     <div id="footer">
-        <table>
-            <tr>
-                <td id="infor-shop">
-                    <h3>Liên hệ</h3>
-                        CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB. <br>
-                        Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
-                        <br>
-                    <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
-                    <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
-                    <div id="connect_shop">
-                        <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </td>
-                <td style="width: 30%;"> &nbsp;</td>
-                <td id="policy">
-                    <h3>Chính sách khách hàng</h3>
-                    <a href="{{URL::to('/chinh-sach-doi-tra')}}">Chính sách đổi trả.</a><br>
-                    <a href="{{URL::to('/chinh-sach-bao-mat')}}">Chính sách bảo mật.</a><br>
-                    <a href="{{URL::to('/phuong-thuc-thanh-toan')}}">Phương thức thanh toán.</a><br>
-                    <a href="{{URL::to('/chinh-sach-hoan-tien')}}">Chính sách hoàn tiền</a><br>
-                    <p>&nbsp;</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align: center;" class="logo"><img src="{{('public/frontend/image/logo.png')}}" alt="logo"></td>
-            </tr>
-        </table>
+        <div id="footer-body">
+            <div id="infor-shop">
+                <h3>Liên hệ</h3>
+                <p>
+                    CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB.
+                </p>
+                <p>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
+                </p>
+                <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
+                <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                <div id="connect_shop">
+                    <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div id="policy">
+                <h3>Chính sách khách hàng</h3>
+                <a href="{{URL::to('/chinh-sach-doi-tra')}}">Chính sách đổi trả.</a><br>
+                <a href="{{URL::to('/chinh-sach-bao-mat')}}">Chính sách bảo mật.</a><br>
+                <a href="{{URL::to('/phuong-thuc-thanh-toan')}}">Phương thức thanh toán.</a><br>
+                <a href="{{URL::to('/chinh-sach-hoan-tien')}}">Chính sách hoàn tiền</a><br>
+                <p>&nbsp;</p>
+            </div>   
+        </div>
+                <div class="logo"><img src="{{('public/frontend/image/logo.png')}}" alt="logo"></div>
     </div>
     <script>
         let items1 = document.querySelectorAll('#productCarousel1 .carousel-item')
@@ -192,6 +190,16 @@
                 const convertedValue = convertToK(originalValue); 
                 elements[i].textContent = convertedValue;
             }
+            const currentUrl = window.location.href;
+            // Lấy danh sách các menu
+            const menuItems = document.querySelectorAll('.nav-item a');
+
+            // Kiểm tra và thêm lớp "active" cho menu đang được truy cập
+            menuItems.forEach(item => {
+                if (item.href === currentUrl) {
+                    item.parentElement.classList.add('active');
+                }
+    });
     </script>
 </body>
 </html>

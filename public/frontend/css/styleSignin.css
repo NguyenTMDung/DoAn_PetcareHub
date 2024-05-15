@@ -1,5 +1,4 @@
-<style>
-    .header {
+.header {
     height: fit-content;
     padding: 2% 3% 0 2%;
     display: flex;
@@ -255,45 +254,6 @@ td {
 .ju-center {
     justify-content: center;
 }
-
-.item {
-    width: 17vw;
-    text-align: center;
-    border-radius: 12px;
-    background: var(--Neutral-Color-00, #FDFDFD);
-    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-    height: 25vw;
-    margin: 2vw;
-
-}
-
-.item p {
-    text-align: left;
-    margin: auto;
-    width: 80%;
-
-}
-
-.text-truncate-container p {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 18px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.pro-price {
-    color: #FF0E0E;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    text-align: left;
-    margin: 0.5vw 2vw 2vw 2vw;
-}
-
 #title-header {
     display: flex;
     justify-content: space-between;
@@ -303,7 +263,7 @@ td {
 }
 
 #title-header a {
-    font-size: 20px;
+    font-size: 1.4vw;
     font-weight: 700;
     text-decoration-line: none;
     color: var(--Primary-Color-Dark-Blue, #003459);;
@@ -329,13 +289,13 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     padding: 1vw 1.5vw;
     border: 1px solid #AFAFAF;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 1.1vw;
 }
 #infor-customer p
 {
     margin-bottom: -1px;
     margin-top: 2vw;
-    font-size: 18px;
+    font-size: 1.1vw;
     font-weight: 500;
 }
 #infor-customer #forgot-password
@@ -344,8 +304,8 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
 }
 #forgot-password a
 {
-    color: #000;
-    font-size: 18px;
+    color: #003459;
+    font-size: 1.1vw;
     font-weight: 500;
     font-style: italic;
 }
@@ -356,11 +316,12 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     padding: 0.5vw 2vw;
     background-color:var(--Primary-Color-Dark-Blue, #003459);
     color: #FCEED5;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-weight: 700;
     border-radius: 10px;
     margin-top: 2vw;
     margin-left: 10vw;
+    width: 13vw;
 }
 #frame
 {
@@ -376,6 +337,7 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
 #frame h2
 {
     color: var(--Primary-Color-Dark-Blue, #003459);
+    font-size: 1.8vw;
 }
 #frame input[type=button]
 {
@@ -383,7 +345,7 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     padding: 0.5vw 2vw;
     background-color:white;
     color: var(--Primary-Color-Dark-Blue, #003459);
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 700;
     border: 1px solid black;
     border-radius: 10px;
@@ -396,18 +358,19 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     padding: 0.5vw 2vw;
     background-color:var(--Primary-Color-Dark-Blue, #003459);
     color: #FCEED5;
-    font-size: 20px;
+    font-size: 1.4vw;
     font-weight: 700;
     border-radius: 10px;
     margin-top: 2vw;
 }
-#frame input[type=text]
+#frame input[type=text], #email-cus
 {
     width: 100%;
     padding: 1vw 1.5vw;
     border: 1px solid #AFAFAF;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 1.1vw;
+    text-align: center;
 }
 #frame table
 {
@@ -425,5 +388,11 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
 #frame h5
 {
     font-weight: 700;
+    font-size: 1.3vw;
 }
-</style>
+.set-active {
+    text-decoration: none;
+}
+.set-active.active {
+    text-decoration: underline;
+}

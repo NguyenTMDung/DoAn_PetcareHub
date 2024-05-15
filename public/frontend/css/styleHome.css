@@ -253,7 +253,11 @@
         }
 
         .title {
+<<<<<<< HEAD
             font-size: 1.35vw;
+=======
+            font-size: 1.4vw;
+>>>>>>> task1
             font-weight: 600;
             color: var(--Primary-Color-Dark-Blue, #003459);
         }
@@ -266,7 +270,7 @@
 
 
         .text-truncate-container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
 
@@ -275,7 +279,11 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
+<<<<<<< HEAD
             font-size: 1.2vw;
+=======
+            font-size: 1.15vw;
+>>>>>>> task1
             text-align: left;
             font-weight: 500;
         }
@@ -286,12 +294,17 @@
             background-color: #FCEED5;
         }
         .product-list .item {
+<<<<<<< HEAD
             width: 93%;
+=======
+            width: 94%;
+>>>>>>> task1
             text-align: center;
             border: 0.5px solid gainsboro;
             border-radius: 12px;
             background: var(--Neutral-Color-00, #FDFDFD);
             box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+            padding: 1.5vw 1.5vw 1.5vw 1.5vw;
         }
 
         .product-list .item a {
@@ -300,8 +313,9 @@
         }
 
         .product-list .item img {
-            margin: 0.5vw 0;
             border-radius: 12px;
+            margin-bottom: 1vw;
+            width: 100%;
         }
 
         .product-list .item img:hover {
@@ -319,12 +333,18 @@
             font-weight: 600;
             line-height: 5px;
             text-align: left;
-            margin: 0 2vw 1vw 1.7vw;
+            margin-top: 1vw;
         }
         .sales {
+<<<<<<< HEAD
             display: flex;
             justify-content: end;
             margin: 1vw 1.5vw;
+=======
+            text-align: end;
+            margin-top: 1vw;
+            font-size: 1vw;
+>>>>>>> task1
         }
 
         .number-of-sales {
@@ -380,7 +400,7 @@
         }
 
         #shop-address p {
-            font-size: 18px;
+            font-size: 1.2vw;
         }
 
         #shop-address input {
@@ -397,7 +417,10 @@
             text-align: center;
             margin: 2vw;
         }
-
+        #shop-address-detail h3
+        {
+            font-size: 1.6vw;
+        }
         .product-list .carousel-inner .carousel-item.active,
         .product-list .carousel-inner .carousel-item-next,
         .product-list .carousel-inner .carousel-item-prev {

@@ -304,7 +304,7 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
 }
 #forgot-password a
 {
-    color: #000;
+    color: #003459;
     font-size: 1.1vw;
     font-weight: 500;
     font-style: italic;

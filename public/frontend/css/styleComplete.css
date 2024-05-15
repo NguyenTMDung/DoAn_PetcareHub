@@ -26,11 +26,6 @@
     margin-left: 23%;
 }
 
-.options {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .orders {
     display: flex;
     flex-wrap: wrap;
@@ -48,91 +43,6 @@
     font-size: 1.5vw;
     font-weight: 600;
 }
-
-#location,
-#pay {
-    margin-top: 2vw;
-    border: 1px solid #AFAFAF;
-    border-radius: 10px;
-}
-
-.options input[type=radio] {
-    width: 3%;
-    margin: 1vw 2vw;
-}
-
-.options p {
-    margin: 1vw 0;
-    font-size: 1.15vw;
-    font-weight: 400;
-    width: 65%;
-}
-
-.options i {
-    width: 19%;
-    margin: 1vw 0;
-    text-align: center;
-}
-
-#infor-customer input[type=text],
-input[type=tel] {
-    width: 100%;
-    padding: 1vw;
-    border: 1px solid #AFAFAF;
-    border-radius: 10px;
-    font-size: 1vw;
-}
-input[type=text],
-input[type=tel] {
-    width: 100%;
-    padding: 1vw;
-    border: 1px solid #AFAFAF;
-    border-radius: 10px;
-    font-size: 1vw;
-}
-
-#address_shop {
-    border: 1px solid #CCD1D2;
-    border-radius: 10px;
-    width: 100%;
-    text-align: left;
-    background-color: white;
-    padding: 0.5vw 1vw 0 1vw;
-    font-size: 18px;
-}
-
-#infor-customer p {
-    font-size: 1vw;
-    font-weight: 500;
-    margin-top: 1.5vw;
-}
-#customer p
-{
-    font-size: 1vw;
-    font-weight: 500;
-    margin-top: 1.5vw;
-}
-
-#infor-customer h2 {
-    padding: 1vw 0;
-    font-size: 1.3vw;
-}
-
-#bank p {
-    line-height: 0px;
-    width: 100%;
-    padding: 2vw 1vw 2vw 5vw;
-    margin-bottom: -3vw;
-    font-size: 16px;
-    font-weight: 400;
-    color: #656565;
-}
-
-#bank h6 {
-    padding: 0 0 0 5vw;
-    margin-bottom: -1vw;
-}
-
 #products {
     background-color: #F5F5F5;
     width: 50%;
@@ -181,24 +91,6 @@ input[type=tel] {
     width: 5vw;
     margin-top: 1vw;
 }
-
-#error-message,
-#error-message1,
-#error-message2, 
-#error-name,
-#error-tel 
-{
-    color: red;
-    margin-left: 1vw;
-}
-
-#cart i {
-    text-align: right;
-    width: 10vw;
-    margin-top: -0.5vw;
-    margin-left: 7vw;
-}
-
 #note {
     font-size: 0.9vw;
     font-weight: 400;
@@ -214,14 +106,6 @@ h3 {
     font-size: 1.5vw;
     padding: 0.5vw 0;
 }
-#city, #district, #ward
-{
-    width: 100%;
-    padding: 1vw;
-    border: 1px solid #AFAFAF;
-    border-radius: 10px;
-    font-size: 1vw;
-}
 #detail-pay
 {
     margin: 4vw;
@@ -230,7 +114,7 @@ h3 {
 }
 #detail-order p
 {
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     margin-right: 1.5vw;
     margin-bottom: 1.5vw;
 }

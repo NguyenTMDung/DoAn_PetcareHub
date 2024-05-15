@@ -21,11 +21,11 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="#" style="text-decoration-line: none;"></a>
-            <p>PET CARE HUB</p>
+            <a href="#" style="text-decoration-line: none;color: #003459;">
+            PET CARE HUB
             </a>
         </div>
-        <a href="#cart" id="cart"><i class="bi bi-cart4 fa-2x" style="color: #003459;"></i></a>
+        <a href="#cart" id="cart"><i class="bi bi-cart4 fa-2x" style="color: #003459;font-size: 1.6vw;"></i></a>
     </div>
     <div class="orders">
         <div id="detail-order">
@@ -40,6 +40,10 @@
             <div style="display: flex;">
                 <p><strong>Mã đơn hàng:</strong>  </p>
                 <p id="id-order">DH0111</p>
+            </div>
+            <div style="display: flex;">
+                <p><strong>Ngày đặt:</strong>  </p>
+                <p id="current-date"></p>
             </div>
             <div style="display: flex;">
                 <p><strong>Giao hàng:</strong>  </p>
@@ -156,6 +160,19 @@
         <p>Đang xác nhận</p>
         `
     }
+    window.onload = (function loadDate() {
+        let date = new Date(),
+            day = date.getDate(),
+            month = date.getMonth() + 1,
+            year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        const todayDate = `${year}-${month}-${day}`;
+
+        document.getElementById("current-date").innerHTML = todayDate;
+    });
 </script>
 
 </html>

@@ -254,26 +254,26 @@ td {
 .ju-center {
     justify-content: center;
 }
-#greeting
-{
+
+#greeting {
     display: flex;
     justify-content: center;
     padding: 4vw 0;
 }
-#greeting h4
-{
+
+#greeting h4 {
     font-size: 1.4vw;
     margin-right: 0.5vw;
     color: #003459;
 }
-#detail-account
-{
+
+#detail-account {
     width: 45%;
     margin: auto;
     margin-bottom: 3vw;
 }
-#sign-out
-{
+
+#sign-out {
     width: 15vw;
     margin-bottom: 4vw;
     padding: 0.5vw;
@@ -283,25 +283,25 @@ td {
     font-weight: 600;
     color: #ffffff;
 }
-#btn-signout
-{
+
+#btn-signout {
     width: 15vw;
     margin: auto;
 }
-#detail-account a
-{
+
+#detail-account a {
     font-size: 1.3vw;
     font-weight: 600;
     margin-left: 2vw;
     color: #000;
     text-decoration-line: none;
 }
-#detail-account a:hover
-{
+
+#detail-account a:hover {
     text-decoration-line: underline;
 }
-#profile
-{
+
+#profile {
     width: 75%;
     margin: auto;
     margin-top: 5vw;
@@ -309,30 +309,30 @@ td {
     border: 1px solid grey;
     border-radius: 10px;
 }
-#profile-head
-{
+
+#profile-head {
     text-align: center;
-    background-color: #FCEED5;
-    color: #003459;
     border-radius: 10px;
     padding: 1vw;
+    margin-top: 1vw;
 }
-#profile-head h4
-{
-    font-size: 1.6vw;
+
+#profile-head h4 {
+    font-size: 1.7vw;
+    font-weight: 700;
 }
-#profile-detail
-{
+
+#profile-detail {
     display: flex;
     justify-content: space-between;
     padding: 3vw;
 }
-.sty-profile
-{
+
+.sty-profile {
     width: 45%;
 }
-.sty-profile input
-{
+
+.sty-profile input {
     width: 100%;
     padding: 0.7vw;
     margin-top: 0.5vw;
@@ -343,12 +343,13 @@ td {
     background-color: #ffffff;
     text-align: left;
 }
-.sty-profile p
-{
+
+.sty-profile p {
     font-size: 1.2vw;
 }
-#submit
-{
+
+#submit,
+#complete {
     width: 15vw;
     font-size: 1.4vw;
     font-weight: 600;
@@ -357,4 +358,297 @@ td {
     padding: 0.7vw;
     border-radius: 30px;
     margin-bottom: 4vw;
+}
+
+a {
+    font-size: 1.4vw;
+    font-weight: 600;
+    padding: 0.7vw;
+    color: #000;
+}
+
+#change-password table {
+    width: 65%;
+    margin: auto;
+    margin-top: -2vw;
+}
+
+#change-password {
+    width: 100%;
+}
+
+#change-password h5 {
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+#change-password input {
+    width: 100%;
+    padding: 0.5vw;
+}
+
+#change-password tr {
+    height: 4vw;
+}
+
+#forgot-password a {
+    color: #003459;
+    font-size: 1.1vw;
+    font-weight: 500;
+    font-style: italic;
+    margin-left: 9vw;
+}
+
+#address-detail tr {
+    height: 3vw;
+    border-bottom: 1px solid black;
+}
+
+#address-detail table {
+    width: 60%;
+    margin: auto;
+    margin-top: -2vw;
+    margin-bottom: 4vw;
+}
+
+#address-detail td {
+    padding: 0.7vw;
+}
+
+#address-detail button {
+    width: 100%;
+    display: flex;
+    margin-top: 0.2vw;
+    border: none;
+    background-color: #ffffff;
+}
+
+#address-detail p {
+    font-size: 1.2vw;
+    margin-bottom: -0.3vw;
+    font-weight: 300;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    padding: 4vw 0;
+}
+
+#title h4 {
+    font-size: 1.6vw;
+    margin-right: 0.5vw;
+    font-weight: 650;
+    color: #003459;
+}
+
+#error-message {
+    color: red;
+    margin-left: 1vw;
+}
+
+#city,
+#district,
+#ward {
+    width: 100%;
+    padding: 0.5vw;
+    border: 1px solid #AFAFAF;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 0.5vw;
+    border: 1px solid #AFAFAF;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+
+.btn-secondary {
+    background-color: antiquewhite;
+    color: #003459;
+    font-size: 1.1vw;
+    font-weight: 500;
+    --bs-btn-hover-border-color: #FCEED5;
+    --bs-btn-hover-bg: #FCEED5;
+    --bs-btn-hover-color: rgb(108, 0, 0);
+}
+
+.btn-primary {
+    background-color: #003459;
+    color: white;
+    font-size: 1.1vw;
+    font-weight: 500;
+    --bs-btn-hover-border-color: #003459;
+    --bs-btn-hover-bg: #003459;
+    --bs-btn-hover-color: rgb(255, 251, 149);
+}
+
+#address-detail a {
+    color: #000;
+}
+
+#profile-body {
+    width: 50%;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+#profile-body input {
+    width: 100%;
+    padding: 0.5vw;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+li.active a {
+    text-decoration-line: underline;
+}
+
+.menuItem a {
+    text-decoration-line: none;
+    font-size: 1.3vw;
+    color: #003459;
+}
+.menuItem a:hover
+{
+    text-decoration-line: underline;
+}
+
+#menu-purchase li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13vw;
+    height: 3vw;
+    margin-left: -5px;
+    text-align: center;
+}
+
+#menu-purchase ul {
+    overflow: hidden;
+    width: 100%;
+}
+#menu-purchase
+{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2vw;
+}
+.detai-order
+{
+    width: 100%;
+}
+.detai-order th
+{
+    text-align: center;
+    background-color: #FCEED5;
+    padding: 0.5vw;
+    font-size: 1.1vw;
+}
+.detai-order table
+{
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-bottom: 4vw;
+}
+.detai-order td
+{
+    text-align: center;
+    padding: 0.5vw;
+    font-size: 1vw;
+}
+.orders {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    margin-bottom: 3vw;
+}
+
+#detail-order {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #CCD1D2;
+    padding: 3vw 6vw;
+}
+
+.title {
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+#products {
+    background-color: #F5F5F5;
+    width: 50%;
+    border: 1px solid #CCD1D2;
+    max-height: max-content;
+    padding: 3vw 4vw 3vw 1vw;
+}
+
+.text-truncate-container {
+    width: 100%;
+    margin: auto;
+}
+
+.text-truncate-container p {
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.1vw;
+    text-align: left;
+    font-weight: 600;
+}
+
+.detail-product {
+    width: 60%;
+    text-align: left;
+}
+
+.detail-product p {
+    font-size: 1.1vw;
+}
+
+.pro-price {
+    font-family: 'Inter';
+    font-size: 1.3vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5px;
+    align-items: center;
+    display: flex;
+    margin-left: 3.5vw;
+    color: rgba(203, 14, 14, 0.757);
+}
+
+.img-product {
+    width: 5vw;
+    margin-top: 1vw;
+}
+#note {
+    font-size: 0.9vw;
+    font-weight: 400;
+    color: #656565;
+}
+
+h5 {
+    font-size: 1.2vw;
+    padding: 0.5vw 0;
+}
+
+h3 {
+    font-size: 1.5vw;
+    padding: 0.5vw 0;
+}
+#detail-pay
+{
+    margin: 4vw;
+    margin-top: 2vw; 
+    color: #003459;
+}
+#detail-order p
+{
+    font-size: 1.1vw;
+    margin-right: 1.5vw;
+    margin-bottom: 1.5vw;
 }

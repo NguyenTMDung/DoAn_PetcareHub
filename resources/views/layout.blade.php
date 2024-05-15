@@ -23,7 +23,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="{{('public/frontend/image/logo.png')}}" alt="logo">
+            <a href=""><img src="{{('public/frontend/image/logo.png')}}" alt="logo" ></a>
         </div>
         <form>
             <div id="search-container">
@@ -45,7 +45,7 @@
     <div class="menu">
         <ul class="nav al-center ju-center" style="flex-grow: 3;">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
+                <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
                 <div class="btn btn-secondary dropdown-toggle nav-link"
@@ -89,8 +89,8 @@
         <ul id="sty-user" style="flex-grow: 1;">
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
-                        style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                        style="color: #003459;padding: 2vw;font-size : 1.7vw;"></i></a>
+                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;font-size : 1.7vw;"></i></a>
             </li>
         </ul>
     </div>

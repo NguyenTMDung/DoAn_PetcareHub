@@ -40,6 +40,175 @@
             </a>
         </div>
 
+    </div>{{-- được boss yêu thích --}}
+    <div id="best-seller">
+        <p class="title">Được Boss yêu thích</p>
+        <div class="product-list">
+            <div class="text-center my-3">
+                <div class="row mx-auto my-auto justify-content-center">
+                    <div id="productCarousel1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" role="listbox" style="width: 100%;margin-left: 1vw;">
+                            <div class="carousel-item active">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                179.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 100</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/best_seller2.png" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                45.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 101</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/best_seller3.png" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Quần Áo Mùa Hè 4599 Teddy ins Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                50.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 200</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/best_seller4.png" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Đồ chơi gặm nhai phát ra âm thanh kiểu dáng ngộ nghĩnh dành cho thú cưng</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                20.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 500</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/best_seller5.png" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Thú Cưng Vui Halloween Mũ Mèo Chó Gấu Trúc Gấu Lợn Mũ Đội Đầu</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                69.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 150</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-3">
+                                    <div class="item">
+                                        <a href="">
+                                            <div class="img-products">
+                                                <img src="image/best_seller6.png" alt=""
+                                                    style="width: 15vw;">
+                                            </div>
+                                            <div class="text-truncate-container">
+                                                <p>Xúc Xích Cho Chó Thức Ăn Cho Chó Thú Cưng Mèo Xúc Xích Điều Trị Cho Thú Cưng Chó Ăn Nhẹ</p>
+                                            </div>
+                                            <div class="pro-price">
+                                                3.000 VND
+                                            </div>
+                                            <div class="sales">
+                                                <p>
+                                                    Lượt bán: 
+                                                </p>    
+                                                <p class="number-of-sales"> 1000</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-transparent w-aut" href="#productCarousel1" role="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-transparent w-aut" href="#productCarousel1" role="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="banner">
+        <img src="{{('public/frontend/image/banner3.png')}}" alt="banner" style="border-radius: 10px;border: 10px solid #003459;width:100%">
     </div>
     {{-- sản phẩm mới --}}
     <div id="new-products">
@@ -64,7 +233,10 @@
                                                 20.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 10</p>
+                                                <p>
+                                                Lượt bán: 
+                                                </p>
+                                                <p class="number-of-sales"> 10</p>
                                             </div>
                                         </a>
                                     </div>
@@ -86,7 +258,10 @@
                                                 8.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 5 </p>
+                                            <p>
+                                                Lượt bán: 
+                                            </p> 
+                                            <p class="number-of-sales"> 5 </p>
                                             </div>
                                         </a>
                                     </div>
@@ -107,7 +282,10 @@
                                                 20.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 3</p>
+                                            <p>
+                                                Lượt bán: 
+                                            </p>     
+                                            <p class="number-of-sales"> 3</p>
                                             </div>
                                         </a>
                                     </div>
@@ -128,7 +306,10 @@
                                                 13.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 7</p>
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 7</p>
                                             </div>
                                         </a>
                                     </div>
@@ -149,7 +330,10 @@
                                                 50.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 11</p>
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 11</p>
                                             </div>
                                         </a>
                                     </div>
@@ -170,7 +354,10 @@
                                                 6.000 VND
                                             </div>
                                             <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 17</p>
+                                                <p>
+                                                    Lượt bán: 
+                                                </p> 
+                                                <p class="number-of-sales"> 17</p>
                                             </div>
                                         </a>
                                     </div>
@@ -190,313 +377,7 @@
             </div>
         </div>
     </div>
-    {{-- được boss yêu thích --}}
-    <div id="best-seller">
-        <p class="title">Được Boss yêu thích</p>
-        <div class="product-list">
-            <div class="text-center my-3">
-                <div class="row mx-auto my-auto justify-content-center">
-                    <div id="productCarousel1" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" role="listbox" style="width: 100%;margin-left: 1vw;">
-                            <div class="carousel-item active">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                179.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 100</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/best_seller2.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                45.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 101</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/best_seller3.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Quần Áo Mùa Hè 4599 Teddy ins Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                50.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 200</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/best_seller4.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Đồ chơi gặm nhai phát ra âm thanh kiểu dáng ngộ nghĩnh dành cho thú cưng</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                20.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 500</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/best_seller5.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Thú Cưng Vui Halloween Mũ Mèo Chó Gấu Trúc Gấu Lợn Mũ Đội Đầu</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                69.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 150</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/best_seller6.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Xúc Xích Cho Chó Thức Ăn Cho Chó Thú Cưng Mèo Xúc Xích Điều Trị Cho Thú Cưng Chó Ăn Nhẹ</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                3.000 VND
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 1000</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev bg-transparent w-aut" href="#productCarousel1" role="button"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next bg-transparent w-aut" href="#productCarousel1" role="button"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="banner">
-        <img src="{{('public/frontend/image/banner3.png')}}" alt="banner" style="border-radius: 10px;border: 10px solid #003459;">
-    </div>
-    {{-- khuyến mãi --}}
-    <div id="promotion">
-        <p class="title">Khuyến Mãi</p>
-        <div class="product-list">
-            <div class="text-center my-3">
-                <div class="row mx-auto my-auto justify-content-center">
-                    <div id="productCarousel3" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" role="listbox" style="width: 100%;margin-left: 1vw;">
-                            <div class="carousel-item active">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion1.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Bánh thưởng cho chó Bone Appétit by Sumiho (gói 100gr) bánh snack thưởng ăn vặt cho cún</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">35.000 VND</p>
-                                                <p class="new-price">25.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 99</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion2.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Bánh Thưởng Snack Smartheart Cho Chó 100g</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">30.000 VND</p>
-                                                <p class="new-price">17.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 350</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion3.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Bánh thưởng cho chó mèo (Nhiều vị) 100gr/túi Đồ ăn cho chó mèo thú cưng</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">15.000 VND</p>
-                                                <p class="new-price">12.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 800</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion4.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>KẸO SỮA CANXI cho Chó Mèo Gói 100g Thơm ngon, Bổ sung canxi, dinh dưỡng, tốt cho tiêu hóa Thú Cưng</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">30.000 VND</p>
-                                                <p class="new-price">16.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 450</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion5.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Xương gặm sạch răng bổ sung canxi cho chó YAHO (25gr/cây 7cm) vị bò-gà nướng</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">10.000 VND</p>
-                                                <p class="new-price">5.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 100</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3">
-                                    <div class="item">
-                                        <a href="">
-                                            <div class="img-products">
-                                                <img src="image/promotion6.png" alt=""
-                                                    style="width: 15vw;">
-                                            </div>
-                                            <div class="text-truncate-container">
-                                                <p>Hạt Captain cho chó kén ăn 500g - 2.5kg, trộn bò - cá hồi - phô mai bò</p>
-                                            </div>
-                                            <div class="pro-price">
-                                                <p class="old-price">110.000 VND</p>
-                                                <p class="new-price">79.000 VND</p>
-                                            </div>
-                                            <div class="sales">
-                                                Lượt bán: <p class="number-of-sales"> 100</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev bg-transparent w-aut" href="#productCarousel3" role="button"
-                            data-bs-slide="prev" style="margin-left: -6vw;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next bg-transparent w-aut" href="#productCarousel3" role="button"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     {{-- địa chỉ --}}
     <div id="shop-address">
         <div class="title">

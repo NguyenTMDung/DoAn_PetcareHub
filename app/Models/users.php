@@ -16,6 +16,10 @@ class users extends Model
     {
         parent::boot();
 
+        static::addGlobalScope('admin', function ($builder) {
+            $builder->where('role', '!=', 'customer');
+        });
+
         static::creating(function ($users) {
             if (empty($users->code)) {
                 $users->code = 'EMP' . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);

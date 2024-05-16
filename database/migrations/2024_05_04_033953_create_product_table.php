@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('name')->unique;
-            $table->integer ('typeProduct_id')->references('id')->on('typeProduct')->onDelete('set null');
+            $table->string ('typeProduct_name')->references('name')->on('typeProduct')->onDelete('set null');
             $table->integer('price');
             $table->integer ('discount_price');
             $table->integer ('inventory');

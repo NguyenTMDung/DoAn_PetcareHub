@@ -396,3 +396,7 @@ table p
     color: #FEF6E6;
     font-weight: 600;
 }
+#status h3
+{
+    font-size: 1.7vw;
+}

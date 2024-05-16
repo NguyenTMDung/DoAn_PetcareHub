@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('number_service');
             $table->integer('number_days_send');
             $table->date('appointment_date');
-            $table->time('timeslot');
+            $table->enum('timeslot',['8:00-9:30','9:30-11:00','13:30-14:00','14:00-15:30','15:30-17:00']);
             $table->double('discount');
             $table->enum('discount_type',['tiền mặt','phần trăm']);
             $table->double('total');

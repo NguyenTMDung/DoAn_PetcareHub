@@ -4,24 +4,33 @@
 <div id="container">
     <div style="display: flex; justify-content: space-between; margin-top: 1vw;">
         <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                class="bi bi-plus-square-fill"></i> Thêm danh mục </button>
+                class="bi bi-plus-square-fill"></i> Thêm loại sản phẩm </button>
         <!--------------------------------------------------------------------------->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục sản phẩm</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Thêm loại sản phẩm</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                    <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST">
+                    <form action="{{URL::to('/loai-san-pham')}}" method="POST">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="name" class="col-form-label">Tên danh mục</label>
+                                <label for="name" class="col-form-label">Tên loại</label>
                                 <input type="text" class="form-control" id="name"
-                                    placeholder="Nhập tên danh mục sản phẩm" name="name"></input>
+                                    placeholder="Nhập tên loại sản phẩm" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="col-form-label">Tên danh mục </label>
+                                <select class="form-control" id="category" name="category">
+                                    <option value=""></option>
+                                    @foreach ($cate as $catedata)
+                                        <option value="{{$catedata->name}}">{{$catedata->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -39,18 +48,27 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sửa danh mục</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Sửa loại sản phẩm</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST" id="editForm">
+                <form action="{{URL::to('/loai-san-pham')}}" method="POST" id="editForm">
                     {{ csrf_field() }}
                     {{ method_field('PUT')}}
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Tên danh mục</label>
+                            <label for="name" class="col-form-label">Tên loại sản phẩm</label>
                             <input type="text" class="form-control" id="nameEdit"
                                 placeholder="Nhập tên danh mục" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="col-form-label">Tên danh mục </label>
+                            <select class="form-control" id="categoryEdit" name="category">
+                                <option id="show"></option>
+                                @foreach ($cate as $catedata)
+                                    <option value="{{$catedata->name}}">{{$catedata->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -73,21 +91,24 @@
     ?>
     <table id="myTable">
         <thead>
-            <th style="width:30%;">Mã danh mục</th>
+            <th style="width:20%;">Mã loại</th>
+            <th style="width:30%;">Tên loại sản phẩm</th>
             <th style="width:30%;">Tên danh mục</th>
-            <th style="width:30%;">Thao tác</th>
+            <th style="width:20%;">Thao tác</th>
         </thead>
         <tfoot>
-            <th style="width:30%;">Mã danh mục</th>
+            <th style="width:20%;">Mã loại</th>
+            <th style="width:30%;">Tên loại sản phẩm</th>
             <th style="width:30%;">Tên danh mục</th>
-            <th style="width:30%;">Thao tác</th>
+            <th style="width:20%;">Thao tác</th>
         </tfoot>
         <tbody>
-            @foreach ($cate as $catedata)
+            @foreach ($typ as $typdata)
             <tr>
-                <td style="width:30%;">{{$catedata->id}}</td>
-                <td style="width:30%;">{{$catedata->name}}</td>
-                <td style="width:30%;">
+                <td style="width:20%;">{{$typdata->id}}</td>
+                <td style="width:30%;">{{$typdata->name}}</td>
+                <td style="width:30%;">{{$typdata->category_name}}</td>
+                <td style="width:20%;">
                     <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                         data-bs-target="#editModal" style="background-color:green">
                         <i class="bi bi-pencil-square"></i>
@@ -117,8 +138,9 @@
             var data = table.row($tr).data();
             console.log(data);
             $('#nameEdit').val(data[1]);
+            $('#categoryEdit').val(data[2]);
 
-            $('#editForm').attr('action','/DoAn_PetcareHub/danh-muc-san-pham/' + data[0]);
+            $('#editForm').attr('action','/DoAn_PetcareHub/loai-san-pham/' + data[0]);
             $('#editModal').modal('show');
         });
         table.on('click', '.delete', function(){
@@ -130,7 +152,7 @@
             var data = table.row($tr).data();
             console.log(data);
            
-            $('#deleteForm').attr('action','/DoAn_PetcareHub/danh-muc-san-pham/' + data[0]);
+            $('#deleteForm').attr('action','/DoAn_PetcareHub/loai-san-pham/' + data[0]);
             $('#deleteModal').modal('show');
         });
     })
@@ -141,11 +163,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Xóa danh mục</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa loại sản phẩm</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-            <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST" id="deleteForm">
+            <form action="{{URL::to('/loai-san-pham')}}" method="POST" id="deleteForm">
                 {{ csrf_field() }}
                 {{ method_field('DELETE')}}
                 <div class="modal-body">

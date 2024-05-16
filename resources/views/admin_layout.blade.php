@@ -63,26 +63,26 @@
                 <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-khach-hang')}}" >Khách hàng</a></li>
-                <li class="action"><a href="{{URL::to('c')}}" >Đơn hàng</a></li>
+                <li class="action"><a href="{{URL::to('/quan-ly-don-hang')}}" >Đơn hàng</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>
-                <li class="action"><a href="{{URL::to('e')}}" >Sản phẩm</a>
+                <li class="action"><a href="{{URL::to('/quan-ly-san-pham')}}" >Sản phẩm</a>
                     <ul class="sub-menu" style="width: max-content;">
                         <li><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
-                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Loại sản phẩm</a></li>
-                        <li style="margin-bottom: 0;"><a href="#" style="margin-left: 1vw;padding-bottom: 0;">Sản phẩm</a></li>
+                        <li><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
                     </ul>
                 </li>
-                <li class="action"><a href="{{URL::to('f')}}">Quản lý slider</a></li>
+                <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
                 <li class="action">
-                    <a href="{{URL::to('f')}}">Lịch hẹn</a>
+                    <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('f')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('f')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
+                        <li><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
+                        <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
                                 khung
                                 giờ</a></li>
                     </ul>
                 </li>
-                <li class="action"><a href="{{URL::to('f')}}" >Sign out</a></li>
+                <li class="action"><a href="{{URL::to('/dang-xuat')}}" >Sign out</a></li>
             </ul>
         </div>
 

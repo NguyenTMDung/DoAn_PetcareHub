@@ -1,5 +1,4 @@
-
-    .header {
+.header {
     height: fit-content;
     padding: 2% 3% 0 2%;
     display: flex;
@@ -284,10 +283,6 @@ td {
 }
 
 .pro-price {
-    color: #FF0E0E;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     text-align: left;
     margin: 0.5vw 2vw 2vw 2vw;
@@ -305,7 +300,8 @@ td {
     font-size: 20px;
     font-weight: 700;
     text-decoration-line: none;
-    color: var(--Primary-Color-Dark-Blue, #003459);;
+    color: var(--Primary-Color-Dark-Blue, #003459);
+    ;
 }
 
 #title-header a:hover {
@@ -315,8 +311,8 @@ td {
 #title-header a:active {
     text-decoration-line: underline;
 }
-#frame
-{
+
+#frame {
     width: 90%;
     margin: auto;
     border: 1px solid black;
@@ -325,51 +321,59 @@ td {
     text-align: center;
     margin-bottom: 3vw;
 }
-#frame #title
-{
+
+#frame #title {
     width: 100%;
     background-color: #FCEED5;
     color: #003459;
     border-radius: 10px;
     height: 4vw;
     padding: 1vw;
-    font-size: 24px;
+    font-weight: 700;
 }
+
+#title h3 {
+    font-size: 1.7vw;
+}
+
 input[type=checkbox] {
     position: relative;
-      cursor: pointer;
-      border-radius: 5px;
-      margin:4vw;
-      border: 1px solid white;
-      margin-top: 2vw;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 4vw;
+    border: 1px solid white;
+    margin-top: 2vw;
 }
+
 input[type=checkbox]:before {
     content: "";
     display: block;
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 2vw;
+    height: 2vw;
     top: 0;
     left: 0;
-    background-color:#e9e9e9;
+    background-color: #e9e9e9;
     border-radius: 5px;
 }
+
 input[type=checkbox]:checked:before {
     content: "";
     display: block;
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 2vw;
+    height: 2vw;
     top: 0;
     left: 0;
-    background-color:#003459;
+    background-color: #003459;
     border-radius: 5px;
 }
+
 input[type=checkbox]:checked:after {
     content: "";
     display: block;
-    width: 10px;
-    height: 20px;
+    width: 0.7vw;
+    height: 1.3vw;
     border: solid white;
     border-width: 0 4px 4px 0;
     border-radius: 1px;
@@ -381,32 +385,33 @@ input[type=checkbox]:checked:after {
     top: 2px;
     left: 6px;
 }
-.img-product
-{
+
+.img-product {
     width: 30vw;
 }
+
 .text-truncate-container {
     width: 100%;
     margin: auto;
 }
 
 .text-truncate-container p {
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 18px;
+    font-size: 1.1vw;
     text-align: left;
-    font-weight: 700;
+    font-weight: 600;
 }
-.product
-{
+
+.product {
     display: flex;
     margin-left: 1vw;
     margin-right: 4vw;
 }
-.select-kind
-{
+
+.select-kind {
     display: flex;
     width: 15vw;
     padding: 0.5vw;
@@ -414,74 +419,71 @@ input[type=checkbox]:checked:after {
     border-radius: 5px;
     border: 0.5px solid rgb(202, 202, 202);
 }
-#orders td
-{
+
+#orders td {
     padding: 2vw 0;
 }
+
 .pro-price {
     color: #FF0E0E;
     font-family: 'Inter';
-    font-size: 24px;
+    font-size: 1.3vw;
     font-style: normal;
     font-weight: 500;
     line-height: 5px;
     margin-top: 1vw;
     margin-left: 0;
 }
-.quantitys
-{
+
+.quantitys {
     width: 4vw;
     margin-top: -1vw;
 }
-#title {
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration-line: none;
-    color: var(--Primary-Color-Dark-Blue, #003459);;
-}
-tr
-{
+
+tr {
     width: 100%;
 }
-.delete-pro
-{
+
+.delete-pro {
     padding: 0 2vw;
     background-color: #ffffff;
     border: none;
 }
-.detail-product
-{
+
+.detail-product {
     margin-left: 2vw;
     width: 80%;
 }
-#quantity_title, #quantity_procducts
-{
-    font-size: 20px;
+
+#quantity_title,
+#quantity_procducts {
+    font-size: 1.3vw;
     font-weight: 600;
 }
-#total_title, .total_procducts
-{
-    font-size: 24px;
+
+#total_title,
+.total_procducts {
+    font-size: 1.4vw;
     font-weight: 600;
 }
-.total_procducts
-{
+
+.total_procducts {
     color: #FF0E0E;
 }
-#pay
-{
+
+#pay {
     background-color: #003459;
     color: #FCEED5;
     padding: 0.8vw;
-    font-size: 24px;
+    font-size: 1.5vw;
     font-weight: 700;
     width: 20%;
     border-radius: 30px;
     margin-bottom: 5vw;
     margin-left: 40%;
 }
-.quantitys input[type=number]
-{
+
+.quantitys input[type=number] {
     background-color: white;
     padding: 0;
     margin: 0;
@@ -489,4 +491,8 @@ tr
     text-align: center;
     border: 1px solid rgb(168, 168, 168);
     padding: 5px;
+}
+.delete-pro i
+{
+    font-size: 1.5vw;
 }

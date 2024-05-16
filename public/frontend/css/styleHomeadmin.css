@@ -47,6 +47,7 @@ body {
     margin-left: 9vw;
     margin-top: 0.5vw;
     width: 30%;
+    font-size: 1.4vw;
 }
 
 #account-admin {
@@ -299,11 +300,11 @@ margin-top: 2vw;
 border-radius: 10px;
 padding: 2vw;
 }
-.chartRevenue, .chartOrder .title
+.chartRevenue .title, .chartOrder .title
 {
     font-size: 1.3vw;
 }
-.chartRevenue, .chartOrder p
+.chartRevenue p, .chartOrder p
 {
     font-size: 1.2vw;
 }
@@ -394,4 +395,8 @@ table p
     background-color: #003459;
     color: #FEF6E6;
     font-weight: 600;
+}
+#status h3
+{
+    font-size: 1.7vw;
 }

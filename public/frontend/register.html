@@ -19,6 +19,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <link rel="stylesheet" href="css/styleSignin.css">
 </head>
 
 <body>
@@ -97,8 +98,8 @@
     </div>
     <div id="container">
         <div id="title-header">
-            <a href="#">Đăng Nhập</a>
-            <a href="#">Đăng Kí</a>
+            <a href="#" class="set-active">Đăng Nhập</a>
+            <a href="#" class="set-active">Đăng Kí</a>
         </div>
         <hr style="width: 35%;border: 1px solid rgb(0, 0, 0);margin: auto; margin-top: 1vw;opacity: 1;">
         <div id="infor-customer">
@@ -148,5 +149,16 @@
         </table>
     </div>
 </body>
+<script>
+    const links = document.querySelectorAll('.set-active');
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            links.forEach(otherLink => otherLink.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
 <?php include("css/styleSignin.php"); ?>
+
 </html>

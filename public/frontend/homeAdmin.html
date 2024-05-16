@@ -171,6 +171,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 <script>
@@ -186,7 +187,6 @@
         const todayDate = `${year}-${month}-${day}`;
 
         document.getElementById("current-time").value = todayDate;
-        document.getElementById("current-year").innerHTML = year;
     });
     // Seller
     const dataRevenue = {
@@ -248,37 +248,37 @@
     const dataOrder = {
         labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
         datasets: [
-        {
-            label: 'Lượng khách truy cập mới',
-            data: [14, 1, 10, 20, 15, 9, 22],
-            backgroundColor: [
-                'red'
-            ],
-            borderColor: [
-                'black'
-            ],
-            borderWidth: 3,
-            barPercentage: 0.9,
-            categoryPercentage: 0.5,
-            type :'line',
-        },{
-            label: 'Đơn hàng',
-            data: [17, 12, 6, 9, 12, 3, 9],
-            backgroundColor: [
-                'rgba(255, 26, 104, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 26, 104, 1)'
-            ],
-            borderWidth: 1,
-            barPercentage: 0.9,
-            categoryPercentage: 0.5
-        }]
+            {
+                label: 'Lượng khách truy cập mới',
+                data: [14, 1, 10, 20, 15, 9, 22],
+                backgroundColor: [
+                    'red'
+                ],
+                borderColor: [
+                    'black'
+                ],
+                borderWidth: 3,
+                barPercentage: 0.9,
+                categoryPercentage: 0.5,
+                type: 'line',
+            }, {
+                label: 'Đơn hàng',
+                data: [17, 12, 6, 9, 12, 3, 9],
+                backgroundColor: [
+                    'rgba(255, 26, 104, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 26, 104, 1)'
+                ],
+                borderWidth: 1,
+                barPercentage: 0.9,
+                categoryPercentage: 0.5
+            }]
     };
     // config 
     const config2 = {
         data: dataOrder,
-        type :'bar',
+        type: 'bar',
         options: {
             scales: {
                 y: {
@@ -304,7 +304,7 @@
     const chartVersion = document.getElementById('chartVersion');
     chartVersion.innerText = Chart.version;
     //
-    document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
+    document.getElementById('status').innerHTML = '<h3>Trang chủ</h3>'
 </script>
 
 

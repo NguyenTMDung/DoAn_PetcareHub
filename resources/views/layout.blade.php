@@ -16,6 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
 
 
@@ -23,11 +27,11 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="{{('public/frontend/image/logo.png')}}" alt="logo">
+            <a href=""><img src="{{('public/frontend/image/logo.png')}}" alt="logo" ></a>
         </div>
         <form>
             <div id="search-container">
-                <div type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></div>
+                <button type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></button>
                 <input type="search" name="search" id="input_search" placeholder="Search...">
             </div>
         </form>
@@ -45,7 +49,7 @@
     <div class="menu">
         <ul class="nav al-center ju-center" style="flex-grow: 3;">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
+                <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
                 <div class="btn btn-secondary dropdown-toggle nav-link"
@@ -89,8 +93,8 @@
         <ul id="sty-user" style="flex-grow: 1;">
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
-                        style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                        style="color: #003459;padding: 2vw;font-size : 1.7vw;"></i></a>
+                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;font-size : 1.7vw;"></i></a>
             </li>
         </ul>
     </div>
@@ -100,35 +104,33 @@
 
     </div>
     <div id="footer">
-        <table>
-            <tr>
-                <td id="infor-shop">
-                    <h3>Liên hệ</h3>
-                        CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB. <br>
-                        Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
-                        <br>
-                    <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
-                    <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
-                    <div id="connect_shop">
-                        <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </td>
-                <td style="width: 30%;"> &nbsp;</td>
-                <td id="policy">
-                    <h3>Chính sách khách hàng</h3>
-                    <a href="{{URL::to('/chinh-sach-doi-tra')}}">Chính sách đổi trả.</a><br>
-                    <a href="{{URL::to('/chinh-sach-bao-mat')}}">Chính sách bảo mật.</a><br>
-                    <a href="{{URL::to('/phuong-thuc-thanh-toan')}}">Phương thức thanh toán.</a><br>
-                    <a href="{{URL::to('/chinh-sach-hoan-tien')}}">Chính sách hoàn tiền</a><br>
-                    <p>&nbsp;</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align: center;" class="logo"><img src="{{('public/frontend/image/logo.png')}}" alt="logo"></td>
-            </tr>
-        </table>
+        <div id="footer-body">
+            <div id="infor-shop">
+                <h3>Liên hệ</h3>
+                <p>
+                    CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB.
+                </p>
+                <p>
+                    Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
+                </p>
+                <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
+                <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                <div id="connect_shop">
+                    <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div id="policy">
+                <h3>Chính sách khách hàng</h3>
+                <a href="{{URL::to('/chinh-sach-doi-tra')}}">Chính sách đổi trả.</a><br>
+                <a href="{{URL::to('/chinh-sach-bao-mat')}}">Chính sách bảo mật.</a><br>
+                <a href="{{URL::to('/phuong-thuc-thanh-toan')}}">Phương thức thanh toán.</a><br>
+                <a href="{{URL::to('/chinh-sach-hoan-tien')}}">Chính sách hoàn tiền</a><br>
+                <p>&nbsp;</p>
+            </div>   
+        </div>
+                <div class="logo"><img src="{{('public/frontend/image/logo.png')}}" alt="logo"></div>
     </div>
     <script>
         let items1 = document.querySelectorAll('#productCarousel1 .carousel-item')
@@ -192,6 +194,16 @@
                 const convertedValue = convertToK(originalValue); 
                 elements[i].textContent = convertedValue;
             }
+            const currentUrl = window.location.href;
+            // Lấy danh sách các menu
+            const menuItems = document.querySelectorAll('.nav-item a');
+
+            // Kiểm tra và thêm lớp "active" cho menu đang được truy cập
+            menuItems.forEach(item => {
+                if (item.href === currentUrl) {
+                    item.parentElement.classList.add('active');
+                }
+    });
     </script>
 </body>
 </html>

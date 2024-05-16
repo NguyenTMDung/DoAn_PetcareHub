@@ -279,5 +279,37 @@ table,th,td {
 {
     padding: 1vw 2vw;
 }
-
-
+.admin {
+    width: 80%;
+}
+.detail {
+    display: flex;
+}
+.name {
+    margin-left:1vw ;
+}
+.address {
+    margin-left:1vw ;
+}
+.phone {
+    margin-left:1vw ;
+}
+.total-revenue {
+    margin-left:1vw 
+}
+.total-order {
+    margin-left:1vw 
+}
+.total-service {
+    margin-left:1vw 
+}
+.modal-body h5 {
+    margin-top: 3vw;
+}
+.ending {
+    display: flex;
+}
+.tong {
+    margin-left: 58%;
+}
+.total { margin-left: 10vw; }

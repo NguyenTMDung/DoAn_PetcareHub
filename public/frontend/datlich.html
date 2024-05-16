@@ -162,7 +162,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 style="text-align: center;">Thay đổi thông tin</h4>
+                                    <h4 >Thay đổi thông tin</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -178,10 +178,10 @@
                                         <div>
                                             <p><strong>Ngày đặt lịch</strong></p>
                                             <div class="search-date">
-                                                <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                                <input type="date" class="sbox" >
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="time-slot">
                                             <p><strong>Chọn khung giờ</strong></p>
                                             <select name="time" id="time">
                                                 <option value="ca1">Ca1: 7h - 8h30</option>
@@ -192,11 +192,10 @@
                                                 <option value="ca6">Ca6: 4h - 5h30</option>
                                                 <option value="ca7">Ca7: 5h30 - 7h</option>
                                             </select>
-                                            <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                                            <p class="pls">*Vui lòng đến đúng giờ</p>
                                         </div>
                                     </div>
-                                    <h5 style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong>
-                                    </h5>
+                                    <h5 ><strong>Chọn dịch vụ :</strong></h5>
                                     <div id="body">
                                         <div>
                                             <p><strong>Spa :</strong></p>
@@ -225,12 +224,11 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <h5 style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú
-                                            cưng:</strong></h5>
+                                    <h5 ><strong>Kích thước thú cưng:</strong></h5>
                                     <div id="foot">
-                                        <div>
+                                        <div class="spa">
                                             <p><strong>Spa :</strong></p>
-                                            <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                            <select name="size" id="size" >
                                                 <option value="size1">Dưới 2kg</option>
                                                 <option value="size2">Dưới 5kg</option>
                                                 <option value="size3">Dưới 10kg</option>
@@ -238,10 +236,10 @@
                                                 <option value="size5">Trên 20kg</option>
                                             </select>
                                         </div>
-                                        <div style="display: flex;">
-                                            <div style="margin-right: 2vw;">
+                                        <div class="hotel" >
+                                            <div class="hotel-sz">
                                                 <p><strong>Khách sạn :</strong></p>
-                                                <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                                <select name="sz" id="sz" >
                                                     <option value="sz1">Dưới 10kg</option>
                                                     <option value="sz2">Dưới 20kg</option>
                                                     <option value="sz3">Dưới 40kg</option>
@@ -249,8 +247,7 @@
                                             </div>
                                             <div>
                                                 <p><strong>Chọn số ngày :</strong></p>
-                                                <input style=" width: 10vw; height: 3vw; " type="number" name="quantity" min="1"
-                                                    placeholder="1">
+                                                <input  type="number" name="quantity" min="1" placeholder="1">
                                             </div>
                                         </div>
                                     </div>
@@ -276,19 +273,19 @@
                     </td>
                 </tr>
             </table>
-            <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;width: 97%;margin: auto;">
-            <div style="padding: 1vw;">
+            <hr id="dash">
+            <div class="calender">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="form-add">
                     <i class="bi bi-plus-circle"></i> Thêm lịch
                 </button>
-                <hr style="border: 1px solid rgb(82, 79, 79);opacity: 1;margin: auto;margin: 2vw 0;">
-                <table style="width: 95%;margin: auto;">
+                <hr id="dash1">
+                <table class="board">
                     <tr>
                         <td>
                             <p><strong>Tổng số dịch vụ:</strong></p>
                         </td>
                         <td>
-                            <p><strong style="float: right;">3</strong></p>
+                            <p><strong class="quantity-service">3</strong></p>
                         </td>
                     </tr>
                     <tr>
@@ -296,7 +293,7 @@
                             <p><strong>Tổng tiền:</strong></p>
                         </td>
                         <td>
-                            <p><strong class="total-price" style="float: right;">150000</strong></p>
+                            <p><strong class="total-price" >150000</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -320,7 +317,7 @@
                                 <div>
                                     <p><strong>Ngày đặt lịch</strong></p>
                                     <div class="search-date">
-                                        <input type="date" class="sbox" style="width: 11vw; height: 3vw;">
+                                        <input type="date" class="sbox" >
                                     </div>
                                 </div>
                                 <div>
@@ -334,11 +331,10 @@
                                         <option value="ca6">Ca6: 4h - 5h30</option>
                                         <option value="ca7">Ca7: 5h30 - 7h</option>
                                     </select>
-                                    <p style="font-size: 14px;">*Vui lòng đến đúng giờ</p>
+                                    <p class="pls">*Vui lòng đến đúng giờ</p>
                                 </div>
                             </div>
-                            <h5 style="margin-top: 1vw; text-align: center;"><strong>Chọn dịch vụ :</strong>
-                            </h5>
+                            <h5 ><strong>Chọn dịch vụ :</strong></h5>
                             <div id="body">
                                 <div>
                                     <p><strong>Spa :</strong></p>
@@ -367,12 +363,11 @@
                                     </form>
                                 </div>
                             </div>
-                            <h5 style="margin-top: 1vw; text-align: center;"><strong>Kích thước thú
-                                    cưng:</strong></h5>
+                            <h5 ><strong>Kích thước thú cưng:</strong></h5>
                             <div id="foot">
                                 <div>
                                     <p><strong>Spa :</strong></p>
-                                    <select name="size" id="size" style="width: 10vw; height: 3vw;">
+                                    <select name="size" id="size-spa" >
                                         <option value="size1">Dưới 2kg</option>
                                         <option value="size2">Dưới 5kg</option>
                                         <option value="size3">Dưới 10kg</option>
@@ -380,10 +375,10 @@
                                         <option value="size5">Trên 20kg</option>
                                     </select>
                                 </div>
-                                <div style="display: flex;">
-                                    <div style="margin-right: 2vw;">
+                                <div class="hotel">
+                                    <div class="hotel-sz">
                                         <p><strong>Khách sạn :</strong></p>
-                                        <select name="sz" id="sz" style="width: 10vw; height: 3vw;">
+                                        <select name="sz" id="size-hotel" >
                                             <option value="sz1">Dưới 10kg</option>
                                             <option value="sz2">Dưới 20kg</option>
                                             <option value="sz3">Dưới 40kg</option>
@@ -391,7 +386,7 @@
                                     </div>
                                     <div>
                                         <p><strong>Chọn số ngày :</strong></p>
-                                        <input style=" width: 10vw; height: 3vw; " type="number" name="quantity" min="1"
+                                        <input type="number" name="quantity" min="1"
                                             placeholder="1">
                                     </div>
                                 </div>

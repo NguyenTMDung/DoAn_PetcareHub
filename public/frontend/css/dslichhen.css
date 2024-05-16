@@ -6,7 +6,6 @@
     background-color: #fefefe;
     border-bottom: 1px solid #D9D7D7;
 }
-
 .logo {
     width: 10vw;
     text-align: center;
@@ -213,7 +212,6 @@
     margin: auto;
     width: 100%;
 }
-
 table {
     width: 100%;
     margin: 1vw 1vw;
@@ -223,7 +221,9 @@ table,th,td {
     text-align: center;
     height: 10%;
 }
-
+.admin {
+    width: 80%;
+}
 .add-employee-button {
     background-color: #103559;
     color: #fff;
@@ -309,4 +309,79 @@ tr:nth-child(even) {
 #myTable
 {
     width: 98%;
+}
+#head-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
+.choose {
+    display: flex;
+}
+.choose p {
+    margin-top: 1vw;
+}
+.choose-pet {
+    margin-left: 6vw;
+}
+.choose-service {
+    display: flex;
+}
+.choose-service p {
+    margin-top: 2vw;
+}
+.radio {
+    margin-top: 2vw; 
+    margin-left: 2vw;
+}
+.spa-service {
+    display: flex;
+}
+.spa-service p {
+    margin-left: 2vw;
+}
+.spa-service form {
+    margin-left: 2vw;
+}
+.pet-size {
+    display: flex;
+}
+.pet-size p {
+    margin-left: 2vw; 
+    margin-top: 1vw; 
+}
+.pet-size select {
+    margin-left:2vw; 
+    margin-top: 1vw; 
+}
+.hotel-service {
+    display: flex;
+}
+.hotel-service p {
+    margin-left: 2vw;
+}
+.hotel-service select {
+    margin-left: 2vw;
+}
+.choose-date {
+    display: flex;
+}
+.choose-date p {
+    margin-left: 2vw; 
+    margin-top: 2vw; 
+}
+input[type=number] {
+    margin-left:2vw; 
+    margin-top: 2vw; 
+    width: 10% ;
+}
+.hotel-ser {
+    display: flex;
+    margin-top: 2vw;
+}
+.hotel-ser p {
+    margin-left: 2vw;
+}
+.hotel-ser select {
+    margin-left: 2vw;
 }

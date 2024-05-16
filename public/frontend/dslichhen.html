@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color: #FAFBFC;">
+<body >
     <div class="header">
         <div class="logo">
             <img src="image/logo.png" alt="logo">
@@ -61,14 +61,14 @@
                 <li><a href="">Sign out</a></li>
             </ul>
         </div>
-        <div style="width: 80%;">
+        <div class="admin" >
             <div id="style-link">
                 <a href="" style="margin-right: 1vw;">Lịch hẹn</a>
                 >
                 <a href="" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
             </div>
             <div id="container">
-                <div id="head-container" style="display: flex;justify-content: space-between;padding: 1vw;">
+                <div id="head-container" >
                     <div id="add-time">
                         <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#insertModal"><i
                                 class="bi bi-plus-square-fill" style="margin-right: 1vw;"></i> Thêm lịch
@@ -101,9 +101,9 @@
                                 <div class="search-contain">
                                     <input type="date" class="sbox">
                                 </div>
-                                <div style="display: flex;">
-                                    <div>
-                                        <p style="margin-top: 1vw;"><strong>Chọn khung giờ</strong></p>
+                                <div class="choose">
+                                    <div class="choose-time">
+                                        <p ><strong>Chọn khung giờ</strong></p>
                                         <label for="time">Chọn ca :</label>
                                         <select name="time" id="time">
                                             <option value="ca1">Ca1: 7h - 8h30</option>
@@ -115,8 +115,8 @@
                                             <option value="ca7">Ca7: 5h30 - 7h</option>
                                         </select>
                                     </div>
-                                    <div style="margin-left: 4vw;">
-                                        <p style="margin-top: 1vw;"><strong>Chọn loại thú cưng</strong></p>
+                                    <div class="choose-pet">
+                                        <p ><strong>Chọn loại thú cưng</strong></p>
                                         <label for="pet">Thú cưng :</label>
                                         <select name="pet" id="pet">
                                             <option value="pet1">Chó</option>
@@ -124,9 +124,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div style="display: flex;">
-                                    <p style="margin-top: 2vw;"><strong>Chọn dịch vụ :</strong></p>
-                                    <div class="radio" style="margin-top: 2vw; margin-left: 2vw;">
+                                <div class="choose-service">
+                                    <p ><strong>Chọn dịch vụ :</strong></p>
+                                    <div class="radio" >
                                         <input type="radio" id="radio1" name="group-radio" /><label
                                             for="radio1">Spa</label><br>
                                         <input type="radio" id="radio2" name="group-radio" /><label for="radio2">Khách
@@ -193,9 +193,9 @@
                                         <div class="search-contain">
                                             <input type="date" class="sbox">
                                         </div>
-                                        <div style="display: flex;">
+                                        <div class="choose">
                                             <div>
-                                                <p style="margin-top: 1vw;"><strong>Chọn khung giờ</strong></p>
+                                                <p class="choose-time"><strong>Chọn khung giờ</strong></p>
                                                 <label for="time">Chọn ca :</label>
                                                 <select name="time" id="time">
                                                     <option value="ca1">Ca1: 7h - 8h30</option>
@@ -207,8 +207,8 @@
                                                     <option value="ca7">Ca7: 5h30 - 7h</option>
                                                 </select>
                                             </div>
-                                            <div style="margin-left: 4vw;">
-                                                <p style="margin-top: 1vw;"><strong>Chọn loại thú cưng</strong></p>
+                                            <div class="choose-pet">
+                                                <p><strong>Chọn loại thú cưng</strong></p>
                                                 <label for="pet">Thú cưng :</label>
                                                 <select name="pet" id="pet">
                                                     <option value="pet1">Chó</option>
@@ -216,9 +216,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div style="display: flex;">
-                                            <p style="margin-top: 2vw;"><strong>Chọn dịch vụ :</strong></p>
-                                            <div class="radio" style="margin-top: 2vw; margin-left: 2vw;">
+                                        <div class="choose-service">
+                                            <p ><strong>Chọn dịch vụ :</strong></p>
+                                            <div class="radio" >
                                                 <input type="radio" id="type1" name="group-radio" /><label
                                                     for="type1">Spa</label><br>
                                                 <input type="radio" id="type2" name="group-radio" /><label
@@ -397,18 +397,18 @@
         radio.addEventListener('change', () => {
             if (radio.id === 'radio1' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Dịch vụ Spa :</strong></p>
-                    <form style="margin-left: 2vw;">
+                <div class="spa-service">
+                    <p ><strong>Dịch vụ Spa :</strong></p>
+                    <form >
                         <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
                         <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa trọn gói<br>
                         <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm lông<br>
                         <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn thân<br>
                     </form>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 1vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 1vw; " name="size" id="size">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="size" id="size">
                             <option value="size1">Dưới 2kg</option>
                             <option value="size2">Dưới 5kg</option>
                             <option value="size3">Dưới 10kg</option>
@@ -420,43 +420,43 @@
             }
             else if (radio.id === 'radio2' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Khách sạn :</strong></p>
-                    <select name="hotel" id="hotel" style="margin-left: 2vw;">
+                <div class="hotel-service">
+                    <p ><strong>Khách sạn :</strong></p>
+                    <select name="hotel" id="hotel" >
                         <option value="hotel1">Khách sạn bình thường</option>
                         <option value="hotel2">Khách sạn phòng vip A</option>
                         <option value="hotel3">Khách sạn phòng vip B</option>
                         <option value="hotel4">Khách sạn phòng vip C</option>
                     </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 2vw; " name="sz" id="sz">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="sz" id="sz">
                                 <option value="sz1">Dưới 10kg</option>
                                 <option value="sz2">Dưới 20kg</option>
                                 <option value="sz3">Dưới 40kg</option>
                         </select>
                 </div>
-                <form style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Chọn số ngày :</strong></p>
-                    <input style="margin-left:2vw; margin-top: 2vw; width: 10% " type="number" name="quantity" min="1" placeholder="1">
+                <form class="choose-date">
+                    <p ><strong>Chọn số ngày :</strong></p>
+                    <input  type="number" name="quantity" min="1" placeholder="1">
                 </form>
                 `
             }
             else if (radio.id === 'radio3' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Dịch vụ Spa :</strong></p>
-                    <form style="margin-left: 2vw;">
+                <div class="spa-service">
+                    <p ><strong>Dịch vụ Spa :</strong></p>
+                    <form >
                         <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
                         <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa trọn gói<br>
                         <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm lông<br>
                         <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn thân<br>
                     </form>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 1vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 1vw; " name="size" id="size">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="size" id="size">
                             <option value="size1">Dưới 2kg</option>
                             <option value="size2">Dưới 5kg</option>
                             <option value="size3">Dưới 10kg</option>
@@ -464,26 +464,26 @@
                             <option value="size5">Trên 20kg</option>
                         </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw;"><strong>Khách sạn :</strong></p>
-                    <select name="hotel" id="hotel" style="margin-left:2vw; margin-top: 2vw; ">
+                <div class="hotel-ser">
+                    <p ><strong>Khách sạn :</strong></p>
+                    <select name="hotel" id="hotel" >
                         <option value="hotel1">Khách sạn bình thường</option>
                         <option value="hotel2">Khách sạn phòng vip A</option>
                         <option value="hotel3">Khách sạn phòng vip B</option>
                         <option value="hotel4">Khách sạn phòng vip C</option>
                     </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 2vw; " name="sz" id="sz">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="sz" id="sz">
                                 <option value="sz1">Dưới 10kg</option>
                                 <option value="sz2">Dưới 20kg</option>
                                 <option value="sz3">Dưới 40kg</option>
                         </select>
                 </div>
-                <form style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Chọn số ngày :</strong></p>
-                    <input style="margin-left:2vw; margin-top: 2vw; width: 10% " type="number" name="quantity" min="1" placeholder="1">
+                <form class="choose-date">
+                    <p ><strong>Chọn số ngày :</strong></p>
+                    <input  type="number" name="quantity" min="1" placeholder="1">
                 </form>
                 `
             }
@@ -494,18 +494,18 @@
         radio.addEventListener('change', () => {
             if (radio.id === 'type1' && radio.checked) {
                 document.getElementById('detail-service').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Dịch vụ Spa :</strong></p>
-                    <form style="margin-left: 2vw;">
+                <div class="spa-service">
+                    <p ><strong>Dịch vụ Spa :</strong></p>
+                    <form >
                         <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
                         <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa trọn gói<br>
                         <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm lông<br>
                         <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn thân<br>
                     </form>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 1vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 1vw; " name="size" id="size">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="size" id="size">
                             <option value="size1">Dưới 2kg</option>
                             <option value="size2">Dưới 5kg</option>
                             <option value="size3">Dưới 10kg</option>
@@ -517,43 +517,43 @@
             }
             else if (radio.id === 'type2' && radio.checked) {
                 document.getElementById('detail-service').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Khách sạn :</strong></p>
-                    <select name="hotel" id="hotel" style="margin-left: 2vw;">
+                <div class="hotel-service">
+                    <p ><strong>Khách sạn :</strong></p>
+                    <select name="hotel" id="hotel" >
                         <option value="hotel1">Khách sạn bình thường</option>
                         <option value="hotel2">Khách sạn phòng vip A</option>
                         <option value="hotel3">Khách sạn phòng vip B</option>
                         <option value="hotel4">Khách sạn phòng vip C</option>
                     </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 2vw; " name="sz" id="sz">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="sz" id="sz">
                                 <option value="sz1">Dưới 10kg</option>
                                 <option value="sz2">Dưới 20kg</option>
                                 <option value="sz3">Dưới 40kg</option>
                         </select>
                 </div>
-                <form style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Chọn số ngày :</strong></p>
-                    <input style="margin-left:2vw; margin-top: 2vw; width: 10% " type="number" name="quantity" min="1" placeholder="1">
+                <form class="choose-date">
+                    <p ><strong>Chọn số ngày :</strong></p>
+                    <input  type="number" name="quantity" min="1" placeholder="1">
                 </form>
                 `
             }
             else if (radio.id === 'type3' && radio.checked) {
                 document.getElementById('detail-service').innerHTML = `
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw;"><strong>Dịch vụ Spa :</strong></p>
-                    <form style="margin-left: 2vw;">
+                <div class="spa-service">
+                    <p ><strong>Dịch vụ Spa :</strong></p>
+                    <form >
                         <input type="checkbox" name="spa" value="Spa tắm, vệ sinh">Spa tắm, vệ sinh<br>
                         <input type="checkbox" name="spa" value="Spa, cắt tỉa trọn gói">Spa, cắt tỉa trọn gói<br>
                         <input type="checkbox" name="spa" value="Cắt tỉa, nhuộm lông">Cắt tỉa, nhuộm lông<br>
                         <input type="checkbox" name="spa" value="Cạo lông toàn thân">Cạo lông toàn thân<br>
                     </form>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 1vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 1vw; " name="size" id="size">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="size" id="size">
                             <option value="size1">Dưới 2kg</option>
                             <option value="size2">Dưới 5kg</option>
                             <option value="size3">Dưới 10kg</option>
@@ -561,26 +561,26 @@
                             <option value="size5">Trên 20kg</option>
                         </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw;"><strong>Khách sạn :</strong></p>
-                    <select name="hotel" id="hotel" style="margin-left:2vw; margin-top: 2vw; ">
+                <div class="hotel-ser">
+                    <p ><strong>Khách sạn :</strong></p>
+                    <select name="hotel" id="hotel" >
                         <option value="hotel1">Khách sạn bình thường</option>
                         <option value="hotel2">Khách sạn phòng vip A</option>
                         <option value="hotel3">Khách sạn phòng vip B</option>
                         <option value="hotel4">Khách sạn phòng vip C</option>
                     </select>
                 </div>
-                <div style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Kích thước thú cưng :</strong></p>
-                        <select style="margin-left:2vw; margin-top: 2vw; " name="sz" id="sz">
+                <div class="pet-size">
+                    <p ><strong>Kích thước thú cưng :</strong></p>
+                        <select  name="sz" id="sz">
                                 <option value="sz1">Dưới 10kg</option>
                                 <option value="sz2">Dưới 20kg</option>
                                 <option value="sz3">Dưới 40kg</option>
                         </select>
                 </div>
-                <form style="display: flex;">
-                    <p style="margin-left: 2vw; margin-top: 2vw; "><strong>Chọn số ngày :</strong></p>
-                    <input style="margin-left:2vw; margin-top: 2vw; width: 10% " type="number" name="quantity" min="1" placeholder="1">
+                <form class="choose-date">
+                    <p ><strong>Chọn số ngày :</strong></p>
+                    <input  type="number" name="quantity" min="1" placeholder="1">
                 </form>
                 `
             }

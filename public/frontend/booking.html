@@ -45,9 +45,11 @@
                 <div class="search-contain">
                     <input type="text" class="sbox" placeholder="Số nhà,Đường,Phường/Xã,Quận/Huyện,Tỉnh/Thành phố">
                 </div>
-                <h4 style="margin-top: 2vw;">Thanh toán</h4>
-                <p style="font-size: 15px; font-weight: 400;color: #656565;">* Toàn bộ các giao dịch được bảo mật và mã
+                <div class="transaction">
+                    <h4 >Thanh toán</h4>
+                    <p >* Toàn bộ các giao dịch được bảo mật và mã
                     hóa.</p>
+                </div>
                 <div id="pay" onclick="choose(this)">
                     <div class="options pay" onclick="bg">
                         <input type="radio" id="cash" name="method" value="1">
@@ -73,33 +75,34 @@
             <h3>Lịch hẹn</h3>
             <div class="product" >
                 <div class="detail-product">
-                    <div style="display: flex;">
+                    <div class="column">
                         <p><strong>Mã lịch:</strong></p>
-                        <p class="classify" style="margin-left:2vw ;">A0002</p>
+                        <p class="classify">A0002</p>
                     </div>
-                    <div style="display: flex;">
+                    <div class="column">
                         <p><strong>Số lượng dịch vụ:</strong></p>
-                        <p class="quantity" style="margin-left:2vw;">1</p>
+                        <p class="quantity">1</p>
                     </div>
                 </div>
-                <div class="total-price" style="margin-top: 2vw;">
+                <div class="total-price" >
                     150000
                 </div>
             </div>
-            <hr style="border: 1px solid #656565;width: 100%;margin: auto;margin-bottom: 1vw;">
-            <div style="margin-top: 2vw; color: #003459;">
-                <div style="display: flex;">
-                    <h5 style="width: 75%;">Số lượng dịch vụ:</h5>
-                    <h5 id="quantity" style="text-align: end;width:25% ;">1</h5>
+            <hr>
+            <div class="bill" >
+                <div class="column">
+                    <h5 class="column1">Số lượng dịch vụ:</h5>
+                    <h5 id="quantity" >1</h5>
                 </div>
-                <div style="display: flex;">
-                    <h3 style="width: 75%;">Tổng tiền:</h3>
-                    <h3 class="pro-price" style="text-align: end;width:25%  ;">150000</h3>
+                <div class="column">
+                    <h3 class="column1">Tổng tiền:</h3>
+                    <h3 class="pro-price" >150000</h3>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 <script>
     function choose(a) {
         a.querySelectorAll('input[type=radio]').forEach(radio => {

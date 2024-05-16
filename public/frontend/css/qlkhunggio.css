@@ -304,10 +304,36 @@ tr:nth-child(even) {
 #style-link a:hover {
     text-decoration-line: underline;
 }
-#myTable
-{
-    width: 98%;
-}
+#myTable { width: 98%; }
 .modal-body {
     margin-left: 3vw;
+}
+.admin { width: 80%; }
+.time {
+    display: flex;
+    margin-top: 1vw;
+}
+.time p {
+    margin-top: 8px;
+}
+.choose-time p {
+    margin-top: 8px;
+}
+.calendar {
+    display: flex;
+}
+.quantity {
+    display: flex;
+}
+.quantity p {
+    margin-top: 2vw; 
+}
+#time { margin-left: 2vw; }
+input[type=number] {
+    margin-left:2vw; 
+    margin-top: 2vw; 
+    width: 15% 
+}
+.spa-service {
+    display: flex;
 }

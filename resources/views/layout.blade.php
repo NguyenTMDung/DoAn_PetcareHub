@@ -46,59 +46,66 @@
             </div>
         </div>
     </div>
-    <div class="menu">
-        <ul class="nav al-center ju-center" style="flex-grow: 3;">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="btn btn-secondary dropdown-toggle nav-link"
-                    aria-expanded="false" style="background-color: #FCEED5; border: none;color: #003459;">
-                    <a href="{{URL::to('/san-pham')}}">Sản Phẩm</a>
-                </div>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Chó</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Thức ăn</a></li>
-                            <li><a href="#">Đồ dùng thú cưng</a></li>
-                            <li><a href="#">Thời trang</a></li>
-                            <li><a href="#">Sản Phẩm làm đẹp</a></li>
+    <div class="menu" style="display: flex;justify-content: space-between;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 0;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sản Phẩm
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Thức ăn</a></li>
+                                    <li><a href="#">Đồ dùng thú cưng</a></li>
+                                    <li><a href="#">Thời trang</a></li>
+                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
+                                <ul class="sub-menu" style="margin-top: 2.7vw;">
+                                    <li><a href="#">Thức ăn</a></li>
+                                    <li><a href="#">Đồ dùng thú cưng</a></li>
+                                    <li><a href="#">Thời trang</a></li>
+                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li><a class="dropdown-item" href="#">Mèo</a>
-                        <ul class="sub-menu" style="margin-top: 26%;">
-                            <li><a href="#">Thức ăn</a></li>
-                            <li><a href="#">Đồ dùng thú cưng</a></li>
-                            <li><a href="#">Thời trang</a></li>
-                            <li><a href="#">Sản Phẩm làm đẹp</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dịch vụ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#" style="padding: 0;">Dịch vụ Spa</a></li>
+                            <li><a class="dropdown-item" href="#" style="padding: 0;">Dịch vụ khách sạn</a></li>
                         </ul>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="">Giới thiệu</a>
+                    </li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="btn btn-secondary dropdown-toggle nav-link"
-                    aria-expanded="false" style="background-color: #FCEED5; border: none;color: #003459;">
-                    <a href="{{URL::to('/dich-vu-khach-san')}}">Dịch Vụ</a>
-                </div>
-                <ul class="dropdown-menu" style="width: 200px;">
-                    <li><a class="dropdown-item" href="#">Dịch vụ Spa</a></li>
-                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}">Dịch vụ khách sạn</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Giới Thiệu</a>
-            </li>
-        </ul>
-        <ul id="sty-user" style="flex-grow: 1;">
+            </div>
+        </nav>
+        <div id="sty-user" style="flex-grow: 1;">
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
-                        style="color: #003459;padding: 2vw;font-size : 1.7vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;font-size : 1.7vw;"></i></a>
+                        style="color: #003459;padding: 2vw;"></i></a>
+                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
             </li>
-        </ul>
+        </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-top: 0;">
 
         @yield('content')
 

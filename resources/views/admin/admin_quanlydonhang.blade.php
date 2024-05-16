@@ -4,12 +4,12 @@
 <div id="container" >
     <div >
         <!--------------------------------------------------------------------------->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        {{-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sửa khách hàng</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Xem đơn hàng</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -39,49 +39,52 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
         <!------------------------------------------------------------------------------->
     </div>
-    <br>
-    <?php
-        $message = Session::get('message');
-        if($message){
-            echo '<p class="text-alert" style="color:green; text-align:right; margin-right: 2vw"><i>'. $message.'</i></p>';
-            Session::put('message',null);
-        }
-    ?>
+    
     <table id="myTable">
         <thead>
             <tr class="head">
-                <th style="width:5%;">Id</th>
-                <th style="width:10%;">Mã KH</th>
-                <th style="width:20%;">Tên </th>
-                <th style="width:25%;">Email</th>
-                <th style="width:10%;">SĐT</th>
-                <th style="width:15%;">Tổng chi</th>
+                <th style="width:10%;">Mã đơn hàng</th>
+                <th style="width:10%;">Mã khách hàng</th>
+                <th style="width:10%;">Ngày đặt </th>
+                <th style="width:10%;">Tổng tiền</th>
+                <th style="width:20%;">Cập nhật</th>
+                <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th style="width:5%;">Id</th>
-                <th style="width:10%;">Mã KH</th>
-                <th style="width:20%;">Tên </th>
-                <th style="width:25%;">Email</th>
-                <th style="width:10%;">SĐT</th>
-                <th style="width:10%;">Tổng chi</th>
+                <th style="width:10%;">Mã đơn hàng</th>
+                <th style="width:10%;">Mã khách hàng</th>
+                <th style="width:10%;">Ngày đặt </th>
+                <th style="width:10%;">Tổng tiền</th>
+                <th style="width:20%;">Cập nhật</th>
+                <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
         </thfoot>
         <tbody>
-            @foreach ($cus as $cusdata)
             <tr>
-                <td style="width:5%;">{{$cusdata->id}}</td>
-                <td style="width:10%;">{{$cusdata->code}}</td>
-                <td style="width:20%;">{{$cusdata->name}}</td>
-                <td style="width:25%;">{{$cusdata->email}}</td>
-                <td style="width:10%;">{{$cusdata->phone}}</td>
-                <td style="width:10%;">{{$cusdata->total}}</td>
+                <td style="width:10%;">DH01</td>
+                <td style="width:10%;">KH01</td>
+                <td style="width:10%;">11/02/2024</td>
+                <td style="width:10%;">1000000</td>
+                <td style="width:20%;">
+                    <button class="confirm">
+                        <i class="fas fa-check-circle"
+                            style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
+                        <p>Xác nhận</p>
+                    </button>
+                    <button class="cancel">
+                        <i class="fas fa-times-circle"
+                            style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
+                        <p>Hủy</p>
+                    </button>
+                </td>
+                <td style="width:20%;">Chờ xác nhận</td>
                 <td style="width:20%;">
                     <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                         data-bs-target="#editModal" style="background-color:green">
@@ -91,7 +94,33 @@
                     data-bs-target="#deleteModal"><i class="bi bi-trash"></i></button>
                 </td>
             </tr>
-            @endforeach
+            <tr>
+                <td style="width:10%;">DH01</td>
+                <td style="width:10%;">KH01</td>
+                <td style="width:10%;">11/02/2024</td>
+                <td style="width:10%;">1000000</td>
+                <td style="width:20%;">
+                    <button class="confirm">
+                        <i class="fas fa-check-circle"
+                            style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
+                        <p>Xác nhận</p>
+                    </button>
+                    <button class="cancel">
+                        <i class="fas fa-times-circle"
+                            style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
+                        <p>Hủy</p>
+                    </button>
+                </td>
+                <td style="width:20%;">Chờ xác nhận</td>
+                <td style="width:20%;">
+                    <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
+                        data-bs-target="#editModal" style="background-color:green">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-block btn-danger delete" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"><i class="bi bi-trash"></i></button>
+                </td>
+            </tr>
         </tbody>
     </table>
 

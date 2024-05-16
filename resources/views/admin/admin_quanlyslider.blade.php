@@ -4,24 +4,28 @@
 <div id="container">
     <div style="display: flex; justify-content: space-between; margin-top: 1vw;">
         <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                class="bi bi-plus-square-fill"></i> Thêm danh mục </button>
+                class="bi bi-plus-square-fill"></i> Thêm slider </button>
         <!--------------------------------------------------------------------------->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục sản phẩm</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Thêm slider</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                    <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST">
+                    <form action="{{URL::to('/quan-ly-slider')}}" method="POST">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="name" class="col-form-label">Tên danh mục</label>
-                                <input type="text" class="form-control" id="name"
-                                    placeholder="Nhập tên danh mục sản phẩm" name="name"></input>
+                                <label for="image" class="col-form-label">Hình ảnh</label>
+                                <input type="file" class="form-control" id="image" name="image"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Vị trí</label>
+                                <input type="text" class="form-control" id="place"
+                                    placeholder="Nhập vị trí slider" name="place"></input>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -34,32 +38,6 @@
             </div>
         </div>
             <!--------------------------------------------------------------------------->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Sửa danh mục</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST" id="editForm">
-                    {{ csrf_field() }}
-                    {{ method_field('PUT')}}
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Tên danh mục</label>
-                            <input type="text" class="form-control" id="nameEdit"
-                                placeholder="Nhập tên danh mục" name="name"></input>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                    </div>
-                </form>
-            </div>
-        </div>
         <!------------------------------------------------------------------------------->
         
     </div>
@@ -73,21 +51,31 @@
     ?>
     <table id="myTable">
         <thead>
-            <th style="width:30%;">Mã danh mục</th>
-            <th style="width:30%;">Tên danh mục</th>
-            <th style="width:30%;">Thao tác</th>
+            <tr class="head">
+                <th style="width:5%;">ID</th>
+                <th style="width:35%;">Hình ảnh</th>
+                <th style="width:25%;">Vị trí</th>
+                <th style="width:20%;">Ngày tạo</th>
+                <th style="width:15%;">Chi tiết</th>
+            </tr>
         </thead>
         <tfoot>
-            <th style="width:30%;">Mã danh mục</th>
-            <th style="width:30%;">Tên danh mục</th>
-            <th style="width:30%;">Thao tác</th>
-        </tfoot>
-        <tbody>
-            @foreach ($cate as $catedata)
             <tr>
-                <td style="width:30%;">{{$catedata->id}}</td>
-                <td style="width:30%;">{{$catedata->name}}</td>
-                <td style="width:30%;">
+                <th style="width:5%;">ID</th>
+                <th style="width:35%;">Hình ảnh</th>
+                <th style="width:25%;">Vị trí</th>
+                <th style="width:20%;">Ngày tạo</th>
+                <th style="width:15%;">Chi tiết</th>
+            </tr>
+        </thfoot>
+        <tbody>
+            @foreach ($sli as $slidata)
+            <tr>
+                <td style="width:5%;">{{$slidata->id}}</td>
+                <td style="width:35%;">{{$slidata->image}}</td>
+                <td style="width:25%;">{{$slidata->place}}</td>
+                <td style="width:10%;">{{$slidata->created_at->format('d-m-Y')}}</td>
+                <td style="width:15%;">
                     <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                         data-bs-target="#editModal" style="background-color:green">
                         <i class="bi bi-pencil-square"></i>
@@ -103,6 +91,7 @@
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.min.js"></script>
 
+
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -116,9 +105,10 @@
 
             var data = table.row($tr).data();
             console.log(data);
-            $('#nameEdit').val(data[1]);
+            $('#imageEdit').val(''); //Không có dữ liệu tệp hình ảnh nên nếu sửa vị trí thì không lưu được
+            $('#placeEdit').val(data[2]);
 
-            $('#editForm').attr('action','/DoAn_PetcareHub/danh-muc-san-pham/' + data[0]);
+            $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-slider/' + data[0]);
             $('#editModal').modal('show');
         });
         table.on('click', '.delete', function(){
@@ -130,22 +120,52 @@
             var data = table.row($tr).data();
             console.log(data);
            
-            $('#deleteForm').attr('action','/DoAn_PetcareHub/danh-muc-san-pham/' + data[0]);
+            $('#deleteForm').attr('action','/DoAn_PetcareHub/quan-ly-slider/' + data[0]);
             $('#deleteModal').modal('show');
         });
     })
 
 </script>
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sửa slider</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+        <form action="{{URL::to('/quan-ly-slider')}}" method="POST" id="editForm">
+            {{ csrf_field() }}
+            {{ method_field('PUT')}}
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="image" class="col-form-label">Hình ảnh</label>
+                    <input type="file" class="form-control" id="imageEdit" name="image"></input>
+                </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Vị trí</label>
+                    <input type="text" class="form-control" id="placeEdit"
+                        placeholder="Nhập vị trí slider" name="place"></input>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+    </div>
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Xóa danh mục</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa nhân viên</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-            <form action="{{URL::to('/danh-muc-san-pham')}}" method="POST" id="deleteForm">
+            <form action="{{URL::to('/quan-ly-slider')}}" method="POST" id="deleteForm">
                 {{ csrf_field() }}
                 {{ method_field('DELETE')}}
                 <div class="modal-body">

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('typeProduct', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->string('name');
-            $table->integer('category_id')->references('id')->on('category')->onDelete('set null');
+            $table->string('name')-> unique;
+            $table->string('category_name')->references('name')->on('category')->onDelete('set null');
             $table->timestamps();
         });
     }

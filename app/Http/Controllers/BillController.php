@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class BillController extends Controller
 {
     public function index(){
-        return view('admin.admin_quanlydonhang');
+        return view('admin.admin_quanlyhoadon');
     }
 }

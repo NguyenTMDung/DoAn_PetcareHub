@@ -100,14 +100,13 @@
         </div>
         <!------------------------------------------------------------------------------->
         
-    <!------------------------------------------------------------------------------->
 
     </div>
     <br>
     <?php
         $message = Session::get('message');
         if($message){
-            echo '<p class="text-alert" style="color:green; text-align:right"><i>'. $message.'</i></p>';
+            echo '<p class="text-alert" style="color:green; text-align:right; margin-right: 2vw"><i>'. $message.'</i></p>';
             Session::put('message',null);
         }
     ?>

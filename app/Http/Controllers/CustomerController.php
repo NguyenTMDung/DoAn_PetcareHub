@@ -13,7 +13,7 @@ class CustomerController extends Controller
     use ValidatesRequests;
     public function index()
     {
-        $cus = customer::where('role', 'customer')->get();
+        $cus = customer::all();
         return view('admin.admin_quanlykhachhang')->with('cus', $cus);
     }
 

@@ -86,12 +86,12 @@
                             Dịch vụ
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Dịch vụ Spa</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}" style="padding: 0;">Dịch vụ Spa</a></li>
                             <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}" style="padding: 0;">Dịch vụ khách sạn</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Giới thiệu</a>
+                        <a class="nav-link" aria-current="page" href="{{URL::to('/gioi-thieu')}}">Giới thiệu</a>
                     </li>
                 </ul>
             </li>
@@ -102,7 +102,7 @@
                 </div>
                 <ul class="dropdown-menu" style="width: 200px;">
                     <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}">Dịch vụ Spa</a></li>
-                    <li><a class="dropdown-item" href="#">Dịch vụ khách sạn</a></li>
+                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}">Dịch vụ khách sạn</a></li>
                 </ul>
             </li>
             <li class="nav-item">

@@ -361,7 +361,7 @@ img {
     border: 1px solid grey;
 }
 .contain1 p {
-    font-size: 1.2vw;
+    font-size: 1.05vw;
 }
 .info-img {
     display: flex;
@@ -418,13 +418,17 @@ img {
     width: 100%;
 }
 .conner p {
-    font-size: 1.2vw;
+    font-size: 1.05vw;
 }
 .chitiet .column
 {
     margin-bottom: 0;
 }
 .comn  p
+{
+    font-size: 1.05vw;
+}
+.comn  h4
 {
     font-size: 1.2vw;
 }
@@ -473,7 +477,7 @@ input[type=submit] {
 .pro-price {
     color: #FF0E0E;
     font-family: 'Inter';
-    font-size: 1.2em;
+    font-size: 1.2vw;
     font-style: normal;
     font-weight: 600;
     line-height: 5px;
@@ -489,7 +493,6 @@ input[type=submit] {
 
 .sales {
     text-align: end;
-    margin: 1.5vw 0;
     display: flex;
     font-size: 1.2vw;
     justify-content: end;
@@ -504,7 +507,7 @@ input[type=submit] {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 1.3vw;
+    font-size: 1.15vw;
     text-align: left;
     font-weight: 500;
 }
@@ -548,11 +551,11 @@ review-section p {
 }
 .panel-group a
 {
-    font-size: 1.2vw;;
+    font-size: 1.05vw;;
 }
 .panel-group p
 {
-    font-size: 1.1vw;
+    font-size: 1.05vw;
 }
 .anh p
 {
@@ -564,4 +567,12 @@ body h4
 }
 .note {
     margin-top: 1vw;
+}
+.sales p
+{
+    font-size: 1vw;
+}
+.collapse, .navbar-collapse {
+    margin-left: 0; 
+    margin-right: 0;
 }

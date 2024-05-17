@@ -312,12 +312,6 @@ td {
     background-color: white;
     width: 9vw;
 }
-@media all and (min-width: 768px) {
-    .container
-    {
-        margin-top: 90vw;
-    }
-}
 .collapse, .navbar-collapse
 {
     margin-left: 12vw;
@@ -673,4 +667,10 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     font-size: 1vw;
     text-align: left;
     font-weight: 500;
+}
+.map iframe
+{
+    width: 100%;
+    height: 30vw;
+    margin-bottom: 5vw;
 }

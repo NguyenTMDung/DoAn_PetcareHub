@@ -95,21 +95,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <div class="btn btn-secondary dropdown-toggle nav-link"
-                    aria-expanded="false" style="background-color: #FCEED5; border: none;color: #003459;">
-                    <a href="">Dịch Vụ</a>
-                </div>
-                <ul class="dropdown-menu" style="width: 200px;">
-                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}">Dịch vụ Spa</a></li>
-                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}">Dịch vụ khách sạn</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL::to('/gioi-thieu')}}">Giới Thiệu</a>
-            </li>
         </ul>
-        <ul id="sty-user" style="flex-grow: 1;">
+        </div>
+        </nav>
+        <div id="sty-user" style="flex-grow: 1;">
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
                         style="color: #003459;padding: 2vw;"></i></a>
@@ -117,7 +106,7 @@
             </li>
         </div>
     </div>
-    <div class="container" style="margin-top: 0;">
+    <div class="container" >
 
         @yield('content')
     </div>

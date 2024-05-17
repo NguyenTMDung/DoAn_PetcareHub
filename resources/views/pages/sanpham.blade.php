@@ -1,13 +1,24 @@
-@extends('layout_poster')
+@extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/sanpham.css')}}">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="container">
-    <div class="row">
-        <div class="Sanpham-left">
-            <form action="" class="tieu_de_loc">
+    <div class="link-pickeat">
+        <a href="" class="text-link">Sản Phẩm</a>
+    </div>
+    div
+    <div class="poster">
+        <img src="{{asset('public/frontend/image/poster.png')}}" alt="poster">
+    </div>
+    <div>
+        <br>
+        <br>
+        <h3 style="color: #024c81;text-align: center;"> <b>SẢN PHẨM </b></h3>
+    </div>
+    <br>
+    <div id="container-body">
+        <div class="row">
+
+            <form action="" class="tieu_de_loc"> <br>
                 <b>Kích Thước</b><br />
 
                 <input type="checkbox" id="size_nho" name="size1" value="Nhỏ" />
@@ -15,16 +26,14 @@
                 <input type="checkbox" id="size_lon" name="size2" value="Trưởng thành" />
                 <label for="Kích thước">Trưởng thành</label><br />
             </form>
-            <form class="tieu_de_loc">
+            <form class="tieu_de_loc"> <br>
                 <b> Phân loại</b> <br />
                 <input type="checkbox" id="phan_loai_cho" name="Chó" value="Chó" />
                 <label for="phân loại">Chó</label><br />
                 <input type="checkbox" id="phan_loai_meo" name="Mèo" value="Mèo" />
                 <label for="phân loại">Mèo</label><br />
-                <input type="checkbox" id="phan_loai_khac" name="Khác" value="Khác" />
-                <label for="phân loại">Khác</label><br />
             </form>
-            <form class="tieu_de_loc">
+            <form class="tieu_de_loc"> <br>
                 <b>Giá</b><br />
 
                 <td>
@@ -32,12 +41,12 @@
                         step="10000" value="Từ" />
                 </td>
                 <td>
-                    <input type="number" id="quanlity_den" name="quanlity" placeholder="Đến" min="0"
-                        max="1000000" step="100000" value="Đến" />
+                    <input type="number" id="quanlity_den" name="quanlity" placeholder="Đến" min="0" max="1000000"
+                        step="100000" value="Đến" />
                 </td>
             </form>
 
-            <form class="tieu_de_loc">
+            <form class="tieu_de_loc"> <br>
                 <b>Sắp xếp theo</b><br />
 
                 <input type="checkbox" id="sap_xep_theo_mac_dinh" name="Mặc định" value="Mặc định" />
@@ -51,222 +60,281 @@
                 <input type="checkbox" id="sap_xep_theo_tang_dan" name="tăng dần" value="tăng dần" />
                 <label for="sắp xếp theo">Tăng dần</label><br />
             </form>
+            <button id="loc">Lọc</button>
         </div>
-    </div>
-    <div class="container-item">
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="{{asset('public/frontend/image/chailong.jpg')}}" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+        <!-------------------------------------------------------------------------sản phẩm-------------------------------------------------------------------->
+        <div class="container-item">
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number_of_sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="{{asset('public/frontend/image/chailong.jpg')}}" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number_of_sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="{{asset('public/frontend/image/chailong.jpg')}}" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
-            </div>
-        </div>
 
-        <div class="item ">
-            <a href="">
-                <div>
-                    <img src="image/chailong.jpg" alt="">
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <div class="pro-price">
-                30.000 VNĐ
+                </a>
             </div>
-            <div style="display: flex;">
-                <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating">★★★★★</p>
-                <p class="number-of-sales">Lượt bán:88</p>
+
+            <div class="item ">
+                <a href="">
+                    <div>
+                        <img src="image/chailong.jpg" alt="">
+                        <div class="text-truncate-container">
+                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                        </div>
+                        <div class="pro-price">
+                            30.000 VNĐ
+                        </div>
+                        <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;">
+                                <p class="star-rating" style="color: #000;">5</p>
+                                <p class="star-rating">★★★★★</p>
+                            </div>
+                            <p class="number-of-sales">Lượt bán: 88</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TrangphuController;
 use App\Http\Controllers\QLNVController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\CustomerController;

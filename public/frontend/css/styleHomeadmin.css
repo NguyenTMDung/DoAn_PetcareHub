@@ -231,8 +231,9 @@ body {
 #ratio-4,
 #ratio-5 {
     text-align: center;
-    width: 40px;
-    border-radius: 10px;
+    border-radius: 3vw;
+    width: 3vw;
+    font-size: 1vw;
 }
 
 #ratio-1 {
@@ -342,7 +343,7 @@ padding: 2vw;
 }
 table p
 {
-    font-size: 15px;
+    font-size: 1.2vw;
     text-align: left;
 }
 #close
@@ -381,11 +382,6 @@ table p
 {
     width: 100%;
     margin-top: -1vw;
-}
-table p
-{
-    font-size: 15px;
-    text-align: left;
 }
 #close
 {

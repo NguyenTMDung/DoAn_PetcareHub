@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/gioithieu.css')}}">
         <h4 class="nen"><b>PET CARE HUB</b></h4>
         <p><b>Về Pet Care Hub</b></p>
         <p><strog>Chào mừng đến với PetCareHub!</strog></p>

@@ -202,13 +202,19 @@ tr:nth-child(even) {
 .dt-search label
 {
     margin-right: 1vw;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-weight: 600;
     color: #103559;
+}
+.dt-search input
+{
+    font-size: 1.1vw;
 }
 .dt-length
 {
     display: flex;
+    width: 30vw;
+    color: #667479;
 }
 .form-select ,.form-select-sm
 {
@@ -219,23 +225,27 @@ tr:nth-child(even) {
 {
     width: 20vw;
 }
-.dt-length
-{
-    color: #667479;
-}
 thead .dt-column-title
 {
-    font-size: 19px;
+    font-size: 1.3vw;
     font-weight: 600;
     color: black;
 }
+tfoot .dt-column-title
+{
+    font-size: 1vw;
+}
 tbody td
 {
-    font-size: 18px;
+    font-size: 1.25vw;
 }
 .pagination
 {
     margin-left: 6vw;
+}
+.pagination a
+{
+    font-size: 1.2vw;
 }
 .active>.page-link, .page-link.active
 {
@@ -249,4 +259,13 @@ tbody td
 #myTable_info
 {
     visibility: hidden;
+}
+.dt-length label
+{
+    font-size: 1vw;
+    margin-top: 0.4vw;
+}
+.dt-length select
+{
+    font-size: 1vw;
 }

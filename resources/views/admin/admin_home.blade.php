@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
 <div id="part-1">
                     <div id="statistic">
                         <div id="date">

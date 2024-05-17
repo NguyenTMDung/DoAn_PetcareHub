@@ -22,7 +22,7 @@
             phthalates và thuốc nhuộm hóa học, đảm bảo an toàn cho sức khỏe của thú cưng.</p>
     </div>
     <div class="form-column2">
-        <img src="image/grooming1.webp">
+        <img src="{{asset('public/frontend/image/grooming1.webp')}}">
     </div>
 </div>
 <br><br><br>
@@ -52,7 +52,7 @@
 
 <div class="form-container">
     <div class="form-column1">
-        <img src="image/grooming3.webp">
+        <img src="{{asset('public/frontend/image/grooming3.webp')}}">
     </div>
     <div class="form-column2">
         <h4><strong>⚠️ TẠI SAO NÊN CẮT TỈA LÔNG CHO CHÓ MÈO TẠI PET MART?</strong></h4>
@@ -80,27 +80,27 @@
         tế dựa theo hiện trạng kích cỡ, trọng lượng và nhu cầu phát sinh thêm của khách hàng.</p>
     <div class="info-img">
         <div class="anh">
-            <img src="image/2kg.webp">
+            <img src="{{asset('public/frontend/image/2kg.webp')}}">
             <p>Thú cưng có trọng lượng dưới 2kg</p>
             <b class="mau">250k</b>
         </div>
         <div class="anh">
-            <img src="image/5kg.jpg">
+            <img src="{{asset('public/frontend/image/5kg.jpg')}}">
             <p>Thú cưng có trọng lượng dưới 5kg</p>
             <b class="mau">350k</b>
         </div>
         <div class="anh">
-            <img src="image/10kg.jpg">
+            <img src="{{asset('public/frontend/image/10kg.jpg')}}">
             <p>Thú cưng có trọng lượng dưới 10kg</p>
             <b class="mau">400k</b>
         </div>
         <div class="anh">
-            <img src="image/d2okh.webp">
+            <img src="{{asset('public/frontend/image/d2okh.webp')}}">
             <p>Thú cưng có trọng lượng dưới 20kg</p>
             <b class="mau">650k</b>
         </div>
         <div class="anh">
-            <img src="image/20kg.jpg">
+            <img src="{{asset('public/frontend/image/20kg.jpg')}}">
             <p>Thú cưng có trọng lượng trên 20kg</p>
             <b class="mau">800k</b>
         </div>
@@ -193,7 +193,7 @@
                 tôi!</strong></p>
     </div>
     <div class="form-column2">
-        <img src="image/grooming2.webp">
+        <img src="{{asset('public/frontend/image/grooming2.webp')}}">
     </div>
 </div>
 <br><br><br>
@@ -358,7 +358,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="image/sp1.jpg" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
                 </div>
                 <div class="text-truncate-container">
                     <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
@@ -375,7 +375,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="image/sp2.jpg" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
                 </div>
                 <div class="text-truncate-container">
                     <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
@@ -392,7 +392,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="image/sp3.jpg" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
                 </div>
                 <div class="text-truncate-container">
                     <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
@@ -409,7 +409,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="image/sp5.jpg" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
                 </div>
                 <div class="text-truncate-container">
                     <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>

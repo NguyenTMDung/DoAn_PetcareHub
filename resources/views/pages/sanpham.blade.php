@@ -1,11 +1,6 @@
 @extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/sanpham.css')}}">
-<div class="container">
-    <div class="link-pickeat">
-        <a href="" class="text-link">Sản Phẩm</a>
-    </div>
-    div
     <div class="poster">
         <img src="{{asset('public/frontend/image/poster.png')}}" alt="poster">
     </div>
@@ -338,5 +333,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

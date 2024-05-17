@@ -76,7 +76,7 @@
                     <a href="">Dịch Vụ</a>
                 </div>
                 <ul class="dropdown-menu" style="width: 200px;">
-                    <li><a class="dropdown-item" href="#">Dịch vụ Spa</a></li>
+                    <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}">Dịch vụ Spa</a></li>
                     <li><a class="dropdown-item" href="#">Dịch vụ khách sạn</a></li>
                 </ul>
             </li>

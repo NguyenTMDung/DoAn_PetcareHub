@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GioithieuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QLNVController;
 use App\Http\Controllers\CategoryProductController;
@@ -13,6 +14,8 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
+use App\Http\Controllers\SpaController;
+
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
@@ -27,10 +30,12 @@ Route::get('/san-pham',[ProductController::class,'pagesanpham']);
 
 //Page Dịch vụ
 Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
+//dich vu spa
+Route::get('/dich-vu-spa', [SpaController::class,'index']);
 
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
-Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+Route::get('/gioi-thieu', [GioithieuController::class,'index']);
 
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);

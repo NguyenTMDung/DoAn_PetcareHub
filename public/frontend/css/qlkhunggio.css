@@ -6,6 +6,7 @@
     background-color: #fefefe;
     border-bottom: 1px solid #D9D7D7;
 }
+
 .logo {
     width: 10vw;
     text-align: center;
@@ -212,17 +213,16 @@
     margin: auto;
     width: 100%;
 }
+
 table {
     width: 100%;
     margin: 1vw 1vw;
 }
-table,th,td {
+
+table, th, td {
     padding: 5px;
     text-align: center;
     height: 10%;
-}
-.admin {
-    width: 80%;
 }
 .add-employee-button {
     background-color: #103559;
@@ -230,39 +230,47 @@ table,th,td {
     border: none;
     padding: 10px 5px;
     border-radius: 1vw;
-    width: 15vw;
+    width: 17vw;
     font-size: 20px;
     margin-top: 1vw;
     margin-left: 1vw;
 }
-
-.search {
-    display: flex;
-    justify-content: right;
-    height: fit-content;
-    margin-right: 1vw;
-    margin-right: 1vw;
+.seen {
+    background-color: #103559;
+    color: #fff;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 1vw;
+    width: 6vw;
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-right: 2vw;
 }
-
+.choose-time {
+    display: flex; 
+    margin-bottom: 1vw;
+}
+#head-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
 .search-box {
     border: 1px solid #ccc;
     padding: 10px;
     width: 20vw;
     font-size: 14px;
 }
-
-.search-button {
-    color: darkblue;
-    background-color: white;
-    padding: 10px;
+.box {
+    height: fit-content;
+    margin-left: 2vw;
+    margin-right: 4vw;
+    width: 11vw;
+    height: 4vw;
+    border-radius: 1vw;
+    padding: 0.6vw;
     border: 1px solid #ccc;
-    font-size: 18px;
 }
-
-.search-button:hover {
-    text-decoration: underline;
-}
-
 .head {
     background-color:#FFF4DE;
     height: 4vw;
@@ -284,18 +292,8 @@ tr:nth-child(even) {
     padding: 10px;
     width: 100%;
     font-size: 14px;
-    border-radius: 10px;
 }
-.sbutton {
-    color:darkblue;
-    background-color:#D9D7D7;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 18px;
-}
-.sbutton:hover {
-    text-decoration: underline;
-}
+
 #style-link {
     margin-left: 2vw;
 }
@@ -306,82 +304,36 @@ tr:nth-child(even) {
 #style-link a:hover {
     text-decoration-line: underline;
 }
-#myTable
-{
-    width: 98%;
+#myTable { width: 98%; }
+.modal-body {
+    margin-left: 3vw;
 }
-#head-container {
+.admin { width: 80%; }
+.time {
     display: flex;
-    justify-content: space-between;
-    padding: 1vw;
-}
-.choose {
-    display: flex;
-}
-.choose p {
     margin-top: 1vw;
 }
-.choose-pet {
-    margin-left: 6vw;
+.time p {
+    margin-top: 8px;
 }
-.choose-service {
+.choose-time p {
+    margin-top: 8px;
+}
+.calendar {
     display: flex;
 }
-.choose-service p {
-    margin-top: 2vw;
-}
-.radio {
-    margin-top: 2vw; 
-    margin-left: 2vw;
-}
-.spa-service {
+.quantity {
     display: flex;
 }
-.spa-service p {
-    margin-left: 2vw;
-}
-.spa-service form {
-    margin-left: 2vw;
-}
-.pet-size {
-    display: flex;
-}
-.pet-size p {
-    margin-left: 2vw; 
-    margin-top: 1vw; 
-}
-.pet-size select {
-    margin-left:2vw; 
-    margin-top: 1vw; 
-}
-.hotel-service {
-    display: flex;
-}
-.hotel-service p {
-    margin-left: 2vw;
-}
-.hotel-service select {
-    margin-left: 2vw;
-}
-.choose-date {
-    display: flex;
-}
-.choose-date p {
-    margin-left: 2vw; 
+.quantity p {
     margin-top: 2vw; 
 }
+#time { margin-left: 2vw; }
 input[type=number] {
     margin-left:2vw; 
     margin-top: 2vw; 
-    width: 10% ;
+    width: 15% 
 }
-.hotel-ser {
+.spa-service {
     display: flex;
-    margin-top: 2vw;
-}
-.hotel-ser p {
-    margin-left: 2vw;
-}
-.hotel-ser select {
-    margin-left: 2vw;
 }

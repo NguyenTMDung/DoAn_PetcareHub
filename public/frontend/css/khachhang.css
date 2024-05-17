@@ -6,6 +6,7 @@
     background-color: #fefefe;
     border-bottom: 1px solid #D9D7D7;
 }
+
 .logo {
     width: 10vw;
     text-align: center;
@@ -212,6 +213,7 @@
     margin: auto;
     width: 100%;
 }
+
 table {
     width: 100%;
     margin: 1vw 1vw;
@@ -221,21 +223,10 @@ table,th,td {
     text-align: center;
     height: 10%;
 }
-.admin {
-    width: 80%;
+#myTable
+{
+    width: 98%;
 }
-.add-employee-button {
-    background-color: #103559;
-    color: #fff;
-    border: none;
-    padding: 10px 5px;
-    border-radius: 1vw;
-    width: 15vw;
-    font-size: 20px;
-    margin-top: 1vw;
-    margin-left: 1vw;
-}
-
 .search {
     display: flex;
     justify-content: right;
@@ -267,121 +258,58 @@ table,th,td {
     background-color:#FFF4DE;
     height: 4vw;
 }
-tr:nth-child(even) {
+#myTable tr:nth-child(even) {
     background-color: #00345944
 }
   .pagination a
   {
     border: none;
   }
-  .search-contain {
-    display: flex;
-    justify-content:center;
 
+.first {
+    background-color:#FFF4DE;
+    height: 2vw;
 }
-.sbox {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    font-size: 14px;
-    border-radius: 10px;
+#info-detail table {
+    border:1px solid black;
+    margin-left: 0;
 }
-.sbutton {
-    color:darkblue;
-    background-color:#D9D7D7;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 18px;
-}
-.sbutton:hover {
-    text-decoration: underline;
-}
-#style-link {
-    margin-left: 2vw;
-}
-#style-link a {
-    text-decoration-line: none;
-    color: #667479;
-}
-#style-link a:hover {
-    text-decoration-line: underline;
-}
-#myTable
+
+.modal-content
 {
-    width: 98%;
+    padding: 1vw 2vw;
 }
-#head-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 1vw;
+.admin {
+    width: 80%;
 }
-.choose {
+.detail {
     display: flex;
 }
-.choose p {
-    margin-top: 1vw;
+.name {
+    margin-left:1vw ;
 }
-.choose-pet {
-    margin-left: 6vw;
+.address {
+    margin-left:1vw ;
 }
-.choose-service {
+.phone {
+    margin-left:1vw ;
+}
+.total-revenue {
+    margin-left:1vw 
+}
+.total-order {
+    margin-left:1vw 
+}
+.total-service {
+    margin-left:1vw 
+}
+.modal-body h5 {
+    margin-top: 3vw;
+}
+.ending {
     display: flex;
 }
-.choose-service p {
-    margin-top: 2vw;
+.tong {
+    margin-left: 58%;
 }
-.radio {
-    margin-top: 2vw; 
-    margin-left: 2vw;
-}
-.spa-service {
-    display: flex;
-}
-.spa-service p {
-    margin-left: 2vw;
-}
-.spa-service form {
-    margin-left: 2vw;
-}
-.pet-size {
-    display: flex;
-}
-.pet-size p {
-    margin-left: 2vw; 
-    margin-top: 1vw; 
-}
-.pet-size select {
-    margin-left:2vw; 
-    margin-top: 1vw; 
-}
-.hotel-service {
-    display: flex;
-}
-.hotel-service p {
-    margin-left: 2vw;
-}
-.hotel-service select {
-    margin-left: 2vw;
-}
-.choose-date {
-    display: flex;
-}
-.choose-date p {
-    margin-left: 2vw; 
-    margin-top: 2vw; 
-}
-input[type=number] {
-    margin-left:2vw; 
-    margin-top: 2vw; 
-    width: 10% ;
-}
-.hotel-ser {
-    display: flex;
-    margin-top: 2vw;
-}
-.hotel-ser p {
-    margin-left: 2vw;
-}
-.hotel-ser select {
-    margin-left: 2vw;
-}
+.total { margin-left: 10vw; }

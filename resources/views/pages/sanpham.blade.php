@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/sanpham.css')}}">
-    <div class="poster">
+    <div class="poster" style="margin-top: 1vw">
         <img src="{{asset('public/frontend/image/poster.png')}}" alt="poster">
     </div>
     <div>

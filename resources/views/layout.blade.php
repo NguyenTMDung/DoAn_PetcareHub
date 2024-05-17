@@ -81,13 +81,13 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#" style="padding: 0;">Dịch vụ Spa</a></li>
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Dịch vụ khách sạn</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}" style="padding: 0;">Dịch vụ khách sạn</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

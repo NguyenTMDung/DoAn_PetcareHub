@@ -18,6 +18,11 @@ use App\Http\Controllers\TypeProductController;
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
 
+Route::get('/chinh-sach-doi-tra', [HomeController::class,'ChinhSachDoiTra']);
+Route::get('/chinh-sach-hoan-tien', [HomeController::class,'ChinhSachHoanTien']);
+Route::get('/phuong-thuc-thanh-toan', [HomeController::class,'PhuongThucThanhToan']);
+Route::get('/chinh-sach-bao-mat', [HomeController::class,'ChinhSachBaoMat']);
+
 //Page SP
 Route::get('/san-pham',[ProductController::class,'pagesanpham']);
 
@@ -46,12 +51,6 @@ Route::post('/quan-ly-san-pham',[ProductController::class,'store']);
 Route::put('/quan-ly-san-pham/{id}', [ProductController::class, 'update']);
 Route::delete('/quan-ly-san-pham/{id}', [ProductController::class, 'destroy']);
 
-
-//doitra
-Route::get('/chinh-sach-doi-tra', [TrangphuController::class,'ChinhSachDoiTra']);
-Route::get('/chinh-sach-hoan-tien', [TrangphuController::class,'ChinhSachHoanTien']);
-Route::get('/phuong-thuc-thanh-toan', [TrangphuController::class,'PhuongThucThanhToan']);
-Route::get('/chinh-sach-bao-mat', [TrangphuController::class,'ChinhSachBaoMat']);
 
 //admin employee
 Route::resource('/quan-ly-nhan-vien',QLNVController::class);

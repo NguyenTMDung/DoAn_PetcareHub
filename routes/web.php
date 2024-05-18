@@ -15,15 +15,16 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
 use App\Http\Controllers\SpaController;
+use App\Http\Controllers\FootController;
 
-
+ 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
 
-Route::get('/chinh-sach-doi-tra', [HomeController::class,'ChinhSachDoiTra']);
-Route::get('/chinh-sach-hoan-tien', [HomeController::class,'ChinhSachHoanTien']);
-Route::get('/phuong-thuc-thanh-toan', [HomeController::class,'PhuongThucThanhToan']);
-Route::get('/chinh-sach-bao-mat', [HomeController::class,'ChinhSachBaoMat']);
+Route::get('/chinh-sach-doi-tra', [FootController::class,'ChinhSachDoiTra']);
+Route::get('/chinh-sach-hoan-tien', [FootController::class,'ChinhSachHoanTien']);
+Route::get('/phuong-thuc-thanh-toan', [FootController::class,'PhuongThucThanhToan']);
+Route::get('/chinh-sach-bao-mat', [FootController::class,'ChinhSachBaoMat']);
 
 //Page SP
 Route::get('/san-pham',[ProductController::class,'pagesanpham']);

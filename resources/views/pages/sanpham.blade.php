@@ -62,7 +62,7 @@
             <div class="item ">
                 <a href="">
                     <div>
-                        <img src="image/chailong.jpg" alt="">
+                        <img src="{{asset('public/frontend/image/chailong.jp')}}g" alt="">
                         <div class="text-truncate-container">
                             <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
                         </div>

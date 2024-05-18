@@ -1,4 +1,4 @@
-.header {
+/* .header {
     height: fit-content;
     padding: 2% 3% 0 2%;
     display: flex;
@@ -16,7 +16,7 @@
 
 .header .logo {
     width: 10vw;
-}
+
 
 .header #search-container {
     position: relative;
@@ -575,4 +575,4 @@ body h4
 .collapse, .navbar-collapse {
     margin-left: 0; 
     margin-right: 0;
-}
+} */

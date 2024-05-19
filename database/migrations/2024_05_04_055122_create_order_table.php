@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('order', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('code');
             $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable;

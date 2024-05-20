@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('code');
             $table->string('email')->unique();
             $table->string('phone');
+            $table->date('date_of_birth')->nullable();
             $table->string('role')->default('Customer');
             $table->double('total')->default(0);
             $table->string('password')->nullable();

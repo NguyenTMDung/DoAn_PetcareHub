@@ -61,24 +61,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sản Phẩm
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{URL::to('/san-pham')}}">Thức ăn</a></li>
-                                    <li><a href="#">Đồ dùng thú cưng</a></li>
-                                    <li><a href="#">Thời trang</a></li>
-                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
-                                <ul class="sub-menu" style="margin-top: 2.7vw;">
-                                    <li><a href="#">Thức ăn</a></li>
-                                    <li><a href="#">Đồ dùng thú cưng</a></li>
-                                    <li><a href="#">Thời trang</a></li>
-                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        @include('category')
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"

@@ -51,4 +51,9 @@ class CategoryProductController extends Controller
         Session::put('message', 'Đã xóa danh mục!');
         return Redirect::to('/danh-muc-san-pham');
     }
+    //Hết admin
+    public function lay_danh_muc(){
+        $cate = category::all();
+        return response()->json(['cate' => $cate]);
+    }
 }

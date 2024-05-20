@@ -66,6 +66,7 @@ Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']
 
 //admin hoa don
 Route::resource('/quan-ly-hoa-don',BillController::class);
+Route::delete('/quan-ly-hoa-don/{id}', [BillController::class, 'destroy']);
 
 //admin don hang
 Route::resource('/quan-ly-don-hang',OrderController::class);

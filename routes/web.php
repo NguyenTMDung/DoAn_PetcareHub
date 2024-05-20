@@ -20,7 +20,7 @@ use App\Http\Controllers\FootController;
  
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
-Route::get('/api/category', [CategoryProductController::class],'lay_danh_muc');
+Route::get('/api/category', [CategoryProductController::class, 'lay_danh_muc']);
 
 Route::get('/chinh-sach-doi-tra', [FootController::class,'ChinhSachDoiTra']);
 Route::get('/chinh-sach-hoan-tien', [FootController::class,'ChinhSachHoanTien']);

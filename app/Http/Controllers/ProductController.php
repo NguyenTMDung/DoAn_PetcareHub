@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\type_product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -17,9 +18,19 @@ class ProductController extends Controller
         $typ = type_product::all();
         return view('admin.admin_sanpham')->with('pro', $pro)->with('typ', $typ);
     }
-    public function pagesanpham(){
-        return view('pages.sanpham');
+    public function showByPetandCateId($pet, $cate_id){
+        if($pet == 'dog') $pet='Chó';
+        else $pet='Mèo';
+        $pro = DB::table('product')
+        ->join('typeProduct', 'product.typeProduct_name', '=', 'typeProduct.name')
+        ->join('category', 'typeProduct.category_name', '=', 'category.name')
+        ->select('Product.*')
+        ->where('category.id', '=', $cate_id)
+        ->where ('pet', '=', $pet)
+        ->get();
+        return view('pages.sanpham', ['pro' => $pro]);
     }
+
     public function store(Request $request)
     {
         // $this->validate($request, [

@@ -9,7 +9,6 @@
         <br>
         <h3 style="color: #024c81;text-align: center;"> <b>SẢN PHẨM </b></h3>
     </div>
-    <br>
     <div id="container-body">
         <div class="row">
 
@@ -33,11 +32,11 @@
 
                 <td>
                     <input type="number" id="quanlity_tu" name="quanlity" placeholder="Từ" min="0" max="1000000"
-                        step="10000" value="Từ" />
+                        step="10000" placeholder="Từ" />
                 </td>
                 <td>
                     <input type="number" id="quanlity_den" name="quanlity" placeholder="Đến" min="0" max="1000000"
-                        step="100000" value="Đến" />
+                        step="100000" placeholder="Đến" />
                 </td>
             </form>
 
@@ -59,15 +58,16 @@
         </div>
         <!-------------------------------------------------------------------------sản phẩm-------------------------------------------------------------------->
         <div class="container-item">
+            @foreach($pro as $prodata)
             <div class="item ">
                 <a href="">
                     <div>
                         <img src="{{asset('public/frontend/image/chailong.jp')}}g" alt="">
                         <div class="text-truncate-container">
-                            <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                            <p>{{$prodata->name}}</p>
                         </div>
                         <div class="pro-price">
-                            30.000 VNĐ
+                            {{$prodata->price}} VNĐ
                         </div>
                         <div style="display: flex;justify-content: space-between;">
                             <div style="display: flex;">
@@ -79,6 +79,7 @@
                     </div>
                 </a>
             </div>
+            @endforeach
 
             <div class="item ">
                 <a href="">

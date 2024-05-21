@@ -1,11 +1,11 @@
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
-        <ul class="sub-menu" id="dog_cate">
+        <ul class="sub-menu" id="dog">
             {{-- menu chó --}}
         </ul>
     </li>
     <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
-        <ul class="sub-menu" id="meow_cate">
+        <ul class="sub-menu" id="meow">
             {{-- menu meow --}}
         </ul>
     </li>
@@ -22,8 +22,7 @@
                     data.cate.forEach(function(cate) {
                         var li = document.createElement('li');
                         var a = document.createElement('a');
-                        a.href = "{{ URL::to('/san-pham') }}/";
-                        // + cate.id
+                        a.href = "{{ URL::to('/san-pham') }}-"+ container.id + "-" +cate.id;
                         a.textContent = cate.name; 
                         li.appendChild(a);
                         container.appendChild(li);
@@ -35,7 +34,7 @@
             });
     }
     //Gọi hàm lấy danh mục cho chó và meow
-    fetchCategory('api/category', 'dog_cate');
-    fetchCategory('api/category', 'meow_cate');
+    fetchCategory('api/category', 'dog');
+    fetchCategory('api/category', 'meow');
 
 </script>

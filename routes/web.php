@@ -28,7 +28,8 @@ Route::get('/phuong-thuc-thanh-toan', [FootController::class,'PhuongThucThanhToa
 Route::get('/chinh-sach-bao-mat', [FootController::class,'ChinhSachBaoMat']);
 
 //Page SP
-Route::get('/san-pham',[ProductController::class,'pagesanpham']);
+// Route::get('/san-pham',[ProductController::class,'pagesanpham']);
+Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 
 //Page Dịch vụ
 Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);

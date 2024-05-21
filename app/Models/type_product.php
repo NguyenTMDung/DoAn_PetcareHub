@@ -13,4 +13,8 @@ class type_product extends Model
     public function category(){
         return $this->belongsTo(category::class,'category_name');
     }
+    // public function products()
+    // {
+    //     return $this->hasMany(Product::class, 'typeProduct_name');
+    // }
 }

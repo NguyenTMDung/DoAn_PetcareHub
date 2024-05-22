@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('code');
             $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable;
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->double('total');
             $table->enum('method_payment', ['Tiền mặt', 'Thanh toán online']);
             $table->enum('status', ['Đang chờ xử lý','Đang xử lý','Đang giao hàng', 'Hủy']);
-            $table->text('cancelllation_reason');
+            $table->text('cancelllation_reason')->nullable();
             $table->timestamps();           
         });
     }

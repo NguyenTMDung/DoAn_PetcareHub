@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service', function (Blueprint $table) {
+        Schema::create('services_pet', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('name');
             $table->string('file_image');

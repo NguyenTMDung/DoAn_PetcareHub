@@ -21,7 +21,11 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
-
+<style>
+    nav li.active a{
+    text-decoration-line: underline;
+    }
+</style>
 </head>
 <body>
     <div class="header">
@@ -81,7 +85,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu-spa')}}" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>
@@ -209,6 +213,7 @@
             menuItems.forEach(item => {
                 if (item.href === currentUrl) {
                     item.parentElement.classList.add('active');
+                    console.log(currentUrl);
                 }
     });
     </script>

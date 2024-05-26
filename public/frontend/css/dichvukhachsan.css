@@ -1,132 +1,26 @@
 
-.al-center {
-    display: flex;
-    align-items: center;
-}
-
-.ju-center {
-    justify-content: center;
-}
-
-@media only screen and (max-width: 768px) {}
-
-.header {
-    text-align: center;
-}
-
-.services {
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-
-.commitments {
-    background-color: #d0e0f0;
-    padding: 20px;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-}
-
-* {
-    font-family: 'inter';
-    font-style: normal;
-}
-
-.form-container {
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.voucher
-{
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.form-column {
-    margin-left: 20;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.banner {
-    background-color: #003459;
-    color: #f0f0f0;
-}
-
-.commitment {
-    background-color: rgb(237, 237, 187);
-    color: #000;
-    border-radius: 8px;
-    padding-left: 10px;
-    margin-left: 30px;
-    width: 30%;
-    height: 150px;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    float: left;
-
-}
-
-.contain {
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-.contain p {
-    font-size: 16px;
-}
-
-.mau {
-    color: red;
-}
-
-.column {
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-}
-
 .column .col {
-    background: rgb(237, 237, 187);
+    background: #FCEED5;
     border-radius: 10px;
-    margin: 10px;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2vw;
 }
 
 .column .comn {
     background-color: #003459;
     color: #f0f0f0;
     border-radius: 10px;
-    margin: 10px;
     display: inline-block;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2vw;
 }
 
 .column .conner {
     background: rgb(237, 237, 187);
     border-radius: 10px;
-    margin: 10px;
     display: inline-block;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2vw;
 }
 
 #sub {
@@ -134,7 +28,7 @@ img {
     color: #f0f0f0;
     font-size: 20px;
     font-weight: bold;
-
+    border-radius: 30px;
 }
 
 input[type=submit] {
@@ -169,17 +63,23 @@ input[type=submit] {
 .pro-price {
     color: #FF0E0E;
     font-family: 'Inter';
-    font-size: 1.2vw;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 5px;
     text-align: left;
 }
 
+.pro-price .old-price {
+    font-size: 16px;
+    font-weight: 100;
+    color: #000;
+    text-decoration-line: line-through;
+}
 
 .sales {
     text-align: end;
-    margin: 1vw 1.5vw;
+    margin: 1.5vw 0;
 }
 
 .number-of-sales {
@@ -227,13 +127,37 @@ input[type=submit] {
 }
 
 .star-rating {
-    color: yellow;
+    color: #ffce1b;
 }
 
 input[type=submit] {
     border-radius: 10px;
     background-color: #003459;
     padding: 8px;
+}
+
+.item {
+    width: 17vw;
+    text-align: center;
+    border: 0.5px solid gainsboro;
+    border-radius: 12px;
+    background: var(--Neutral-Color-00, #FDFDFD);
+    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+}
+
+.item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.item img {
+    margin: 0.5vw 0;
+    border-radius: 12px;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
 }
 
 .pro-price {
@@ -278,51 +202,31 @@ input[type=submit] {
     font-weight: 500;
 }
 
-.products-list {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.products-list a:hover {
-    text-decoration-line: none;
-    color: #000;
-}
-
-.contain {
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-.contain p {
-    font-size: 16px;
-}
-
-#sub {
-    float: center;
-}
+ 
 .product-card1, .product-card2 , .product-card3 , .product-card4 , .product-card5 , .product-card6 {
     position: relative;
     border-radius: 10px;
-    margin: 20px;
-    width: 30%;
+    width: 31%;
     display: inline-block;
     text-align: center;
     padding: 1vw;
-    height: 420px;
+    height: 40vw;
+}
+.product-card1 p, .product-card2 p, .product-card3 p, .product-card4 p, .product-card5 p, .product-card6 p
+{
+    font-size: 1.05vw;
 }
 .card-info,
 .card-detail {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90%;
-    padding: 20px;
+    width: 100%;
+    padding: 1.5vw;
     background-color: #f0f0f0;
     transition: opacity 0.3s ease-in-out;
-    margin-left: 1vw;
-    margin-top: 1vw;
     border-radius: 10px;
+    height: 31vw;
 }
 
 .card-detail {
@@ -344,105 +248,43 @@ input[type=submit] {
     margin-top: 1vw;
     background-color: #103559;
     color: #FCEED5;
-    padding: 5px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 0.5vw 2vw ;
+    border-radius: 2vw;
+    font-size: 1.3vw;
     font-weight: 600;
     margin-bottom: -2vw;
 }
-.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover
-{
-    background-color: #ffffff00;
-    color: #000;
+.form-column{
+    margin-left: 1vw;
 }
-.item {
-    width: 24%;
+.container h3 {
+    font-weight: 700;
+    color: #024c81;
     text-align: center;
-    border: 0.5px solid gainsboro;
-    border-radius: 12px;
-    background: var(--Neutral-Color-00, #FDFDFD);
-    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-    padding: 2vw 2vw 0 2vw;
+    margin: 2vw 4vw;
 }
-
-.item a {
-    color: #000;
-    text-decoration: none;
-}
-
-.item img {
-    border-radius: 12px;
-    margin-bottom: 1vw;
-}
-
-.item img:hover {
-    transform: scale(1.05);
-    transition: all 0.5s;
-}
-
-.sales {
-    text-align: end;
-    display: flex;
+.form-container .contain .banner p li {
     font-size: 1.2vw;
-    justify-content: end;
 }
-
-.number-of-sales {
-    display: inline;
+.banner {
+    background-color: #003459;
+    color: #f0f0f0;
+    padding: 0 2vw;
 }
+ hr{
 
-.text-truncate-container p {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 1.15vw;
-    text-align: left;
-    font-weight: 500;
+    border: 1px solid black;
+    opacity: 5;
 }
-
-.products-list {
+.menu-hotel
+{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    height: 40vw;
 }
-
-.products-list a:hover {
-    text-decoration-line: none;
-    color: #000;
-}
-
-.review-section {
-    background-color: #FDFDFD;
-    color: black;
-    border: 1px solid gainsboro;
-    border-radius: 10px;
-    padding: 2vw;
-    width: 100%;
-}
-review-section p {
-    font-size: 1.2vw;
-}
-.review {
-    margin-bottom: 20px;
-}
-
-.star-rating {
-    color: #ffce1b;
-}
-.chitiet
+.voucher
 {
+    border: 1px solid;
     border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1vw;
-    margin-bottom: 2vw;
-}
-.anh p
-{
-    font-size: 1.1vw;
-}
-.sales p
-{
-    font-size: 1vw;
+    padding: 2vw;
 }

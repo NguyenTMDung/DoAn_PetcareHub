@@ -1,206 +1,175 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="{{asset('public/frontend/css/dvspa.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/dichvukhachsan.css')}}">
-<div class="container" style="margin-top: 20px">
+<div class="title">
+    <h3><strong>DỊCH VỤ KHÁCH SẠN THÚ CƯNG</strong></h3>
+</div>
     <div class="form-container">
-        <div class="form-column"> <h1><b>🥇 DỊCH VỤ TRÔNG GIỮ CHÓ MÈO UY TÍN</b> </h1>
+        <div class="form-column1">
+            <h4><b>🥇 DỊCH VỤ TRÔNG GIỮ CHÓ MÈO UY TÍN </b></h4>
             <hr style="border: 1px solid black;opacity: 1;">
-            <p style="font-size:80%;"><strong>Pet Care Hub - Nơi yêu thương được tiếp nối</strong></p>
-            <p style="font-size:80%;">Pet Care Hub là điểm đến tin cậy cho chất lượng dịch vụ chuyên nghiệp, tiện
+            <p><strong>Pet Care Hub - Nơi yêu thương được tiếp nối</strong></p>
+            <p>Pet Care Hub là điểm đến tin cậy cho chất lượng dịch vụ chuyên nghiệp, tiện
                 ích và mô hình phòng ốc hiện đại. Với sứ mệnh mang lại trải nghiệm tuyệt vời nhất cho thú cưng,
                 chúng tôi cung cấp dịch vụ Pet Hotel tại TP. Hồ Chí Minh.</p>
-            <p style="font-size:80%;"><strong>Cam kết của Pet Care Hub: </strong></p>
+            <p><strong>Cam kết của Pet Care Hub:</strong></p>
             <ul>
-                <p style="font-size:80%;">- Môi trường sống lý tưởng, vệ sinh cao, tiêu chuẩn 5 sao.</p>
-                <p style="font-size:80%;">- Ánh sáng phù hợp, tạo cảm giác thoải mái cho thú cưng.</p>
-                <p style="font-size:80%;">- Giám sát liên tục 24/7 bằng hệ thống camera hiện đại, đảm bảo an toàn
+                <p>- Môi trường sống lý tưởng, vệ sinh cao, tiêu chuẩn 5 sao.</p>
+                <p>- Ánh sáng phù hợp, tạo cảm giác thoải mái cho thú cưng.</p>
+                <p>- Giám sát liên tục 24/7 bằng hệ thống camera hiện đại, đảm bảo an toàn
                     tuyệt đối.</p>
-                <p style="font-size:80%;">- Thiết kế phòng ốc hiện đại:</p>
-                <ul>
-                    <p style="font-size:80%;">+ Luôn được chú trọng và nâng cấp thường xuyên.</p>
-                    <p style="font-size:80%;">+ Mang đến không gian rộng rãi, thoáng mát và tiện nghi cho thú cưng.
-                        Dịch vụ chuyên nghiệp:</p>
-                </ul>
             </ul>
-            <p style="font-size:80%;"><strong>Dịch vụ chuyên nghiệp: </strong>
-            <p></p>
-            <ul>
-                <p style="font-size:80%;">- Đội ngũ nhân viên tận tâm, yêu thương động vật.</p>
-                <p style="font-size:80%;">- Chăm sóc thú cưng chu đáo, cẩn thận và tỉ mỉ.</p>
-                <p style="font-size:80%;">- Cung cấp dịch vụ đa dạng, đáp ứng mọi nhu cầu của khách hàng.</p>
-            </ul>
-            <p style="font-size:80%;"><b>Hãy liên hệ với chúng tôi để đặt phòng cho thú cưng của bạn!</b></p>
+            <p><b>Hãy liên hệ với chúng tôi để đặt phòng cho thú cưng của bạn!</b></p>
         </div>
-        <div class="form-column" style="width:100%; margin-left: 20px;">
+        <div class="form-column2">
             <img src="{{asset('public/frontend/image_task2/dvu.png')}}">
         </div>
     </div>
     <br><br><br>
 
     <div class="form-container">
-        <div class="form-column" style="width: 60%; margin-right: 25px;">
+        <div class="form-column1">
             <img src="{{asset('public/frontend/image_task2/mohinh.png')}}">
         </div>
-        <div class="form-column" <h1><b>🦮 MÔ HÌNH CHĂM SÓC VÀ HOẠT ĐỘNG</b></h1>
+        <div class="form-column2">
+            <h4><strong>🦮 MÔ HÌNH CHĂM SÓC VÀ HOẠT ĐỘNG</strong></h4>
             <hr style="border: 1px solid black;opacity: 1;">
-            <p style="font-size:80%;"><strong>Chế độ dinh dưỡng:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Khung giờ ăn uống khoa học, đảm bảo phù hợp với nhu cầu sinh học của từng
-                    bé.</li>
-                <li style="font-size:80%;">Thực đơn cân bằng, đầy đủ dinh dưỡng, được thiết kế riêng cho từng độ
-                    tuổi và giống loài.</li>
-                <li style="font-size:80%;">Cung cấp thức ăn hạt hỗn hợp từ các thương hiệu uy tín, đảm bảo chất
-                    lượng cao.</li>
-            </ul>
-            <p style="font-size:80%;"><strong>Chế độ vui chơi thể thao:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Hoạt động thường xuyên giúp tăng cường thể lực, cải thiện tiêu hóa và
-                    tăng cường giaolưu với các bạn thú cưng khác (chỉ áp dụng cho chó). </li>
-                <li style="font-size:80%;">Khu vui chơi rộng rãi, an toàn với nhiều trò chơi thú vị.</li>
-            </ul>
-            <p style="font-size:80%;"><strong>Chế độ vệ sinh:</strong>
-            <ul>
-                <li style="font-size:80%;">Chải lông, tắm rửa, vệ sinh tai, mắt... hoàn toàn miễn phí.</li>
-                <li style="font-size:80%;">Sử dụng các sản phẩm chăm sóc chuyên dụng, an toàn cho da và lông của thú
-                    cưng.</li>
-                <li style="font-size:80%;">Đảm bảo thú cưng luôn sạch sẽ, khỏe mạnh và vui vẻ trong suốt thời gian
-                    lưu trú.</li>
-            </ul>
-
+            <p><strong>Chế độ dinh dưỡng:</strong></p>
+            <p>Khung giờ ăn uống khoa học, đảm bảo phù hợp với nhu cầu sinh học của từng
+                        bé.</p>
+            <p>Thực đơn cân bằng, đầy đủ dinh dưỡng, được thiết kế riêng cho từng độ
+                        tuổi và giống loài.</p>
+            <p>Cung cấp thức ăn hạt hỗn hợp từ các thương hiệu uy tín, đảm bảo chất
+                        lượng cao.</p>
+            <p><strong>Chế độ vui chơi thể thao:</strong></p>
+            <p>Hoạt động thường xuyên giúp tăng cường thể lực, cải thiện tiêu hóa và
+                        tăng cường giao lưu với các bạn thú cưng khác (chỉ áp dụng cho chó).</p>
+            <p>Khu vui chơi rộng rãi, an toàn với nhiều trò chơi thú vị.</p>
         </div>
     </div>
     <br><br><br>
     <div class="form-container">
-        <div class="form-column" <h1><b>🎯 KHÁCH SẠN THÚ CƯNG PET CARE HUB CÓ GÌ?</strong></b> </h1>
+        <div class="form-column1">
+            <h4><b>🎯 KHÁCH SẠN THÚ CƯNG PET CARE HUB CÓ GÌ? </b></h4>
             <hr style="border: 1px solid black;opacity: 1;">
-            <p style="font-size:80%;"><strong>Hệ thống phòng ốc hiện đại và tiện nghi:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Các phòng được ngăn bằng tấm nhựa lõi thép và kính cường lực, đảm bảo an
-                    toàn cho thú cưng. </li>
-                <li style="font-size:80%;">Sàn nhà được trải thảm cách điện, cách nhiệt, tạo cảm giác êm ái và ấm
-                    áp.</li>
-                <li style="font-size:80%;">Hệ thống hút khử mùi hoạt động 15 phút/lần giúp khử mùi hôi, quạt cấp gió
-                    tươi cung cấp oxy liên tục, tạo môi trường thông thoáng, dễ chịu cho thú cưng.</li>
-                <li style="font-size:80%;">Hệ thống điều hòa công suất lớn hoạt động 24/7 giúp duy trì nhiệt độ
-                    phòng lý tưởng.</li>
-                <li style="font-size:80%;">Môi trường được vệ sinh sạch sẽ hàng ngày, đảm bảo tiêu diệt vi khuẩn,
-                    bảo vệ sức khỏe cho thú cưng.</li>
-            </ul>
-            <p style="font-size:80%;"><strong>Hệ thống phòng ốc hiện đại và tiện nghi:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Chúng tôi thường xuyên tổ chức đào tạo cho nhân viên để nâng cao kiến
-                    thức và kỹ năng chăm sóc thú cưng.</li>
-                <li style="font-size:80%;">Đội ngũ nhân viên đều có tình yêu thương động vật, luôn ân cần, chu đáo
-                    và quan tâm đến từng bé thú cưng.</li>
-                <li style="font-size:80%;">Chúng tôi cam kết cung cấp dịch vụ chăm sóc thú cưng tốt nhất, đáp ứng
-                    mọi nhu cầu của bạn.</li>
-            </ul>
+            <p><strong>Hệ thống phòng ốc hiện đại và tiện nghi:</strong></p>
+            <p>Các phòng được ngăn bằng tấm nhựa lõi thép và kính cường lực, đảm bảo an
+                    toàn cho thú cưng.</p>
+            <p>Sàn nhà được trải thảm cách điện, cách nhiệt, tạo cảm giác êm ái và ấm
+                    áp.</p>
+            <p>Hệ thống hút khử mùi hoạt động 15 phút/lần giúp khử mùi hôi, tạo môi trường thông thoáng, dễ chịu cho thú cưng.</p>
+            <p><strong>Đội ngũ nhân viên chuyên nghiệp:</strong></p>
+            <p>Chúng tôi thường xuyên tổ chức đào tạo cho nhân viên để nâng cao kiến
+                    thức và kỹ năng chăm sóc thú cưng.</p>
+            <p>Đội ngũ nhân viên đều có tình yêu thương động vật, luôn ân cần, chu đáo
+                    và quan tâm đến từng bé thú cưng.</p>
         </div>
-        <div class="form-column" style="width: 60%; margin-left: 20px;">
+        <div class="form-column2">
             <img src="{{asset('public/frontend/image_task2/khachsan.png')}}">
         </div>
-    </div>
-    <div>
-
     </div>
     <br><br><br>
     <div class="banner">
         <h4><br><b>💲 BẢNG GIÁ PHÒNG KHÁCH SẠN THÚ CƯNG</b></h4>
         <hr style="border: 1px solid black;opacity: 1;">
-        <div style="display: flex;">
+        <div class="menu-hotel">
             <div class="product-card1">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/chuongm.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Chuồng M (Dành cho thú cưng tối đa 10kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails1()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color:black;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có khả năng chịu lực tốt. 
-                            2. Lót chuồng: làm từ mùn cưa, khăn mềm hoặc thảm được thay lót chuồng thường xuyên.
-                            3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng. Thay đổi đồ chơi thường xuyên để thú cưng không cảm thấy nhàm chán.
-                            4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà.
-                            5.Dịch vụ tắm rửa, sấy lông miễn phí.</p>
-                        <button onclick="toggleDetails1()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/chuongm.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Chuồng M (Dành cho thú cưng tối đa 10kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails1()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">1. Chuồng: Kích thước 70 x 50 x 50 cm <br>
+                    2. Lót chuồng: làm từ mùn cưa, khăn mềm hoặc thảm được thay lót chuồng thường xuyên <br>
+                    3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng.<br>
+                    4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
+                    5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
+                    <button onclick="toggleDetails1()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
             <div class="product-card2">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/chuongl.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Chuồng L (Dành cho thú cưng tối đa 20kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails2()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color: red;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có
-                            khả năng chịu lực tốt. </p>
-                        <button onclick="toggleDetails2()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/chuongl.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Chuồng L (Dành cho thú cưng tối đa 20kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails2()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">1. Chuồng: Kích thước 100 x 70 x 80 cm <br>
+                        2. Lót chuồng: làm từ mùn cưa, khăn mềm hoặc thảm được thay lót chuồng thường xuyên. <br>
+                        3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng. <br>
+                        4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
+                        5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
+                    <button onclick="toggleDetails2()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
             <div class="product-card3">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/chuongxl.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Chuồng XL (Dành cho thú cưng tối đa 40kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails3()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color: red;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có
-                            khả năng chịu lực tốt. </p>
-                        <button onclick="toggleDetails3()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/chuongxl.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Chuồng XL (Dành cho thú cưng tối đa 40kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails3()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">1. Chuồng: Kích thước 120 x 80 x 100 cm. <br>
+                        2. Lót chuồng: làm từ mùn cưa, khăn mềm hoặc thảm được thay lót chuồng thường xuyên. <br>
+                        3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng <br>
+                        4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
+                        5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
+                    <button onclick="toggleDetails3()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
         </div>
-        <div style="display: flex;">
+        <div class="menu-hotel">
             <div class="product-card4">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/vipc.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Phòng VIP C (Dành cho thú cưng tối đa 10kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails4()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color: red;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có
-                            khả năng chịu lực tốt. </p>
-                        <button onclick="toggleDetails4()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/vipc.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Phòng VIP C (Dành cho thú cưng tối đa 10kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails4()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">
+                        1. Tặng voucher giảm giá 5% cho dịch vụ spa: Bao gồm các dịch vụ như cắt tỉa lông, vệ sinh răng miệng. (Voucher có hiệu lực trong vòng 3 tháng.) <br>
+                        2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
+                        3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
+                        </p>
+                    <button onclick="toggleDetails4()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
             <div class="product-card5">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/vipb.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Phòng VIP B (Dành cho thú cưng tối đa 20kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails5()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color: red;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có
-                            khả năng chịu lực tốt. </p>
-                        <button onclick="toggleDetails5()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/vipb.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Phòng VIP B (Dành cho thú cưng tối đa 20kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails5()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">
+                        1. Tặng voucher giảm giá 5% cho dịch vụ spa: Bao gồm các dịch vụ như cắt tỉa lông, vệ sinh răng miệng. (Voucher có hiệu lực trong vòng 3 tháng.) <br>
+                        2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
+                        3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
+                        </p>
+                    <button onclick="toggleDetails5()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
             <div class="product-card6">
-                <div>
-                    <div class="card-info">
-                        <img src="{{asset('public/frontend/image_task2/vipa.png')}}" alt="" width="100%">
-                        <p style="color: #103559;">Phòng VIP A (Dành cho thú cưng tối đa 40kg)</p>
-                        <b class="mau" style="color: #103559;">150k/ngày</b><br>
-                        <button class="chi-tiet" onclick="toggleDetails6()">(Xem chi tiết)</button>
-                    </div>
-                    <div class=" card-detail">
-                        <p style="color: red;">1. Chuồng: Kích thước 70 x 50 x 50 cm làm từ kim loại chắc chắn, có
-                            khả năng chịu lực tốt. </p>
-                        <button onclick="toggleDetails6()" class="gia">Giá và Thông tin</button>
-                    </div>
+                <div class="card-info">
+                    <img src="{{asset('public/frontend/image_task2/vipa.png')}}" alt="" width="100%">
+                    <p style="color: #103559;">Phòng VIP A (Dành cho thú cưng tối đa 40kg)</p>
+                    <b class="mau" style="color: #103559;">150k/ngày</b><br>
+                    <button class="chi-tiet" onclick="toggleDetails6()">(Xem chi tiết)</button>
+                </div>
+                <div class=" card-detail">
+                    <p style="color:black;text-align:left;">
+                        1. Tặng voucher giảm giá 5% cho dịch vụ spa: Bao gồm các dịch vụ như cắt tỉa lông, vệ sinh răng miệng. (Voucher có hiệu lực trong vòng 3 tháng.) <br>
+                        2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
+                        3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
+                        </p>
+                    <button onclick="toggleDetails6()" class="gia">Giá và Thông tin</button>
                 </div>
             </div>
         </div>

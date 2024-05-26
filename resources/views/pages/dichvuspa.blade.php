@@ -6,7 +6,7 @@
 </div>
 <div class="form-container">
     <div class="form-column1">
-        <h4><strong>🐶😸 PET SALON HÀNG ĐẦU CHO THÚ CƯNG</strong></h4>
+        <h4>🐶😸 PET SALON HÀNG ĐẦU CHO THÚ CƯNG</h4>
         <hr style="border: 1px solid black;opacity: 1;">
         <p><strong>Bạn đang tìm kiếm dịch vụ cắt tỉa lông chó mèo chuyên nghiệp gần đây?</strong></p>
         <p><a title="Pet Care Hub" href=" https://www.petcarehub.vn">Pet Care Hub</a> tự hào là địa chỉ cung cấp

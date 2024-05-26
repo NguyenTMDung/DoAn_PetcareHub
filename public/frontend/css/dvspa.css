@@ -33,9 +33,13 @@
     font-style: normal;
 }
 .title {
-    color: #024c81;
+    color: #003459;
     text-align: center;
     margin-bottom: 3vw;
+    margin-top: 1.5vw;
+}
+.title h3 {
+    font-size: 1.55vw;
 }
 .form-container {
     background-color: #ffffff;

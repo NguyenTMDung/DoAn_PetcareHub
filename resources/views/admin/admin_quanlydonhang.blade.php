@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
 <div id="container" >
     <div >
         <!--------------------------------------------------------------------------->
@@ -55,24 +55,13 @@
                 <th style="width:20%;">Chi tiết</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th style="width:10%;">Mã đơn hàng</th>
-                <th style="width:10%;">Mã khách hàng</th>
-                <th style="width:10%;">Ngày đặt </th>
-                <th style="width:10%;">Tổng tiền</th>
-                <th style="width:20%;">Cập nhật</th>
-                <th style="width:20%;">Trạng thái</th>
-                <th style="width:20%;">Chi tiết</th>
-            </tr>
-        </thfoot>
         <tbody>
             <tr>
                 <td style="width:10%;">DH01</td>
                 <td style="width:10%;">KH01</td>
                 <td style="width:10%;">11/02/2024</td>
                 <td style="width:10%;">1000000</td>
-                <td style="width:20%;">
+                <td class="update">
                     <button class="confirm">
                         <i class="fas fa-check-circle"
                             style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
@@ -99,7 +88,7 @@
                 <td style="width:10%;">KH01</td>
                 <td style="width:10%;">11/02/2024</td>
                 <td style="width:10%;">1000000</td>
-                <td style="width:20%;">
+                <td class="update">
                     <button class="confirm">
                         <i class="fas fa-check-circle"
                             style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
@@ -123,6 +112,7 @@
             </tr>
         </tbody>
     </table>
+    
 
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.min.js"></script>

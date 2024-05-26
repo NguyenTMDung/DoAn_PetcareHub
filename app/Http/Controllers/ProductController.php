@@ -45,7 +45,6 @@ class ProductController extends Controller
         $pro->pet = $request->input('pet');
         $pro->typeProduct_name = $request->input('typeProduct_name');
         $pro->price = $request->input('price');
-        $pro->image = $request->input('image');
         $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
 

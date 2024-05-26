@@ -280,87 +280,75 @@
             <li>Hotline: +84987654321</li>
         </ul>
         <div class="products-list">
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image/suatam.jpg')}}" alt="" style="width: 15vw;">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                    </div>
-                    <div class="pro-price">
-                        30.000 VND
-                    </div>
-                    <div class="sales">
-                        Lượt bán: <p class="number-of-sales"> 200</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image_task2/ruatai.jpg')}}" alt="" style="width: 15vw;">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
-                    </div>
-                    <div class="pro-price">
-                        59.000 VND
-                    </div>
-                    <div class="sales">
-                        Lượt bán: <p class="number-of-sales"> 225</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image_task2/chailong.jpg')}}" alt="" style="width: 15vw;">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
-                    </div>
-                    <div class="pro-price">
-                        37.000 VND
-                    </div>
-                    <div class="sales">
-                        Lượt bán: <p class="number-of-sales"> 115</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="image_task2/tinhdau.jpg" alt="" style="width: 15vw;">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Xịt Vệ Sinh Chuồng Trại Khử Mùi Chất Thải, Nước Tiểu Thú Cưng TINHDAUSACHANH 300ml</p>
-                    </div>
-                    <div class="pro-price">
-                        79.000 VND
-                    </div>
-                    <div class="sales">
-                        Lượt bán: <p class="number-of-sales"> 88</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="image_task2/khantam.jpg" alt="" style="width: 15vw;">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>
-                    </div>
-                    <div class="pro-price">
-                        35.000 VND
-                    </div>
-                    <div class="sales">
-                        Lượt bán: <p class="number-of-sales"> 123</p>
-                    </div>
-                </a>
-            </div>
+        <div class="item">
+            <a href="">
+                <div class="img-products">
+                    <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
+                </div>
+                <div class="text-truncate-container">
+                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                </div>
+                <div class="pro-price">
+                    30.000 VND
+                </div>
+                <div class="sales">
+                    <p>Lượt bán:</p> 
+                    <p class="number-of-sales"> 1232</p>
+                </div>
+            </a>
         </div>
+        <div class="item">
+            <a href="">
+                <div class="img-products">
+                    <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
+                </div>
+                <div class="text-truncate-container">
+                    <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
+                </div>
+                <div class="pro-price">
+                    59.000 VND
+                </div>
+                <div class="sales">
+                    <p>Lượt bán:</p> 
+                    <p class="number-of-sales"> 1232</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <div class="img-products">
+                    <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
+                </div>
+                <div class="text-truncate-container">
+                    <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
+                </div>
+                <div class="pro-price">
+                    37.000 VND
+                </div>
+                <div class="sales">
+                    <p>Lượt bán:</p> 
+                    <p class="number-of-sales"> 1232</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <div class="img-products">
+                    <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
+                </div>
+                <div class="text-truncate-container">
+                    <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>
+                </div>
+                <div class="pro-price">
+                    35.000 VND
+                </div>
+                <div class="sales">
+                    <p>Lượt bán:</p> 
+                    <p class="number-of-sales"> 1232</p>
+                </div>
+            </a>
+        </div>
+    </div>
     </div>
     <div id="sub">
         <a href="{{URL::to('/san-pham')}}" style="color:aliceblue"><input type="Submit" value="Sản phẩm" name="Submit"></a>

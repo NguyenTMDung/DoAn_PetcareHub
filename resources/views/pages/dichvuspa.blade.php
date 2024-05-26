@@ -11,11 +11,6 @@
         <p><strong>Bạn đang tìm kiếm dịch vụ cắt tỉa lông chó mèo chuyên nghiệp gần đây?</strong></p>
         <p><a title="Pet Care Hub" href=" https://www.petcarehub.vn">Pet Care Hub</a> tự hào là địa chỉ cung cấp
             dịch vụ chăm sóc và làm đẹp trọn gói tốt nhất cho thú cưng của bạn.</p>
-        <p><strong>Đội ngũ nhân viên chuyên nghiệp:</strong> Với đội ngũ nhân viên được đào tạo bài bản, có
-            nhiều năm kinh nghiệm trong lĩnh vực chăm sóc thú cưng.</p>
-        <p><strong>Cơ sở vật chất hiện đại:</strong> Pet Care Hub được trang bị hệ thống máy móc hiện đại, cùng
-            với không gian rộng rãi, thoáng mát, đảm bảo thú cưng của bạn được thoải mái trong suốt quá trình
-            làm đẹp.</p>
         <p><strong>Dịch vụ đa dạng:</strong> cung cấp đa dạng các dịch vụ cắt tỉa lông cho chó mèo, từ cắt tỉa
             theo kiểu cơ bản đến tạo kiểu theo yêu cầu.</p>
         <p><strong>Sản phẩm an toàn:</strong>sử dụng các sản phẩm chăm sóc thú cưng không chứa paraben,
@@ -60,12 +55,10 @@
         <p><strong>Đội ngũ nhân viên chuyên nghiệp:</strong></p>
         <p>Đội ngũ nhân viên của Pet Care Hub được đào tạo bài bản về kỹ thuật cắt tỉa lông cho từng giống chó
             mèo khác nhau.</p>
-        <p>Chúng tôi luôn cập nhật những xu hướng mới nhất trong lĩnh vực chăm sóc thú cưng để mang đến dịch vụ
-            tốt nhất cho khách hàng.</p>
         <p>Pet Care Hub hiểu rằng thú cưng là thành viên trong gia đình bạn, vì vậy chúng tôi luôn chăm sóc các
             bé với tình yêu thương và sự tận tâm.</p>
         <p>Pet Care Hub có kinh nghiệm cắt tỉa lông cho nhiều giống chó mèo khác nhau, từ Poodle, Phốc sóc,
-            Samoyed đến Nhật, Bắc Kinh, Corgi, Alaska, Yorkshire, mèo Anh lông dài...</p>
+            Samoyed đến Nhật, Corgi,mèo Anh lông dài...</p>
         <p><strong>Hãy liên hệ ngay với Pet Care Hub để đặt lịch hẹn cắt tỉa lông cho thú cưng của bạn!</strong>
         </p>
     </div>

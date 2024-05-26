@@ -169,20 +169,13 @@ input[type=submit] {
 .pro-price {
     color: #FF0E0E;
     font-family: 'Inter';
-    font-size: 20px;
+    font-size: 1.2vw;
     font-style: normal;
     font-weight: 600;
     line-height: 5px;
     text-align: left;
-    margin: 0 2vw 1vw 2vw;
 }
 
-.pro-price .old-price {
-    font-size: 16px;
-    font-weight: 100;
-    color: #000;
-    text-decoration-line: line-through;
-}
 
 .sales {
     text-align: end;
@@ -241,30 +234,6 @@ input[type=submit] {
     border-radius: 10px;
     background-color: #003459;
     padding: 8px;
-}
-
-.item {
-    width: 17vw;
-    text-align: center;
-    border: 0.5px solid gainsboro;
-    border-radius: 12px;
-    background: var(--Neutral-Color-00, #FDFDFD);
-    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-}
-
-.item a {
-    color: #000;
-    text-decoration: none;
-}
-
-.item img {
-    margin: 0.5vw 0;
-    border-radius: 12px;
-}
-
-.item img:hover {
-    transform: scale(1.05);
-    transition: all 0.5s;
 }
 
 .pro-price {
@@ -385,4 +354,95 @@ input[type=submit] {
 {
     background-color: #ffffff00;
     color: #000;
+}
+.item {
+    width: 24%;
+    text-align: center;
+    border: 0.5px solid gainsboro;
+    border-radius: 12px;
+    background: var(--Neutral-Color-00, #FDFDFD);
+    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+    padding: 2vw 2vw 0 2vw;
+}
+
+.item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.item img {
+    border-radius: 12px;
+    margin-bottom: 1vw;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.sales {
+    text-align: end;
+    display: flex;
+    font-size: 1.2vw;
+    justify-content: end;
+}
+
+.number-of-sales {
+    display: inline;
+}
+
+.text-truncate-container p {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.15vw;
+    text-align: left;
+    font-weight: 500;
+}
+
+.products-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.products-list a:hover {
+    text-decoration-line: none;
+    color: #000;
+}
+
+.review-section {
+    background-color: #FDFDFD;
+    color: black;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 2vw;
+    width: 100%;
+}
+review-section p {
+    font-size: 1.2vw;
+}
+.review {
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    color: #ffce1b;
+}
+.chitiet
+{
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+    margin-bottom: 2vw;
+}
+.anh p
+{
+    font-size: 1.1vw;
+}
+.sales p
+{
+    font-size: 1vw;
 }

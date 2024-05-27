@@ -18,6 +18,7 @@ class ProductController extends Controller
         $typ = type_product::all();
         return view('admin.admin_sanpham')->with('pro', $pro)->with('typ', $typ);
     }
+
     public function showByPetandCateId($pet, $cate_id){
         if($pet == 'dog') $pet='Chó';
         else $pet='Mèo';
@@ -29,6 +30,10 @@ class ProductController extends Controller
         ->where ('pet', '=', $pet)
         ->get();
         return view('pages.sanpham', ['pro' => $pro]);
+    }
+
+    public function detailProduct(){
+        return view('pages.chitietsp');
     }
 
     public function store(Request $request)

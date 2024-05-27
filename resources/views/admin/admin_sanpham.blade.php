@@ -170,7 +170,7 @@
                 <td><input type="checkbox" class="new" name="new" style="width: 100%;" data-id="{{$prodata->id }}"
                     {{$prodata->new == 1 ? 'checked': ''}}></td>
                 <td>{{$prodata->name}}</td>
-                <td ><img src="{{$prodata->image}}" alt="Hình Ảnh"></td>
+                <td><img src="public/storage/products/{{$prodata->image}}" alt="Hình Ảnh"></td>
                 <td>{{$prodata->inventory}}</td>
                 <td>{{$prodata->price}}</td>
                 <td>{{$prodata->typeProduct_name}}</td>
@@ -208,6 +208,7 @@
                     $('#priceEdit').val(data.price);
                     $('#inventoryEdit').val(data.inventory);
                     $('#descriptionEdit').val(data.description);
+                    $('#imageEdit').val(data.image);
 
                     $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-san-pham/' + id);
                     $('#editModal').modal('show');
@@ -216,7 +217,6 @@
                     console.error('Không tải được dữ liệu sản phẩm: ', error);
                 }
             });
-
         });
 
         table.on('click', '.delete', function(){

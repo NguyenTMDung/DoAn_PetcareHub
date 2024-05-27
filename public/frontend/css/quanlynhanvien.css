@@ -184,10 +184,10 @@ tr:nth-child(even) {
 }
 #myTable
 {
-    width: 98%;
+    width: 98% !important;
 }
 #myTable img {
-    width: 50%;
+    width: 70%;
 }
 /* css datatable */
 .row, .mt-2, .justify-content-between

@@ -6,7 +6,7 @@
 </div>
 <div class="form-container">
     <div class="form-column1">
-        <h4>🐶😸 PET SALON HÀNG ĐẦU CHO THÚ CƯNG</h4>
+        <h4><b>🐶😸 PET SALON HÀNG ĐẦU CHO THÚ CƯNG</b></h4>
         <hr style="border: 1px solid black;opacity: 1;">
         <p><strong>Bạn đang tìm kiếm dịch vụ cắt tỉa lông chó mèo chuyên nghiệp gần đây?</strong></p>
         <p><a title="Pet Care Hub" href=" https://www.petcarehub.vn">Pet Care Hub</a> tự hào là địa chỉ cung cấp
@@ -17,7 +17,7 @@
             phthalates và thuốc nhuộm hóa học, đảm bảo an toàn cho sức khỏe của thú cưng.</p>
     </div>
     <div class="form-column2">
-        <img src="{{asset('public/frontend/image/grooming1.webp')}}">
+        <img src="{{asset('public/frontend/image_task2/img-pet.png')}}">
     </div>
 </div>
 <br><br><br>
@@ -47,7 +47,7 @@
 
 <div class="form-container">
     <div class="form-column1">
-        <img src="{{asset('public/frontend/image/grooming3.webp')}}">
+        <img src="{{asset('public/frontend/image_task2/img-pet2.png')}}">
     </div>
     <div class="form-column2">
         <h4><strong>⚠️ TẠI SAO NÊN CẮT TỈA LÔNG CHO CHÓ MÈO TẠI PET MART?</strong></h4>
@@ -176,17 +176,14 @@
             Do vậy, chúng tôi xin thông báo một số trường hợp Pet Care Hub không tiếp nhận và lưu ý khi đưa thú
             cưng đến làm dịch vụ.</p>
         <p>1. Trường hợp Pet Care Hub không tiếp nhận: Thú cưng đang mang thai, thú cưng đang điều trị bệnh,
-            không tiếp nhận thú cưng đang mắc bệnh truyền nhiễm hoặc cần điều trị y tế đặc biệt, thú cưng mới
-            phẫu thuật, thú cưng có tiểu sử bệnh hen, co giật hoặc các bệnh lý khác khiến thú cưng không có khả
-            năng tự chủ.</p>
+            không tiếp nhận thú cưng đang mắc bệnh truyền nhiễm hoặc cần điều trị y tế đặc biệt.</p>
         <p>2. Lưu ý khi đưa thú cưng đến làm dịch vụ: Để đảm bảo sức khỏe cho thú cưng, không nên để bé quá đói
-            hoặc ăn quá no trước khi đến cửa hàng. Nếu thú cưng có những biểu hiện bất thường về sức khỏe, vui
-            lòng liên hệ Pet Care Hub để được trợ giúp kịp thời.</p>
+            hoặc ăn quá no trước khi đến cửa hàng.</p>
         <p><strong>Pet Care Hub xin trân trọng cảm ơn quý khách đã quan tâm và sử dụng dịch vụ của chúng
                 tôi!</strong></p>
     </div>
     <div class="form-column2">
-        <img src="{{asset('public/frontend/image/grooming2.webp')}}">
+        <img src="{{asset('public/frontend/image_task2/img-pet3.png')}}">
     </div>
 </div>
 <br><br><br>

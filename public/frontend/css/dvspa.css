@@ -75,36 +75,30 @@ img {
 .banner {
     background-color: #003459;
     color: #f0f0f0;
-    padding-bottom: 3vw;
+    padding: 0 2vw 1.5vw 2vw;
     border-radius: 8px;
-}
-.banner h4
-{
-    margin: 0 2vw ;
 }
 #banner-body {
     display: flex;
     justify-content: space-between;
-    margin: 0 2vw;
     height: 12vw;
 }
 .commitment {
     background-color: rgb(237, 237, 187);
     color: #000;
     border-radius: 10px;
-    width: 30%;
-    height: 12vw;
+    width: 31%;
     align-items: center;
     margin-bottom: 1vw;
     float: left;
-    padding: 1vw;
+    padding: 0 1vw;
 }
 .commitment p {
     font-size: 1.05vw;
 }
 .commitment h5
 {
-    font-size: 1.3vw;
+    font-size: 1.19vw;
 }
 .contain {
     background-color: #ffffff;
@@ -149,7 +143,7 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
 }
 
 .column .gia{
@@ -203,7 +197,6 @@ img {
 }
 
 input[type=submit] {
-    border-radius: 10px;
     background-color: #003459;
     padding: 8px;
     width: 18vw;
@@ -331,4 +324,13 @@ body h4
 {
     background-color: #ffffff00;
     color: #000;
+}
+.review-section p
+{
+    font-size: 1.05vw;
+}
+.review-section h5
+{
+    font-size: 1.05vw;
+    font-weight: 700;
 }

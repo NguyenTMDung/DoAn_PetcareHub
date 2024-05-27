@@ -16,21 +16,20 @@
             <p><strong>Cam kết của Pet Care Hub:</strong></p>
             <ul>
                 <p>- Môi trường sống lý tưởng, vệ sinh cao, tiêu chuẩn 5 sao.</p>
-                <p>- Ánh sáng phù hợp, tạo cảm giác thoải mái cho thú cưng.</p>
                 <p>- Giám sát liên tục 24/7 bằng hệ thống camera hiện đại, đảm bảo an toàn
                     tuyệt đối.</p>
             </ul>
             <p><b>Hãy liên hệ với chúng tôi để đặt phòng cho thú cưng của bạn!</b></p>
         </div>
         <div class="form-column2">
-            <img src="{{asset('public/frontend/image_task2/dvu.png')}}">
+            <img src="{{asset('public/frontend/image_task2/img-hotel1.png')}}">
         </div>
     </div>
     <br><br><br>
 
     <div class="form-container">
         <div class="form-column1">
-            <img src="{{asset('public/frontend/image_task2/mohinh.png')}}">
+            <img src="{{asset('public/frontend/image_task2/img-hotel2.png')}}">
         </div>
         <div class="form-column2">
             <h4><strong>🦮 MÔ HÌNH CHĂM SÓC VÀ HOẠT ĐỘNG</strong></h4>
@@ -66,7 +65,7 @@
                     và quan tâm đến từng bé thú cưng.</p>
         </div>
         <div class="form-column2">
-            <img src="{{asset('public/frontend/image_task2/khachsan.png')}}">
+            <img src="{{asset('public/frontend/image_task2/img-hotel3.png')}}">
         </div>
     </div>
     <br><br><br>
@@ -77,7 +76,7 @@
             <div class="product-card1">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/chuongm.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Chuồng M (Dành cho thú cưng tối đa 10kg)</p>
+                    <p style="color: #103559;">Chuồng M <br>(Dành cho thú cưng tối đa 10kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails1()">(Xem chi tiết)</button>
                 </div>
@@ -87,13 +86,13 @@
                     3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng.<br>
                     4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
                     5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
-                    <button onclick="toggleDetails1()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails1()" class="gia">Ẩn</button>
                 </div>
             </div>
             <div class="product-card2">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/chuongl.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Chuồng L (Dành cho thú cưng tối đa 20kg)</p>
+                    <p style="color: #103559;">Chuồng L <br>(Dành cho thú cưng tối đa 20kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails2()">(Xem chi tiết)</button>
                 </div>
@@ -103,13 +102,13 @@
                         3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng. <br>
                         4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
                         5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
-                    <button onclick="toggleDetails2()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails2()" class="gia">Ẩn</button>
                 </div>
             </div>
             <div class="product-card3">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/chuongxl.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Chuồng XL (Dành cho thú cưng tối đa 40kg)</p>
+                    <p style="color: #103559;">Chuồng XL <br>(Dành cho thú cưng tối đa 40kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails3()">(Xem chi tiết)</button>
                 </div>
@@ -119,15 +118,13 @@
                         3. Đồ chơi: phù hợp với kích thước và độ tuổi của thú cưng <br>
                         4. Cây cào móng (cho mèo): giúp mèo cào móng, tránh làm hỏng đồ đạc trong nhà. <br>
                         5. Dịch vụ tắm rửa, sấy lông miễn phí.</p>
-                    <button onclick="toggleDetails3()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails3()" class="gia">Ẩn</button>
                 </div>
             </div>
-        </div>
-        <div class="menu-hotel">
             <div class="product-card4">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/vipc.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Phòng VIP C (Dành cho thú cưng tối đa 10kg)</p>
+                    <p style="color: #103559;">Phòng VIP C <br>(Dành cho thú cưng tối đa 10kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails4()">(Xem chi tiết)</button>
                 </div>
@@ -137,13 +134,13 @@
                         2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
                         3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
                         </p>
-                    <button onclick="toggleDetails4()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails4()" class="gia">Ẩn</button>
                 </div>
             </div>
             <div class="product-card5">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/vipb.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Phòng VIP B (Dành cho thú cưng tối đa 20kg)</p>
+                    <p style="color: #103559;">Phòng VIP B <br>(Dành cho thú cưng tối đa 20kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails5()">(Xem chi tiết)</button>
                 </div>
@@ -153,13 +150,13 @@
                         2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
                         3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
                         </p>
-                    <button onclick="toggleDetails5()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails5()" class="gia">Ẩn</button>
                 </div>
             </div>
             <div class="product-card6">
                 <div class="card-info">
                     <img src="{{asset('public/frontend/image_task2/vipa.png')}}" alt="" width="100%">
-                    <p style="color: #103559;">Phòng VIP A (Dành cho thú cưng tối đa 40kg)</p>
+                    <p style="color: #103559;">Phòng VIP A <br>(Dành cho thú cưng tối đa 40kg)</p>
                     <b class="mau" style="color: #103559;">150k/ngày</b><br>
                     <button class="chi-tiet" onclick="toggleDetails6()">(Xem chi tiết)</button>
                 </div>
@@ -169,31 +166,29 @@
                         2.Dịch vụ spa, cắt tỉa lông, vệ sinh răng miệng. <br>
                         3.Dịch vụ đưa đón thú cưng (Áp dụng cho khách hàng đặt phòng VIP trong bán kính 10km từ cơ sở Pet Care Hub). 
                         </p>
-                    <button onclick="toggleDetails6()" class="gia">Giá và Thông tin</button>
+                    <button onclick="toggleDetails6()" class="gia">Ẩn</button>
                 </div>
             </div>
         </div>
     </div>
     <br><br><br>
-    <br><br><br>
-
     <div class="voucher">
         <div>
             <h4 class="form-column"><b>🎁 CÁC CHƯƠNG TRÌNH ƯU ĐÃI KHUYẾN MÃI</b></h4>
             <hr style="border: 1px solid black;opacity: 1;">
 
             <div class="column">
-                <div class="col ">
+                <div class="contents">
                     <h4 style="text-align: center;"><strong>🔖 Ưu đãi hàng tuần</strong> </h4>
                     <p style="text-align: center;">Thú cưng gửi khách sạn 1 tuần</p>
                     <p style="text-align: center;"><strong>Tặng miễn phí 1 ngày</strong></p>
                 </div>
-                <div class="col ">
+                <div class="contents">
                     <h4 style="text-align: center;"><strong>🔖 Ưu đãi hàng tháng </strong></h4>
                     <p style="text-align: center;">Thú cưng gửi khách sạn 1 tháng </p>
                     <p style="text-align: center;"><strong>Tặng miễn phí 5 ngày</strong></p>
                 </div>
-                <div class="col ">
+                <div class="contents">
                     <h4 style="text-align: center;"><strong>🔖 Ưu đãi đặc biệt</strong></h4>
                     <p style="text-align: center;">Thú cưng gửi khách sạn 3 ngày</p>
                     <p style="text-align: center;"><strong>Tặng 1 lần miễn phí tắm spa</strong></p>
@@ -207,149 +202,134 @@
     </div>
     <br><br><br>
     <div class="form-container">
-        <div class="form-column" <h1><b>📸 GỬI ẢNH THÚ CƯNG CẬP NHẬT MỖI NGÀY</strong></b> </h1>
+        <div class="form-column1">
+            <h4><b>📸 GỬI ẢNH THÚ CƯNG CẬP NHẬT MỖI NGÀY</b></h4>
             <hr style="border: 1px solid black;opacity: 1;">
-            <p style="font-size:80%;"><strong>Pet Care Hub - Nơi an toàn và vui vẻ cho thú cưng của bạn!</strong>
-            </p>
-            <p style="font-size:80%;"><strong>Yên tâm khi đi chơi xa:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Cập nhật hình ảnh hoạt động của thú cưng hàng ngày để bạn an tâm công
-                    tác, du lịch.</li>
-                <li style="font-size:80%;">Hệ thống camera giám sát 24/7 giúp bạn theo dõi thú cưng mọi lúc mọi nơi.
-                </li>
-            </ul>
-            <p style="font-size:80%;"><strong>Nơi lưu trú lý tưởng:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Môi trường an toàn, thoải mái, giúp thú cưng tận hưởng thời gian vui chơi
-                    tự do.</li>
-                <li style="font-size:80%;">Cung cấp nhiều gói dịch vụ phù hợp với nhu cầu của từng bé.</li>
-                <li style="font-size:80%;">Chăm sóc chu đáo, tận tình, giúp thú cưng luôn vui vẻ và khỏe mạnh.</li>
-            </ul>
-            <p style="font-size:80%;"><strong>Tiện lợi và linh hoạt:</strong></p>
-            <ul>
-                <li style="font-size:80%;">Cho phép mang theo thức ăn riêng hoặc sử dụng thức ăn của khách sạn.</li>
-                <li style="font-size:80%;">Cung cấp dịch vụ tắm spa, cắt tỉa lông theo yêu cầu.</li>
-                <li style="font-size:80%;">Cam kết không tăng giá dịch vụ tất cả các ngày lễ tết.</li>
-            </ul>
+            <p><strong>Pet Care Hub - Nơi an toàn và vui vẻ cho thú cưng của bạn!</strong></p>
+            <p><strong>Yên tâm khi đi chơi xa:</strong></p>
+            <p>Hệ thống camera giám sát 24/7 giúp bạn theo dõi thú cưng mọi lúc mọi nơi.</p>
+            <p><strong>Nơi lưu trú lý tưởng:</strong></p>
+            <p>Môi trường an toàn, thoải mái, giúp thú cưng tận hưởng thời gian vui chơi
+                    tự do.</p>
+            <p>Cung cấp nhiều gói dịch vụ phù hợp với nhu cầu của từng bé.</p>
+            <p><strong>Tiện lợi và linh hoạt:</strong></p>
+            <p>Cho phép mang theo thức ăn riêng hoặc sử dụng thức ăn của khách sạn.</p>
+            <p>Cam kết không tăng giá dịch vụ tất cả các ngày lễ tết</p>
         </div>
-        <div class="form-column" style="width: 50%;">
-            <img src="{{asset('public/frontend/image_task2/img-pet-12.png')}}">
+        <div class="form-column2">
+            <img src="{{asset('public/frontend/image_task2/img-hotel4.png')}}">
         </div>
     </div>
     <br><br><br>
-    <div class="contain">
-        <h4><b>Đừng quên chăm sóc thú cưng sau khi làm dịch vụ!</b></h4>
+    <div class="contain1">
+        <h4><b>ĐỪNG QUÊN CHĂM SÓC THÚ CƯNG SAU KHI LÀM DỊCH VỤ!</b></h4>
         <hr style="border: 1px solid black;opacity: 1;">
         <p>Mặc dù việc gần như thường xuyên ghé thăm cửa hàng của chúng tôi để sử dụng dịch vụ sẽ giúp thú cưng của
             bạn sạch sẽ và đẹp hơn. Nhưng đừng quên việc chải lông, vệ sinh tai hàng ngày cho các bé khi ở nhà. Việc
             đó sẽ giúp cho thú cưng luôn duy trì được sự sạch sẽ, khỏe mạnh. Hãy tham khảo các mẹo và sản phẩm mà
             chúng tôi sử dụng để chăm sóc cho thú cưng của bạn tại nhà.</p>
-        <p>Liên hệ ngay với Pet Care Hub để được tư vấn và hỗ trợ:</p>
-        <ul>
-            <li>Hotline: +84987654321</li>
-        </ul>
         <div class="products-list">
-        <div class="item">
-            <a href="">
-                <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
-                </div>
-                <div class="text-truncate-container">
-                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                </div>
-                <div class="pro-price">
-                    30.000 VND
-                </div>
-                <div class="sales">
-                    <p>Lượt bán:</p> 
-                    <p class="number-of-sales"> 1232</p>
-                </div>
-            </a>
+            <div class="item">
+                <a href="">
+                    <div class="img-products">
+                        <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
+                    </div>
+                    <div class="text-truncate-container">
+                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                    </div>
+                    <div class="pro-price">
+                        30.000 VND
+                    </div>
+                    <div class="sales">
+                        <p>Lượt bán:</p> 
+                        <p class="number-of-sales"> 1232</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="img-products">
+                        <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
+                    </div>
+                    <div class="text-truncate-container">
+                        <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
+                    </div>
+                    <div class="pro-price">
+                        59.000 VND
+                    </div>
+                    <div class="sales">
+                        <p>Lượt bán:</p> 
+                        <p class="number-of-sales"> 1232</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="img-products">
+                        <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
+                    </div>
+                    <div class="text-truncate-container">
+                        <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
+                    </div>
+                    <div class="pro-price">
+                        37.000 VND
+                    </div>
+                    <div class="sales">
+                        <p>Lượt bán:</p> 
+                        <p class="number-of-sales"> 1232</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="img-products">
+                        <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
+                    </div>
+                    <div class="text-truncate-container">
+                        <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>
+                    </div>
+                    <div class="pro-price">
+                        35.000 VND
+                    </div>
+                    <div class="sales">
+                        <p>Lượt bán:</p> 
+                        <p class="number-of-sales"> 1232</p>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="item">
-            <a href="">
-                <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
-                </div>
-                <div class="text-truncate-container">
-                    <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
-                </div>
-                <div class="pro-price">
-                    59.000 VND
-                </div>
-                <div class="sales">
-                    <p>Lượt bán:</p> 
-                    <p class="number-of-sales"> 1232</p>
-                </div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="">
-                <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
-                </div>
-                <div class="text-truncate-container">
-                    <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
-                </div>
-                <div class="pro-price">
-                    37.000 VND
-                </div>
-                <div class="sales">
-                    <p>Lượt bán:</p> 
-                    <p class="number-of-sales"> 1232</p>
-                </div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="">
-                <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
-                </div>
-                <div class="text-truncate-container">
-                    <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>
-                </div>
-                <div class="pro-price">
-                    35.000 VND
-                </div>
-                <div class="sales">
-                    <p>Lượt bán:</p> 
-                    <p class="number-of-sales"> 1232</p>
-                </div>
-            </a>
-        </div>
-    </div>
     </div>
     <div id="sub">
         <a href="{{URL::to('/san-pham')}}" style="color:aliceblue"><input type="Submit" value="Sản phẩm" name="Submit"></a>
     </div>
     <br><br><br>
     <div class="review-section">
-        <h3><strong>📮 ĐÁNH GIÁ CỦA KHÁCH HÀNG</strong></h3>
-        <hr style="border: 1px solid rgba(0, 0, 0, 0.498);opacity: 1;">
+        <h4><b>📮 ĐÁNH GIÁ CỦA KHÁCH HÀNG</b></h4>
+        <hr style="border: 1px solid black;opacity: 1;">
         <h4 style="color: red;"><strong>PET CARE HUB</strong></h4>
         <div class="star-rating">★★★★★</div>
         <p>Based on 3 reviews</p>
-        <hr style="border: 1px solid rgba(0, 0, 0, 0.498);opacity: 1;">
+        <hr style="border: 1px solid black;opacity: 1;">
         <div class="review">
-            <h4>Trịnh Thiên Hoàng</h4>
+            <h5>Trịnh Thiên Hoàng</h5>
             <div class="star-rating">★★★★★</div>
             <p>Dịch vụ chăm sóc thú cưng mà mình thích nhất luôn. Như cái siêu thị thu nhỏ cho cún mèo vậy.</p>
         </div>
 
         <div class="review">
-            <h4>Nguyễn Huy Hoàng</h4>
+            <h5>Nguyễn Huy Hoàng</h5>
             <div class="star-rating">★★★★★</div>
             <p>Shop bán hàng cực kì có tâm luôn nè, giá cả hợp lý và sản phẩm chất lượng.</p>
         </div>
 
         <div class="review">
-            <h4>Lê Hà My Ngọc</h4>
+            <h5>Lê Hà My Ngọc</h5>
             <div class="star-rating">★★★★★</div>
             <p>Nhân viên rất chuyên nghiệp và tận tình. Chó nhà tôi luôn trở về với bộ lông bóng mượt và thơm tho.
-                Dịch
-                vụ tuyệt vời!</p>
+                Dịch vụ tuyệt vời!</p>
         </div>
     </div>
+    <br><br><br>
 </div>
 </body>
 

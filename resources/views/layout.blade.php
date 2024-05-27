@@ -85,7 +85,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu-spa')}}" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>

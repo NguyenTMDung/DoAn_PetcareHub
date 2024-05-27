@@ -1,9 +1,10 @@
 
-.column .col {
+.column .contents {
     background: #FCEED5;
     border-radius: 10px;
     border: 1px solid black;
-    padding: 2vw;
+    padding: 1vw;
+    width: 28%;
 }
 
 .column .comn {
@@ -23,95 +24,6 @@
     padding: 2vw;
 }
 
-#sub {
-    text-align: center;
-    color: #f0f0f0;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 30px;
-}
-
-input[type=submit] {
-    border-radius: 20px;
-    background-color: #003459;
-}
-
-.item {
-    width: 17vw;
-    text-align: center;
-    border: 0.5px solid gainsboro;
-    border-radius: 12px;
-    background: var(--Neutral-Color-00, #FDFDFD);
-    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-}
-
-.item a {
-    color: #000;
-    text-decoration: none;
-}
-
-.item img {
-    margin: 0.5vw 0;
-    border-radius: 12px;
-}
-
-.item img:hover {
-    transform: scale(1.05);
-    transition: all 0.5s;
-}
-
-.pro-price {
-    color: #FF0E0E;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 5px;
-    text-align: left;
-}
-
-.pro-price .old-price {
-    font-size: 16px;
-    font-weight: 100;
-    color: #000;
-    text-decoration-line: line-through;
-}
-
-.sales {
-    text-align: end;
-    margin: 1.5vw 0;
-}
-
-.number-of-sales {
-    display: inline;
-}
-
-.text-truncate-container {
-    width: 80%;
-    margin: auto;
-}
-
-.text-truncate-container p {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 18px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.products-list {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.products-list a:hover {
-    text-decoration-line: none;
-    color: #000;
-}
-
 .review-section {
     background-color: #FDFDFD;
     color: black;
@@ -129,13 +41,6 @@ input[type=submit] {
 .star-rating {
     color: #ffce1b;
 }
-
-input[type=submit] {
-    border-radius: 10px;
-    background-color: #003459;
-    padding: 8px;
-}
-
 .item {
     width: 17vw;
     text-align: center;
@@ -210,28 +115,33 @@ input[type=submit] {
     display: inline-block;
     text-align: center;
     padding: 1vw;
-    height: 40vw;
 }
 .product-card1 p, .product-card2 p, .product-card3 p, .product-card4 p, .product-card5 p, .product-card6 p
 {
     font-size: 1.05vw;
+    margin-bottom: 0;
+    margin-top: 0.5vw;
 }
 .card-info,
 .card-detail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 1.5vw;
     background-color: #f0f0f0;
-    transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
-    height: 31vw;
 }
 
 .card-detail {
+    top: 0;
+    left: 0;
+    position: absolute;
     opacity: 0;
     pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 1vw;
+    margin-left: 1vw;
 }
 .show-details .card-info {
     opacity: 0;
@@ -242,9 +152,8 @@ input[type=submit] {
     opacity: 1;
     pointer-events: auto;
 }
-.chi-tiet, .gia
+.chi-tiet
 {
-    color: black;
     margin-top: 1vw;
     background-color: #103559;
     color: #FCEED5;
@@ -252,16 +161,17 @@ input[type=submit] {
     border-radius: 2vw;
     font-size: 1.3vw;
     font-weight: 600;
-    margin-bottom: -2vw;
 }
-.form-column{
-    margin-left: 1vw;
-}
-.container h3 {
-    font-weight: 700;
-    color: #024c81;
-    text-align: center;
-    margin: 2vw 4vw;
+.gia
+{
+    color: #003459;
+    margin-top: 1vw;
+    background-color:#f0f0f000;
+    padding: 0.5vw 2vw ;
+    border-radius: 2vw;
+    font-size: 1.3vw;
+    border: none;
+    text-decoration-line: underline;
 }
 .form-container .contain .banner p li {
     font-size: 1.2vw;
@@ -269,7 +179,7 @@ input[type=submit] {
 .banner {
     background-color: #003459;
     color: #f0f0f0;
-    padding: 0 2vw;
+    padding: 0 2vw 2vw 2vw;
 }
  hr{
 
@@ -280,7 +190,7 @@ input[type=submit] {
 {
     display: flex;
     justify-content: space-between;
-    height: 40vw;
+    flex-wrap: wrap;
 }
 .voucher
 {

@@ -15,7 +15,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                    <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST">
+                    <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="mb-3">
@@ -45,7 +45,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="col-form-label">Ảnh</label>
-                                <input type="file" class="form-control" id="image" name="image"></input>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*"></input>
                             </div>
                             <div class="mb-3">
                                 <label for="inventory" class="col-form-label">Số lượng</label>
@@ -170,7 +170,7 @@
                 <td><input type="checkbox" class="new" name="new" style="width: 100%;" data-id="{{$prodata->id }}"
                     {{$prodata->new == 1 ? 'checked': ''}}></td>
                 <td>{{$prodata->name}}</td>
-                <td><img src="public/storage/products/{{$prodata->image}}" alt="Hình Ảnh"></td>
+                <td><img src=" public/storage/products/{{$prodata->image}}" alt="{{$prodata->name}}"></td>
                 <td>{{$prodata->inventory}}</td>
                 <td>{{$prodata->price}}</td>
                 <td>{{$prodata->typeProduct_name}}</td>

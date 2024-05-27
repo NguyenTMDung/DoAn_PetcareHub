@@ -62,7 +62,7 @@
             <div class="item ">
                 <a href="">
                     <div>
-                        <img src="{{asset('public/frontend/image/chailong.jp')}}g" alt="">
+                        <img src=" public/storage/products/{{$prodata->image}}" alt="{{$prodata->name}}">
                         <div class="text-truncate-container">
                             <p>{{$prodata->name}}</p>
                         </div>

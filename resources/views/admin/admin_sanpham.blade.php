@@ -208,7 +208,6 @@
                     $('#priceEdit').val(data.price);
                     $('#inventoryEdit').val(data.inventory);
                     $('#descriptionEdit').val(data.description);
-                    $('#imageEdit').val(data.image);
 
                     $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-san-pham/' + id);
                     $('#editModal').modal('show');

@@ -75,10 +75,12 @@ class ProductController extends Controller
     {
         // $this->validate($request, [
         //     'name' => 'required',
-        //     'email' => 'required',
-        //     'phone' => 'required',
-        //     'role' => 'required',
-        //     'date_join' => 'required',
+        //     'pet' => 'required',
+        //     'typeProduct_name' => 'required',
+        //     'price' => 'required',
+        //     'inventory' => 'required',
+        //     'description' => 'required',
+        //     'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
         // ]);
 
         $pro = product::find($id);
@@ -87,8 +89,10 @@ class ProductController extends Controller
         $pro->typeProduct_name = $request->input('typeProduct_name');
         $pro->price = $request->input('price');
         $pro->image = $request->input('image');
-        $pro->inventory = $request->input('inventory');
+        // $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
+        
+        DB::select('CALL UpdateProductInventory(?, ?)', array($id, $request->input('inventory')));
 
         $pro->save();
         Session::put('message', 'Chỉnh sửa sản phẩm thành công!');

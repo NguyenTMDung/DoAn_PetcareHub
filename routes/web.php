@@ -39,6 +39,8 @@ Route::get('/dich-vu-spa', [SpaController::class,'index']);
 
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
+Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+
 Route::get('/gioi-thieu', [GioithieuController::class,'index']);
 
 //admin danh muc san pham

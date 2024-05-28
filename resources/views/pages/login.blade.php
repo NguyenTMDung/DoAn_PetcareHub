@@ -31,7 +31,7 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="css/styleSignin.css" />
+        <link rel="stylesheet" href="{{asset('public/frontend/css/styleSignin.css')}}">
     </head>
 
     <body>
@@ -162,19 +162,35 @@
                 "
             />
             <div id="infor-customer">
-                <form action="#home">
+                <form action="{{ url('/admin-login') }}" method="POST">
+                    @csrf
                     <p>Email</p>
                     <input
                         type="email"
+                        name="email"
                         id="email-customer"
                         placeholder="Hãy nhập địa chỉ email tài khoản của bạn"
                     /><br />
                     <p>Mật Khẩu</p>
                     <input
+                    name="password"
                         type="password"
                         id="password-customer"
                         placeholder="Hãy nhập mật khẩu của bạn"
                     />
+                    @if ($errors->any())
+                    <div class="alert alert-danger" style=" height: 30px;
+                    display: flex;
+                    align-items: center;
+                    margin-top:10px
+                    ">
+                        <ul style=" margin-top:10px">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div id="forgot-password">
                         <a href="#">Quên mật khẩu</a>
                     </div>

@@ -25,7 +25,6 @@ class AdminController extends Controller
             return redirect('/admin-login');
         }
         return view('admin.admin_home');
-       
     }
     public function Login(){
         return view('pages.login');

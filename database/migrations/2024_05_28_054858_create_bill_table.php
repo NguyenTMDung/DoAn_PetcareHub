@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->text('note');
-            $table->double('ship_cost');
+            $table->double('shipcost');
             $table->integer('discount');
             $table->enum('type_discount', ['Tiền mặt', 'Phần trăm']);
             $table->double('total');

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->enum('type_discount', ['Tiền mặt', 'Phần trăm']);
             $table->double('total');
             $table->enum('method_payment', ['Tiền mặt', 'Thanh toán online']);
-            $table->enum('status', ['Đang chờ xử lý','Đang xử lý','Đang giao hàng', 'Hủy']);
+            $table->enum('status', ['Đang chờ xử lý','Đang xử lý','Đang giao hàng','Đã giao hàng', 'Hủy']);
             $table->text('cancelllation_reason')->nullable();
             $table->timestamps();           
         });

@@ -82,7 +82,7 @@
                                 giờ</a></li>
                     </ul>
                 </li>
-                <li class="action"><a href="{{URL::to('/dang-xuat')}}" >Sign out</a></li>
+                <li class="action"><a href="{{URL::to('/admin-logout')}}" >Sign out</a></li>
             </ul>
         </div>
 

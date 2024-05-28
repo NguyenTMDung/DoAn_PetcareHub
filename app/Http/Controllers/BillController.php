@@ -11,11 +11,21 @@ class BillController extends Controller
 {
     use ValidatesRequests;
     public function index(){
+        $adminController = new AdminController();
+        $check = $adminController->checkadmin();
+        if(!$check) {
+            return redirect('/admin-login');
+         }
          $emps = bill::get();
         return view('admin.admin_quanlyhoadon')->with('emps', $emps);
     }
     public function destroy($id)
     {
+        $adminController = new AdminController();
+        $check = $adminController->checkadmin();
+        if(!$check) {
+            return redirect('/admin-login');
+         }
         $emps = bill::find($id);
         $emps->delete();
 

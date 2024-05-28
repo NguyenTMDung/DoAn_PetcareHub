@@ -64,6 +64,16 @@
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 100;
+    font-size: 1.1vw;
+  }
+  .row p
+  {
+    font-size: 1.15vw;
+
+  }
+  .row input[type=number]
+  {
+    font-size: 1.1vw;
   }
 
   .container-item {
@@ -139,6 +149,17 @@
   .number-of-sales {
     display: inline;
     margin-left: 5vw;
+  }
+  .row button
+  {
+    padding: 0.5vw 1vw;
+    width: 10vw;
+    margin: auto;
+    border-radius: 20vw;
+    background-color: antiquewhite;
+    color: black;
+    font-size: 1.2vw;
+    margin-top: 3vw;
   }
 
   @media only screen and (max-width: 768px) {}

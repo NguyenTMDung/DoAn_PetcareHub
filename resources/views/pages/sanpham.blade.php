@@ -14,23 +14,21 @@
         <div class="row">
 
             <form action="" class="tieu_de_loc"> <br>
-                <b>Kích Thước</b><br />
-
+                <p><b>Kích Thước</b></p><br>
                 <input type="checkbox" id="size_nho" name="size1" value="Nhỏ" />
                 <label for="kích thước">Nhỏ</label><br />
                 <input type="checkbox" id="size_lon" name="size2" value="Trưởng thành" />
                 <label for="Kích thước">Trưởng thành</label><br />
             </form>
             <form class="tieu_de_loc"> <br>
-                <b> Phân loại</b> <br />
+                <b> <p>Phân loại</b></p> <br />
                 <input type="checkbox" id="phan_loai_cho" name="Chó" value="Chó" />
                 <label for="phân loại">Chó</label><br />
                 <input type="checkbox" id="phan_loai_meo" name="Mèo" value="Mèo" />
                 <label for="phân loại">Mèo</label><br />
             </form>
             <form class="tieu_de_loc"> <br>
-                <b>Giá</b><br />
-
+                <b><p>Giá</b></p><br />
                 <td>
                     <input type="number" id="quanlity_tu" name="quanlity" placeholder="Từ" min="0" max="1000000"
                         step="10000" value="Từ" />
@@ -42,17 +40,16 @@
             </form>
 
             <form class="tieu_de_loc"> <br>
-                <b>Sắp xếp theo</b><br />
-
-                <input type="checkbox" id="sap_xep_theo_mac_dinh" name="Mặc định" value="Mặc định" />
+                <b><p>Sắp xếp theo</b></p><br />
+                <input type="radio" id="sap_xep_theo_mac_dinh" name="arrange" value="Mặc định" />
                 <label for="sắp xếp theo">Mặc định</label><br />
-                <input type="checkbox" id="sap_xep_theo_a_den_z" name="A đến Z" value="A đến Z" />
+                <input type="radio" id="sap_xep_theo_a_den_z" name="arrange" value="A đến Z" />
                 <label for="sắp xếp theo">A<span>&#10230; </span>Z</label><br />
-                <input type="checkbox" id="sap_xep_theo_z_den_a" name="Z đến A" value="Z đến A" />
+                <input type="radio" id="sap_xep_theo_z_den_a" name="arrange" value="Z đến A" />
                 <label for="sắp xếp theo">Z<span>&#10230; </span>A</label><br />
-                <input type="checkbox" id="sap_xep_theo_giam_dan" name="giảm dần" value="giảm dần" />
+                <input type="radio" id="sap_xep_theo_giam_dan" name="arrange" value="giảm dần" />
                 <label for="sắp xếp theo">Giảm dần</label><br />
-                <input type="checkbox" id="sap_xep_theo_tang_dan" name="tăng dần" value="tăng dần" />
+                <input type="radio" id="sap_xep_theo_tang_dan" name="arrange" value="tăng dần" />
                 <label for="sắp xếp theo">Tăng dần</label><br />
             </form>
             <button id="loc">Lọc</button>

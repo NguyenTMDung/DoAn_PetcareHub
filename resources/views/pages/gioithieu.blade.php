@@ -1,7 +1,9 @@
 @extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/gioithieu.css')}}">
-        
+        <div class="poster" style="margin-top: 1vw">
+        <img src="{{asset('public/frontend/image/banner-gt.png')}}" alt="poster">
+        </div>
         <h4 class="nen"><b>PET CARE HUB</b></h4>
         <p><b>Về Pet Care Hub</b></p>
         <p><strog>Chào mừng đến với PetCareHub!</strog></p>

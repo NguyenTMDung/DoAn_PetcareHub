@@ -9,24 +9,33 @@
   }
 
   .item {
-    width: 29%;
+    width: 31%;
     text-align: center;
     border-radius: 12px;
     background: var(--Neutral-Color-00, #fdfdfd);
     box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
-    height: 22vw;
-    margin: 1vw;
     cursor: pointer;
+    padding: 1.2vw 1.2vw 0 1.2vw;
+    margin-bottom: 1vw;
   }
-
+  .item 
   .item:hover {
     box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.2);
   }
-
-
-  .item img {
-    width: 80%;
-    margin-top: 1vw;
+  .item img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1vw;
+  }
+  .item a:hover
+  {
+    text-decoration-line: none;
+    color: #000;
+  }
+  .item a
+  {
+    text-decoration-line: none;
+    color: #000;
   }
 
   .text-truncate-container p {
@@ -34,51 +43,55 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 18px;
+    font-size: 1vw;
     text-align: left;
     font-weight: 500;
     text-align: left;
     margin: auto;
-    width: 80%;
   }
-
+  .item p
+  {
+    font-size: 1vw;
+  }
   .pro-price {
     color: #ff0e0e;
     font-family: "Inter";
-    font-size: 20px;
+    font-size: 1.15vw;
     font-style: normal;
     font-weight: 600;
     text-align: left;
-    margin: 0.5vw 0.5vw 0.5vw 3vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
   }
 
-  .row {
-    width: 30%;
-    padding-top: 2VW;
+  .filter {
+    width: 25%;
+    margin-top: 2vw;
     float: left;
     text-align: left;
+    padding-right: 1vw;
+    border-right: 1px solid gray;
   }
 
-  .row label {
+  .filter label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 100;
     font-size: 1.1vw;
   }
-  .row p
+  .filter p
   {
     font-size: 1.15vw;
 
   }
-  .row input[type=number]
+  .filter input[type=number]
   {
     font-size: 1.1vw;
   }
-
   .container-item {
-    width: 70%;
-    margin-top: 20px;
+    width: 73%;
+    margin-top: 2vw;
     display: flex;
     flex-wrap: wrap;
     float: right;
@@ -87,7 +100,6 @@
 
   .tieu_de_loc {
     margin-top: 20px;
-    padding-left: 4VW;
   }
 
   .container-item.item {
@@ -95,7 +107,10 @@
     padding: 8px 0;
     display: inline-table;
   }
-
+  .container
+  {
+    margin-bottom: 3vw;
+  }
   .con.item h1 {
     font-size: 11px;
     font-family: var(--main-text-font);
@@ -148,13 +163,13 @@
 
   .number-of-sales {
     display: inline;
-    margin-left: 5vw;
+    font-size: 0.9vw;
   }
-  .row button
+  .filter button
   {
     padding: 0.5vw 1vw;
     width: 10vw;
-    margin: auto;
+    float: right;
     border-radius: 20vw;
     background-color: antiquewhite;
     color: black;
@@ -163,3 +178,49 @@
   }
 
   @media only screen and (max-width: 768px) {}
+  label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 2vw;
+  }
+  
+  label:before {
+    content: "";
+    display: inline-block;
+    width: 1.3vw;
+    height: 1.3vw;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: white;
+    border: 1px solid #003459;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    border-radius: 5px;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+    border-radius: 0.3vw;
+  }
+  input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 1.3vw;
+    color: #003459;
+    text-align: center;
+    line-height: 1.2vw;
+  }
+  input[type=radio]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 1.3vw;
+    color: #003459;
+    text-align: center;
+    line-height: 1.2vw;
+  }
+  input[type=radio] {
+    display: none;
+    border-radius: 0.3vw;
+  }

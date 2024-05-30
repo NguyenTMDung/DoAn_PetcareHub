@@ -27,6 +27,9 @@ Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
 Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+Route::get('/admin-login', [AdminController::class,'Login']);
+Route::post('/admin-login', [AdminController::class,'AuthLogin']);
+Route::get('/admin-logout', [AdminController::class,'Logout']);
 
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);
@@ -67,11 +70,13 @@ Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']
 //admin hoa don
 Route::resource('/quan-ly-hoa-don',BillController::class);
 Route::delete('/quan-ly-hoa-don/{id}', [BillController::class, 'destroy']);
+Route::get('/quan-ly-hoa-don', [BillController::class, 'index']);
 
 //admin don hang
 Route::resource('/quan-ly-don-hang',OrderController::class);
 Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
+Route::get('/order-detail/{id}', [OrderController::class, 'show']);
 
 //admin slider
 Route::resource('/quan-ly-slider',SliderController::class);

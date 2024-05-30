@@ -2,7 +2,7 @@
     height: fit-content;
     padding: 2% 3% 0 2%;
     display: flex;
-    background-color: #FCEED5;
+    background-color: #fceed5;
 }
 
 .logo {
@@ -26,7 +26,7 @@
     display: flex;
     width: 45vw;
     border-radius: 10px;
-    border: 1px solid #D9D7D7;
+    border: 1px solid #d9d7d7;
     margin-left: 5vw;
 }
 
@@ -40,7 +40,6 @@
     width: 90%;
     border: none;
     margin: 1% 1%;
-
 }
 
 .header #isearch {
@@ -56,7 +55,7 @@
 
 .header #sty_phone,
 #sty_email {
-    color: #8E8989;
+    color: #8e8989;
     font-family: Inter;
     line-height: 1px;
 }
@@ -69,12 +68,12 @@
 .menu {
     display: flex;
     justify-content: center;
-    background-color: #FCEED5;
+    background-color: #fceed5;
     height: 5vw;
 }
 
 .menu .nav-link {
-    font-family: 'inter';
+    font-family: "inter";
     font-size: 20px;
     font-weight: bold;
     font-style: normal;
@@ -83,7 +82,7 @@
 }
 
 .nav-link a {
-    font-family: 'inter';
+    font-family: "inter";
     font-size: 20px;
     font-weight: bold;
     font-style: normal;
@@ -118,10 +117,10 @@
 
 #footer {
     height: 10%;
-    background-color: #FCEED5;
+    background-color: #fceed5;
     width: 100%;
     font-style: normal;
-    font-family: 'inter';
+    font-family: "inter";
 }
 
 #footer .fa-phone-alt,
@@ -145,7 +144,7 @@
 td {
     margin-left: 15%;
     margin-right: 10%;
-    font-family: 'inter';
+    font-family: "inter";
 }
 
 #footer #connect_shop {
@@ -200,7 +199,7 @@ td {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
@@ -236,12 +235,12 @@ td {
     background-color: #d9d7d72f;
 }
 
-.nav li:hover>.sub-menu {
+.nav li:hover > .sub-menu {
     display: block;
-    color: #D9D7D7;
+    color: #d9d7d7;
 }
 
-.nav>li>.sub-menu {
+.nav > li > .sub-menu {
     top: 40px;
     left: 0;
 }
@@ -266,7 +265,7 @@ td {
     font-size: 1.4vw;
     font-weight: 700;
     text-decoration-line: none;
-    color: var(--Primary-Color-Dark-Blue, #003459);;
+    color: var(--Primary-Color-Dark-Blue, #003459);
 }
 
 #title-header a:hover {
@@ -283,39 +282,38 @@ td {
     padding-bottom: 2vw;
 }
 
-#infor-customer input[type=text],
-input[type=password], input[type=date], input[type=tel],  input[type=email]{
+#infor-customer input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="email"] {
     width: 100%;
     padding: 1vw 1.5vw;
-    border: 1px solid #AFAFAF;
+    border: 1px solid #afafaf;
     border-radius: 4px;
     font-size: 1.1vw;
 }
-#infor-customer p
-{
+#infor-customer p {
     margin-bottom: -1px;
     margin-top: 2vw;
     font-size: 1.1vw;
     font-weight: 500;
 }
-#infor-customer #forgot-password
-{
+#infor-customer #forgot-password {
     padding-top: 1vw;
 }
-#forgot-password a
-{
+#forgot-password a {
     color: #003459;
     font-size: 1.1vw;
     font-weight: 500;
     font-style: italic;
 }
-#infor-customer #submit
-{
+#infor-customer #submit {
     width: max-content;
     text-align: center;
     padding: 0.5vw 2vw;
-    background-color:var(--Primary-Color-Dark-Blue, #003459);
-    color: #FCEED5;
+    background-color: var(--Primary-Color-Dark-Blue, #003459);
+    color: #fceed5;
     font-size: 1.3vw;
     font-weight: 700;
     border-radius: 10px;
@@ -323,8 +321,7 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     margin-left: 10vw;
     width: 13vw;
 }
-#frame
-{
+#frame {
     width: 60%;
     margin: auto;
     border: 1px solid black;
@@ -334,16 +331,14 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     padding: 1vw 2vw 2vw 2vw;
     margin-bottom: 3vw;
 }
-#frame h2
-{
+#frame h2 {
     color: var(--Primary-Color-Dark-Blue, #003459);
     font-size: 1.8vw;
 }
-#frame input[type=button]
-{
+#frame input[type="button"] {
     width: max-content;
     padding: 0.5vw 2vw;
-    background-color:white;
+    background-color: white;
     color: var(--Primary-Color-Dark-Blue, #003459);
     font-size: 1.5vw;
     font-weight: 700;
@@ -352,41 +347,37 @@ input[type=password], input[type=date], input[type=tel],  input[type=email]{
     margin-top: 2vw;
     margin-left: 7vw;
 }
-#frame input[type=submit]
-{
+#frame input[type="submit"] {
     width: max-content;
     padding: 0.5vw 2vw;
-    background-color:var(--Primary-Color-Dark-Blue, #003459);
-    color: #FCEED5;
+    background-color: var(--Primary-Color-Dark-Blue, #003459);
+    color: #fceed5;
     font-size: 1.4vw;
     font-weight: 700;
     border-radius: 10px;
     margin-top: 2vw;
 }
-#frame input[type=text], #email-cus
-{
+#frame input[type="text"],
+#email-cus {
     width: 100%;
     padding: 1vw 1.5vw;
-    border: 1px solid #AFAFAF;
+    border: 1px solid #afafaf;
     border-radius: 4px;
     font-size: 1.1vw;
     text-align: center;
 }
-#frame table
-{
+#frame table {
     width: 70%;
     margin: auto;
 }
-#frame tr
-{
+#frame tr {
     height: 5vw;
 }
-#frame #new-password, #confirm-password
-{
+#frame #new-password,
+#confirm-password {
     height: 2.5vw;
 }
-#frame h5
-{
+#frame h5 {
     font-weight: 700;
     font-size: 1.3vw;
 }

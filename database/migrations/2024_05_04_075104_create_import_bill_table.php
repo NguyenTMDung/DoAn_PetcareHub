@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('supplier_id')->references('id')->on('supplier')->onDelete('no action');
             $table->string('code');
             $table->datetime('date_import');
-            $table->integer('num');
             $table->float('total');
             $table->enum('method_payment',['Tiền mặt', 'Chuyển khoản']);
         });

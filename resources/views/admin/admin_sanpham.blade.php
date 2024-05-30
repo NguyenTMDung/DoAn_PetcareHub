@@ -104,12 +104,17 @@
                             <input type="number" class="form-control" id="priceEdit" name="price" placeholder="Nhập giá"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="col-form-label">Ảnh</label>
+                            <label for="image" class="col-form-label">Ảnh</label> <br>
+                            <img id="currentImage" src="" alt="Current Image" style="max-width: 100px; margin-bottom:0.5vw"> <br>
                             <input type="file" class="form-control" id="imageEdit" name="image"></input>
                         </div>
                         <div class="mb-3">
                             <label for="inventory" class="col-form-label">Số lượng</label>
                             <input type="number" class="form-control" id="inventoryEdit" placeholder="Nhập số lượng" name="inventory"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inventory_update" class="col-form-label">Số lượng tăng hay giảm </label>
+                            <input type="number" class="form-control" id="inventoryUpEdit" placeholder="Nhập số lượng tăng hay giảm: 1; -1" name="inventory_update"></input>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="col-form-label">Mô tả</label>
@@ -209,6 +214,11 @@
                     $('#inventoryEdit').val(data.inventory);
                     $('#descriptionEdit').val(data.description);
 
+                    if (data.image) {
+                        $('#currentImage').attr('src', 'public/storage/products/' + data.image);
+                    } else {
+                        $('#currentImage').attr('src', '');
+                    }
                     $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-san-pham/' + id);
                     $('#editModal').modal('show');
                 },

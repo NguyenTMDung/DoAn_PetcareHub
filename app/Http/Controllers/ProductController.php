@@ -15,7 +15,7 @@ use GuzzleHttp\Client;
 class ProductController extends Controller
 {
     use ValidatesRequests;
-
+    
     public function index()
     {
         $pro = product::all();
@@ -63,9 +63,10 @@ class ProductController extends Controller
         $get_image = $request->file('image'); 
         $get_name_img = $get_image->getClientOriginalName();
         $name_img = current(explode('.', $get_name_img));
-        $new_image =$name_img.rand(0,99) . '.' . $get_image->getClientOriginalExtension();
+        $new_image =$name_img.rand(0,99). '.' . $get_image->getClientOriginalExtension();
         $get_image->move('public/storage/products',  $new_image);
         $pro->image = $new_image;
+
         $pro->save();
         Session::put('message', 'Thêm sản phẩm thành công!');
         return Redirect::to('/quan-ly-san-pham');
@@ -73,29 +74,43 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'name' => 'required',
-        //     'pet' => 'required',
-        //     'typeProduct_name' => 'required',
-        //     'price' => 'required',
-        //     'inventory' => 'required',
-        //     'description' => 'required',
-        //     'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-        // ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'pet' => 'required',
+            'typeProduct_name' => 'required',
+            'price' => 'required',
+            'inventory' => 'required',
+            'description' => 'required',
+            // 'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
+        ]);
 
         $pro = product::find($id);
         $pro->name = $request->input('name');
         $pro->pet = $request->input('pet');
         $pro->typeProduct_name = $request->input('typeProduct_name');
         $pro->price = $request->input('price');
-        $pro->image = $request->input('image');
-        // $pro->inventory = $request->input('inventory');
+        $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
-        
-        DB::select('CALL UpdateProductInventory(?, ?)', array($id, $request->input('inventory')));
 
+        // $get_image = $request->file('image'); 
+        // $get_name_img = $get_image->getClientOriginalName();
+        // $name_img = current(explode('.', $get_name_img));
+        // $new_image =$name_img.$id. '.' . $get_image->getClientOriginalExtension();
+        // $get_image->move('public/storage/products',  $new_image);
+        // $pro->image = $new_image;
+
+        //Không dùng cơ chế lock
+        // $pro->inventory = $request->input('inventory')+ $request->input('inventory_update') ;
+
+        $message ='';
+        //Dùng cơ chế lock
+        $up_inventory=  $request->input('inventory_update');
+        DB::select("CALL UpdateProductInventory(?, ?, ?)", array($id, $up_inventory, $message));
+
+        //Lưu
         $pro->save();
-        Session::put('message', 'Chỉnh sửa sản phẩm thành công!');
+        
+        Session::put('message', $message);
         return Redirect::to('/quan-ly-san-pham');
     }
 
@@ -128,4 +143,6 @@ class ProductController extends Controller
         $pro->save();
         return response()->json(['message' => 'Cập nhật trạng thái mới thành công.']);
     }
+
+    
 }

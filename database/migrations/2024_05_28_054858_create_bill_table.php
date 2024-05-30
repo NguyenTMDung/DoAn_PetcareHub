@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->string('code');
             $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable;
+            $table->integer('order_id')->references('id')->on('orders')->onDelete('null')->nullable;
             $table->string('name');
             $table->string('email');
             $table->string('phone');
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->enum('type_discount', ['Tiền mặt', 'Phần trăm']);
             $table->double('total');
             $table->enum('method_payment', ['Tiền mặt', 'Thanh toán online']);
-            $table->timestamps();  
+            $table->timestamps();
         });
     }
 

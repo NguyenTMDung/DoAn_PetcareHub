@@ -21,6 +21,9 @@ class AdminController extends Controller
         return false;
     }
     public function trangchu(){
+        if(!$this->checkadmin()) {
+            return redirect('/admin-login');
+        }
         $totalRevenue = $this->getTotalRevenue();
         $totalBills = $this->countTotalBills();
         $newCustomersCount = $this->countNewCustomersInCurrentMonth();
@@ -34,7 +37,7 @@ class AdminController extends Controller
     private function getTotalRevenue()
     {
         // Sử dụng query builder để gọi function
-        $result = DB::select("SELECT GetTotalRevenue() AS totalRevenue");
+        $result = DB::select("SELECT GetTotalRevenue() AS totalRevenue ");
 
         // Trích xuất kết quả từ kết quả truy vấn
         $totalRevenue = $result[0]->totalRevenue;
@@ -61,12 +64,8 @@ class AdminController extends Controller
         $newCustomersCount = $result[0]->newCustomersCount;
 
         return $newCustomersCount;
-     
-        if(!$this->checkadmin()) {
-            return redirect('/admin-login');
-        }
-        return view('admin.admin_home');
     }
+
     public function Login(){
         return view('pages.login');
     }
@@ -79,7 +78,7 @@ class AdminController extends Controller
         return back()->withErrors([
             'email' => 'Vui lòng nhập đầy đủ thông tin.',
         ]);
-    }
+        }
 
         // Tìm admin với email tương ứng
         $admin = Admin::where('email', $admin_email)->first();
@@ -92,7 +91,7 @@ class AdminController extends Controller
         }
     
         // Nếu admin không có quyền admin
-        if ($admin->role != 'Admin') {
+        if ($admin->role == 'Customer') {
            return back()->withErrors([
                 'email' => 'Tài khoản này không có quyền admin.',
             ]);
@@ -101,12 +100,12 @@ class AdminController extends Controller
         // Đăng nhập và chuyển hướng đến trang admin
         Auth::login($admin);
         $request->session()->put('admin', $admin);
-        return view('admin.admin_home');
+        return redirect('/admin');
     }
+
     public function logout(){
         Auth::logout();
         return redirect('/admin-login');
     }
     
-      
 }

@@ -59,6 +59,8 @@
         var table = $('#myTable').DataTable();
 
         table.on('click', '.edit', function(){
+            $('#detail-product tbody').empty();
+            
             $tr = $(this).closest('tr')
             if($($tr).hasClass('Child')){
                 $tr = $tr.prev('.parent');
@@ -67,34 +69,74 @@
             var orderId = data[0];
             console.log(orderId);
             $.ajax({
-            url: '/order-detail/' + orderId,
-            method: 'GET',
+            url: '/DoAn_PetcareHub/chi-tiet-don-hang/' + orderId,
+             method: 'GET',
             success: function(response) {
-             console.log("oke");
-            }
-        });
-            $('#detail-order').modal('show');
-        });
-        try {
-       
-        table.on('click', '.delete', function(){
-            $tr = $(this).closest('tr')
-            if($($tr).hasClass('Child')){
-                $tr = $tr.prev('.parent');
-            }
+                console.log(response);
+                $('#total-pay').text(response[0].total);
+                 $('#fee-transfer').text(response[0].ship_cost);
+                $('#total').text(response[0].total - response[0].ship_cost);
+                $('#detail-orderid').text(response[0].id);
+                $('#name-customer').text(response[0].kh_name);
+                $('#detail-date').text(response[0].created_at);
+                $('#status-order').text(response[0].status);
+                $('#totalpay').text(response[0].total);
 
-            var data = table.row($tr).data();
-           console.log('1');
-            $('#deleteForm').attr('action','/DoAn_PetcareHub/quan-ly-don-hang/' + data[0]);
-            console.log('2');
-            $('#deleteModal').modal('show');
-            console.log('3');
-        });
-    } catch (error) {
-        console.error("An error occurred:", error);
+
+                var inum=0;
+        
+            response.forEach(function(item) {
+                console.log('Order Total: ' + item.total);
+                console.log('Shipping Cost: ' + item.ship_cost);
+                console.log('Product Name: ' + item.product_name);
+                console.log('Product Price: ' + item.price);
+                console.log('Type Product Name: ' + item.typeproduct_name);
+                console.log('Number of Items: ' + item.num);
+                inum += item.num;
+               
+            
+                var newRow = $('<tr>');
+
+                // Thêm các cột vào hàng
+                newRow.append('<td><p class="name-product">' + item.product_name + '</p></td>');
+                newRow.append('<td><p class="classify">' + item.typeproduct_name + '</p></td>'); // Sử dụng product_id như một ví dụ
+                newRow.append('<td><p class="price">' + item.price + '</p></td>'); // Giả sử item có thuộc tính price
+                newRow.append('<td><p class="quantity-product">' + item.num + '</p></td>');
+                newRow.append('<td><p class="total-price">' + (item.price * item.num) + '</p></td>'); // Giả sử item có thuộc tính price
+
+                // Thêm hàng mới vào bảng
+                $('#detail-product tbody').append(newRow);
+   
+                // ...
+            });
+            $('#quantity').text(inum);
+            
+        
     }
-    })
+});
+$('#detail-order').modal('show');
+});
+           
+            try {
+       
+       table.on('click', '.delete', function(){
+           $tr = $(this).closest('tr')
+           if($($tr).hasClass('Child')){
+               $tr = $tr.prev('.parent');
+           }
 
+           var data = table.row($tr).data();
+          console.log('1');
+           $('#deleteForm').attr('action','/DoAn_PetcareHub/quan-ly-don-hang/' + data[0]);
+           console.log('2');
+           $('#deleteModal').modal('show');
+           console.log('3');
+       });
+   } catch (error) {
+       console.error("An error occurred:", error);
+   }
+        });
+      
 </script>
 <div class="modal fade" id="detail-order" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -105,129 +147,71 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div id="detai">
+                            <div id="detail">
                                 <div id="detail-infor">
                                     <ul>
                                         <li>
                                             <h5>Mã đơn hàng: </h5>
-                                            <p id="deatil-orderid">001</p>
+                                            <p id="detail-orderid"></p>
                                         </li>
                                         <li>
                                             <h5>Tên khách hàng: </h5>
-                                            <p id="name-customer">Nguyễn Dương Tùng</p>
+                                            <p id="name-customer"></p>
                                         </li>
                                         <li>
                                             <h5>Ngày đặt: </h5>
-                                            <p id="detail-date">22/12/2023</p>
+                                            <p id="detail-date"></p>
                                         </li>
                                         <li>
                                             <h5>Số lượng: </h5>
-                                            <p id="quantity">5</p>
+                                            <p id="quantity"></p>
                                         </li>
                                     </ul>
                                     <ul>
                                         <li>
                                             <h5>Tổng tiền: </h5>
-                                            <p class="total-pay">1000000</p>
+                                            <p id ="totalpay" class="total-pay"></p>
                                         </li>
                                         <li>
                                             <h5>Trạng thái thanh toán: </h5>
-                                            <p id="status-pay">Đã thanh toán</p>
+                                            <p id="status-pay"></p>
                                         </li>
                                         <li>
                                             <h5>Trạng thái đơn hàng: </h5>
-                                            <p id="status-order">Chờ xác nhận</p>
+                                            <p id="status-order"></p>
                                         </li>
                                     </ul>
                                 </div>
                                 <hr style="border:1px solid rgb(64, 64, 64);">
                                 <h4 id="title-table">Chi tiết đơn hàng</h4>
                                 <table id="detail-product">
-                                    <tr>
-                                        <th style="width: 30%;">
-                                            <p>Tên sản phẩm</p>
-                                        </th>
-                                        <th style="width: 15%;">
-                                            <p>Phân loại</p>
-                                        </th>
-                                        <th style="width: 15%;">
-                                            <p>Giá</p>
-                                        </th>
-                                        <th style="width: 10%;">
-                                            <p>Số lượng</p>
-                                        </th>
-                                        <th style="width: 15%;">
-                                            <p>Tổng tiền</p>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="name-product">Thức ăn cho chó</p>
-                                        </td>
-                                        <td>
-                                            <p class="classify">Vị bò rau củ</p>
-                                        </td>
-                                        <td>
-                                            <p class="price">100000 </p>
-                                        </td>
-                                        <td>
-                                            <p class="quantity-product"> 3 </p>
-                                        </td>
-                                        <td>
-                                            <p class="total-price">300000</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="name-product">Pate thùng lớn</p>
-                                        </td>
-                                        <td>
-                                            <p class="classify">Vị bò</p>
-                                        </td>
-                                        <td>
-                                            <p class="price">160000</p>
-                                        </td>
-                                        <td>
-                                            <p class="quantity-product"> 1 </p>
-                                        </td>
-                                        <td>
-                                            <p class="total-price">160000</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="name-product">Nhà thú cưng màu xám</p>
-                                        </td>
-                                        <td>
-                                            <p class="classify">Size XXL</p>
-                                        </td>
-                                        <td>
-                                            <p class="price">300000</p>
-                                        </td>
-                                        <td>
-                                            <p class="quantity-product"> 1 </p>
-                                        </td>
-                                        <td>
-                                            <p class="total-price">300000</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="name-product">Combo sữa tắm cho chó</p>
-                                        </td>
-                                        <td>
-                                            <p class="classify"></p>
-                                        </td>
-                                        <td>
-                                            <p class="price">200000</p>
-                                        </td>
-                                        <td>
-                                            <p class="quantity-product"> 1 </p>
-                                        </td>
-                                        <td>
-                                            <p class="total-price">200000</p>
-                                        </td>
-                                    </tr>
+                                    
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 30%;">
+                                                <p>Tên sản phẩm</p>
+                                            </th>
+                                            <th style="width: 15%;">
+                                                <p>Phân loại</p>
+                                            </th>
+                                            <th style="width: 15%;">
+                                                <p>Giá</p>
+                                            </th>
+                                            <th style="width: 10%;">
+                                                <p>Số lượng</p>
+                                            </th>
+                                            <th style="width: 15%;">
+                                                <p>Tổng tiền </p>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    
+                                   <tbody>
+                                     
+                                   </tbody>
+                                    
+                                </table>
+                                <tfoot>
                                     <tr>
                                         <td colspan="5">
                                             <table id="style-table" style="width: 50%;float: right; border: none;">
@@ -236,7 +220,7 @@
                                                         <p>Tổng cộng</p>
                                                     </td>
                                                     <td>
-                                                        <p id="total">960000</p>
+                                                        <p id="total"></p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -244,7 +228,7 @@
                                                         <p>Phí vận chuyển</p>
                                                     </td>
                                                     <td>
-                                                        <p id="fee-transfer">40000</p>
+                                                        <p id="fee-transfer"></p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -252,17 +236,18 @@
                                                         <h3>Tổng</h3>
                                                     </td>
                                                     <td>
-                                                        <h3 class="total-pay">1000000</h3>
+                                                        <h3 id="total-pay"></h3>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
-                                </table>
+
+                                </tfoot>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
     
-@endsection
+@endsection 

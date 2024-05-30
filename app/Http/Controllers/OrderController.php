@@ -35,13 +35,16 @@ class OrderController extends Controller
     }
     public function show($id)
 {
+   
     $order = DB::table('order')
-        ->join('users', 'users.id', '=', 'order.user_id')
-        ->join('product', 'products.id', '=', 'order.product_id')
+        ->join('orderdetail', 'orderdetail.order_id', '=', 'order.id')
+        ->join('product', 'product.id', '=', 'orderdetail.product_id')
+        ->join('typeproduct','typeproduct.id','=','product.typeProduct_id')
         ->where('order.id', '=', $id)
-        ->select('order.*', 'users.name as user_name', 'product.name as product_name')
-        ->first();
-
+        ->select( 'order.total as total','order.ship_cost as ship_cost','orderdetail.num as num'
+        , 'product.name as product_name','product.price','typeproduct.name as typeproduct_name'
+        ,'order.name as kh_name','order.id as id','order.status as status','order.created_at as created_at')
+        ->get();
     return response()->json($order);
 }
 

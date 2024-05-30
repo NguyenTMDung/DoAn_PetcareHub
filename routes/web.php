@@ -71,12 +71,13 @@ Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']
 Route::resource('/quan-ly-hoa-don',BillController::class);
 Route::delete('/quan-ly-hoa-don/{id}', [BillController::class, 'destroy']);
 Route::get('/quan-ly-hoa-don', [BillController::class, 'index']);
+Route::get('/chi-tiet-hoa-don/{id}', [BillController::class, 'show']);
 
 //admin don hang
 Route::resource('/quan-ly-don-hang',OrderController::class);
 Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
-Route::get('/order-detail/{id}', [OrderController::class, 'show']);
+Route::get('/chi-tiet-don-hang/{id}', [OrderController::class, 'show']);
 
 //admin slider
 Route::resource('/quan-ly-slider',SliderController::class);

@@ -113,10 +113,6 @@
                             <input type="number" class="form-control" id="inventoryEdit" placeholder="Nhập số lượng" name="inventory"></input>
                         </div>
                         <div class="mb-3">
-                            <label for="inventory_update" class="col-form-label">Số lượng tăng hay giảm </label>
-                            <input type="number" class="form-control" id="inventoryUpEdit" placeholder="Nhập số lượng tăng hay giảm: 1; -1" name="inventory_update"></input>
-                        </div>
-                        <div class="mb-3">
                             <label for="description" class="col-form-label">Mô tả</label>
                             <textarea type="number" class="form-control" id="descriptionEdit" name="description"></textarea>
                         </div>
@@ -227,6 +223,38 @@
                 }
             });
         });
+
+        $('#imageEdit').on('change', function() {
+        if (this.files.length > 0) {
+            var fileName = this.files[0].name;
+
+            // Tải lên file ảnh mới và xóa file ảnh cũ
+            var formData = new FormData();
+            formData.append('image', this.files[0]);
+            var productId = $('#editForm').attr('action').split('/').pop();
+            formData.append('id', productId);
+
+            $.ajax({
+                url: 'quan-ly-san-pham/update-image',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    // Cập nhật ảnh mới
+                    $('#currentImage').attr('src', 'public/storage/products/' + response.new_image);
+                    $('#imageEdit').attr('data-value', response.new_image);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Không thể cập nhật ảnh: ', error);
+                }
+            });
+        } 
+    });
+
 
         table.on('click', '.delete', function(){
             $tr = $(this).closest('tr')

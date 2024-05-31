@@ -66,6 +66,8 @@ Route::delete('/quan-ly-san-pham/{id}', [ProductController::class, 'destroy']);
 Route::get('/san-pham/{id}', [ProductController::class, 'getProduct']);
 Route::POST('/update_new_status/{id}', [ProductController::class, 'updateNewStatus']);
 Route::POST('/update_best_seller_status/{id}', [ProductController::class, 'updateBestSellerStatus']);
+Route::post('/quan-ly-san-pham/update-image', [ProductController::class, 'updateImage']);
+
 
 //admin employee
 Route::resource('/quan-ly-nhan-vien', QLNVController::class);

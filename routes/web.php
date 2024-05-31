@@ -16,7 +16,7 @@ use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
 use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
-
+use App\Http\Controllers\DatLichController;
  
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
@@ -92,3 +92,6 @@ Route::delete('/quan-ly-lich-hen/{id}', [AppointController::class, 'destroy']);
 //admin khung gio
 Route::get('/khung-gio', [AppointController::class, 'timeslot']);
 
+
+//datlich
+Route::get('/datlich', [DatLichController::class, 'index'])->name('datlich');

@@ -455,6 +455,12 @@ td {
         margin: 0 auto;
     }
 }
+
+.carousel-showmanymoveone .carousel-control {
+    width: 4%;
+    background-image: none;
+}
+
 .carousel-showmanymoveone .carousel-control.left {
     display: flex;
     align-items: center;
@@ -657,7 +663,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 #slide-show
     {
-        height: 23vw;
+        height: 22vw;
     }
 .carousel-item img {
     width: 100%;
@@ -766,10 +772,6 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     {
         margin-left: 3.5vw;
     }
-    .col-xs-6, .col-sm-4 ,.col-md-3
-    {
-        padding: unset;
-    }
     #shop-address p {
         font-size: 2.5vw;
     }
@@ -816,5 +818,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     #shop-address .img-shop {
         display: unset;
+    }
+    .carousel-showmanymoveone .carousel-control.right {
+        margin-right: 2vw;
     }
   }

@@ -652,3 +652,34 @@ h3 {
     margin-right: 1.5vw;
     margin-bottom: 1.5vw;
 }
+@media only screen and (max-width: 768px) {
+    #profile {
+        width: 90%;
+    }
+    #profile-head h4 {
+        font-size: unset;
+    }
+    h5 {
+        font-size: unset;
+    }
+    #profile-detail {
+        display: unset;
+        padding: 1vw;
+    }
+    .sty-profile {
+        width: 90%;
+        margin: auto;
+    }
+    .sty-profile input {
+        font-size: unset;
+        border-radius: 1vw;
+        border: 1px solid #afafaf;
+        background-color: #ffffff;
+        text-align: left;
+        padding: 2vw 1vw;
+    }
+    #submit, #complete {
+        width: unset;
+        font-size: unset;
+    }
+}

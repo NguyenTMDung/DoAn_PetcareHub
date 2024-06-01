@@ -5,15 +5,15 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{('public/frontend/image/Pet Care Hub (1).png')}}" class="d-block w-100" alt="..."
-                    style="max-width: 90vw;border-radius: 10px">
+                    style="border-radius: 10px">
             </div>
             <div class="carousel-item">
                 <img src="{{('public/frontend/image/banner2.png')}}" class="d-block w-100" alt="..."
-                    style="max-width: 90vw;border-radius: 10px">
+                    style="border-radius: 10px">
             </div>
             <div class="carousel-item">
                 <img src="{{('public/frontend/image/slide-show-3.png')}}" class="d-block w-100" alt="..."
-                    style="max-width: 90vw;border-radius: 10px">
+                    style="border-radius: 10px">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#slide-show" data-bs-slide="prev">

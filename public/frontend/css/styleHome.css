@@ -191,12 +191,9 @@ td {
     line-height: 3.5vw;
 }
 
-#policy a {
-    font-size: 1vw;
-}
-
 #footer a {
     color: #000;
+    font-size: 1vw;
 }
 
 #footer-body {
@@ -477,15 +474,6 @@ td {
     background-color: #fceed500;
     background-image: none;
 }
-
-.carousel-showmanymoveone .cloneditem-1,
-.carousel-showmanymoveone .cloneditem-2,
-.carousel-showmanymoveone .cloneditem-3,
-.carousel-showmanymoveone .cloneditem-4,
-.carousel-showmanymoveone .cloneditem-5 {
-    display: none;
-}
-
 @media all and (min-width: 768px) {
 
     .carousel-showmanymoveone .carousel-inner>.active.left,
@@ -673,3 +661,158 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     height: 30vw;
     margin-bottom: 5vw;
 }
+#slide-show
+    {
+        height: 23vw;
+    }
+.carousel-item img {
+    width: 100%;
+}
+/* responsive */
+@media only screen and (max-width: 768px) {
+    #footer #policy {
+        margin-top: 2vw;
+        width: 40%;
+        line-height: 5vw;
+    }   
+    #footer h3
+    {
+        margin-bottom: 2vw;
+        font-size: 2.5vw;
+    }
+    #footer p {
+        font-size: 2vw;
+    }
+    #footer a {
+        font-size: 2vw;
+    }
+    #footer-body{
+        width: 90%;
+    }
+    #infor-shop i
+    {
+        font-size: 1.5vw;
+    }
+    #footer .fa-phone-alt, .bi-envelope-fill, .fa-tiktok, .fa-facebook-f, .fa-youtube {
+        color: white;
+        background-color: black;
+        padding: 1%;
+        border-radius: 100%;
+        margin: 0 3% 0 0;
+    }
+    .logo img {
+        width: 7vw;
+        max-width: 70px;
+    }
+    .header #search-container {
+        width: 55vw;
+        margin-right: 22vw;
+        margin-left: 10vw;
+    }
+    .header #isearch {
+        font-size: 3vw;
+    }
+    .header #input_search {
+        width: 90%;
+        border: none;
+        font-size: 2vw;
+        border-radius: 10vw;
+        padding-left: 3vw;
+    }
+    .menu
+    {
+        height: 10vw;
+        background-color: #ffffff00;
+    }
+    #sty-user i {
+        font-size: 3.5vw;
+    }
+    .header #infor {
+        display: none;
+    }
+    #sty-user {
+        margin-top: -10vw;
+    }
+    .header  {
+        padding-bottom: 3vw;
+    }
+    .menu .collapse, .menu .navbar-collapse {
+        margin-left: 0;
+        margin-right: 40vw;
+        background-color: #FFF;
+    }
+    .menu .nav-link {
+        font-size: 2.5vw;
+    }
+    .sub-menu
+    {
+        display: unset;
+        position: unset;
+        padding: 0;
+    }
+    .dropdown-menu a
+    {
+        font-size: 2.2vw;
+    }
+    .sub-menu li {
+        width: unset;
+    }
+    .sub-menu li a
+    {
+        font-size: 2vw;
+    }
+    #slide-show
+    {
+        height: 30vw;
+    }
+    .title {
+        font-size: 2.5vw;
+    }
+    .navbar-toggler
+    {
+        margin-left: 3.5vw;
+    }
+    .col-xs-6, .col-sm-4 ,.col-md-3
+    {
+        padding: unset;
+    }
+    #shop-address p {
+        font-size: 2.5vw;
+    }
+    .title p
+    {
+        width: 40vw;
+        text-align: center;
+    }
+    #shop-address .title {
+        height: 6vw;
+    }
+    #shop-address-detail h3 {
+        font-size: 3vw;
+    }
+    #shop-address input {
+        font-size: 3vw;
+        width: 30vw;
+    }
+    .text-truncate-container p {
+        font-size: 2vw;
+        font-weight: 300;
+    }
+    .pro-price {
+        font-size: 2.5vw;
+    }
+    .sales {
+        font-size: 1.9vw;
+    }
+    .navbar {
+        width: 75vw;
+    }
+    #sty-user a
+    {
+        margin-left: 3vw;
+    }
+    #slide-show
+    {
+        height: 30vw;
+    }
+  }

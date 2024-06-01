@@ -26,11 +26,11 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="image/logo.png" alt="logo">
+            <a href=""><img src="image/logo.png" alt="logo"></a>
         </div>
         <form>
             <div id="search-container">
-                <div type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></div>
+                <button type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></button>
                 <input type="search" name="search" id="input_search" placeholder="Search...">
             </div>
         </form>
@@ -57,21 +57,21 @@
                         <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/san-pham-abc')}}" id="navbarDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sản Phẩm
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Thức ăn</a></li>
+                                    <li><a href="{{URL::to('/san-pham')}}">Thức ăn</a></li>
                                     <li><a href="#">Đồ dùng thú cưng</a></li>
                                     <li><a href="#">Thời trang</a></li>
                                     <li><a href="#">Sản Phẩm làm đẹp</a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
-                                <ul class="sub-menu" style="margin-top: 26%;">
+                                <ul class="sub-menu" style="margin-top: 2.7vw;">
                                     <li><a href="#">Thức ăn</a></li>
                                     <li><a href="#">Đồ dùng thú cưng</a></li>
                                     <li><a href="#">Thời trang</a></li>
@@ -81,18 +81,22 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="dvspa.html" style="padding: 0;">Dịch vụ Spa</a></li>
-                            <li><a class="dropdown-item" href="dichvukhachsan.html" style="padding: 0;">Dịch vụ khách sạn</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}" style="padding: 0;">Dịch vụ
+                                    Spa</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}"
+                                    style="padding: 0;">Dịch vụ khách sạn</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="gioithieu.html">Giới thiệu</a>
+                        <a class="nav-link" aria-current="page" href="{{URL::to('/gioi-thieu')}}">Giới thiệu</a>
                     </li>
+                </ul>
+                </li>
                 </ul>
             </div>
         </nav>
@@ -109,15 +113,15 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="image/Pet Care Hub (1).png" class="d-block w-100" alt="..."
-                        style="max-width: 90vw;border-radius: 10px">
+                        style="border-radius: 10px">
                 </div>
                 <div class="carousel-item">
                     <img src="image/banner2.png" class="d-block w-100" alt="..."
-                        style="max-width: 90vw;border-radius: 10px">
+                        style="border-radius: 10px">
                 </div>
                 <div class="carousel-item">
                     <img src="image/slide-show-3.png" class="d-block w-100" alt="..."
-                        style="max-width: 90vw;border-radius: 10px">
+                        style="border-radius: 10px">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#slide-show" data-bs-slide="prev">
@@ -152,7 +156,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -173,7 +177,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -193,7 +197,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -215,7 +219,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -237,7 +241,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -258,7 +262,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -304,7 +308,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemsliderx">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -328,7 +332,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -351,7 +355,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -373,7 +377,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -395,7 +399,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -418,7 +422,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -479,36 +483,33 @@
         </div>
     </div>
     <div id="footer">
-        <table>
-            <tr>
-                <td id="infor-shop">
-                    <h3>Liên hệ</h3>
-                    CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB. <br>
+        <div id="footer-body">
+            <div id="infor-shop">
+                <h3>Liên hệ</h3>
+                <p>
+                    CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB.
+                </p>
+                <p>
                     Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
-                    <br>
-                    <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
-                    <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
-                    <div id="connect_shop">
-                        <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </td>
-                <td style="width: 30%;"> &nbsp;</td>
-                <td id="policy">
-                    <h3>Chính sách khách hàng</h3>
-                    <a href="#">Chính sách đổi trả.</a><br>
-                    <a href="#">Chính sách bảo mật.</a><br>
-                    <a href="#">Phương thức thanh toán.</a><br>
-                    <a href="#">Chính sách hoàn tiền</a><br>
-                    <p>&nbsp;</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align: center;" class="logo"><img src="image/logo.png" alt="logo">
-                </td>
-            </tr>
-        </table>
+                </p>
+                <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
+                <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                <div id="connect_shop">
+                    <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div id="policy">
+                <h3>Chính sách khách hàng</h3>
+                <a href="{{URL::to('/chinh-sach-doi-tra')}}">Chính sách đổi trả.</a><br>
+                <a href="{{URL::to('/chinh-sach-bao-mat')}}">Chính sách bảo mật.</a><br>
+                <a href="{{URL::to('/phuong-thuc-thanh-toan')}}">Phương thức thanh toán.</a><br>
+                <a href="{{URL::to('/chinh-sach-hoan-tien')}}">Chính sách hoàn tiền</a><br>
+                <p>&nbsp;</p>
+            </div>   
+        </div>
+                <div class="logo"><img src="image/logo.png" alt="logo"></div>
     </div>
     <script>
         function convertToK(number) {
@@ -535,26 +536,55 @@
         }
     </script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#itemslider').carousel({ interval: 3000 });
-            $('.carousel-showmanymoveone .item').each(function () {
-                var itemToClone = $(this);
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $(document).ready(function () {
+                    $('#itemslider').carousel({ interval: 3000 });
+                    $('.carousel-showmanymoveone .item').each(function () {
+                        var itemToClone = $(this);
 
-                for (var i = 1; i < 4; i++) {
-                    itemToClone = itemToClone.next();
+                        for (var i = 1; i < 2; i++) {
+                            itemToClone = itemToClone.next();
 
-                    if (!itemToClone.length) {
-                        itemToClone = $(this).siblings(':first');
-                    }
-                    itemToClone.children(':first-child').clone()
-                        .addClass("cloneditem-" + (i))
-                        .appendTo($(this));
-                }
-            });
+                            if (!itemToClone.length) {
+                                itemToClone = $(this).siblings(':first');
+                            }
+                            itemToClone.children(':first-child').clone()
+                                .addClass("cloneditem-" + (i))
+                                .appendTo($(this));
+                        }
+                    });
+                });
+            } else {
+                $(document).ready(function () {
+                    $('#itemslider').carousel({ interval: 3000 });
+                    $('.carousel-showmanymoveone .item').each(function () {
+                        var itemToClone = $(this);
+
+                        for (var i = 1; i < 4; i++) {
+                            itemToClone = itemToClone.next();
+
+                            if (!itemToClone.length) {
+                                itemToClone = $(this).siblings(':first');
+                            }
+                            itemToClone.children(':first-child').clone()
+                                .addClass("cloneditem-" + (i))
+                                .appendTo($(this));
+                        }
+                    });
+                });
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+
+        // Call listener function at run time
+        myFunction(x);
+
+        // Attach listener function on state changes
+        x.addEventListener("change", function () {
+            myFunction(x);
         });
-
     </script>
-    <?php include("css/styleHome.php"); ?>
 </body>
 
 </html>

@@ -33,7 +33,6 @@
                 <img src="{{('public/frontend/image/dog_banner.webp')}}" alt="dog">
             </a>
         </div>
-
         <div class="sub-section">
             <a href="meo">
                 <img src="{{('public/frontend/image/cat_banner.webp')}}" alt="cat">
@@ -49,7 +48,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -70,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -90,7 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -112,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -134,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -155,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -203,7 +202,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemsliderx">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -227,7 +226,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -250,7 +249,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -272,7 +271,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -294,7 +293,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -317,7 +316,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -383,21 +382,53 @@
         }
     </script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#itemslider').carousel({ interval: 3000 });
-            $('.carousel-showmanymoveone .item').each(function () {
-                var itemToClone = $(this);
-                for (var i = 1; i < 4; i++) {
-                    itemToClone = itemToClone.next();
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                $(document).ready(function () {
+                    $('#itemslider').carousel({ interval: 3000 });
+                    $('.carousel-showmanymoveone .item').each(function () {
+                        var itemToClone = $(this);
 
-                    if (!itemToClone.length) {
-                        itemToClone = $(this).siblings(':first');
-                    }
-                    itemToClone.children(':first-child').clone()
-                        .addClass("cloneditem-" + (i))
-                        .appendTo($(this));
-                }
-            });
+                        for (var i = 1; i < 2; i++) {
+                            itemToClone = itemToClone.next();
+
+                            if (!itemToClone.length) {
+                                itemToClone = $(this).siblings(':first');
+                            }
+                            itemToClone.children(':first-child').clone()
+                                .addClass("cloneditem-" + (i))
+                                .appendTo($(this));
+                        }
+                    });
+                });
+            } else {
+                $(document).ready(function () {
+                    $('#itemslider').carousel({ interval: 3000 });
+                    $('.carousel-showmanymoveone .item').each(function () {
+                        var itemToClone = $(this);
+
+                        for (var i = 1; i < 4; i++) {
+                            itemToClone = itemToClone.next();
+
+                            if (!itemToClone.length) {
+                                itemToClone = $(this).siblings(':first');
+                            }
+                            itemToClone.children(':first-child').clone()
+                                .addClass("cloneditem-" + (i))
+                                .appendTo($(this));
+                        }
+                    });
+                });
+            }
+        }
+        var x = window.matchMedia("(max-width: 700px)")
+
+        // Call listener function at run time
+        myFunction(x);
+
+        // Attach listener function on state changes
+        x.addEventListener("change", function () {
+            myFunction(x);
         });
     </script>
 @endsection

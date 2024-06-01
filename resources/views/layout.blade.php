@@ -28,9 +28,9 @@
 </style>
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <div class="logo">
-            <a href=""><img src="{{('public/frontend/image/logo.png')}}" alt="logo" ></a>
+            <a href=""><img src="image/logo.png" alt="logo"></a>
         </div>
         <form>
             <div id="search-container">
@@ -61,8 +61,8 @@
                         <a class="nav-link" aria-current="page" href="{{URL::to('/trang-chu')}}">Trang chủ</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{URL::to('/san-pham-abc')}}" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/san-pham-abc')}}" id="navbarDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sản Phẩm
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -85,22 +85,24 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}" style="padding: 0;">Dịch vụ Spa</a></li>
-                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}" style="padding: 0;">Dịch vụ khách sạn</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-spa')}}" style="padding: 0;">Dịch vụ
+                                    Spa</a></li>
+                            <li><a class="dropdown-item" href="{{URL::to('/dich-vu-khach-san')}}"
+                                    style="padding: 0;">Dịch vụ khách sạn</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{URL::to('/gioi-thieu')}}">Giới thiệu</a>
                     </li>
                 </ul>
-            </li>
-        </ul>
-        </div>
+                </li>
+                </ul>
+            </div>
         </nav>
         <div id="sty-user" style="flex-grow: 1;">
             <li>

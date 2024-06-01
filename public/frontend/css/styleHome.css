@@ -455,12 +455,6 @@ td {
         margin: 0 auto;
     }
 }
-
-.carousel-showmanymoveone .carousel-control {
-    width: 4%;
-    background-image: none;
-}
-
 .carousel-showmanymoveone .carousel-control.left {
     display: flex;
     align-items: center;
@@ -789,6 +783,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     #shop-address-detail h3 {
         font-size: 3vw;
+        font-weight: 600;
     }
     #shop-address input {
         font-size: 3vw;
@@ -814,5 +809,12 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     #slide-show
     {
         height: 30vw;
+    }
+    .sub-section {
+        width: 100%;
+        margin-bottom: 2vw;
+    }
+    #shop-address .img-shop {
+        display: unset;
     }
   }

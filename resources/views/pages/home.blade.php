@@ -188,12 +188,10 @@
                 </div>
             </div>
         </div>
-        {{-- banner --}}
         <div id="banner">
             <img src="{{('public/frontend/image/banner3.png')}}" alt="banner"
                 style="border-radius: 10px;border: 10px solid #003459;width: 100%;">
         </div>
-        {{-- san phẩm mới --}}
         <div id="new-products">
             <p class="title">Sản Phẩm Mới Nhất</p>
             <div class="container-fluid">
@@ -202,7 +200,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemsliderx">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-md-3 col-xs-6 col-sm-4 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">

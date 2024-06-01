@@ -34,7 +34,7 @@ class AdminController extends Controller
         ]);
     }
 
-    private function getTotalRevenue()
+    <!-- private function getTotalRevenue()
     {
         // Sử dụng query builder để gọi function
         $result = DB::select("SELECT GetTotalRevenue() AS totalRevenue ");
@@ -64,7 +64,7 @@ class AdminController extends Controller
         $newCustomersCount = $result[0]->newCustomersCount;
 
         return $newCustomersCount;
-    }
+    } -->
 
     public function Login(){
         return view('pages.login');

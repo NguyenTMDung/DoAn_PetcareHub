@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galery', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->integer('product_id')->references('id')->on('product')->onDelete('cascade');
             $table->string('file_image');
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galery');
+        Schema::dropIfExists('galleries');
     }
 };

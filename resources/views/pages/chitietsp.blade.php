@@ -19,15 +19,16 @@
     ></script>
     <script src="data/data.js"></script>
     <script src="./js/slide.js"></script>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 
 <div class="price-detail-container" style="margin-top: 2vw">
     <div class="image-product-container">
-      <img
-        class="mySlides"
-        src="{{asset('public/frontend/image/nhadem02.jpg')}}"
-        alt="cho1"
-        style="width: 100%"
-      />
+        <img
+          class="mySlides"
+          src="{{asset('public/storage/products/' . $pro->image)}}" 
+          alt="cho1"
+          style="width: 100%"
+        />
       <img
         class="mySlides"
         src="{{asset('public/frontend/image/nhadem02.jpg')}}"
@@ -98,20 +99,16 @@
       </div>
     </div>
     <div class="detail-product-container">
-      <p class="name-product">
-        Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng
-      </p>
+      <p class="name-product">{{$pro->name}}</p>
       <div class="evaluate" style="display: flex;">
         <div class="img-evaluate" style="display: flex;">
           5 <p class="star-rating1">★★★★★</p>
         </div>
-        <p class="text-evaluate">|</p>
-        <p class="text-evaluate">30 đánh giá</p>
-        <p class="text-evaluate">|</p>
-        <p class="text-evaluate">Đã bán 100</p>
+        <p class="text-evaluate">|30 đánh giá</p>
+        <p class="text-evaluate">|Đã bán 100</p>
       </div>
       <div class="price-container">
-        <p class="text-price">179.000 - 279.000 VND</p>
+        <p class="text-price">{{$pro->price}}</p>
       </div>
       <div class="return-policy-container">
         <p class="text-return-policy">Chính Sách Trả Hàng:</p>
@@ -125,8 +122,7 @@
         </div>
       </div>
       <div class="size-container">
-        <label for="size" class="text-size">Phân loại:</label>
-        <select id="size" style="margin-left: 2vw; display: grid; place-items: center;">
+        <p class="text-size">Phân loại:</p>
           <div class="size-box">
             <input type="radio" class="btn-check"  name="btnradio" id="btnradio1" autocomplete="off" >
             <label class="btn btn-outline-primary " for="btnradio1">Size S (Dưới 5kg)</label>
@@ -137,7 +133,6 @@
             <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
             <label class="btn btn-outline-primary" for="btnradio3">Size L (Dưới 15kg)</label>
           </div>
-        </select>
       </div>
       <div class="quantity-container">
         <p class="text-quantity">Số lượng:</p>

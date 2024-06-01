@@ -235,6 +235,7 @@ class ProductController extends Controller
     public function detailProduct($id)
     {
         $pro = product::find($id);
-        return view('pages.chitietsp',['pro' => $pro]);
+        // dd($pro);
+        return view('pages.chitietsp', ['pro' => $pro]);
     }
 }

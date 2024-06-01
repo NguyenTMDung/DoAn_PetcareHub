@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->string('name')-> unique;
             $table->string('category_name')->references('name')->on('category')->onDelete('set null');
+            $table->integer('category_id')->references('id')->on('category')->onDelete('set null');
             $table->timestamps();
         });
     }

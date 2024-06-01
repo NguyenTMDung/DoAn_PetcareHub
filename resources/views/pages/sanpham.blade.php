@@ -12,57 +12,60 @@
     <div id="container-body">
         <div class="row">
 
-            <form action="" class="tieu_de_loc"> <br>
-                <b>Kích Thước</b><br />
+            <form action="{{URL::to('/loc-san-pham-'.$cate_id)}}" class="tieu_de_loc" method="POST" id="filterForm"> 
+                {{ csrf_field() }}
+                <b>Loại Sản phẩm</b><br> <br>
+                @foreach( $types as $typPro)
+                    <label>
+                        <input type="checkbox" 
+                        name="typeProduct[]" value="{{$typPro->id}}" style="margin-right:1vw"/>{{$typPro->name}} 
+                    </label><br>  
+                @endforeach
+                <br>
+                <b>Phân loại pet</b> <br> <br>
+                <label>
+                    <input type="checkbox" name="pett[]" value="Chó" style="margin-right:1vw"/>Chó
+                </label><br />
+                <label>
+                    <input type="checkbox" name="pett[]" value="Mèo" style="margin-right:1vw"/>Mèo
+                </label><br> <br>
 
-                <input type="checkbox" id="size_nho" name="size1" value="Nhỏ" />
-                <label for="kích thước">Nhỏ</label><br />
-                <input type="checkbox" id="size_lon" name="size2" value="Trưởng thành" />
-                <label for="Kích thước">Trưởng thành</label><br />
-            </form>
-            <form class="tieu_de_loc"> <br>
-                <b> Phân loại</b> <br />
-                <input type="checkbox" id="phan_loai_cho" name="Chó" value="Chó" />
-                <label for="phân loại">Chó</label><br />
-                <input type="checkbox" id="phan_loai_meo" name="Mèo" value="Mèo" />
-                <label for="phân loại">Mèo</label><br />
-            </form>
-            <form class="tieu_de_loc"> <br>
-                <b>Giá</b><br />
-
+                <b>Giá</b><br>
                 <td>
-                    <input type="number" id="quanlity_tu" name="quanlity" placeholder="Từ" min="0" max="1000000"
-                        step="10000" placeholder="Từ" />
+                    <input type="number" id="quanlity_tu" name="min_price" placeholder="Từ" min="0" 
+                        placeholder="Từ" value="0" oninput="validateMinMaxPrice()"/>
                 </td>
                 <td>
-                    <input type="number" id="quanlity_den" name="quanlity" placeholder="Đến" min="0" max="1000000"
-                        step="100000" placeholder="Đến" />
-                </td>
-            </form>
-
-            <form class="tieu_de_loc"> <br>
+                    <input type="number" id="quanlity_den" name="max_price" placeholder="Đến" min="0" max="1000000"
+                        step="100000" placeholder="Đến" value="500000" oninput="validateMinMaxPrice()"/>
+                </td><br><br> <br>
                 <b>Sắp xếp theo</b><br />
 
-                <input type="checkbox" id="sap_xep_theo_mac_dinh" name="Mặc định" value="Mặc định" />
-                <label for="sắp xếp theo">Mặc định</label><br />
-                <input type="checkbox" id="sap_xep_theo_a_den_z" name="A đến Z" value="A đến Z" />
-                <label for="sắp xếp theo">A<span>&#10230; </span>Z</label><br />
-                <input type="checkbox" id="sap_xep_theo_z_den_a" name="Z đến A" value="Z đến A" />
-                <label for="sắp xếp theo">Z<span>&#10230; </span>A</label><br />
-                <input type="checkbox" id="sap_xep_theo_giam_dan" name="giảm dần" value="giảm dần" />
-                <label for="sắp xếp theo">Giảm dần</label><br />
-                <input type="checkbox" id="sap_xep_theo_tang_dan" name="tăng dần" value="tăng dần" />
-                <label for="sắp xếp theo">Tăng dần</label><br />
+                <input type="radio" id="sap_xep_theo_mac_dinh" name="sap_xep" value="Mặc định" checked />
+                <label for="sap_xep_theo_mac_dinh">Mặc định</label><br />
+
+                <input type="radio" id="sap_xep_theo_a_den_z" name="sap_xep" value="A đến Z" />
+                <label for="sap_xep_theo_a_den_z">A<span>&#10230; </span>Z</label><br />
+
+                <input type="radio" id="sap_xep_theo_z_den_a" name="sap_xep" value="Z đến A" />
+                <label for="sap_xep_theo_z_den_a">Z<span>&#10230; </span>A</label><br />
+
+                <input type="radio" id="sap_xep_theo_giam_dan" name="sap_xep" value="Giảm dần" />
+                <label for="sap_xep_theo_giam_dan">Giảm dần</label><br />
+
+                <input type="radio" id="sap_xep_theo_tang_dan" name="sap_xep" value="Tăng dần" />
+                <label for="sap_xep_theo_tang_dan">Tăng dần</label><br><br> <br>
+
+                <button id="loc" type="submit">Lọc</button>
             </form>
-            <button id="loc">Lọc</button>
         </div>
         <!-------------------------------------------------------------------------sản phẩm-------------------------------------------------------------------->
         <div class="container-item">
             @foreach($pro as $prodata)
             <div class="item ">
-                <a href="">
+                <a href="{{URL::to('/chi-tiet-san-pham-' . $prodata->id)}}" method="GET">
                     <div>
-                        <img src=" public/storage/products/{{$prodata->image}}" alt="{{$prodata->name}}">
+                        <img src="{{asset('public/storage/products/' . $prodata->image)}}" alt="{{$prodata->name}}">
                         <div class="text-truncate-container">
                             <p>{{$prodata->name}}</p>
                         </div>
@@ -82,4 +85,14 @@
             @endforeach
         </div>
     </div>
+    <script>
+        function validateMinMaxPrice() {
+            var minPrice = parseFloat(document.getElementById("min_price").value);
+            var maxPrice = parseFloat(document.getElementById("max_price").value);
+    
+            if (maxPrice < minPrice) {
+                document.getElementById("max_price").value = minPrice;
+            }
+        }
+    </script>
 @endsection

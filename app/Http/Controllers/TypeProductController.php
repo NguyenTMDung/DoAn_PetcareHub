@@ -13,10 +13,11 @@ class TypeProductController extends Controller
 {
     use ValidatesRequests;
 
-    public function index(){
+    public function index()
+    {
         $cate = category::all();
         $typ = type_product::all();
-        return view('admin.admin_loaisp')->with('typ',$typ)->with('cate',$cate);
+        return view('admin.admin_loaisp')->with('typ', $typ)->with('cate', $cate);
     }
     public function store(Request $request)
     {
@@ -27,7 +28,10 @@ class TypeProductController extends Controller
         $typ = new type_product;
         $typ->name = $request->input('name');
         $typ->category_name = $request->input('category');
-
+        $category = Category::where('name', $request->input('category'))->first();
+        if ($category) {
+            $typ->category_id = $category->id;
+        }
         $typ->save();
         Session::put('message', 'Thêm loại sản phẩm thành công!');
         return Redirect::to('/loai-san-pham');
@@ -42,7 +46,10 @@ class TypeProductController extends Controller
         $typ = type_product::find($id);
         $typ->name = $request->input('name');
         $typ->category_name = $request->input('category');
-
+        $category = Category::where('name', $request->input('category'))->first();
+        if ($category) {
+            $typ->category_id = $category->id;
+        }
         $typ->save();
         Session::put('message', 'Chỉnh sửa loại sản phẩm thành công!');
         return Redirect::to('/loai-san-pham');

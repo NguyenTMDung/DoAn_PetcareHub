@@ -29,7 +29,10 @@ Route::get('/chinh-sach-bao-mat', [FootController::class, 'ChinhSachBaoMat']);
 
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
-Route::get('/chi-tiet-san-pham', [ProductController::class, 'detailProduct']);
+Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
+Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
+// Route::get('/san-pham-{cate_id}', [ProductController::class, 'showAfterfilter']);
+
 
 
 //Page Dịch vụ

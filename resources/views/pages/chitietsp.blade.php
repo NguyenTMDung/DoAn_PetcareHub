@@ -20,7 +20,7 @@
     <script src="data/data.js"></script>
     <script src="./js/slide.js"></script>
 
-<div class="price-detail-container">
+<div class="price-detail-container" style="margin-top: 2vw">
     <div class="image-product-container">
       <img
         class="mySlides"
@@ -125,24 +125,19 @@
         </div>
       </div>
       <div class="size-container">
-        {{-- <label for="size" class="text-size">Phân loại:</label>
+        <label for="size" class="text-size">Phân loại:</label>
         <select id="size" style="margin-left: 2vw; display: grid; place-items: center;">
-            <div class="size-box">
-            <option value="small" class="size-button">Size S (Dưới 5kg)</option>
-            <option value="medium" class="size-button" style="margin-left: 20px">Size M (Dưới 10kg)</option>
-            <option value="large" class="size-button" style="margin-left: 20px">Size L (Dưới 15kg)</option>
-            </div>  
-        </select> --}}
-        <p class="text-size">Phân loại:</p>
-        <div class="size-box">
-          <button class="size-button">Size S (Dưới 5kg)</button>
-          <button class="size-button" style="margin-left: 20px">
-            Size M (Dưới 10kg)
-          </button>
-          <button class="size-button" style="margin-left: 20px">
-            Size L (Dưới 15kg)
-          </button>
-        </div>
+          <div class="size-box">
+            <input type="radio" class="btn-check"  name="btnradio" id="btnradio1" autocomplete="off" >
+            <label class="btn btn-outline-primary " for="btnradio1">Size S (Dưới 5kg)</label>
+  
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Size M (Dưới 10kg)</label>
+  
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">Size L (Dưới 15kg)</label>
+          </div>
+        </select>
       </div>
       <div class="quantity-container">
         <p class="text-quantity">Số lượng:</p>

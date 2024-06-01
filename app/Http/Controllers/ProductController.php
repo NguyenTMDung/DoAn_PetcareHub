@@ -23,25 +23,6 @@ class ProductController extends Controller
         return view('admin.admin_sanpham')->with('pro', $pro)->with('typ', $typ);
     }
 
-    public function showByPetandCateId($pet, $cate_id)
-    {
-        if ($pet == 'dog') $pet = 'Chó';
-        else $pet = 'Mèo';
-        $pro = DB::table('product')
-            ->join('typeProduct', 'product.typeProduct_name', '=', 'typeProduct.name')
-            ->join('category', 'typeProduct.category_name', '=', 'category.name')
-            ->select('Product.*')
-            ->where('category.id', '=', $cate_id)
-            ->where('pet', '=', $pet)
-            ->get();
-        return view('pages.sanpham', ['pro' => $pro]);
-    }
-
-    public function detailProduct()
-    {
-        return view('pages.chitietsp');
-    }
-
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -57,7 +38,12 @@ class ProductController extends Controller
         $pro = new product;
         $pro->name = $request->input('name');
         $pro->pet = $request->input('pet');
+
         $pro->typeProduct_name = $request->input('typeProduct_name');
+        $typeProduct = type_product::where('name', $request->input('typeProduct_name'))->first();
+        if ($typeProduct) {
+            $pro->typeProduct_id = $typeProduct->id;
+        }
         $pro->price = $request->input('price');
         $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
@@ -89,6 +75,10 @@ class ProductController extends Controller
         $pro->name = $request->input('name');
         $pro->pet = $request->input('pet');
         $pro->typeProduct_name = $request->input('typeProduct_name');
+        $typeProduct = type_product::where('name', $request->input('typeProduct_name'))->first();
+        if ($typeProduct) {
+            $pro->typeProduct_id = $typeProduct->id;
+        }
         $pro->price = $request->input('price');
         $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
@@ -145,7 +135,7 @@ class ProductController extends Controller
 
             // Lưu ảnh mới
             if ($request->hasFile('image')) {
-                $get_image = $request->file('image'); 
+                $get_image = $request->file('image');
                 $get_name_img = $get_image->getClientOriginalName();
                 $name_img = current(explode('.', $get_name_img));
                 $new_image = $name_img . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
@@ -159,5 +149,92 @@ class ProductController extends Controller
             return response()->json(['error' => 'Sản phẩm không tồn tại'], 404);
         }
     }
-}
 
+    //Page KH
+    public function showByPetandCateId($pet, $cate_id)
+    {
+        if ($pet == 'dog') $pet = 'Chó';
+        else $pet = 'Mèo';
+        $pro = DB::table('product')
+            ->join('typeProduct', 'product.typeProduct_id', '=', 'typeProduct.id')
+            ->select('Product.*')
+            ->where('typeProduct.category_id', '=', $cate_id)
+            ->where('pet', '=', $pet)
+            ->get();
+
+        $types = DB::table('typeProduct')
+            ->select('typeProduct.*')
+            ->where('category_id', '=', $cate_id)
+            ->get();
+        return view('pages.sanpham', ['pro' => $pro, 'types' => $types, 'cate_id' => $cate_id, 'pet' => $pet]);
+    }
+
+    public function filterProduct(Request $request, $cate_id)
+    {
+        $pro = DB::table('product')
+            ->join('typeProduct', 'product.typeProduct_id', '=', 'typeProduct.id')
+            ->select('product.*')
+            ->where('typeProduct.category_id', '=', $cate_id);
+
+        if ($request->has('typeProduct')) {
+            $typeProductIds = $request->input('typeProduct');
+            $pro->whereIn('typeProduct.id', $typeProductIds);
+        }
+
+        // Lọc sản phẩm theo loại pet. 
+        if ($request->has('pett')) {
+            $petTypes = $request->input('pett');
+            $pro->whereIn('product.pet', $petTypes);
+        }
+
+        // Lọc theo giá min và max
+        if ($request->has('min_price') && $request->has('max_price')) {
+            $minPrice = (float) $request->input('min_price');
+            $maxPrice = (float) $request->input('max_price');
+            $pro->whereBetween('price', [$minPrice, $maxPrice]);
+        } elseif ($request->has('min_price')) {
+            // Chỉ lọc theo giá min
+            $minPrice = (float) $request->input('min_price');
+            $pro->where('price', '>=', $minPrice);
+        } elseif ($request->has('max_price')) {
+            // Chỉ lọc theo giá max
+            $maxPrice = (float) $request->input('max_price');
+            $pro->where('price', '<=', $maxPrice);
+        }
+
+
+        $sortOption = $request->input('sap_xep');
+
+        switch ($sortOption) {
+            case 'A đến Z':
+                $pro->orderBy('product.name', 'asc');
+                break;
+            case 'Z đến A':
+                $pro->orderBy('product.name', 'desc');
+                break;
+            case 'Giảm dần':
+                $pro->orderBy('product.price', 'desc');
+                break;
+            case 'Tăng dần':
+                $pro->orderBy('product.price', 'asc');
+                break;
+            default:
+                break;
+        }
+
+        $pro = $pro->get();
+        // dd($pro);
+
+        $types = DB::table('typeProduct')
+            ->select('typeProduct.*')
+            ->where('category_id', '=', $cate_id)
+            ->get();
+
+        return view('pages.sanpham', ['pro' => $pro, 'cate_id' => $cate_id, 'types' => $types]);
+    }
+    public function detailProduct($id)
+    {
+        $pro = product::find($id);
+        return view('pages.chitietsp',['pro' => $pro]);
+    }
+}

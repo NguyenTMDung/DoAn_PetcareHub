@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->string('name')->unique;
             $table->string('typeProduct_name')->references('name')->on('typeProduct')->onDelete('set null');
+            $table->integer('typeProduct_id')->references('id')->on('typeProduct')->onDelete('set null');
             $table->integer('price');
             $table->integer('discount_price')->nullable();
             $table->integer('inventory');

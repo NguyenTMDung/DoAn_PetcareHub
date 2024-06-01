@@ -324,7 +324,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-            <form action="{{URL::to('/quan-ly-nhan-vien')}}" method="POST" id="deleteForm">
+            <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST" id="deleteForm">
                 {{ csrf_field() }}
                 {{ method_field('DELETE')}}
                 <div class="modal-body">

@@ -672,22 +672,33 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 @media only screen and (max-width: 768px) {
     #footer #policy {
         margin-top: 2vw;
-        width: 40%;
+        width: 100%;
         line-height: 5vw;
-    }   
+        text-align: center;
+    }  
+    #infor-shop {
+        width: 100%;
+        margin-top: 2vw;
+        text-align: center;
+    }
+    #footer
+    {
+        padding: 2vw 5vw;
+    } 
     #footer h3
     {
         margin-bottom: 2vw;
-        font-size: 2.5vw;
+        font-size: unset;
     }
     #footer p {
-        font-size: 2vw;
+        font-size: 0.9em;
     }
     #footer a {
-        font-size: 2vw;
+        font-size: 0.9em;
     }
     #footer-body{
         width: 90%;
+        display: unset;
     }
     #infor-shop i
     {
@@ -715,7 +726,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     .header #input_search {
         width: 90%;
         border: none;
-        font-size: 2vw;
+        font-size: unset;
         border-radius: 10vw;
         padding-left: 3vw;
     }
@@ -738,11 +749,11 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     .menu .collapse, .menu .navbar-collapse {
         margin-left: 0;
-        margin-right: 40vw;
+        margin-right: 30vw;
         background-color: #FFF;
     }
     .menu .nav-link {
-        font-size: 2.5vw;
+        font-size: unset;
     }
     .sub-menu
     {
@@ -752,39 +763,44 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     .dropdown-menu a
     {
-        font-size: 2.2vw;
+        font-size: unset;
     }
     .sub-menu li {
         width: unset;
+        border-bottom: 1px solid rgb(174, 174, 174);
+        padding: 1vw 0;
     }
     .sub-menu li a
     {
-        font-size: 2vw;
+        font-size: unset;
     }
     #slide-show
     {
         height: 30vw;
     }
     .title {
-        font-size: 2.5vw;
+        font-size: unset;
+    }
+    .dropdown-menu li {
+        padding: 1vw 1vw;
     }
     .navbar-toggler
     {
         margin-left: 3.5vw;
     }
     #shop-address p {
-        font-size: 2.5vw;
+        font-size: unset;
     }
     .title p
     {
-        width: 40vw;
+        width: 80vw;
         text-align: center;
     }
     #shop-address .title {
         height: 6vw;
     }
     #shop-address-detail h3 {
-        font-size: 3vw;
+        font-size: unset;
         font-weight: 600;
     }
     #shop-address input {
@@ -792,14 +808,14 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
         width: 30vw;
     }
     .text-truncate-container p {
-        font-size: 2vw;
+        font-size: 0.8em;
         font-weight: 300;
     }
     .pro-price {
-        font-size: 2.5vw;
+        font-size: 1em;
     }
     .sales {
-        font-size: 1.9vw;
+        font-size: 0.7em;
     }
     .navbar {
         width: 75vw;

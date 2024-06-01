@@ -13,8 +13,13 @@ class product extends Model
     protected $fillable = [
         'name', 'pet' ,'typeProduct_name','typeProduct_id', 'price', 'image', 'inventory', 'description'
     ];
-    public function typeProduct(){
-        return $this->belongsTo(type_product::class,'typeProduct_name');
+    public function typeProduct()
+    {
+        return $this->belongsTo(Type_Product::class, 'typeProduct_id');
+    }
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
     }
 
 }

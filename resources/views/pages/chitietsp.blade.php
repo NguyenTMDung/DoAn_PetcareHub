@@ -29,71 +29,25 @@
           alt="cho1"
           style="width: 100%"
         />
-      <img
-        class="mySlides"
-        src="{{asset('public/frontend/image/nhadem02.jpg')}}"
-        alt="cho1"
-        style="width: 100%; display: none"
-      />
-      <img
-        class="mySlides"
-        src="{{asset('public/frontend/image/nhadem03.jpg')}}"
-        alt="cho1"
-        style="width: 100%; display: none"
-      />
-      <img
-        class="mySlides"
-        src="{{asset('public/frontend/image/nhadem04.jpg')}}"
-        alt="cho1"
-        style="width: 100%; display: none"
-      />
-      <img
-        class="mySlides"
-        src="{{asset('public/frontend/image/nhadem05.jpg')}}"
-        alt="cho1"
-        style="width: 100%; display: none"
-      />
+        @foreach($pro->galleries as $gallery)
+          <img
+          class="mySlides"
+          src="{{ asset('public/storage/gallery/' . $gallery->image) }}" 
+          alt="cho1"
+          style="width: 100%; display: none"
+          />
+        @endforeach
       <div class="row-padding section">
-        <div class="col s4">
-          <img
-            class="demo opacity hover-opacity-off"
-            src="{{asset('public/frontend/image/nhadem06.jpg')}}"
-            style="width: 100%; cursor: pointer"
-            onclick="currentDiv(1)"
-          />
-        </div>
-        <div class="col s4">
-          <img
-            class="demo opacity hover-opacity-off"
-            src="{{asset('public/frontend/image/nhadem02.jpg')}}"
-            style="width: 100%; cursor: pointer"
-            onclick="currentDiv(2)"
-          />
-        </div>
-        <div class="col s4">
-          <img
-            class="demo opacity hover-opacity-off"
-            src="{{asset('public/frontend/image/nhadem03.jpg')}}"
-            style="width: 100%; cursor: pointer"
-            onclick="currentDiv(3)"
-          />
-        </div>
-        <div class="col s4">
-          <img
-            class="demo opacity hover-opacity-off"
-            src="{{asset('public/frontend/image/nhadem04.jpg')}}"
-            style="width: 100%; cursor: pointer"
-            onclick="currentDiv(4)"
-          />
-        </div>
-        <div class="col s4">
-          <img
-            class="demo opacity hover-opacity-off"
-            src="{{asset('public/frontend/image/nhadem05.jpg')}}"
-            style="width: 100%; cursor: pointer"
-            onclick="currentDiv(5)"
-          />
-        </div>
+        @foreach($pro->galleries as $gallery)
+          <div class="col s4">
+            <img
+              class="demo opacity hover-opacity-off"
+              src="{{ asset('public/storage/gallery/' . $gallery->image) }}" 
+              style="width: 100%; cursor: pointer"
+              onclick="currentDiv(1)"
+            />
+          </div>
+        @endforeach
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
@@ -166,15 +120,7 @@
   <!----------------------------------- detail infor -------------------------------------------------------------------------->
   <div class="detail-infor-container">
     <p class="text-detail-in">Chi tiết sản phẩm</p>
-    <p class="text-detail-in-infor">Kích thước Size:</p>
-    <p class="text-detail-in-size">- S : 45x47x34</p>
-    <p class="text-detail-in-size">- M : 65x69x48</p>
-    <p class="text-detail-in-size">- L : 90x90x60</p>
-    <p class="text-detail-in-infor">Chất liệu:</p>
-    <p class="text-detail-in-size">
-      - Vải bông mịn ấm áp, mềm mại Với kiểu cách thiết kế mới giúp tiết
-      kiệm không gian và chi phí vận chuyển
-    </p>
+    <p class="text-detail-in-size"><pre>{{ $pro->description }}</pre></p>
   </div>
   <!-------------------------------------------------------- product reviews----------------------------------------------------------- -->
   <div class="product-reviews-container">
@@ -214,79 +160,26 @@
   </div>
   <!------------------------------------------------------ other products -------------------------------------------------------------------->
   <div class="container-item">
+    @foreach( $relatedProducts as $relatedProductsData)
     <div class="item ">
         <a href="">
             <div>
-                <img src="image/chailong.jpg" alt="">
+                <img src="{{asset('public/storage/products/' . $relatedProductsData->image)}}" alt="">
                 <div class="text-truncate-container">
-                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
+                    <p>{{$relatedProductsData->name}}</p>
                 </div>
             </div>
         </a>
         <div class="pro-price">
-            30.000 VNĐ
+          {{$relatedProductsData->price}} VNĐ
         </div>
         <div style="display: flex;">
            <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
             <p class="number-of-sales">Lượt bán: 88</p>
         </div>
     </div>
-
-    <div class="item ">
-        <a href="">
-            <div>
-                <img src="image/chailong.jpg" alt="">
-                <div class="text-truncate-container">
-                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                </div>
-            </div>
-        </a>
-        <div class="pro-price">
-            30.000 VNĐ
-        </div>
-        <div style="display: flex;">
-            <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
-            <p class="number-of-sales">Lượt bán: 88</p>
-        </div>
-    </div>
-
-    <div class="item ">
-        <a href="">
-            <div>
-                <img src="image/chailong.jpg" alt="">
-                <div class="text-truncate-container">
-                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                </div>
-            </div>
-        </a>
-        <div class="pro-price">
-            30.000 VNĐ
-        </div>
-        <div style="display: flex;">
-            <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
-            <p class="number-of-sales">Lượt bán: 88</p>
-        </div>
-    </div>
-
-    <div class="item ">
-        <a href="">
-            <div>
-                <img src="image/chailong.jpg" alt="">
-                <div class="text-truncate-container">
-                    <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                </div>
-            </div>
-        </a>
-        <div class="pro-price">
-            30.000 VNĐ
-        </div>
-        <div style="display: flex;">
-            <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
-            <p class="number-of-sales">Lượt bán: 88</p>
-        </div>
-    </div>
+    @endforeach
   </div>
-</div>
 <script>
     function increaseQuantity() {
       let input = document.getElementById("quantity");

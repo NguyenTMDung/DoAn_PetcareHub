@@ -44,8 +44,12 @@
                                 <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá"></input>
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="col-form-label">Ảnh</label>
+                                <label for="image" class="col-form-label">Ảnh chính</label>
                                 <input type="file" class="form-control" id="image" name="image" accept="image/*"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gallery" class="col-form-label">Ảnh phụ</label>
+                                <input type="file" class="form-control" name="gallery[]" id="gallery" multiple></input>
                             </div>
                             <div class="mb-3">
                                 <label for="inventory" class="col-form-label">Số lượng</label>
@@ -113,14 +117,14 @@
                             <input type="number" class="form-control" id="inventoryEdit" placeholder="Nhập số lượng" name="inventory"></input>
                         </div>
                         {{-- Bosung --}}
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="kieupl" class="col-form-label"> Kiểu phân loại</label>
                             <input type="text" class="form-control" id="kieuplEdit" placeholder="Nhập kiểu phân loại sản phẩm" name="kieupl"></input>
                         </div>
                         <div class="mb-3">
                             <label for="slpl" class="col-form-label">Số lượng phân loại</label>
                             <input type="number" class="form-control" id="slplEdit" name="description"></textarea>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <label for="description" class="col-form-label">Mô tả</label>
                             <textarea type="text" class="form-control" id="descriptionEdit" name="description"></textarea>

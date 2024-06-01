@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\type_product;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
@@ -56,6 +57,21 @@ class ProductController extends Controller
         $pro->image = $new_image;
 
         $pro->save();
+
+        if ($request->hasFile('gallery')) {
+            foreach ($request->file('gallery') as $galleryImage) {
+                $get_image =  $galleryImage;
+                $get_name_img = $get_image->getClientOriginalName();
+                $name_img = current(explode('.', $get_name_img));
+                $new_image = $name_img . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+                $get_image->move('public/storage/gallery',  $new_image);
+                Gallery::create([
+                    'product_id' => $pro->id,
+                    'image' => $new_image
+                ]);
+            }
+        }
+
         Session::put('message', 'Thêm sản phẩm thành công!');
         return Redirect::to('/quan-ly-san-pham');
     }
@@ -235,7 +251,22 @@ class ProductController extends Controller
     public function detailProduct($id)
     {
         $pro = product::find($id);
+         // Lấy danh mục của sản phẩm
+        $typeProductId = $pro->typeProduct_id;
+
+         // Lấy category_id từ bảng typeProduct
+        $typeProduct = DB::table('typeProduct')->where('id', $typeProductId)->first();
+
+        $categoryId = $typeProduct->category_id;
+
+        // Lấy các sản phẩm cùng danh mục (ngoại trừ sản phẩm hiện tại)
+        $relatedProducts = DB::table('product')
+        ->join('typeProduct', 'product.typeProduct_id', '=', 'typeProduct.id')
+        ->where('typeProduct.category_id', $categoryId)
+        ->where('product.id', '!=', $id)
+        ->select('product.*')
+        ->get();
         // dd($pro);
-        return view('pages.chitietsp', ['pro' => $pro]);
+        return view('pages.chitietsp', ['pro' => $pro, 'relatedProducts' => $relatedProducts]);
     }
 }

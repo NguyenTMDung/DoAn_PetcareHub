@@ -20,10 +20,13 @@ return new class extends Migration
             $table->integer('discount_price')->nullable();
             $table->integer('inventory');
             $table->string('image');
+            $table->float('rating')->default(0);;
+            $table->integer('sales')->default(0);;
             $table->integer('bestseller')->default(0);
             $table->integer('new')->default(1);
             $table->integer('number_of_sale')->default(0);
             $table->string('size')->nullable();
+            $table->text('gallery')->nullable();
             $table->enum('pet', ['Chó', 'Mèo']);
             $table->longtext('description');
             // $table->integer('id_user_created')->references('id')->on('users')->onDelete('set null');

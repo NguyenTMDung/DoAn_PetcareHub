@@ -93,5 +93,5 @@ Route::delete('/quan-ly-lich-hen/{id}', [AppointController::class, 'destroy']);
 Route::get('/khung-gio', [AppointController::class, 'timeslot']);
 
 
-//datlich
-Route::get('/datlich', [DatLichController::class, 'index'])->name('datlich');
+// 'datlich'
+Route::get('/datlich', [DatLichController::class, 'index']);

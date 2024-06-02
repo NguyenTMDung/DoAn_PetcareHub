@@ -163,9 +163,13 @@
 </div>
 <br>
 
+<!-- resources/views/dichvuspa.blade.php -->
 <div id="sub">
-    <input type="Submit" value="Đặt lịch ngay" name="datlich">
+    <a href="{{ url('/datlich') }}">
+        <button type="button">Đặt lịch ngay</button>
+    </a>
 </div>
+
 <br><br><br>
 
 <div class="form-container">

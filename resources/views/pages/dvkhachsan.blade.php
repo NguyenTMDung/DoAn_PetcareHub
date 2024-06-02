@@ -198,8 +198,9 @@
     </div>
 
     <div id="sub">
+     <a href="{{ url('/datlich') }}" style="color:aliceblue">
         <input type="Submit" value="Đặt lịch ngay" name="Submit">
-    </div>
+</a> </div>
     <br><br><br>
     <div class="form-container">
         <div class="form-column1">
@@ -299,9 +300,12 @@
             </div>
         </div>
     </div>
+   
     <div id="sub">
-        <a href="{{URL::to('/san-pham')}}" style="color:aliceblue"><input type="Submit" value="Sản phẩm" name="Submit"></a>
-    </div>
+    <a href="{{ url('/sanpham') }}" style="color:aliceblue">
+        <input type="Submit" value="Sản phẩm"> 
+    </a>
+</div>
     <br><br><br>
     <div class="review-section">
         <h4><b>📮 ĐÁNH GIÁ CỦA KHÁCH HÀNG</b></h4>

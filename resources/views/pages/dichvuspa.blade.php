@@ -164,7 +164,9 @@
 <br>
 
 <div id="sub">
-    <input type="Submit" value="Đặt lịch ngay" name="datlich">
+    <a href="{{ url('/datlich') }}" style="color:aliceblue">
+        <input type="Submit" value="Đặt lịch ngay"> 
+    </a>
 </div>
 <br><br><br>
 
@@ -417,8 +419,12 @@
 </div>
 <br>
 <div id="sub">
-    <input type="Submit" value="Sản phẩm" name="sp">
+    <a href="{{ url('/sanpham') }}" style="color:aliceblue">
+        <input type="Submit" value="Sản phẩm"> 
+    </a>
 </div>
+
+
 <br><br><br>
 
 <div class="review-section">

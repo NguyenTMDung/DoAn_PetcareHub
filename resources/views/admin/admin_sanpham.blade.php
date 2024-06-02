@@ -51,13 +51,18 @@
                                 <label for="gallery" class="col-form-label">Ảnh phụ</label>
                                 <input type="file" class="form-control" name="gallery[]" id="gallery" multiple></input>
                             </div>
+                            <div class="form-group">
+                                <label for="sizes">Phân loại và Giá</label> <br>
+                                <button type="button" class="btn btn-success" id="addSize">Thêm Phân loại</button>
+                                <div id="sizeFields"></div>
+                            </div>
                             <div class="mb-3">
                                 <label for="inventory" class="col-form-label">Số lượng</label>
                                 <input type="number" class="form-control" id="inventory" placeholder="Nhập số lượng" name="inventory"></input>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="col-form-label">Mô tả</label>
-                                <textarea type="number" class="form-control" id="description" name="description"></textarea>
+                                <textarea type="text" class="form-control" id="description" name="description"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -113,18 +118,13 @@
                             <input type="file" class="form-control" id="imageEdit" name="image"></input>
                         </div>
                         <div class="mb-3">
+                            <label for="size">Phân loại (Theo định dạng: X|M|L)</label>
+                            <input type="text" class="form-control" id="sizeEdit" placeholder="X|M|L" name="size"></input>
+                        </div>
+                        <div class="mb-3">
                             <label for="inventory" class="col-form-label">Số lượng</label>
                             <input type="number" class="form-control" id="inventoryEdit" placeholder="Nhập số lượng" name="inventory"></input>
                         </div>
-                        {{-- Bosung --}}
-                        {{-- <div class="mb-3">
-                            <label for="kieupl" class="col-form-label"> Kiểu phân loại</label>
-                            <input type="text" class="form-control" id="kieuplEdit" placeholder="Nhập kiểu phân loại sản phẩm" name="kieupl"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="slpl" class="col-form-label">Số lượng phân loại</label>
-                            <input type="number" class="form-control" id="slplEdit" name="description"></textarea>
-                        </div> --}}
                         <div class="mb-3">
                             <label for="description" class="col-form-label">Mô tả</label>
                             <textarea type="text" class="form-control" id="descriptionEdit" name="description"></textarea>
@@ -220,6 +220,7 @@
                     $('#petEdit').val(data.pet);
                     $('#typeProduct_nameEdit').val(data.typeProduct_name);
                     $('#priceEdit').val(data.price);
+                    $('#sizeEdit').val(data.size);
                     $('#inventoryEdit').val(data.inventory);
                     $('#descriptionEdit').val(data.description);
 
@@ -325,6 +326,23 @@
                 }
             });
         });
+    });
+
+    let sizeIndex = 0;
+    document.getElementById('addSize').addEventListener('click', function() {
+        var sizeFields = document.getElementById('sizeFields');
+        var sizeField = document.createElement('div');
+        sizeField.classList.add('form-row');
+        sizeField.innerHTML = `
+            <div class="col">
+                <input type="text" name="sizes[${sizeIndex}][size]" class="form-control" placeholder="Phân loại" required>
+            </div>
+            <div class="col">
+                <input type="number" name="sizes[${sizeIndex}][price]" class="form-control" placeholder="Giá" required>
+            </div>
+        `;
+        sizeFields.appendChild(sizeField);
+        sizeIndex++;
     });
 
 </script>

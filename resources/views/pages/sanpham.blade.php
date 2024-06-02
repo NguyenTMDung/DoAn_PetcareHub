@@ -70,7 +70,7 @@
                             <p>{{$prodata->name}}</p>
                         </div>
                         <div class="pro-price">
-                            {{$prodata->price}} VNĐ
+                            {{$prodata->min_price}} - {{$prodata->max_price}} VNĐ
                         </div>
                         <div style="display: flex;justify-content: space-between;">
                             <div style="display: flex;">

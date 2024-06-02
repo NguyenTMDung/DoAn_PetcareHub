@@ -16,12 +16,13 @@ return new class extends Migration
             $table->string('name')->unique;
             $table->string('typeProduct_name')->references('name')->on('typeProduct')->onDelete('set null');
             $table->integer('typeProduct_id')->references('id')->on('typeProduct')->onDelete('set null');
-            $table->integer('price');
+            $table->integer('min_price')->default(0);
+            $table->integer('max_price')->default(0);
             $table->integer('discount_price')->nullable();
             $table->integer('inventory');
             $table->string('image');
-            $table->float('rating')->default(0);;
-            $table->integer('sales')->default(0);;
+            $table->float('rating')->default(0);
+            $table->integer('sales')->default(0);
             $table->integer('bestseller')->default(0);
             $table->integer('new')->default(1);
             $table->integer('number_of_sale')->default(0);

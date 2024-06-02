@@ -58,11 +58,11 @@
         <div class="img-evaluate" style="display: flex;">
           5 <p class="star-rating1">★★★★★</p>
         </div>
-        <p class="text-evaluate">|30 đánh giá</p>
-        <p class="text-evaluate">|Đã bán 100</p>
+        <p class="text-evaluate">| 30 đánh giá</p>
+        <p class="text-evaluate">| Đã bán 100</p>
       </div>
       <div class="price-container">
-        <p class="text-price">{{$pro->price}}</p>
+        <p class="text-price" id= "priceRange">{{$pro->min_price}} - {{$pro->max_price}} VNĐ</p>
       </div>
       <div class="return-policy-container">
         <p class="text-return-policy">Chính Sách Trả Hàng:</p>
@@ -75,46 +75,46 @@
           <script src="./js/infor.js"></script>
         </div>
       </div>
+      <form action=" {{URL::to('them-vao-gio-hang-' . $pro->id)}}" method="POST">
+        {{ csrf_field() }}
       <div class="size-container">
         <p class="text-size">Phân loại:</p>
           <div class="size-box">
-            <input type="radio" class="btn-check"  name="btnradio" id="btnradio1" autocomplete="off" >
-            <label class="btn btn-outline-primary " for="btnradio1">Size S (Dưới 5kg)</label>
-  
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Size M (Dưới 10kg)</label>
-  
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio3">Size L (Dưới 15kg)</label>
+            @foreach($sizes as $sizeData)
+              <input type="radio" class="btn-check" name="size" id="size{{$sizeData->id}}" data-price="{{$sizeData->price}}" value="{{$sizeData->size}}" autocomplete="off">
+              <label class="btn btn-outline-primary " for="size{{$sizeData->id}}">{{$sizeData->size}}</label>
+            @endforeach
           </div>
       </div>
       <div class="quantity-container">
         <p class="text-quantity">Số lượng:</p>
         <div class="quantity-box">
-          <button class="quantity-button" onclick="decreaseQuantity()">
+          <button type="button" class="quantity-button" onclick="decreaseQuantity()">
             -
           </button>
           <input
             type="text"
             class="quantity-input"
             id="quantity"
+            name= "quantity"
             value="1"
             style="width: 50px"
           />
-          <button class="quantity-button" onclick="increaseQuantity()">
+          <button type="button" class="quantity-button" onclick="increaseQuantity()">
             +
           </button>
         </div>
       </div>
       <div class="buy-cart-container">
-        <div class="buy-container">
-          <button class="buy-button">Mua ngay</button>
-        </div>
         <div class="cart-container">
           <i class="bi bi-cart4"></i>
-          <button class="cart-button">Thêm vào giỏ hàng</button>
+          <button type="submit" class="cart-button" value="add_to_cart">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="buy-container" style="margin-left: 1vw">
+          <button type="submit" class="buy-button" value="buy_now">Mua ngay</button>
         </div>
       </div>
+    </form>
     </div>
   </div>
   <!----------------------------------- detail infor -------------------------------------------------------------------------->
@@ -171,7 +171,7 @@
             </div>
         </a>
         <div class="pro-price">
-          {{$relatedProductsData->price}} VNĐ
+          {{$relatedProductsData->min_price}} - {{$relatedProductsData->max_price}} VNĐ
         </div>
         <div style="display: flex;">
            <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
@@ -181,6 +181,7 @@
     @endforeach
   </div>
 <script>
+
     function increaseQuantity() {
       let input = document.getElementById("quantity");
       let value = parseInt(input.value);
@@ -194,6 +195,7 @@
         input.value = value - 1;
       }
     }
+
     function showInfo(event) {
       const infoText =
         "Miên phí Trả hàng trong 15 ngày nếu Đổi ý (hàng trả phải còn nguyên seal, tem, hộp sản phẩm). Ngoài ra, tại thời điểm nhận hàng, bạn có thể đóng kiểm và được trả hàng miễn phí.";
@@ -247,6 +249,29 @@
       dots[slideIndex - 1].className += "opacity-off";
     }
   </script>
+  <script>
+    // Lắng nghe sự kiện khi người dùng chọn kích thước
+    var sizeButtons = document.querySelectorAll('.btn-check');
+    sizeButtons.forEach(function(button) {
+        button.addEventListener('change', function() {
+            var priceRange = document.getElementById('priceRange');
+            var selectedSize = document.querySelector('input[name="size"]:checked');
+            if (selectedSize) {
+                var price = selectedSize.getAttribute('data-price');
+                priceRange.textContent = price + ' VNĐ';
+            } else {
+                priceRange.textContent = '';
+            }
+        });
+    });
+
+    // Tắt sự kiện bỏ chọn cho tất cả các ô radio khi một ô radio được chọn
+    // document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    //     radio.addEventListener('click', () => {
+            
+    //     });
+    // });
+</script>
   
 @endsection
 

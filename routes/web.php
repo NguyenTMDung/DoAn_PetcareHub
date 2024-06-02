@@ -30,6 +30,7 @@ Route::get('/chinh-sach-bao-mat', [FootController::class, 'ChinhSachBaoMat']);
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
+Route::post('them-vao-gio-hang-{id}', [ProductController::class, 'addToCart'])->middleware('checkUser');
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
 // Route::get('/san-pham-{cate_id}', [ProductController::class, 'showAfterfilter']);
 

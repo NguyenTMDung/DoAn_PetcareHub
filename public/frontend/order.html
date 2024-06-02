@@ -47,7 +47,7 @@
                 </div>
                 <div id="location" onclick="choose(this)">
                     <div class="options ship">
-                        <input type="radio" id="address" name="loca" value="1">
+                        <input type="radio" id="addresss" name="loca" value="1">
                         <p>Giao đến địa chỉ của bạn</p>
                         <i class="bi bi-truck"></i>
                     </div>
@@ -83,75 +83,161 @@
                 <div id="error-message">
 
                 </div>
+                <div id="product-mobile">
+
+
+                </div>
                 <input type="submit" name="complete" id="complete" value="Thanh toán">
             </form>
-        </div>
-        <div id="products">
-            <h2 class="title">Sản phẩm</h2>
-            <div class="product" style="display: flex;">
-                <div style="width: 6vw;">
-                    <img src="image/best_seller3.png" alt="" class="img-product">
-                </div>
-                <div class="detail-product">
-                    <div class="text-truncate-container">
-                        <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng
-                            Phong Cách Chó Mèo Mùa Hè</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>Phân loại:</p>
-                        <p class="classify" style="margin-left:5px ;">Size XXL</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>SL: </p>
-                        <p class="quantity" style="margin-left:5px ;">1</p>
-                    </div>
-                </div>
-                <div class="pro-price">
-                    50000
-                </div>
-            </div>
-            <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
-            <div class="product" style="display: flex;">
-                <div style="width: 6vw;">
-                    <img src="image/best_seller2.png" alt="" class="img-product">
-                </div>
-                <div class="detail-product">
-                    <div class="text-truncate-container">
-                        <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>Phân loại:</p>
-                        <p class="classify" style="margin-left:5px ;">Size XXL</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>SL: </p>
-                        <p class="quantity" style="margin-left:5px ;">1</p>
-                    </div>
-                </div>
-                <div class="pro-price">
-                    40000
-                </div>
-            </div>
-            <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
-            <div id="detail-pay">
-                <div style="display: flex;">
-                    <h5 style="width: 75%;">Số lượng</h5>
-                    <h5 id="quantity" style="text-align: end;width:25% ;">2</h5>
-                </div>
-                <div style="display: flex;">
-                    <h5 style="width: 75%;">Phí vận chuyển</h5>
-                    <h5 id="transport-fee" style="text-align: end;width:25% ;">40000</h5>
-                </div>
-                <div style="display: flex;">
-                    <h3 style="width: 75%;">Tổng tiền</h3>
-                    <h3 id="total-products" style="text-align: end;width:25%  ;">90000</h3>
-                </div>
-            </div>
-        </div>
+        </div> 
+        <div id="product-web">
+
+
+        </div>   
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </body>
 <script>
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            document.getElementById("product-mobile").innerHTML = `<div id="products">
+                <h2 class="title">Sản phẩm</h2>
+                <div class="product" style="display: flex;">
+                    <div class="img-pro">
+                        <img src="image/best_seller3.png" alt="" class="img-product">
+                    </div>
+                    <div class="detail-product">
+                        <div class="text-truncate-container">
+                            <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng
+                                Phong Cách Chó Mèo Mùa Hè</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>Phân loại:</p>
+                            <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>SL: </p>
+                            <p class="quantity" style="margin-left:5px ;">1</p>
+                        </div>
+                    </div>
+                    <div class="pro-price">
+                        50000
+                    </div>
+                </div>
+                <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                <div class="product" style="display: flex;">
+                    <div class="img-pro">
+                        <img src="image/best_seller2.png" alt="" class="img-product">
+                    </div>
+                    <div class="detail-product">
+                        <div class="text-truncate-container">
+                            <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>Phân loại:</p>
+                            <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>SL: </p>
+                            <p class="quantity" style="margin-left:5px ;">1</p>
+                        </div>
+                    </div>
+                    <div class="pro-price">
+                        40000
+                    </div>
+                </div>
+                <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                <div style="margin: 5vw 2vw;margin-top: 2vw; color: #003459;">
+                    <div style="display: flex;">
+                        <h5 style="width: 75%;">Số lượng</h5>
+                        <h5 id="quantity" style="text-align: end;width:25% ;">2</h5>
+                    </div>
+                    <div style="display: flex;">
+                        <h5 style="width: 75%;">Phí vận chuyển</h5>
+                        <h5 id="transport-fee" style="text-align: end;width:25% ;">40000</h5>
+                    </div>
+                    <div style="display: flex;">
+                        <h3 style="width: 75%;">Tổng tiền</h3>
+                        <h3 id="total-products" style="text-align: end;width:25%  ;">90000</h3>
+                    </div>
+                </div>
+            </div>`;
+        } else {
+            document.getElementById("product-web").innerHTML = `<div id="products">
+                <h2 class="title">Sản phẩm</h2>
+                <div class="product" style="display: flex;">
+                    <div class="img-pro">
+                        <img src="image/best_seller3.png" alt="" class="img-product">
+                    </div>
+                    <div class="detail-product">
+                        <div class="text-truncate-container">
+                            <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng
+                                Phong Cách Chó Mèo Mùa Hè</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>Phân loại:</p>
+                            <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>SL: </p>
+                            <p class="quantity" style="margin-left:5px ;">1</p>
+                        </div>
+                    </div>
+                    <div class="pro-price">
+                        50000
+                    </div>
+                </div>
+                <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                <div class="product" style="display: flex;">
+                    <div class="img-pro">
+                        <img src="image/best_seller2.png" alt="" class="img-product">
+                    </div>
+                    <div class="detail-product">
+                        <div class="text-truncate-container">
+                            <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>Phân loại:</p>
+                            <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>SL: </p>
+                            <p class="quantity" style="margin-left:5px ;">1</p>
+                        </div>
+                    </div>
+                    <div class="pro-price">
+                        40000
+                    </div>
+                </div>
+                <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                <div style="margin: 5vw 2vw;margin-top: 2vw; color: #003459;">
+                    <div style="display: flex;">
+                        <h5 style="width: 75%;">Số lượng</h5>
+                        <h5 id="quantity" style="text-align: end;width:25% ;">2</h5>
+                    </div>
+                    <div style="display: flex;">
+                        <h5 style="width: 75%;">Phí vận chuyển</h5>
+                        <h5 id="transport-fee" style="text-align: end;width:25% ;">40000</h5>
+                    </div>
+                    <div style="display: flex;">
+                        <h3 style="width: 75%;">Tổng tiền</h3>
+                        <h3 id="total-products" style="text-align: end;width:25%  ;">90000</h3>
+                    </div>
+                </div>
+            </div>`;
+        }
+    }
+
+    // Create a MediaQueryList object
+    var x = window.matchMedia("(max-width: 700px)")
+
+    // Call listener function at run time
+    myFunction(x);
+
+    // Attach listener function on state changes
+    x.addEventListener("change", function () {
+        myFunction(x);
+    });
     function choose(a) {
         a.querySelectorAll('input[type=radio]').forEach(radio => {
             const divOptions = radio.parentNode;
@@ -166,7 +252,7 @@
     }
     document.querySelectorAll('input[type=radio]').forEach(radio => {
         radio.addEventListener('change', () => {
-            if (radio.id === 'address' && radio.checked) {
+            if (radio.id === 'addresss' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
                     <p>Địa chỉ giao hàng*</p>
                     <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">

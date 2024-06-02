@@ -105,8 +105,8 @@
                         <tr>
                             <td style="flex-grow: 1;"><input type="checkbox" name="tick" class="tick"></td>
                             <td class="product" style="flex-grow: 4;">
-                                <div style="width: 10vw;">
-                                    <img src="image/best_seller3.png" alt="" class="img-product" style="width: 10vw;">
+                                <div class="img-pro">
+                                    <img src="image/best_seller3.png" alt="" class="img-product" >
                                 </div>
                                 <div class="detail-product">
                                     <div class="text-truncate-container">
@@ -123,8 +123,12 @@
                                     <div class="pro-price">
                                         50000
                                     </div>
-                                    <div class="quantitys" style="width: 1vw;">
-                                        <input type="number" name="id2" id="quantity" value="1" min="1" max="10">
+                                    <div class="quantitys" >
+                                        <div class="number-input">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="border-radius: 0.5vw 0 0 0.5vw;"></button>
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" style="border-radius: 0 0.5vw 0.5vw 0;"></button>
+                                          </div>
                                     </div>
                                 </div>
                             </td>
@@ -135,8 +139,8 @@
                         <tr>
                             <td style="flex-grow: 1;"><input type="checkbox" name="tick" class="tick"></td>
                             <td class="product" style="flex-grow: 4;">
-                                <div>
-                                    <img src="image/best_seller2.png" alt="" class="img-product" style="width: 10vw;">
+                                <div class="img-pro">
+                                    <img src="image/best_seller2.png" alt="" class="img-product" >
                                 </div>
                                 <div class="detail-product">
                                     <div class="text-truncate-container">
@@ -152,8 +156,12 @@
                                     <div class="pro-price">
                                         40000
                                     </div>
-                                    <div class="quantitys" style="width: 1vw;">
-                                        <input type="number" name="id2" id="quantity" value="1" min="1" max="10">
+                                    <div class="quantitys">
+                                        <div class="number-input">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="border-radius: 0.5vw 0 0 0.5vw;"></button>
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" style="border-radius: 0 0.5vw 0.5vw 0;"></button>
+                                          </div>
                                     </div>
                                 </div>
                             </td>
@@ -164,9 +172,9 @@
                         </tr>
                         <tr>
                             <td colspan="3">
-                                <table style="width: 100%;border-top: 1px solid;">
+                                <table id="total-order">
                                     <tr>
-                                        <td style="width: 70%; text-align: start;padding: 0 10vw;">
+                                        <td style="width: 70%; text-align: start;">
                                             <p id="quantity_title">Số lượng sản phẩm :</p>
                                         </td>
                                         <td>
@@ -174,7 +182,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 70%;text-align: start;padding: 0 10vw;">
+                                        <td style="width: 70%;text-align: start;">
                                             <p id="total_title">Tổng tiền :</p>
                                         </td>
                                         <td>

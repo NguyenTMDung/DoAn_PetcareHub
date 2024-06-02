@@ -28,5 +28,6 @@
             <p>Do bên bán sử dụng hoá đơn điện tử và xuất hoá đơn trong ngày bán hàng, chính vì vậy: Trong mọi trường hợp đổi hàng - trả hàng nếu bên mua đã lấy hóa đơn VAT (hóa đơn giá trị gia tăng) thì bên mua có trách nhiệm xuất hóa đơn VAT hoàn trả chính xác các sản phẩm cần đổi - trả cho bên bán. Nếu bên mua không xuất hóa đơn VAT lại cho bên bán của sản phẩm đổi - trả thì bên bán có quyền hủy hóa đơn có sản phẩm đổi - trả.</p>
     
     </ul>
+    <br><br><br>
 </div>
 @endsection

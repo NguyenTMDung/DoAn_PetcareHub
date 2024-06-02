@@ -1,15 +1,19 @@
 .header {
     height: fit-content;
-    padding: 2% 3% 0 10%;
-    display: flex;
+    padding: 2% 6vw 0 6vw;
     background-color: #FCEED5;
     height: 7vw;
     display: flex;
+    justify-content: space-between;
+}
+
+.header i {
+    font-size: 1.6vw;
 }
 
 .logo {
     text-align: left;
-    font-size: 1.7vw;
+    font-size: 1.4em;
     font-weight: 700;
     color: var(--Primary-Color-Dark-Blue, #003459);
     width: 80%;
@@ -18,12 +22,13 @@
 #complete {
     background-color: #003459;
     color: #FCEED5;
-    font-size: 1.6vw;
+    font-size: 1.2em;
     font-weight: 700;
     border-radius: 20px;
     margin-top: 2vw;
     padding: 0.5vw 1vw;
-    margin-left: 23%;
+    margin: auto;
+    display: flex;
 }
 
 .orders {
@@ -40,15 +45,18 @@
 }
 
 .title {
-    font-size: 1.5vw;
+    font-size: 1.6em;
     font-weight: 600;
+    margin-bottom: 2vw;
+    margin-top: 0;
 }
-#products {
+
+#product-web {
     background-color: #F5F5F5;
     width: 50%;
     border: 1px solid #CCD1D2;
     max-height: max-content;
-    padding: 3vw 4vw 3vw 1vw;
+    padding: 2vw 4vw 3vw 1vw;
 }
 
 .text-truncate-container {
@@ -61,7 +69,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     text-align: left;
     font-weight: 600;
 }
@@ -69,52 +77,153 @@
 .detail-product {
     width: 60%;
     text-align: left;
+    line-height: 1.5vw;
+    margin-top: 1vw;
 }
 
 .detail-product p {
-    font-size: 1.1vw;
+    font-size: 1.1em;
 }
 
 .pro-price {
     font-family: 'Inter';
-    font-size: 1.3vw;
+    font-size: 1.2em;
     font-style: normal;
     font-weight: 700;
     line-height: 5px;
     align-items: center;
     display: flex;
     margin-left: 3.5vw;
-    color: rgba(203, 14, 14, 0.757);
+    color: #003459(203, 14, 14, 0.757);
 }
 
 .img-product {
-    width: 5vw;
+    width: 6.8vw;
     margin-top: 1vw;
-}
-#note {
-    font-size: 0.9vw;
-    font-weight: 400;
-    color: #656565;
 }
 
 h5 {
-    font-size: 1.2vw;
+    font-size: 1.15em;
     padding: 0.5vw 0;
 }
 
 h3 {
-    font-size: 1.5vw;
+    font-size: 1.4em;
     padding: 0.5vw 0;
 }
-#detail-pay
-{
+
+#detail-pay {
     margin: 4vw;
-    margin-top: 2vw; 
+    margin-top: 2vw;
     color: #003459;
 }
-#detail-order p
-{
-    font-size: 1.1vw;
+
+#detail-order p {
+    font-size: 1.1em;
     margin-right: 1.5vw;
     margin-bottom: 1.5vw;
+}
+
+.content {
+    font-weight: 600;
+}
+
+.img-pro {
+    width: 7.5vw;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .orders {
+        display: unset;
+    }
+    #detail-order p {
+        font-size: 1em;
+        margin-bottom: 1vw;
+        margin-left: 1vw;
+    }
+    #detail-order,
+    #product-web {
+        width: 100%;
+        padding: 5vw 6vw;
+    }
+
+    #product-mobile {
+        margin-top: 7vw;
+        border-top: 1px solid #AFAFAF;
+        padding: 3vw 0;
+    }
+
+    #product-web {
+        display: none;
+    }
+
+    .header {
+        height: unset;
+    }
+
+    .header i {
+        font-size: 4vw;
+    }
+
+    .logo {
+        text-align: left;
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    #bank p {
+        line-height: unset;
+    }
+
+    #bank {
+        margin-left: 1vw;
+        margin-top: 2vw;
+    }
+
+    .options {
+        padding: 2vw 0;
+        align-items: center;
+    }
+
+    .options i {
+        display: none;
+    }
+
+    .content {
+        font-weight: 500;
+    }
+
+    .detail-product {
+        width: 70%;
+        text-align: left;
+        line-height: unset;
+    }
+    .detail-product p{
+        font-size: 1em;
+    }
+
+    .img-pro {
+        width: 15%;
+    }
+    .img-product {
+        width: 90%;
+        margin-top: 3vw;
+    } 
+    .pro-price {
+        margin: 0;
+        font-size: 1em;
+        font-weight: 500;
+    } 
+    #complete {
+        padding: 0.5vw 3vw;
+    }  
+    .title
+    {
+        font-size: 1.3em;
+    }
 }

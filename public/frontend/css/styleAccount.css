@@ -318,7 +318,7 @@ td {
 }
 
 #profile-head h4 {
-    font-size: 1.7vw;
+    font-size: 1.6em;
     font-weight: 700;
 }
 
@@ -347,8 +347,10 @@ td {
 .sty-profile p {
     font-size: 1.2vw;
 }
-
-#submit,
+#edit-complete #complete
+    {
+        margin: unset;
+    }
 #complete {
     width: 15vw;
     font-size: 1.4vw;
@@ -358,6 +360,9 @@ td {
     padding: 0.7vw;
     border-radius: 30px;
     margin-bottom: 4vw;
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
 
 a {
@@ -378,7 +383,7 @@ a {
 }
 
 #change-password h5 {
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
@@ -393,7 +398,7 @@ a {
 
 #forgot-password a {
     color: #003459;
-    font-size: 1.1vw;
+    font-size: 1em;
     font-weight: 500;
     font-style: italic;
     margin-left: 9vw;
@@ -512,8 +517,8 @@ li.active a {
     font-size: 1.3vw;
     color: #003459;
 }
-.menuItem a:hover
-{
+
+.menuItem a:hover {
     text-decoration-line: underline;
 }
 
@@ -530,35 +535,36 @@ li.active a {
     overflow: hidden;
     width: 100%;
 }
-#menu-purchase
-{
+
+#menu-purchase {
     width: 70%;
     margin: auto;
     margin-bottom: 2vw;
 }
-.detai-order
-{
+
+.detai-order {
     width: 100%;
 }
-.detai-order th
-{
+
+.detai-order th {
     text-align: center;
     background-color: #FCEED5;
     padding: 0.5vw;
     font-size: 1.1vw;
 }
-.detai-order table
-{
+
+.detai-order table {
     border-radius: 10px;
     border: 1px solid grey;
     margin-bottom: 4vw;
 }
-.detai-order td
-{
+
+.detai-order td {
     text-align: center;
     padding: 0.5vw;
     font-size: 1vw;
 }
+
 .orders {
     display: flex;
     flex-wrap: wrap;
@@ -577,6 +583,7 @@ li.active a {
     font-size: 1.5vw;
     font-weight: 600;
 }
+
 #products {
     background-color: #F5F5F5;
     width: 50%;
@@ -625,6 +632,7 @@ li.active a {
     width: 5vw;
     margin-top: 1vw;
 }
+
 #note {
     font-size: 0.9vw;
     font-weight: 400;
@@ -640,36 +648,70 @@ h3 {
     font-size: 1.5vw;
     padding: 0.5vw 0;
 }
-#detail-pay
-{
+
+#detail-pay {
     margin: 4vw;
-    margin-top: 2vw; 
+    margin-top: 2vw;
     color: #003459;
 }
-#detail-order p
-{
+
+#detail-order p {
     font-size: 1.1vw;
     margin-right: 1.5vw;
     margin-bottom: 1.5vw;
 }
+
+#address-detail i {
+    font-size: 1.4vw;
+}
+#edit-complete
+{
+    width: 30vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 3vw 0;
+}
 @media only screen and (max-width: 768px) {
-    #profile {
-        width: 90%;
+    /* .menu {
+        display: none;
     }
-    #profile-head h4 {
-        font-size: unset;
+
+    .header {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    } */
+
+    #profile {
+        width: 100%;
+    }
+
+    #profile-head h4,
+    #title h4 {
+        font-size: 1.2em;
+        color: #003459;
+    }
+    #profile-head
+    {
+        margin-bottom: -2vw;
     }
     h5 {
         font-size: unset;
     }
+
     #profile-detail {
         display: unset;
         padding: 1vw;
     }
+
     .sty-profile {
         width: 90%;
         margin: auto;
     }
+
     .sty-profile input {
         font-size: unset;
         border-radius: 1vw;
@@ -678,8 +720,61 @@ h3 {
         text-align: left;
         padding: 2vw 1vw;
     }
-    #submit, #complete {
+    #edit-complete #complete
+    {
+        margin: unset;
+    }
+    #complete {
         width: unset;
+        font-size: 1.2em;
+        display: flex;
+        margin: auto;
+        padding: 1vw 3vw;
+    }
+    #profile {
+        border: none;
+    }
+
+    #address-detail p {
         font-size: unset;
+    }
+
+    #address-detail table {
+        width: 90%;
+    }
+
+    a {
+        font-size: 1.2em;
+    }
+
+    #address-detail tr {
+        height: 13vw;
+    }
+
+    #address-detail i {
+        font-size: unset;
+    }
+
+    #address-detail {
+        margin-bottom: 8vw;
+    }
+    #change-password table {
+        width: 100%;
+    }
+    #change-password h5 {
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+    #change-password tr {
+        height: 16vw;
+    }
+    #forgot-password a {
+        margin-left: 0;
+    }
+    #edit-complete
+    {
+        width: 70%;
+        margin-top: -2vw;
+        justify-content: space-between;
     }
 }

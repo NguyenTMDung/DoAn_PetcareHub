@@ -21,34 +21,43 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="#" style="text-decoration-line: none;"></a>
-            <p>PET CARE HUB</p>
+            <a href="#" style="text-decoration-line: none;color: #003459;">
+                PET CARE HUB
             </a>
         </div>
-
-        <a href="#cart" id="cart" style="text-align: right;width: 10%;margin-top: -0.5vw;"><i class="bi bi-cart4 fa-2x"
-                style="color: #003459;"></i></a>
+        <a href="#cart" id="cart"><i class="bi bi-cart4 fa-2x" style="color: #003459;"></i></a>
     </div>
     <div class="booking">
         <div id="detail-customer">
             <form>
                 <h3>Thông tin khách hàng</h3>
-                <p class="title"><strong>Họ và Tên</strong></p>
+                <p class="title">Họ và Tên</p>
                 <div class="search-contain">
                     <input type="text" class="sbox" placeholder="Nguyễn Văn A">
                 </div>
-                <p class="title"><strong>Số điện thoại</strong></p>
+                <p class="title">Số điện thoại</p>
                 <div class="search-contain">
                     <input type="tel" class="sbox" placeholder="098xxxxxxx">
                 </div>
-                <p class="title"><strong>Địa chỉ giao hàng</strong></p>
-                <div class="search-contain">
-                    <input type="text" class="sbox" placeholder="Số nhà,Đường,Phường/Xã,Quận/Huyện,Tỉnh/Thành phố">
+                <p class="title">Địa chỉ</p>
+                <p>Địa chỉ giao hàng*</p>
+                <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                    <option value="" selected>Chọn tỉnh thành</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                    <option value="" selected>Chọn quận huyện</option>
+                </select>
+                <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                    <option value="" selected>Chọn phường xã</option>
+                </select>
+                <p>Chi tiết*</p>
+                <input type="text" id="address" placeholder="Số 34, Tân Lập">
+                <div id="error-message2">
                 </div>
                 <div class="transaction">
-                    <h4 >Thanh toán</h4>
-                    <p >* Toàn bộ các giao dịch được bảo mật và mã
-                    hóa.</p>
+                    <h4>Thanh toán</h4>
+                    <p>* Toàn bộ các giao dịch được bảo mật và mã
+                        hóa.</p>
                 </div>
                 <div id="pay" onclick="choose(this)">
                     <div class="options pay" onclick="bg">
@@ -68,41 +77,18 @@
                 <div id="error-message">
 
                 </div>
-                <input type="submit" name="complete" id="complete" value="Hoàn tất đơn hàng">
+                <div id="detail-booking1">
+
+                </div>
+                <input type="submit" name="complete" id="complete" value="Hoàn tất lịch hẹn">
             </form>
         </div>
-        <div id="detail-booking">
-            <h3>Lịch hẹn</h3>
-            <div class="product" >
-                <div class="detail-product">
-                    <div class="column">
-                        <p><strong>Mã lịch:</strong></p>
-                        <p class="classify">A0002</p>
-                    </div>
-                    <div class="column">
-                        <p><strong>Số lượng dịch vụ:</strong></p>
-                        <p class="quantity">1</p>
-                    </div>
-                </div>
-                <div class="total-price" >
-                    150000
-                </div>
-            </div>
-            <hr>
-            <div class="bill" >
-                <div class="column">
-                    <h5 class="column1">Số lượng dịch vụ:</h5>
-                    <h5 id="quantity" >1</h5>
-                </div>
-                <div class="column">
-                    <h3 class="column1">Tổng tiền:</h3>
-                    <h3 class="pro-price" >150000</h3>
-                </div>
-            </div>
+        <div id="detail-booking2">
+
         </div>
     </div>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script>
     function choose(a) {
         a.querySelectorAll('input[type=radio]').forEach(radio => {
@@ -160,6 +146,140 @@
         }
     });
     //
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            document.getElementById("detail-booking1").innerHTML = `<div id="detail-booking">
+                <h3>Lịch hẹn</h3>
+                <div class="product">
+                    <div class="detail-product">
+                        <div class="column">
+                            <p><strong>Mã lịch:</strong></p>
+                            <p class="classify">A0002</p>
+                        </div>
+                        <div class="column">
+                            <p><strong>Số lượng dịch vụ:</strong></p>
+                            <p class="quantity">1</p>
+                        </div>
+                    </div>
+                    <div class="total-price">
+                        150000
+                    </div>
+                </div>
+                <hr>
+                <div class="bill">
+                    <div class="column">
+                        <h5 class="column1">Số lượng dịch vụ:</h5>
+                        <h5 id="quantity">1</h5>
+                    </div>
+                    <div class="column">
+                        <h3 class="column1">Tổng tiền:</h3>
+                        <h3 class="pro-price">150000</h3>
+                    </div>
+                </div>
+            </div>`;
+        } else {
+            document.getElementById("detail-booking2").innerHTML = `<div id="detail-booking">
+                <h3>Lịch hẹn</h3>
+                <div class="product">
+                    <div class="detail-product">
+                        <div class="column">
+                            <p><strong>Mã lịch:</strong></p>
+                            <p class="classify">A0002</p>
+                        </div>
+                        <div class="column">
+                            <p><strong>Số lượng dịch vụ:</strong></p>
+                            <p class="quantity">1</p>
+                        </div>
+                    </div>
+                    <div class="total-price">
+                        150000
+                    </div>
+                </div>
+                <hr>
+                <div class="bill">
+                    <div class="column">
+                        <h5 class="column1">Số lượng dịch vụ:</h5>
+                        <h5 id="quantity">1</h5>
+                    </div>
+                    <div class="column">
+                        <h3 class="column1">Tổng tiền:</h3>
+                        <h3 class="pro-price">150000</h3>
+                    </div>
+                </div>
+            </div>`;
+        }
+    }
+
+    // Create a MediaQueryList object
+    var x = window.matchMedia("(max-width: 700px)")
+
+    // Call listener function at run time
+    myFunction(x);
+
+    // Attach listener function on state changes
+    x.addEventListener("change", function () {
+        myFunction(x);
+    });
+    function getAPI() {
+        var citis = document.getElementById("city");
+        var districts = document.getElementById("district");
+        var wards = document.getElementById("ward");
+        var Parameter = {
+            url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+            method: "GET",
+            responseType: "application/json",
+        };
+        var promise = axios(Parameter);
+        promise.then(function (result) {
+            renderCity(result.data);
+        });
+
+        function renderCity(data) {
+            for (const x of data) {
+                citis.options[citis.options.length] = new Option(x.Name, x.Id);
+            }
+            citis.onchange = function () {
+                district.length = 1;
+                ward.length = 1;
+                if (this.value != "") {
+                    const result = data.filter(n => n.Id === this.value);
+
+                    for (const k of result[0].Districts) {
+                        district.options[district.options.length] = new Option(k.Name, k.Id);
+                    }
+                }
+            };
+            district.onchange = function () {
+                ward.length = 1;
+                const dataCity = data.filter((n) => n.Id === citis.value);
+                if (this.value != "") {
+                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                    for (const w of dataWards) {
+                        wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                    }
+                }
+            };
+        }
+    }
+    function getCheck() {
+        document.getElementById('complete').addEventListener('click', function (event) {
+            event.preventDefault();
+            var city = document.getElementById('city');
+            var district = document.getElementById('district');
+            var ward = document.getElementById('ward');
+            var address = document.getElementById('address');
+
+            if (city.value === '' || district.value === '' || ward.value === '' || address.value === ' ') {
+                document.getElementById('error-message2').innerHTML = '*Không được để trống thông tin';
+            } else {
+                document.getElementById('error-message2').innerHTML = '';
+            }
+        });
+
+    }
+    getAPI();
+    getCheck();
 </script>
 
 </html>

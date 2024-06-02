@@ -98,5 +98,6 @@ Route::get('/khung-gio', [AppointController::class, 'timeslot']);
 Route::get('/datlich', [DatLichController::class, 'index']);
 
 
-//sanpham
-Route::get('/sanpham', [SanPhamController::class, 'index'])->name('sanpham.index');
+
+Route::get('/sanpham', [ProductController::class, 'index']);
+

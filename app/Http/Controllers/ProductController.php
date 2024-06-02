@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 class ProductController extends Controller
 {
+
+    
     use ValidatesRequests;
 
     public function index(){
+            return view('pages.sanpham'); 
+        
         $pro = product::all();
         $typ = type_product::all();
         return view('admin.admin_sanpham')->with('pro', $pro)->with('typ', $typ);

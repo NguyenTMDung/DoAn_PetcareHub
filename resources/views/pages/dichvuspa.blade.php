@@ -164,8 +164,8 @@
 <br>
 
 <div id="sub">
-    <a href="{{ url('/datlich') }}">
-        <input type="Submit" value="Sản phẩm"> 
+    <a href="{{ url('/datlich') }}" style="color:aliceblue">
+        <input type="Submit" value="Đặt lịch ngay"> 
     </a>
 </div>
 <br><br><br>
@@ -419,7 +419,7 @@
 </div>
 <br>
 <div id="sub">
-    <a href="{{ url('/sanpham') }}">
+    <a href="{{ url('/sanpham') }}" style="color:aliceblue">
         <input type="Submit" value="Sản phẩm"> 
     </a>
 </div>

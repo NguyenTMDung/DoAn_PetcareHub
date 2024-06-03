@@ -7,6 +7,7 @@ use App\Models\product;
 use App\Models\type_product;
 use App\Models\Gallery;
 use App\Models\ProductSize;
+use App\Models\OrderDetail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
@@ -91,7 +92,6 @@ class ProductController extends Controller
             'name' => 'required',
             'pet' => 'required',
             'typeProduct_name' => 'required',
-            'price' => 'required',
             'inventory' => 'required',
             'description' => 'required',
         ]);
@@ -104,12 +104,23 @@ class ProductController extends Controller
         if ($typeProduct) {
             $pro->typeProduct_id = $typeProduct->id;
         }
-        $pro->price = $request->input('price');
         $pro->size = $request->input('size');
         $pro->inventory = $request->input('inventory');
         $pro->description = $request->input('description');
 
         $pro->save();
+
+        ProductSize::where('product_id', $pro->id)->delete();
+
+        foreach ($request->sizesEdit as $sizeData) {
+            ProductSize::create([
+                'product_id' => $pro->id,
+                'size' => $sizeData['size'],
+                'price' => $sizeData['price'],
+            ]);
+        }
+
+        $pro->calculateMinMaxPrice();
 
         Session::put('message', 'Chỉnh sửa sản phẩm thành công!');
         return Redirect::to('/quan-ly-san-pham');
@@ -126,7 +137,13 @@ class ProductController extends Controller
     public function getProduct($id)
     {
         $pro = product::find($id);
-        return response()->json($pro);
+        $sizes = ProductSize::where('product_id', $id)->get(['size', 'price']);
+
+        return response()->json([
+            'success' => true,
+            'product' => $pro,
+            'sizes' => $sizes
+        ]);
     }
 
     public function updateNewStatus($id, Request $request)
@@ -278,7 +295,17 @@ class ProductController extends Controller
             ->get();
         // dd($pro);
         $sizes = ProductSize::where('product_id', $id)->get(['id', 'size', 'price']);
-        return view('pages.chitietsp', ['pro' => $pro, 'relatedProducts' => $relatedProducts, 'sizes' => $sizes]);
+
+        $averageRating = OrderDetail::calculateAverageRating($id);
+        $numRating = OrderDetail::calculateNumRating($id);
+
+        return view('pages.chitietsp', [
+            'pro' => $pro, 
+            'relatedProducts' => $relatedProducts, 
+            'sizes' => $sizes,
+            'averageRating' => $averageRating,
+            'numRating' => $numRating
+        ]);
     }
 
 }

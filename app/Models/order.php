@@ -14,4 +14,13 @@ class order extends Model
         'id', 'user_id','created_at', 'total', 'status'
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Generate UUID before creating the order
+        static::creating(function ($order) {
+            $order->order_code = Uuid::uuid4()->toString();
+        });
+    }
 }

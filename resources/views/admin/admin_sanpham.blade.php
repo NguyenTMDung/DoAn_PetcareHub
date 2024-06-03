@@ -117,9 +117,9 @@
                             <img id="currentImage" src="" alt="Current Image" style="max-width: 100px; margin-bottom:0.5vw"> <br>
                             <input type="file" class="form-control" id="imageEdit" name="image"></input>
                         </div>
-                        <div class="mb-3">
-                            <label for="size">Phân loại (Theo định dạng: X|M|L)</label>
-                            <input type="text" class="form-control" id="sizeEdit" placeholder="X|M|L" name="size"></input>
+                        <div class="form-group" id="sizeField">
+                            <label for="sizes">Phân loại và Giá</label>
+                            <button type="button" class="btn btn-success" id="addSizeEdit">Thêm Phân loại</button>
                         </div>
                         <div class="mb-3">
                             <label for="inventory" class="col-form-label">Số lượng</label>
@@ -207,6 +207,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        let sizeEdit = 0;
         var table = $('#myTable').DataTable();
 
         $('.edit').on('click', function() {
@@ -215,7 +216,8 @@
             $.ajax({
                 url: 'san-pham/' + id,
                 type: 'GET',
-                success: function(data) {
+                success: function(response) {
+                    var data = response.product;
                     $('#nameEdit').val(data.name);
                     $('#petEdit').val(data.pet);
                     $('#typeProduct_nameEdit').val(data.typeProduct_name);
@@ -229,6 +231,30 @@
                     } else {
                         $('#currentImage').attr('src', '');
                     }
+
+                    var sizes = response.sizes;
+                    // Duyệt qua mảng sizes và in dữ liệu ra
+                    let sizeInd = 0;
+
+                    sizes.forEach(function(size, index) {
+                        // console.log("Size: " + size.size + ", Giá: " + size.price);
+                        var sizeField = document.getElementById('sizeField');
+                        var sizeF = document.createElement('div');
+                        sizeF.classList.add('form-row');
+                        sizeF.innerHTML = 
+                            `<div class="row">
+                                <div class="col" style="width: 50%">
+                                    <input type="text" name="sizesEdit[${sizeInd}][size]" class="form-control" placeholder="Phân loại" value = "${size.size}" required>
+                                </div>
+                                <div class="col" style="width: 50%">
+                                    <input type="number" name="sizesEdit[${sizeInd}][price]" class="form-control" placeholder="Giá" value = "${size.price}" required>
+                                </div>
+                            </div>`;
+                        $('#sizeField').append(sizeF);
+                        sizeInd++;
+                    });
+                    sizeEdit = sizeInd;
+                    console.log(sizeEdit);
                     $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-san-pham/' + id);
                     $('#editModal').modal('show');
                 },
@@ -237,6 +263,24 @@
                 }
             });
         });
+
+        document.getElementById('addSizeEdit').addEventListener('click', function() {
+        var sizeField = document.getElementById('sizeField');
+        var sizeF = document.createElement('div');
+        sizeF.classList.add('form-row');
+        sizeF.innerHTML = `
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="sizesEdit[${sizeEdit}][size]" class="form-control" placeholder="Phân loại" required>
+                </div>
+                <div class="col">
+                    <input type="number" name="sizesEdit[${sizeEdit}][price]" class="form-control" placeholder="Giá" required>
+                </div>
+            </div>
+        `;
+        sizeField.appendChild(sizeF);
+        sizeEdit++;
+    });
 
         $('#imageEdit').on('change', function() {
         if (this.files.length > 0) {
@@ -334,17 +378,19 @@
         var sizeField = document.createElement('div');
         sizeField.classList.add('form-row');
         sizeField.innerHTML = `
-            <div class="col">
-                <input type="text" name="sizes[${sizeIndex}][size]" class="form-control" placeholder="Phân loại" required>
-            </div>
-            <div class="col">
-                <input type="number" name="sizes[${sizeIndex}][price]" class="form-control" placeholder="Giá" required>
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="sizes[${sizeIndex}][size]" class="form-control" placeholder="Phân loại" required>
+                </div>
+                <div class="col">
+                    <input type="number" name="sizes[${sizeIndex}][price]" class="form-control" placeholder="Giá" required>
+                </div>
             </div>
         `;
         sizeFields.appendChild(sizeField);
         sizeIndex++;
     });
-
+           
 </script>
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

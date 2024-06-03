@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-123456789..." crossorigin="anonymous" />
 <link rel="stylesheet" href="{{asset('public/frontend/css/detail.css')}}">
 <link
       rel="stylesheet"
@@ -20,6 +21,12 @@
     <script src="data/data.js"></script>
     <script src="./js/slide.js"></script>
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <style>
+      .star-icon {
+          color: gold; /* Màu vàng */
+          font-size: 24px; /* Kích thước icon */
+      }
+  </style>
 
 <div class="price-detail-container" style="margin-top: 2vw">
     <div class="image-product-container">
@@ -56,9 +63,31 @@
       <p class="name-product">{{$pro->name}}</p>
       <div class="evaluate" style="display: flex;">
         <div class="img-evaluate" style="display: flex;">
-          5 <p class="star-rating1">★★★★★</p>
+          {{ number_format($averageRating, 1) }} <p class="star-rating1">
+            @php
+                // Làm tròn số với 1 chữ số thập phân
+                $roundedRating = round($averageRating, 1);
+                // Số sao đầy
+                $fullStars = floor($roundedRating);
+                // Kiểm tra nếu có sao nửa
+                $halfStar = ($roundedRating - $fullStars) >= 0.5;
+            @endphp
+
+            @for ($i = 1; $i <= 5; $i++)
+                @if ($i <= $fullStars)
+                    {{-- Đổ sao đầy --}}
+                    <i class="fas fa-star"></i>
+                @elseif ($halfStar && $i == $fullStars + 1)
+                    {{-- Đổ sao nửa --}}
+                    <i class="fas fa-star-half-alt"></i>
+                @else
+                    {{-- Đổ sao rỗng --}}
+                    <i class="far fa-star"></i>
+                @endif
+            @endfor
+          </p>
         </div>
-        <p class="text-evaluate">| 30 đánh giá</p>
+        <p class="text-evaluate">| {{$numRating}} đánh giá</p>
         <p class="text-evaluate">| Đã bán 100</p>
       </div>
       <div class="price-container">
@@ -134,26 +163,62 @@
     <div class="list-start">
       <div>
         <div class="fiveUpfive">
-          <p class="text-quantity-big">5</p>
+          <p class="text-quantity-big">{{ number_format($averageRating, 1) }}</p>
           <p class="text-quantity-small">trên 5 sao</p>
         </div>
         <div style="display: flex; padding-left: 8vw">
-        <p class="star-rating1">★★★★★</p>
+        <p class="star-rating1">
+            @php
+                // Làm tròn số với 1 chữ số thập phân
+                $roundedRating = round($averageRating, 1);
+                // Số sao đầy
+                $fullStars = floor($roundedRating);
+                // Kiểm tra nếu có sao nửa
+                $halfStar = ($roundedRating - $fullStars) >= 0.5;
+            @endphp
+
+            @for ($i = 1; $i <= 5; $i++)
+                @if ($i <= $fullStars)
+                    {{-- Đổ sao đầy --}}
+                    <i class="fas fa-star"></i>
+                @elseif ($halfStar && $i == $fullStars + 1)
+                    {{-- Đổ sao nửa --}}
+                    <i class="fas fa-star-half-alt"></i>
+                @else
+                    {{-- Đổ sao rỗng --}}
+                    <i class="far fa-star"></i>
+                @endif
+            @endfor
+        </p>
         </div>
-      </div>
-      <div class="button-start">
-        <button class="button-reviews">Tất cả</button>
-        <button class="button-reviews">5 sao</button>
-        <button class="button-reviews">4 sao</button>
-        <button class="button-reviews">3 sao</button>
-        <button class="button-reviews">2 sao</button>
-        <button class="button-reviews">1 sao</button>
       </div>
     </div>
     <div class="reviews-comment-container" >
       <p>Kieumoquanh</p>
       <div style="display: flex;">
-        <p class="star-rating2">★★★★★</p>
+        <p class="star-rating2">
+            @php
+                // Làm tròn số với 1 chữ số thập phân
+                $roundedRating = round($averageRating, 1);
+                // Số sao đầy
+                $fullStars = floor($roundedRating);
+                // Kiểm tra nếu có sao nửa
+                $halfStar = ($roundedRating - $fullStars) >= 0.5;
+            @endphp
+
+            @for ($i = 1; $i <= 5; $i++)
+                @if ($i <= $fullStars)
+                    {{-- Đổ sao đầy --}}
+                    <i class="fas fa-star"></i>
+                @elseif ($halfStar && $i == $fullStars + 1)
+                    {{-- Đổ sao nửa --}}
+                    <i class="fas fa-star-half-alt"></i>
+                @else
+                    {{-- Đổ sao rỗng --}}
+                    <i class="far fa-star"></i>
+                @endif
+            @endfor
+        </p>
       </div>
       <div class="evaluate" style="display: flex;margin-left: 0vw;" >
         <p class="text-evaluate">2024-01-31 06:24</p>
@@ -180,7 +245,7 @@
           {{$relatedProductsData->min_price}} - {{$relatedProductsData->max_price}} VNĐ
         </div>
         <div style="display: flex;">
-           <p style="display: flex; margin-left:0.5vw ;">5</p><p class="star-rating1">★★★★★</p>
+           <p style="display: flex; margin-left:0.5vw ;">{{$relatedProducts}}</p><p class="star-rating1">★★★★★</p>
             <p class="number-of-sales">Lượt bán: 88</p>
         </div>
     </div>
@@ -293,6 +358,7 @@
       .then(data => {
           if (data.success) {
               document.getElementById('cartCount').innerText = data.cartCount;
+              alert(data.message);
           } else {
               alert('Có lỗi xảy ra, vui lòng thử lại.');
           }

@@ -46,4 +46,11 @@ class product extends Model
         return $productSize ? $productSize->price : null;
     }
 
+    public function updateAverageRating()
+    {
+        $averageRating = OrderDetail::calculateAverageRating($this->id);
+        $this->rating = $averageRating;
+        $this->save();
+    }
+
 }

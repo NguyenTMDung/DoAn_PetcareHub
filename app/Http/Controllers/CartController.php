@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\Cart;
 use App\Models\ProductSize;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
@@ -51,20 +50,36 @@ class CartController extends Controller
         $quantity = $request->input('quantity');
         $userId = $request->input('user_id');
 
-        // Tạo một đối tượng Cart mới
-        if ($cart_action === 'add_to_cart') {
-            $cart = new Cart();
-            $cart->user_id = $userId;
-            $cart->product_id = $id;
-            $cart->size = $size;
-            $cart->num = $quantity;
-            $cart->save();
+        $existingCartItem = Cart::where('user_id', $userId)
+        ->where('product_id', $id)
+        ->where('size', $size)
+        ->first();
+
+        if ($existingCartItem) {
+
+            $existingCartItem->num += $quantity;
+            $existingCartItem->save();
 
             $cartCount = Cart::where('user_id', $userId)->count('id');
+        } else {
 
-            return response()->json(['success' => true, 'cartCount' => $cartCount]);
-        } elseif ($cart_action === 'buy_now') {
+        // Tạo một đối tượng Cart mới
+            if ($cart_action === 'add_to_cart') {
+                $cart = new Cart();
+                $cart->user_id = $userId;
+                $cart->product_id = $id;
+                $cart->size = $size;
+                $cart->num = $quantity;
+                $cart->save();
+
+                $cartCount = Cart::where('user_id', $userId)->count('id');
+
+            } 
+            elseif ($cart_action === 'buy_now') {
+            }
         }
+        return response()->json(['success' => true,'message' => 'Thêm sản phẩm vào giỏ hàng thành công!', 'cartCount' => $cartCount]);
+
         return response()->json(['success' => false]);
     }
 

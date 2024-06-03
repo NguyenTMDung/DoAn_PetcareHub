@@ -217,7 +217,6 @@ td {
 .sub-menu li {
   list-style-type: none;
   padding: 5%;
-  width: 100%;
 }
 
 .sub-menu li a {
@@ -734,6 +733,10 @@ td {
   .hien_thi{
     display: flex;
     justify-content: space-between;
+  }
+  .detail-infor-container pre{
+    background-color: white;
+    border: 0;
   }
 
   @media only screen and (max-width: 768px) {}

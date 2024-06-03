@@ -347,10 +347,11 @@ td {
 .sty-profile p {
     font-size: 1.2vw;
 }
-#edit-complete #complete
-    {
-        margin: unset;
-    }
+
+#edit-complete #complete {
+    margin: unset;
+}
+
 #complete {
     width: 15vw;
     font-size: 1.4vw;
@@ -441,7 +442,7 @@ a {
 }
 
 #title h4 {
-    font-size: 1.6vw;
+    font-size: 1.5em;
     margin-right: 0.5vw;
     font-weight: 650;
     color: #003459;
@@ -459,7 +460,7 @@ a {
     padding: 0.5vw;
     border: 1px solid #AFAFAF;
     border-radius: 10px;
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 .modal-body input {
@@ -576,11 +577,11 @@ li.active a {
     background-color: white;
     width: 50%;
     border: 1px solid #CCD1D2;
-    padding: 3vw 6vw;
+    padding: 4em 2em;
 }
 
 .title {
-    font-size: 1.5vw;
+    font-size: 1.3em;
     font-weight: 600;
 }
 
@@ -602,7 +603,7 @@ li.active a {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 1.1vw;
+    font-size: 1em;
     text-align: left;
     font-weight: 600;
 }
@@ -610,26 +611,28 @@ li.active a {
 .detail-product {
     width: 60%;
     text-align: left;
+    margin-left: 1em;
+    line-height:1.1em;
 }
 
 .detail-product p {
-    font-size: 1.1vw;
+    font-size: 1em;
 }
 
 .pro-price {
     font-family: 'Inter';
-    font-size: 1.3vw;
+    font-size: 1.2emvw;
     font-style: normal;
     font-weight: 700;
     line-height: 5px;
     align-items: center;
     display: flex;
-    margin-left: 3.5vw;
+    margin-left: 1.5vw;
     color: rgba(203, 14, 14, 0.757);
 }
 
 .img-product {
-    width: 5vw;
+    width: 100%;
     margin-top: 1vw;
 }
 
@@ -640,12 +643,12 @@ li.active a {
 }
 
 h5 {
-    font-size: 1.2vw;
+    font-size: 1.2em;
     padding: 0.5vw 0;
 }
 
 h3 {
-    font-size: 1.5vw;
+    font-size: 1.4em;
     padding: 0.5vw 0;
 }
 
@@ -656,7 +659,7 @@ h3 {
 }
 
 #detail-order p {
-    font-size: 1.1vw;
+    font-size: 1.1em;
     margin-right: 1.5vw;
     margin-bottom: 1.5vw;
 }
@@ -664,16 +667,33 @@ h3 {
 #address-detail i {
     font-size: 1.4vw;
 }
-#edit-complete
-{
+
+#edit-complete {
     width: 30vw;
     margin: auto;
     display: flex;
     justify-content: space-around;
     padding: 0 0 3vw 0;
 }
+
+#detail {
+    margin-top: 1em;
+    font-weight: 600;
+}
+
+#sty-com {
+    width: 20vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
+.img-pro {
+    width: 7.5vw;
+}
+
 @media only screen and (max-width: 768px) {
-    /* .menu {
+    .menu {
         display: none;
     }
 
@@ -683,7 +703,7 @@ h3 {
 
     #footer {
         display: none;
-    } */
+    }
 
     #profile {
         width: 100%;
@@ -694,10 +714,11 @@ h3 {
         font-size: 1.2em;
         color: #003459;
     }
-    #profile-head
-    {
+
+    #profile-head {
         margin-bottom: -2vw;
     }
+
     h5 {
         font-size: unset;
     }
@@ -720,10 +741,11 @@ h3 {
         text-align: left;
         padding: 2vw 1vw;
     }
-    #edit-complete #complete
-    {
+
+    #edit-complete #complete {
         margin: unset;
     }
+
     #complete {
         width: unset;
         font-size: 1.2em;
@@ -731,6 +753,7 @@ h3 {
         margin: auto;
         padding: 1vw 3vw;
     }
+
     #profile {
         border: none;
     }
@@ -758,23 +781,76 @@ h3 {
     #address-detail {
         margin-bottom: 8vw;
     }
+
     #change-password table {
         width: 100%;
     }
+
     #change-password h5 {
         font-size: 0.9em;
         font-weight: 500;
     }
+
     #change-password tr {
         height: 16vw;
     }
+
     #forgot-password a {
         margin-left: 0;
     }
-    #edit-complete
-    {
+
+    #edit-complete {
         width: 70%;
         margin-top: -2vw;
         justify-content: space-between;
+    }
+
+    #profile-body {
+        width: 100%;
+    }
+
+    #city,
+    #district,
+    #ward,
+    #profile-body input {
+        width: 100%;
+        padding: 1.5vw;
+        border: 1px solid #AFAFAF;
+        border-radius: 1vw;
+        font-size: 1em;
+    }
+
+    #sty-com {
+        width: 15em;
+    }
+    #sty-com #complete
+    {
+        margin: unset;
+    }
+    .orders
+    {
+        display: unset;
+    }
+    #detail-order
+    {
+        width: 100%;
+        padding: 1em;
+    }
+    #products
+    {
+        width: 100%;
+    }
+    .img-pro {
+        width: 15%;
+    }
+    .img-product {
+        width: 90%;
+        margin-top: 3vw;
+    } 
+    .detail-product {
+        width: 65%;
+    }
+    #detail-order p {
+        font-size: 1em;
     }
 }

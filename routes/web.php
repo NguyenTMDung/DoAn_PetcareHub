@@ -30,6 +30,10 @@ Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
 Route::get('/admin-login', [AdminController::class,'Login']);
 Route::post('/admin-login', [AdminController::class,'AuthLogin']);
 Route::get('/admin-logout', [AdminController::class,'Logout']);
+Route::get('/thong-ke/{date}', [AdminController::class,'ThongKe']);
+Route::get('/thong-ke-doanh-thu/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDT']);
+Route::get('/thong-ke-don-hang/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDH']);
+
 
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);

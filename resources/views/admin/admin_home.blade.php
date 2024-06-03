@@ -11,19 +11,19 @@
             <div id="total-revenue">
                 <i class="fas fa-chart-line"
                     style="background-color: #FA5A7D;padding: 0.5vw;color: white;border-radius: 20px;"></i>
-                <h4 id="detail-revenue">1 Tỷ</h4>
+                <h4 id="detail-revenue"></h4>
                 <p>Tổng doanh thu</p>
             </div>
             <div id="total-order">
                 <i class="fas fa-clipboard-list"
                     style="background-color: #FF947A;padding: 0.5vw 0.6vw;color: white;border-radius: 20px;"></i>
-                <h4 id="detail-order">1000</h4>
+                <h4 id="detail-order"></h4>
                 <p>Tổng đơn</p>
             </div>
             <div id="new-customer">
                 <i class="fas fa-user-plus"
                     style="background-color: #BF83FF;padding: 0.5vw 0.4vw;color: white;border-radius: 20px;"></i>
-                <h4 id="detail-customer">8</h4>
+                <h4 id="detail-customer"></h4>
                 <p>Khách hàng mới</p>
             </div>
         </div>
@@ -98,15 +98,65 @@
 
 {{-- biểu đồ cột --}}
 <div class="chartRevenue">
+    <div id="date">
+        <p>Ngày: </p>
+        <input type="date" id="current-time-doanhthu" name="a"
+            style="padding: 5px;font-size: 20px;font-weight: 600;color: #003459;">
+    </div>
     <h5 class="title">Tổng doanh thu</h5>
     <p style="color: #96A5B8;">(Triệu đồng)</p>
     <div class="chartBox">
         <canvas id="venueChart"></canvas>
     </div>
 </div>
+<script>
+
+</script>
+{{-- Sự kiện thay đổi ngày --}}
+<script>
+    $('#current-time').on('change', function() {
+    var selectedDate = $(this).val();
+    console.log('Selected date: ' + selectedDate);
+    $.ajax({
+       
+    url: '/DoAn_PetcareHub/thong-ke/' + selectedDate,
+    method: 'GET',
+    success: function(response) {
+        try {
+            console.log(response);
+            if(response.total<1000000)
+            {
+                $('#detail-revenue').text(response.total + ' Nghìn');
+            }
+            else if(response.total<1000000000)
+            {
+                $('#detail-revenue').text((response.total/1000).toFixed(2) + ' Triệu');
+            }
+            else if(response.total<1000000000000)
+            {
+                $('#detail-revenue').text((response.total/1000000).toFixed(2) + ' Tỷ');
+            }
+    
+            $('#detail-order').text(response.count);
+            $('#detail-customer').text(response.user);
+        } catch (error) {
+            console.error('Có lỗi xảy ra khi xử lý phản hồi từ server:', error);
+        }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.error('Có lỗi xảy ra khi thực hiện yêu cầu AJAX:', textStatus, errorThrown);
+    }
+});
+    });
+</script>
 {{--Biểu đồ khách hàng đơn hàng--}}
 <div class="chartOrder">
-                <h5 class="title">Đơn hàng và lượng truy cập website</h5>
+    <div id="date">
+        <p>Ngày: </p>
+        <input type="date" id="current-time-donhang" name="a"
+            style="padding: 5px;font-size: 20px;font-weight: 600;color: #003459;">
+    </div>
+                <h5 class="title">Đơn hàng </h5>
                 <div class="chartBox">
                     <canvas id="orderChart"></canvas>
                 </div>
@@ -125,14 +175,278 @@
         const todayDate = `${year}-${month}-${day}`;
 
         document.getElementById("current-time").value = todayDate;
+        document.getElementById("current-time-doanhthu").value = todayDate;
+        document.getElementById("current-time-donhang").value = todayDate;
         document.getElementById("current-year").innerHTML = year;
     });
-    // Seller
-    const dataRevenue = {
-        labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
+
+
+    
+    let venueChart;
+    let serviceChart;
+    let dataOrder;
+   
+    $('#current-time-donhang').on('change', function() {
+        // console.log("Su kien thay doi ngay");
+        var data1;
+        var data2;
+    
+    if (serviceChart) {
+        serviceChart.destroy();
+    }
+    let newLabels = [];
+   
+    var selectedDateValue = $(this).val();
+    // console.log('Selected date: ' + selectedDateValue);
+    let selectedDate = new Date(selectedDateValue);
+    let day = selectedDate.getDay();
+    let diffToMonday = selectedDate.getDate() - day + (day === 0 ? -6:1);
+    let startOfWeek = new Date(selectedDate.setDate(diffToMonday));
+    let endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(endOfWeek.getDate() + 6);
+    let formattedStartOfWeek = startOfWeek.getFullYear() + '-' + String(startOfWeek.getMonth() + 1).padStart(2, '0') + '-' + String(startOfWeek.getDate()).padStart(2, '0');
+    let formattedEndOfWeek = endOfWeek.getFullYear() + '-' + String(endOfWeek.getMonth() + 1).padStart(2, '0') + '-' + String(endOfWeek.getDate()).padStart(2, '0');
+
+    // console.log('Start of week: ' + formattedStartOfWeek);
+    // console.log('End of week: ' + formattedEndOfWeek); 
+    let start = new Date(startOfWeek); // replace with your startOfWeek date
+    let end = new Date(endOfWeek); // replace with your endOfWeek date
+   
+    for(let date = start; date <= end; date.setDate(date.getDate() + 1)) {
+    let formattedDate = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2);
+    //  console.log(formattedDate); // Print the date before pushing it
+        newLabels.push(String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2));
+       
+    }
+    $.ajax({
+       
+    url: '/DoAn_PetcareHub/thong-ke-don-hang/' + formattedStartOfWeek + '/' + formattedEndOfWeek,
+    method: 'GET',
+    success: function(response) {
+      console.log(response)
+    var allDays = newLabels;
+    var allDays1=newLabels;
+    // console.log("allDays:");
+    // console.log(allDays);
+    var counts = {};
+    var counts1={};
+   
+
+    // Khởi tạo counts cho tất cả các ngày là 0
+    allDays.forEach(function(day) {
+        counts[day] = 0;
+    });
+    allDays1.forEach(function(day) {
+        counts1[day] = 0;
+    });
+    
+
+    // Kiểm tra nếu response là một mảng trước khi cố gắng lặp qua nó
+    if (Array.isArray(response.orderofweek)) {
+        // Điền counts với dữ liệu từ response
+        response.orderofweek.forEach(function(item) {
+            let date = new Date(item.date);
+        let formattedDate = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2);
+        counts[formattedDate] = item.count;
+        });
+    } else {
+        console.error('Response không phải là một mảng:', response);
+    }
+
+    if (Array.isArray(response.totalPerDay)) {
+        // Điền counts với dữ liệu từ response
+        response.totalPerDay.forEach(function(item) {
+            let date = new Date(item.date);
+        let formattedDate = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2);
+        counts1[formattedDate] = item.count;
+        });
+    } else {
+        console.error('Response không phải là một mảng:', response);
+    }
+
+    var countsArray = Object.keys(counts).map(function(day) {
+    return [day, counts[day]];
+    
+});
+
+var countsArray1 = Object.keys(counts).map(function(day) {
+    return [day, counts1[day]];
+    
+});
+
+// Sắp xếp mảng dựa trên ngày
+countsArray.sort(function(a, b) {
+    let dateA = new Date(a[0].split('/').reverse().join('-'));
+    let dateB = new Date(b[0].split('/').reverse().join('-'));
+    return dateA - dateB;
+});
+
+countsArray1.sort(function(a, b) {
+    let dateA = new Date(a[0].split('/').reverse().join('-'));
+    let dateB = new Date(b[0].split('/').reverse().join('-'));
+    return dateA - dateB;
+});
+
+// In ra mỗi ngày và số lượng tương ứng
+countsArray.forEach(function(item) {
+    console.log(item[0] + ': ' + item[1]);
+});
+countsArray1.forEach(function(item) {
+    console.log(item[0] + ': ' + item[1]);
+});
+ data1 = countsArray.map(function(item) {
+    return item[1];
+
+});
+data2 = countsArray.map(function(item) {
+    return item[1];
+
+});
+// console.log("Tao du lieu cho bieu do 2");
+     dataOrder = {
+        labels: newLabels,
+        datasets: [
+        {
+            label: 'Đơn hàng',
+            data:  data1,
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 26, 104, 1)'
+            ],
+            borderWidth: 1,
+            barPercentage: 0.9,
+            categoryPercentage: 0.5
+        }]
+    };
+    console.log(data1);
+    // console.log("Tao xong du lieu cho bieu do 2");
+    var config2 = {
+        data: dataOrder,
+        type :'bar',
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grace: '5%',
+                    height: '5%'
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                }
+            },
+        }
+    };
+    serviceChart = new Chart(
+        document.getElementById('orderChart'),
+        config2
+    );
+
+    }
+});
+//    console.log("chay xong ajax");
+   
+    const chartVersion = document.getElementById('chartVersion');
+    chartVersion.innerText = Chart.version;
+    });
+
+    $('#current-time-doanhthu').on('change', function() {
+        console.log("Su kien thay doi ngay cua doanh thu");
+        var data1;
+        var data2;
+        if (venueChart) {
+        venueChart.destroy();
+    }
+
+    let newLabels = [];
+   
+    var selectedDateValue = $(this).val();
+    console.log('Selected date: ' + selectedDateValue);
+    let selectedDate = new Date(selectedDateValue);
+    let day = selectedDate.getDay();
+    let diffToMonday = selectedDate.getDate() - day + (day === 0 ? -6:1);
+    let startOfWeek = new Date(selectedDate.setDate(diffToMonday));
+    let endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(endOfWeek.getDate() + 6);
+    let formattedStartOfWeek = startOfWeek.getFullYear() + '-' + String(startOfWeek.getMonth() + 1).padStart(2, '0') + '-' + String(startOfWeek.getDate()).padStart(2, '0');
+    let formattedEndOfWeek = endOfWeek.getFullYear() + '-' + String(endOfWeek.getMonth() + 1).padStart(2, '0') + '-' + String(endOfWeek.getDate()).padStart(2, '0');
+
+    // console.log('Start of week: ' + formattedStartOfWeek);
+    // console.log('End of week: ' + formattedEndOfWeek); 
+    let start = new Date(startOfWeek); // replace with your startOfWeek date
+    let end = new Date(endOfWeek); // replace with your endOfWeek date
+   
+    for(let date = start; date <= end; date.setDate(date.getDate() + 1)) {
+    let formattedDate = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2);
+    //  console.log(formattedDate); // Print the date before pushing it
+        newLabels.push(String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2));
+       
+    }
+    $.ajax({
+       
+    url: '/DoAn_PetcareHub/thong-ke-doanh-thu/' + formattedStartOfWeek + '/' + formattedEndOfWeek,
+    method: 'GET',
+    success: function(response) {
+      console.log(response)
+    var allDays1=newLabels;
+    var counts1={};
+   
+
+    // Khởi tạo counts cho tất cả các ngày là 0
+  
+    allDays1.forEach(function(day) {
+        counts1[day] = 0;
+    });
+    
+
+    // Kiểm tra nếu response là một mảng trước khi cố gắng lặp qua nó
+
+    if (Array.isArray(response.totalPerDay)) {
+        // Điền counts với dữ liệu từ response
+        response.totalPerDay.forEach(function(item) {
+            let date = new Date(item.date);
+        let formattedDate = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + String(date.getFullYear()).slice(-2);
+        counts1[formattedDate] = item.total;
+        });
+    } else {
+        console.error('Response không phải là một mảng:', response);
+    }
+
+
+var countsArray1 = Object.keys(counts1).map(function(day) {
+    return [day, counts1[day]];
+    
+});
+
+// Sắp xếp mảng dựa trên ngày
+countsArray1.sort(function(a, b) {
+    let dateA = new Date(a[0].split('/').reverse().join('-'));
+    let dateB = new Date(b[0].split('/').reverse().join('-'));
+    return dateA - dateB;
+});
+
+// In ra mỗi ngày và số lượng tương ứng
+countsArray1.forEach(function(item) {
+    console.log(item[0] + ': ' + item[1]);
+});
+ data1 = countsArray1.map(function(item) {
+    return item[1];
+
+});
+data2 = countsArray1.map(function(item) {
+    return item[1];
+
+});
+console.log("Tao du lieu cho bieu do 1");
+const dataRevenue = {
+        labels: newLabels ,
         datasets: [{
             label: 'Sản phẩm',
-            data: [17, 12, 6, 9, 12, 3, 9],
+            data: data1,
             backgroundColor: [
                 '#9bd5ff'
             ],
@@ -156,8 +470,7 @@
             categoryPercentage: 0.5
         },]
     };
-
-    // config 
+    console.log("Tao xong du lieu cho bieu do 1");
     const config1 = {
         type: 'bar',
         data: dataRevenue,
@@ -177,71 +490,19 @@
             }
         }
     };
-
-    // render init block
-    const venueChart = new Chart(
+     venueChart = new Chart(
         document.getElementById('venueChart'),
         config1
     );
-    // Order
-    const dataOrder = {
-        labels: ['1/5/2024', '2/5/2024', '3/5/2024', '4/5/2024', '5/5/2024', '6/5/2024', '7/5/2024'],
-        datasets: [
-        {
-            label: 'Lượng khách truy cập mới',
-            data: [14, 1, 10, 20, 15, 9, 22],
-            backgroundColor: [
-                'rgb(139, 139, 139)'
-            ],
-            borderColor: [
-                'black'
-            ],
-            barPercentage: 0.9,
-            categoryPercentage: 0.5,
-            type :'line',
-        },{
-            label: 'Đơn hàng',
-            data: [17, 12, 6, 9, 12, 3, 9],
-            backgroundColor: [
-                'rgba(255, 26, 104, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 26, 104, 1)'
-            ],
-            borderWidth: 1,
-            barPercentage: 0.9,
-            categoryPercentage: 0.5
-        }]
-    };
-    // config 
-    const config2 = {
-        data: dataOrder,
-        type :'bar',
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grace: '5%',
-                    height: '5%'
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'right',
-                    align: 'start',
-                }
-            },
-        }
-    };
-    // render init block
-    const serviceChart = new Chart(
-        document.getElementById('orderChart'),
-        config2
-    );
-    // Instantly assign Chart.js version
     const chartVersion = document.getElementById('chartVersion');
     chartVersion.innerText = Chart.version;
-    //
+
+    }
+});
+   console.log("chay xong ajax cho doanh thu");
+   
+    });
+
     document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
 </script>
 @endsection

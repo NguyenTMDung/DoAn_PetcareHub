@@ -19,7 +19,7 @@
                             <div class="text-truncate-container">
                                 <p>{{$item->name}}</p>
                             </div>
-                            <select class="select-kind" name ="size" onchange="updatePrice(this)" data-product-id="{{ $item->product_id }}" data-id="{{$item->id}}">
+                            <select class="select-kind" name ="size" onchange="updateCart(this)" data-product-id="{{ $item->product_id }}" data-id="{{$item->id}}">
                                 @foreach( $sizes as $size)
                                 <option value="{{ $size }}" {{ $size == $item->size ? 'selected' : '' }}>{{ $size }}</option>
                                 @endforeach
@@ -28,7 +28,7 @@
                                Giá: {{$item->price}} VNĐ
                             </div>
                             <div class="quantitys" style="width: 1vw;">
-                                <input type="number" name="id2" id="quantity" value="{{$item->num}}" min="1" max="20">
+                                <input type="number" name="id2" id="quantity" value="{{$item->num}}" min="1" max="20" onchange="updateCart(this)" data-product-id="{{ $item->product_id }}" data-id="{{ $item->id }}">
                             </div>
                         </div>
                     </td>
@@ -67,31 +67,31 @@
                     console.log(selectedItems); // In ra console để kiểm tra
                 });
             });
-            function updatePrice(select) {
-                    var selectedSize = select.value; // Lấy kích thước đã chọn
-                    var productId = select.getAttribute('data-product-id'); // Lấy id của sản phẩm
-                    var cartId = select.getAttribute('data-id'); // Lấy id của sản phẩm
+        function updateCart(element) {
+            var productId = element.getAttribute('data-product-id');
+            var cartId = element.getAttribute('data-id');
+            var newSize = document.querySelector(`select[data-id='${cartId}']`).value;
+            var newQuantity = document.querySelector(`input[data-id='${cartId}']`).value;
 
-
-                // Gửi yêu cầu Ajax để lấy giá mới dựa trên kích thước và product_id
-                $.ajax({
-                    type: 'GET',
-                    url: '/DoAn_PetcareHub/get-product-price',
-                    data: {
-                        product_id: productId,
-                        size: selectedSize,
-                        
-                    },
-                    success: function(response) {
-                        // Nếu yêu cầu thành công, cập nhật giá sản phẩm trên giao diện
-                        $('#selected-price-'+ cartId ).text('Giá: ' + response.price + ' VNĐ');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                    }
-                });
-            }
-
+            $.ajax({
+                type: 'POST',
+                url: '/DoAn_PetcareHub/update-cart',
+                data: {
+                    _token: '{{ csrf_token() }}', // Đảm bảo bạn bao gồm CSRF token
+                    product_id: productId,
+                    cart_id: cartId,
+                    size: newSize,
+                    quantity: newQuantity
+                },
+                success: function(response) {
+                    // Cập nhật giá sản phẩm nếu cần
+                    $('#selected-price-' + cartId).text('Giá: ' + response.price + ' VNĐ');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
     function deleteCartItem(cartItemId) {
     // Gửi yêu cầu Ajax để xóa sản phẩm
         $.ajax({

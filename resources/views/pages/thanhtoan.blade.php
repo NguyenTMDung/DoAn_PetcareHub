@@ -87,59 +87,38 @@
         </div>
         <div id="products">
             <h2 class="title">Sản phẩm</h2>
+            @foreach( $cartItems as $item)
             <div class="product" style="display: flex;">
                 <div style="width: 6vw;">
-                    <img src="image/best_seller3.png" alt="" class="img-product">
+                    <img src="public/storage/products/{{$item->image}}" alt="" class="img-product">
                 </div>
                 <div class="detail-product">
                     <div class="text-truncate-container">
-                        <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng
-                            Phong Cách Chó Mèo Mùa Hè</p>
+                        <p>{{$item->name}}</p>
                     </div>
                     <div style="display: flex;">
                         <p>Phân loại:</p>
-                        <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                        <p class="classify" style="margin-left:5px ;">{{$item->size}}</p>
                     </div>
                     <div style="display: flex;">
                         <p>SL: </p>
-                        <p class="quantity" style="margin-left:5px ;">1</p>
+                        <p class="quantity" style="margin-left:5px ;">{{$item->num}}</p>
                     </div>
                 </div>
                 <div class="pro-price">
-                    50000
+                    {{$item->price * $item->num}}
                 </div>
             </div>
             <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
-            <div class="product" style="display: flex;">
-                <div style="width: 6vw;">
-                    <img src="image/best_seller2.png" alt="" class="img-product">
-                </div>
-                <div class="detail-product">
-                    <div class="text-truncate-container">
-                        <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>Phân loại:</p>
-                        <p class="classify" style="margin-left:5px ;">Size XXL</p>
-                    </div>
-                    <div style="display: flex;">
-                        <p>SL: </p>
-                        <p class="quantity" style="margin-left:5px ;">1</p>
-                    </div>
-                </div>
-                <div class="pro-price">
-                    40000
-                </div>
-            </div>
-            <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+            @endforeach
             <div id="detail-pay">
                 <div style="display: flex;">
                     <h5 style="width: 75%;">Số lượng</h5>
-                    <h5 id="quantity" style="text-align: end;width:25% ;">2</h5>
+                    <h5 id="quantity" style="text-align: end;width:25% ;"> </h5>
                 </div>
                 <div style="display: flex;">
                     <h5 style="width: 75%;">Phí vận chuyển</h5>
-                    <h5 id="transport-fee" style="text-align: end;width:25% ;">40000</h5>
+                    <h5 id="transport-fee" style="text-align: end;width:25% ;">30000</h5>
                 </div>
                 <div style="display: flex;">
                     <h3 style="width: 75%;">Tổng tiền</h3>
@@ -325,6 +304,26 @@
         });
 
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var selectedCount = {{ $cartItems->count() }};
+        document.getElementById('quantity').innerText = selectedCount;
+
+        // Tính tổng tiền của tất cả các sản phẩm
+        var priceElements = document.querySelectorAll('.pro-price');
+        var totalProductPrice = 0;
+        priceElements.forEach(function(element) {
+            totalProductPrice += parseInt(element.textContent);
+        });
+
+        // Lấy phí vận chuyển
+        var transportFee = parseInt(document.getElementById('transport-fee').textContent);
+
+        // Tính tổng tiền cuối cùng
+        var totalPrice = totalProductPrice + transportFee;
+        document.getElementById('total-products').innerText = totalPrice;
+    });
 </script>
 <?php 
 // include("css/styleOrder.php"); 

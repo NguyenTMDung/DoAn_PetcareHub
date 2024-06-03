@@ -40,7 +40,7 @@ Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
 Route::post('them-vao-gio-hang-{id}', [CartController::class, 'addToCart'])->middleware('checkUser')->name('addToCart');
 Route::post('/cart-count', [CartController::class, 'getCartCount'])->middleware('checkUser')->name('cartCount');
-Route::get('/get-product-price', [CartController::class, 'getProductPrice']);
+Route::post('/update-cart', [CartController::class, 'updateCart']);
 Route::post('/delete-cart-item', [CartController::class, 'deleteCartItem'])->name('deleteCartItem');
 
 //Thanh toán

@@ -29,6 +29,7 @@ class CartController extends Controller
                 ->whereColumn('carts.size', '=', 'product_sizes.size');
         })
         ->where('carts.user_id', $userId)
+        ->orderBy('carts.id', 'desc')
         ->get();
 
         $prices = ProductSize::select('product_id', 'size', 'price')
@@ -73,18 +74,25 @@ class CartController extends Controller
         return response()->json(['cartCount' => $cartCount]);
     }
 
-    public function getProductPrice(Request $request)
+    public function updateCart(Request $request)
     {
-        $productId = $request->input('product_id');
-        $size = $request->input('size');
+        $cartId = $request->input('cart_id');
+        $newSize = $request->input('size');
+        $newQuantity = $request->input('quantity');
 
-        // Tìm giá của sản phẩm dựa trên product_id và kích thước
-        $productPrice = ProductSize::where('product_id', $productId)
-            ->where('size', $size)
-            ->value('price');
+        // Cập nhật cart với kích thước và số lượng mới
+        $cartItem = Cart::find($cartId);
+        $cartItem->size = $newSize;
+        $cartItem->num = $newQuantity;
+        $cartItem->save();
+
+        $newPrice = ProductSize::where('product_id', $cartItem->product_id)
+                           ->where('size', $newSize)
+                           ->first()
+                           ->price;
 
         // Trả về giá dưới dạng JSON
-        return response()->json(['price' => $productPrice]);
+        return response()->json(['price' => $newPrice]);
     }
 
     public function deleteCartItem(Request $request)

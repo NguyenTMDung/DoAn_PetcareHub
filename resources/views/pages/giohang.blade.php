@@ -25,7 +25,7 @@
                                 @endforeach
                             </select>
                             <div class="pro-price" id="selected-price-{{$item->id}}">
-                               Giá: {{$item->price}} VNĐ
+                               Giá: {{ number_format($item->price, 0, '.','.') }} VNĐ
                             </div>
                             <div class="quantitys" style="width: 1vw;">
                                 <input type="number" name="id2" id="quantity" value="{{$item->num}}" min="1" max="20" onchange="updateCart(this)" data-product-id="{{ $item->product_id }}" data-id="{{ $item->id }}">
@@ -85,7 +85,7 @@
                 },
                 success: function(response) {
                     // Cập nhật giá sản phẩm nếu cần
-                    $('#selected-price-' + cartId).text('Giá: ' + response.price + ' VNĐ');
+                    $('#selected-price-' + cartId).text('Giá: ' + response.price.toLocaleString('vi-VN') + ' VNĐ');
                 },
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);

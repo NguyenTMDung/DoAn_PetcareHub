@@ -332,7 +332,7 @@
 
         // Tính tổng tiền cuối cùng
         var totalPrice = totalProductPrice + transportFee;
-        document.getElementById('total-products').innerText = totalPrice;
+        document.getElementById('total-products').innerText = (totalPrice*1000).toLocaleString('vi-VN');
     });
 </script>
 <?php 

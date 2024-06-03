@@ -43,10 +43,15 @@
                     <div id="error-tel">
 
                     </div>
+                    <p>Email*</p>
+                    <input type="email" id="email" placeholder="abc@gmail.com">
+                    <div id="error-mail">
+
+                    </div>
                 </div>
                 <div id="location" onclick="choose(this)">
                     <div class="options ship">
-                        <input type="radio" id="address" name="loca" value="1">
+                        <input type="radio" id="addresss" name="loca" value="1">
                         <p>Giao đến địa chỉ của bạn</p>
                         <i class="bi bi-truck"></i>
                     </div>
@@ -144,7 +149,7 @@
     }
     document.querySelectorAll('input[type=radio]').forEach(radio => {
         radio.addEventListener('change', () => {
-            if (radio.id === 'address' && radio.checked) {
+            if (radio.id === 'addresss' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
                     <p>Địa chỉ giao hàng*</p>
                     <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
@@ -233,17 +238,22 @@
 
         var name = document.getElementById('name');
         var tel = document.getElementById('tel');
+        var email = document.getElementById('email');
 
         if (name.value === '') {
             document.getElementById('error-name').innerHTML = '*Không được để trống tên';
         } else {
             document.getElementById('error-name').innerHTML = '';
         }
-
         if (tel.value === '') {
             document.getElementById('error-tel').innerHTML = '*Không được để trống số điện thoại';
         } else {
             document.getElementById('error-tel').innerHTML = '';
+        }
+        if (email.value === '') {
+            document.getElementById('error-mail').innerHTML = '*Không được để trống email';
+        } else {
+            document.getElementById('error-mail').innerHTML = '';
         }
     });
     function getAPI() {

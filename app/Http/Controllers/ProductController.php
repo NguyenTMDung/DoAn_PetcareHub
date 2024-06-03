@@ -217,15 +217,15 @@ class ProductController extends Controller
         if ($request->has('min_price') && $request->has('max_price')) {
             $minPrice = (float) $request->input('min_price');
             $maxPrice = (float) $request->input('max_price');
-            $pro->whereBetween('price', [$minPrice, $maxPrice]);
+            $pro->whereBetween('min_price', [$minPrice, $maxPrice]);
         } elseif ($request->has('min_price')) {
             // Chỉ lọc theo giá min
             $minPrice = (float) $request->input('min_price');
-            $pro->where('price', '>=', $minPrice);
+            $pro->where('min_price', '>=', $minPrice);
         } elseif ($request->has('max_price')) {
             // Chỉ lọc theo giá max
             $maxPrice = (float) $request->input('max_price');
-            $pro->where('price', '<=', $maxPrice);
+            $pro->where('min_price', '<=', $maxPrice);
         }
 
 
@@ -239,10 +239,10 @@ class ProductController extends Controller
                 $pro->orderBy('product.name', 'desc');
                 break;
             case 'Giảm dần':
-                $pro->orderBy('product.price', 'desc');
+                $pro->orderBy('product.max_price', 'desc');
                 break;
             case 'Tăng dần':
-                $pro->orderBy('product.price', 'asc');
+                $pro->orderBy('product.min_price', 'asc');
                 break;
             default:
                 break;

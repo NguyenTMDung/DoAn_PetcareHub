@@ -62,7 +62,13 @@
         <p class="text-evaluate">| Đã bán 100</p>
       </div>
       <div class="price-container">
-        <p class="text-price" id= "priceRange">{{$pro->min_price}} - {{$pro->max_price}} VNĐ</p>
+        <p class="text-price" id= "priceRange">
+          @if ($pro->min_price == $pro->max_price)
+              {{ number_format($pro->min_price, 0, '.', '.') }} VNĐ
+          @else
+              {{ number_format($pro->min_price, 0, '.', '.') }} - {{ number_format($pro->max_price, 0, '.', '.') }} VNĐ
+          @endif   
+        </p>
       </div>
       <div class="return-policy-container">
         <p class="text-return-policy">Chính Sách Trả Hàng:</p>
@@ -257,8 +263,8 @@
             var priceRange = document.getElementById('priceRange');
             var selectedSize = document.querySelector('input[name="size"]:checked');
             if (selectedSize) {
-                var price = selectedSize.getAttribute('data-price');
-                priceRange.textContent = price + ' VNĐ';
+                var price = parseFloat(selectedSize.getAttribute('data-price'));
+                priceRange.textContent = price.toLocaleString('vi-VN') + ' VNĐ';
             } else {
                 priceRange.textContent = '';
             }

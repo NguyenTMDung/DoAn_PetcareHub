@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\Cart;
+use App\Models\ProductSize;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
@@ -20,15 +22,26 @@ class CartController extends Controller
             $userId = session()->getId();
         }
 
-        // Lấy các sản phẩm trong giỏ hàng của người dùng hiện tại
-        $cartItems = Cart::where('user_id', $userId)->get();
+        $cartItems = Cart::select('carts.*', 'product.name', 'product.image', 'product_sizes.price')
+        ->join('product', 'carts.product_id', '=', 'product.id')
+        ->join('product_sizes', function ($join) {
+            $join->on('carts.product_id', '=', 'product_sizes.product_id')
+                ->whereColumn('carts.size', '=', 'product_sizes.size');
+        })
+        ->where('carts.user_id', $userId)
+        ->get();
 
-        // Lấy thông tin chi tiết của từng sản phẩm
-        foreach ($cartItems as $item) {
-            $item->product = Product::find($item->product_id);
-        }
-
-        return view('pages.giohang', compact('cartItems'));
+        $prices = ProductSize::select('product_id', 'size', 'price')
+        ->whereIn('product_id', $cartItems->pluck('product_id')->unique())
+        ->get()
+        ->groupBy(['product_id', 'size']);
+    
+        // dd($cartItems);
+        $sizes = ProductSize::where('product_id', $cartItems->pluck('product_id')->unique()->toArray())
+        ->pluck('size')->unique();
+        
+        // dd($prices);
+        return view('pages.giohang', compact('cartItems', 'sizes', 'prices'));
     }
     public function addToCart(Request $request, $id)
     {
@@ -58,5 +71,30 @@ class CartController extends Controller
         $userId = $request->input('user_id');
         $cartCount = Cart::where('user_id', $userId)->count('id');
         return response()->json(['cartCount' => $cartCount]);
+    }
+
+    public function getProductPrice(Request $request)
+    {
+        $productId = $request->input('product_id');
+        $size = $request->input('size');
+
+        // Tìm giá của sản phẩm dựa trên product_id và kích thước
+        $productPrice = ProductSize::where('product_id', $productId)
+            ->where('size', $size)
+            ->value('price');
+
+        // Trả về giá dưới dạng JSON
+        return response()->json(['price' => $productPrice]);
+    }
+
+    public function deleteCartItem(Request $request)
+    {
+        $cartItemId = $request->input('cart_item_id');
+
+        // Xóa sản phẩm khỏi giỏ hàng
+        Cart::destroy($cartItemId);
+
+        // Trả về phản hồi thành công
+        return response()->json(['success' => true]);
     }
 }

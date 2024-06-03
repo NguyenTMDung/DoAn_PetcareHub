@@ -17,6 +17,7 @@ use App\Http\Controllers\TypeProductController;
 use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 
 
@@ -39,6 +40,11 @@ Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
 Route::post('them-vao-gio-hang-{id}', [CartController::class, 'addToCart'])->middleware('checkUser')->name('addToCart');
 Route::post('/cart-count', [CartController::class, 'getCartCount'])->middleware('checkUser')->name('cartCount');
+Route::get('/get-product-price', [CartController::class, 'getProductPrice']);
+Route::post('/delete-cart-item', [CartController::class, 'deleteCartItem'])->name('deleteCartItem');
+
+//Thanh toán
+Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name('checkout');
 
 
 

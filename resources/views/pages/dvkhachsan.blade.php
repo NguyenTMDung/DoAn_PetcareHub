@@ -27,7 +27,7 @@
     </div>
     <br><br><br>
 
-    <div class="form-container">
+    <div class="form-container" id="style-responsive">
         <div class="form-column1">
             <img src="{{asset('public/frontend/image_task2/img-hotel2.png')}}">
         </div>
@@ -233,7 +233,7 @@
             <div class="item">
                 <a href="">
                     <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
+                        <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="">
                     </div>
                     <div class="text-truncate-container">
                         <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
@@ -250,7 +250,7 @@
             <div class="item">
                 <a href="">
                     <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
+                        <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" >
                     </div>
                     <div class="text-truncate-container">
                         <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
@@ -267,7 +267,7 @@
             <div class="item">
                 <a href="">
                     <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
+                        <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="">
                     </div>
                     <div class="text-truncate-container">
                         <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
@@ -284,7 +284,7 @@
             <div class="item">
                 <a href="">
                     <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
+                        <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="">
                     </div>
                     <div class="text-truncate-container">
                         <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>

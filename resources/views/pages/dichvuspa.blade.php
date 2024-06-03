@@ -24,12 +24,11 @@
 
 <div class="banner">
     <h4><br><strong>👍 3 ĐIỀU LUÔN CAM KẾT VỚI KHÁCH HÀNG</strong></h4>
-    <hr style="border: 1px solid black;opacity: 1;">
+    <hr style="border: 1px solid #ffffff;opacity: 1;">
     <div id="banner-body">
         <div class="commitment">
             <h5><strong>❣️ HẾT MÌNH VÌ CÔNG VIỆC</strong></h5>
-            <p>Tại Pet Care Hub, chúng tôi luôn đặt chữ tâm, trách nhiệm lên hàng đầu trong việc chăm sóc
-                thú cưng. Đối với chúng tôi, thú cưng khỏe mạnh là niềm hạnh phúc lớn nhất.</p>
+            <p>Tại Pet Care Hub, chúng tôi luôn đặt chữ tâm, trách nhiệm lên hàng đầu. Đối với chúng tôi, thú cưng khỏe mạnh là niềm hạnh phúc lớn nhất.</p>
         </div>
         <div class="commitment">
             <h5><strong>✅ GIÁ DỊCH VỤ RẺ NHẤT</strong></h5>
@@ -45,7 +44,7 @@
 </div>
 <br><br><br>
 
-<div class="form-container">
+<div class="form-container" id="style-responsive">
     <div class="form-column1">
         <img src="{{asset('public/frontend/image_task2/img-pet2.png')}}">
     </div>
@@ -350,7 +349,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="" >
                 </div>
                 <div class="text-truncate-container">
                     <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
@@ -367,7 +366,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" >
                 </div>
                 <div class="text-truncate-container">
                     <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
@@ -384,7 +383,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="" >
                 </div>
                 <div class="text-truncate-container">
                     <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
@@ -401,7 +400,7 @@
         <div class="item">
             <a href="">
                 <div class="img-products">
-                    <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" style="width: 17vw;">
+                    <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="" >
                 </div>
                 <div class="text-truncate-container">
                     <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>

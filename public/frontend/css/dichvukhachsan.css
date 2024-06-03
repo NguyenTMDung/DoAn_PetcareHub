@@ -41,73 +41,10 @@
 .star-rating {
     color: #ffce1b;
 }
-.item {
-    width: 17vw;
-    text-align: center;
-    border: 0.5px solid gainsboro;
-    border-radius: 12px;
-    background: var(--Neutral-Color-00, #FDFDFD);
-    box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+.card-detail p
+{
+    font-size: 1.1em;
 }
-
-.item a {
-    color: #000;
-    text-decoration: none;
-}
-
-.item img {
-    margin: 0.5vw 0;
-    border-radius: 12px;
-}
-
-.item img:hover {
-    transform: scale(1.05);
-    transition: all 0.5s;
-}
-
-.pro-price {
-    color: #FF0E0E;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 5px;
-    text-align: left;
-    margin: 0 2vw 1vw 2vw;
-}
-
-.pro-price .old-price {
-    font-size: 16px;
-    font-weight: 100;
-    color: #000;
-    text-decoration-line: line-through;
-}
-
-.sales {
-    text-align: end;
-    margin: 1vw 1.5vw;
-}
-
-.number-of-sales {
-    display: inline;
-}
-
-.text-truncate-container {
-    width: 80%;
-    margin: auto;
-}
-
-.text-truncate-container p {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 18px;
-    text-align: left;
-    font-weight: 500;
-}
-
- 
 .product-card1, .product-card2 , .product-card3 , .product-card4 , .product-card5 , .product-card6 {
     position: relative;
     border-radius: 10px;
@@ -116,9 +53,9 @@
     text-align: center;
     padding: 1vw;
 }
-.product-card1 p, .product-card2 p, .product-card3 p, .product-card4 p, .product-card5 p, .product-card6 p
+.card-info p
 {
-    font-size: 1.05vw;
+    font-size: 1em;
     margin-bottom: 0;
     margin-top: 0.5vw;
 }
@@ -127,6 +64,7 @@
     padding: 1.5vw;
     background-color: #f0f0f0;
     border-radius: 10px;
+    height: 30em;
 }
 
 .card-detail {
@@ -159,7 +97,7 @@
     color: #FCEED5;
     padding: 0.5vw 2vw ;
     border-radius: 2vw;
-    font-size: 1.3vw;
+    font-size: 1.2em;
     font-weight: 600;
 }
 .gia
@@ -169,10 +107,11 @@
     background-color:#f0f0f000;
     padding: 0.5vw 2vw ;
     border-radius: 2vw;
-    font-size: 1.3vw;
+    font-size: 1.2em;
     border: none;
     text-decoration-line: underline;
 }
+
 .form-container .contain .banner p li {
     font-size: 1.2vw;
 }
@@ -197,4 +136,29 @@
     border: 1px solid;
     border-radius: 8px;
     padding: 2vw;
+}
+.banner1 {
+    background-color: #003459;
+    color: #f0f0f0;
+    padding: 0 2vw 1.5vw 2vw;
+    border-radius: 8px;
+    height: unset;
+}
+@media only screen and (max-width: 768px) {
+.product-card1, .product-card2, .product-card3, .product-card4, .product-card5, .product-card6 {
+    position: relative;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2em;
+}
+.column {
+    display: unset;
+}
+.column .contents {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1em;
+    line-height: 1em;
+}
 }

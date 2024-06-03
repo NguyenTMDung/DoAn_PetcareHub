@@ -7,7 +7,6 @@ use App\Models\product;
 use App\Models\type_product;
 use App\Models\Gallery;
 use App\Models\ProductSize;
-use App\Models\Cart;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
@@ -282,24 +281,4 @@ class ProductController extends Controller
         return view('pages.chitietsp', ['pro' => $pro, 'relatedProducts' => $relatedProducts, 'sizes' => $sizes]);
     }
 
-    public function addToCart(Request $request, $id)
-    {
-        $action = $request->input('action');
-        $size = $request->input('size');
-        $quantity = $request->input('quantity');
-
-        $userId = $request->input('user_id');
-
-        // Tạo một đối tượng Cart mới
-        if ($action === 'add_to_cart') {
-            $cart = new Cart();
-            $cart->user_id = $userId;
-            $cart->product_id = $id;
-            $cart->size = $size;
-            $cart->num = $quantity;
-            $cart->save();
-        } elseif ($action === 'buy_now') {
-        }
-        return Redirect::to('/chi-tiet-san-pham-' . $id);
-    }
 }

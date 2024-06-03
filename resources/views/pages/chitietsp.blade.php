@@ -75,7 +75,7 @@
           <script src="./js/infor.js"></script>
         </div>
       </div>
-      <form action=" {{URL::to('them-vao-gio-hang-' . $pro->id)}}" method="POST">
+      <form action="{{ route('addToCart', ['id' => $pro->id]) }}" method="POST" id="cartForm">
         {{ csrf_field() }}
       <div class="size-container">
         <p class="text-size">Phân loại:</p>
@@ -108,10 +108,10 @@
       <div class="buy-cart-container">
         <div class="cart-container">
           <i class="bi bi-cart4"></i>
-          <button type="submit" class="cart-button" value="add_to_cart">Thêm vào giỏ hàng</button>
+          <button type="button" class="cart-button" onclick="addToCart(event)" value="add_to_cart">Thêm vào giỏ hàng</button>
         </div>
         <div class="buy-container" style="margin-left: 1vw">
-          <button type="submit" class="buy-button" value="buy_now">Mua ngay</button>
+          <button type="submit" class="buy-button" name="action" value="buy_now">Mua ngay</button>
         </div>
       </div>
     </form>
@@ -265,12 +265,36 @@
         });
     });
 
-    // Tắt sự kiện bỏ chọn cho tất cả các ô radio khi một ô radio được chọn
-    // document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    //     radio.addEventListener('click', () => {
-            
-    //     });
-    // });
+    function addToCart(event) {
+      event.preventDefault();
+      
+      let form = document.getElementById('cartForm');
+      let formData = new FormData(form);
+      formData.append('cart_action', 'add_to_cart');
+      
+      let url = '{{ route("addToCart", ["id" => $pro->id]) }}';
+
+      let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+      fetch(url, {
+          method: 'POST',
+          body: formData,
+          headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'X-CSRF-TOKEN': csrfToken
+          }
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              document.getElementById('cartCount').innerText = data.cartCount;
+          } else {
+              alert('Có lỗi xảy ra, vui lòng thử lại.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+    });
+}
 </script>
   
 @endsection

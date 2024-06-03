@@ -16,6 +16,8 @@ use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
 use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
+use App\Http\Controllers\CartController;
+
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -30,9 +32,13 @@ Route::get('/chinh-sach-bao-mat', [FootController::class, 'ChinhSachBaoMat']);
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
-Route::post('them-vao-gio-hang-{id}', [ProductController::class, 'addToCart'])->middleware('checkUser');
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
 // Route::get('/san-pham-{cate_id}', [ProductController::class, 'showAfterfilter']);
+
+//Gio hang
+Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
+Route::post('them-vao-gio-hang-{id}', [CartController::class, 'addToCart'])->middleware('checkUser')->name('addToCart');
+Route::post('/cart-count', [CartController::class, 'getCartCount'])->middleware('checkUser')->name('cartCount');
 
 
 

@@ -21,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body>
@@ -85,7 +86,9 @@
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
                         style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                <a href="{{URL::to("/gio-hang")}}" id="cart">
+                    <span><span id="cartCount" style="color: red">0</span><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></span>
+                </a>
             </li>
         </div>
     </div>
@@ -193,6 +196,29 @@
                 if (item.href === currentUrl) {
                     item.parentElement.classList.add('active');
                 }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const updateCartCount = () => {
+            fetch('{{ route("cartCount") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cartCount').innerText = data.cartCount;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+        // Gọi hàm updateCartCount khi trang được tải
+        updateCartCount();
     });
     </script>
 </body>

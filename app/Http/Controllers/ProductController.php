@@ -296,15 +296,20 @@ class ProductController extends Controller
         // dd($pro);
         $sizes = ProductSize::where('product_id', $id)->get(['id', 'size', 'price']);
 
-        $averageRating = OrderDetail::calculateAverageRating($id);
         $numRating = OrderDetail::calculateNumRating($id);
+
+        $feedback = OrderDetail::where('product_id', $id)
+        ->join('orders', 'orderDetail.order_id', '=', 'orders.id')
+        ->orderBy('rating', 'desc')
+        ->take(5)
+        ->get(['orderDetail.size', 'orderDetail.num', 'orderDetail.rating', 'orderDetail.feedback', 'orders.name']);
 
         return view('pages.chitietsp', [
             'pro' => $pro, 
             'relatedProducts' => $relatedProducts, 
             'sizes' => $sizes,
-            'averageRating' => $averageRating,
-            'numRating' => $numRating
+            'numRating' => $numRating,
+            'feedback' => $feedback,
         ]);
     }
 

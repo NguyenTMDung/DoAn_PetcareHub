@@ -583,6 +583,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .product img {
     width: 100%;
+    height: 14em;
 }
 
 .container-fluid {
@@ -644,6 +645,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 .text-truncate-container {
     width: 100%;
     margin: auto;
+    height: 3.5em;
 }
 
 .text-truncate-container p {
@@ -840,5 +842,9 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     .carousel-showmanymoveone .carousel-control.right {
         margin-right: 2vw;
+    }
+    .product img {
+        width: 100%;
+        height: 10.5em;
     }
   }

@@ -26,6 +26,7 @@
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1vw;
+  height: 14em;
 }
 
 .item a:hover {
@@ -167,6 +168,7 @@
 
 .item {
   font-size: 1.1em;
+  height: fit-content;
 }
 
 #filter button {
@@ -204,7 +206,10 @@ label:before {
   box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
   border-radius: 5px;
 }
-
+.text-truncate-container
+{
+    height: 3.5em;
+}
 input[type=checkbox] {
   display: none;
   border-radius: 0.3vw;
@@ -255,6 +260,7 @@ input[type=radio] {
     background-color: #fdfdfd;
     width: 50%;
     padding-bottom: 2em;
+    display: none;
   }
   #filter-button {
     display: block;
@@ -323,4 +329,11 @@ input[type=radio] {
   width: 5em;
   margin-right: 1em;
 }
+.item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1vw;
+  height: 10.5em;
+}
+
 }

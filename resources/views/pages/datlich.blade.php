@@ -311,4 +311,44 @@
                 name="datlich">
         </div>
         <br><br>
+ <!-- JavaScript code for sending data via Ajax -->
+<script>
+    document.getElementById('sub').addEventListener('click', function() {
+        // Lấy giá trị từ các trường nhập liệu
+        var fullName = document.getElementsByName('fullname')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var address = document.getElementsByName('address')[0].value;
+        var birthdate = document.getElementsByName('birthdate')[0].value;
+        var confirmEmail = document.getElementsByName('confirm_email')[0].value;
+        var phone = document.getElementsByName('phone')[0].value;
+
+        // Chuẩn bị dữ liệu để gửi
+        var data = {
+            fullname: fullName,
+            email: email,
+            address: address,
+            birthdate: birthdate,
+            confirm_email: confirmEmail,
+            phone: phone
+        };
+
+        // Gửi dữ liệu qua Ajax POST request
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/admin_quanlichlichhen', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Xử lý phản hồi thành công
+                    console.log('Dữ liệu đã được gửi thành công!');
+                } else {
+                    // Xử lý phản hồi lỗi
+                    console.error('Lỗi:', xhr.statusText);
+                }
+            }
+        };
+        xhr.send(JSON.stringify(data));
+    });
+</script>
+
 @endsection

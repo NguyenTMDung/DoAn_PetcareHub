@@ -113,7 +113,7 @@
                 <td style="width:10%;">{{$appdata->code}}</td>
                 <td style="width:25%;">{{$appdata->customer->name}}</td>
                 <td style="width:10%;">{{$appdata->customer->phone}}</td>
-                <td style="width:10%;">{{ (new Datetime($appdata->appointment_date))->format('d-m-Y')}}</td>
+                <td style="width:10%;">{{(new Datetime($appdata->appointment_date))->format('d-m-Y')}}</td>
                 <td style="width:10%;">{{$appdata->timeslot}}</td>
                 <td style="width:10%;">{{$appdata->total}}</td>
                 <td style="width:20%;">

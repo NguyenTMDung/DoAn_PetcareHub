@@ -339,6 +339,10 @@ body h4
     font-size: 1.1em;
     font-weight: 700;
 }
+#ks
+{
+    height: 205em;;
+}
 @media only screen and (max-width: 768px) {
     /* .menu {
         display: none;
@@ -399,7 +403,10 @@ input[type=submit] {
 {
     height: 42em;
 }
-
+#ks
+{
+    height: 205em;;
+}
 .chitiet
 {
     display: unset;

@@ -1,7 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
-<div id="container" >
     <div >
         <!--------------------------------------------------------------------------->
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"

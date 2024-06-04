@@ -1,75 +1,3 @@
-
-table {
-    width: 100%;
-    margin: 1vw 1vw;
-}
-
-table,
-th,
-td {
-    padding: 5px;
-    height: 10%;
-}
-
-#myTable td {
-    text-align: center;
-}
-
-#myTable th {
-    text-align: center;
-}
-
-.search-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 20vw;
-    font-size: 14px;
-}
-
-.search-button {
-    color: darkblue;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 18px;
-}
-
-.search-button:hover {
-    text-decoration: underline;
-}
-
-.head {
-    background-color: #FFF4DE;
-    height: 4vw;
-}
-
-#myTable tr:nth-child(even) {
-    background-color: #00345944
-}
-
-.pagination a {
-    border: none;
-}
-
-.search-contain {
-    display: flex;
-    justify-content: center;
-
-}
-
-#myTable {
-    width: 98%;
-    border: none;
-}
-
-#myTable th {
-    border: none;
-}
-
-#myTable td {
-    border: none;
-}
-
 .update {
     display: flex;
     justify-content: space-around;
@@ -92,7 +20,7 @@ tr {
 }
 
 .modal-header h4 {
-    font-size: 24px;
+    font-size: 1.3em;
     margin-left: 2vw;
     color: #003459;
 }
@@ -105,7 +33,7 @@ tr {
 }
 
 #detail-product p {
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 #detail-product table,
@@ -140,7 +68,7 @@ td {
     margin-bottom: -5px;
 }
 #detail-infor h5 {
-    font-size: 18px;
+    font-size: 1.2em;
     margin-top: 2px;
     margin-right: 1vw;
 }
@@ -161,7 +89,7 @@ td {
 }
 
 #detai p {
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 #detai h2 {
@@ -191,11 +119,6 @@ td {
     margin-right: 1vw;
     font-size: 16px;
 }
-
-#myTable {
-    font-size: 18px;
-}
-
 #head-container {
     display: flex;
     justify-content: space-between;
@@ -213,7 +136,7 @@ td {
     height: 4vw;
     display: flex;
     align-self: end;
-    font-size: 18px;
+    font-size: 1.1em;
     margin-top: 0.5vw;
 }
 
@@ -222,7 +145,7 @@ td {
     align-items: center;
     font-weight: 600;
     margin-top: 0.2vw;
-    font-size: 20px;
+    font-size: 1.2em;
     color: #003459;
     margin-left: 2vw;
 }

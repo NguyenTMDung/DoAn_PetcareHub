@@ -19,21 +19,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <style>
-    .active, li:hover, a:active{
-    background-color: antiquewhite;
-    border-radius: 10px;
-    }
-
-    #nav li.active a{
-    background-color: antiquewhite;
-    border-radius: 10px;
-    }
-    #nav li.active
-    {
-        background-color: antiquewhite;
-        border-radius: 10px;
-    }
-    
     </style>
 </head>
 
@@ -76,7 +61,7 @@
                 </li>
                 <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
                 <li class="action" >
-                    <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
+                    <a >Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
                         <li style="font-size: 1em;"><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
                         <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý

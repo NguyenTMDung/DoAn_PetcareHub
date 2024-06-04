@@ -1,5 +1,13 @@
 @extends('admin_layout')
 @section('admin_content')
+@if (session('dat_lich'))
+    <h2>Thông tin đặt lịch mới:</h2>
+    <p>Họ tên: {{ session('dat_lich.ho_ten') }}</p>
+    <p>Email: {{ session('dat_lich.email') }}</p>
+    <p>Ngày đặt: {{ session('dat_lich.ngay_dat') }}</p>
+    <p>Dịch vụ: {{ session('dat_lich.dich_vu') }}</p>
+@endif
+
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
 <div id="head-container">
                 <div id="arrange">

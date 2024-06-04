@@ -311,37 +311,7 @@
                 name="datlich">
         </div>
         <br><br>
-        <div id="footer">
-            <table>
-                <tr>
-                    <td id="infor-shop">
-                        <h3>Liên hệ</h3>
-                        CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB <br>
-                        Địa chỉ: 116 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam <br>
-                        <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
-                        <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
-                        <div id="connect_shop">
-                            <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </td>
-                    <td style="width: 30%;"> &nbsp;</td>
-                    <td id="policy">
-                        <h3>Chính sách khách hàng</h3>
-                        <a href="#">Chính sách đổi trả.</a><br>
-                        <a href="#">Chính sách bảo mật.</a><br>
-                        <a href="#">Phương thức thanh toán.</a><br>
-                        <a href="#">Chính sách hoàn tiền</a><br>
-                        <p>&nbsp;</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" style="text-align: center;" class="logo"><img src="image/logo.png" alt="logo"></td>
-                </tr>
-            </table>
-        </div>
-</body>
+        
 <script>
     const totalPrice = document.getElementsByClassName('total-price');
     const intoMoney = document.getElementsByClassName('into-money');

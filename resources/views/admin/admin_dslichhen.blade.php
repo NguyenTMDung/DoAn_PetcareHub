@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+
 <link rel="stylesheet" href="{{asset('public/frontend/css/dslichhen.css')}}">
 <div class="admin" >
             <div id="style-link">

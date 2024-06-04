@@ -109,3 +109,6 @@ use App\Http\Controllers\LichHenController;
 
 
 Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);
+
+
+Route::post('/appointments', [AppointmentController::class, 'store']);

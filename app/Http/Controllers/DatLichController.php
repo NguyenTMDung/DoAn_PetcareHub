@@ -11,12 +11,9 @@ class DatLichController extends Controller
     }
     public function luuThongTin(Request $request)
     {
-        $data = $request->all(); // Lấy tất cả dữ liệu từ form
-
-        // Xử lý dữ liệu dịch vụ (chuyển mảng thành chuỗi)
+        $data = $request->all(); 
         $dichVu = implode(', ', $data['dich_vu']);
 
-        // Lưu vào session
         session()->flash('dat_lich', [
             'ho_ten' => $data['ho_ten'],
             'email' => $data['email'],
@@ -24,7 +21,7 @@ class DatLichController extends Controller
             'dich_vu' => $dichVu,
         ]);
 
-        return redirect()->route('admin.quanlylichhen');
+        return redirect()->route('admin.dslichhen');
     }
 
 }

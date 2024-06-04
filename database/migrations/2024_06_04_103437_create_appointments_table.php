@@ -57,10 +57,8 @@ return new class extends Migration
             $appointment->size_hotel = $sizeHotel; 
             $appointment->quantity = $quantity; 
             $appointment->service_quantity = $serviceQuantity;
-            // $appointment->service_price = $totalPrice; // Lưu tổng giá (bạn cần tính trước)
             $appointment->save();
         
-            // Gửi phản hồi JSON cho JavaScript
             echo json_encode(['message' => 'Đặt lịch thành công!']);
         }
     }

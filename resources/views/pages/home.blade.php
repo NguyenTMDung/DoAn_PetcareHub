@@ -356,9 +356,9 @@
     {{-- địa chỉ --}}
     <div id="shop-address">
         <div class="title">
-            <hr>
+            <hr style="border: 1px solid black">
             <p>Mua Trực Tiếp Tại Cửa Hàng</p>
-            <hr>
+            <hr style="border: 1px solid black">
         </div>
         <div class="img-shop">
             <div class="sub-section">

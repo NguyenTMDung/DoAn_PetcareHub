@@ -261,7 +261,7 @@ td {
 
 .sub-menu li {
     list-style-type: none;
-    width: 15vw;
+    width: 16vw;
     margin-left: 0;
 }
 
@@ -312,7 +312,7 @@ td {
     background-color: white;
     width: 9vw;
 }
-.collapse, .navbar-collapse
+.menu .collapse,  .menu .navbar-collapse
 {
     margin-left: 12vw;
     margin-right: 6vw;
@@ -623,7 +623,6 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 .carousel-inner {
-    width: 98%;
     margin: auto;
 }
 

@@ -20,6 +20,25 @@ class AdminController extends Controller
         }
         return false;
     }
+<<<<<<< HEAD
+
+    public function xuLyDatLich(Request $request)
+{
+    // Validate dữ liệu
+    $validatedData = $request->validate([
+        'fullname' => 'required',
+        // ... (các quy tắc validate khác)
+    ]);
+
+    // Lưu vào database
+    Appointment::create($validatedData);
+
+    // Trả về phản hồi (nếu cần)
+    return response()->json(['message' => 'Đặt lịch thành công']);
+}
+
+
+=======
     public function trangchu(){
         if(!$this->checkadmin()) {
             return redirect('/admin-login');
@@ -110,4 +129,5 @@ class AdminController extends Controller
         return redirect('/admin-login');
     }
     
+>>>>>>> a539cf27428891c05c00f97128a3a80c820d0aa6
 }

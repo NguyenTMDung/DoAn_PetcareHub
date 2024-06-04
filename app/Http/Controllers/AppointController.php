@@ -30,4 +30,23 @@ class AppointController extends Controller
         Session::put('message', 'Đã xóa lịch hẹn!');
         return Redirect::to('/quan-ly-lich-hen');
     }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'appointment_code' => 'required',
+            'service_quantity' => 'required|integer',
+            'service_price' => 'required|integer',
+        ]);
+
+        $appointment = new Appointment;
+        $appointment->appointment_code = $request->appointment_code;
+        $appointment->service_quantity = $request->service_quantity;
+        $appointment->service_price = $request->service_price;
+        $appointment->save();
+
+        return response()->json(['status' => 'success', 'message' => 'Thêm lịch thành công']);
+    }
 }
+
+    

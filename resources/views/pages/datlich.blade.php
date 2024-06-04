@@ -1,7 +1,8 @@
 @extends('layout')
 @section('content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/datlich.css')}}">
-    <div class="container">
+    
+    <link rel="stylesheet" href="{{asset('public/frontend/css/datlich.css')}}">
+    <br>
         <div class="form-container">
             <div class="form-header">
                 <h3>THÔNG TIN CÁ NHÂN</h3>
@@ -37,8 +38,6 @@
                 </div>
             </div>
         </div>
-        <br><br><br>
-
         <div class="form-container">
             <div class="form-head">
                 <h3>THÔNG TIN ĐẶT LỊCH</h3>
@@ -102,7 +101,7 @@
                                     </div>
                                     <h5 ><strong>Chọn dịch vụ :</strong></h5>
                                     <div id="body">
-                                        <div>
+                                        <div class="spa">
                                             <p><strong>Spa :</strong></p>
                                             <form>
                                                 <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ
@@ -187,18 +186,18 @@
                 <table class="board">
                     <tr>
                         <td>
-                            <p><strong>Tổng số dịch vụ:</strong></p>
+                            <h5>Tổng số dịch vụ:</h5>
                         </td>
                         <td>
-                            <p><strong class="quantity-service">3</strong></p>
+                            <h5 class="quantity-service">3</h5>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p><strong>Tổng tiền:</strong></p>
+                            <h4>Tổng tiền:</h4>
                         </td>
                         <td>
-                            <p><strong class="total-price" >150000</strong></p>
+                            <h4 class="total-price">150000</h4>
                         </td>
                     </tr>
                 </table>
@@ -207,7 +206,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4>Ngày/Giờ/Nội dung mong muốn</h4>
+                            <h4>Thông tin đặt lịch</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body2">
@@ -241,7 +240,7 @@
                             </div>
                             <h5 ><strong>Chọn dịch vụ :</strong></h5>
                             <div id="body">
-                                <div>
+                                <div class="spa">
                                     <p><strong>Spa :</strong></p>
                                     <form>
                                         <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ
@@ -270,7 +269,7 @@
                             </div>
                             <h5 ><strong>Kích thước thú cưng:</strong></h5>
                             <div id="foot">
-                                <div>
+                                <div class ="spa">
                                     <p><strong>Spa :</strong></p>
                                     <select name="size" id="size-spa" >
                                         <option value="size1">Dưới 2kg</option>
@@ -311,4 +310,160 @@
                 name="datlich">
         </div>
         <br><br>
+<script>
+    const totalPrice = document.getElementsByClassName('total-price');
+    const intoMoney = document.getElementsByClassName('into-money');
+    function formatPrice(price) {
+        return price.toLocaleString('en-US', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+    }
+    for (let i = 0; i < totalPrice.length; i++) {
+        const originalValue = parseInt(totalPrice[i].textContent);
+        const price = formatPrice(originalValue);
+        totalPrice[i].textContent = price;
+    }
+    for (let i = 0; i < intoMoney.length; i++) {
+        const originalValue = parseInt(intoMoney[i].textContent);
+        const price = formatPrice(originalValue);
+        intoMoney[i].textContent = price;
+    }
+
+    function sendDataToBackend(action, data) {
+  fetch('/path/to/your/backend/script.php', { // Update with your server-side script
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ action: action, data: data })
+  })
+  .then(response => response.json())
+  .then(result => {
+    console.log(result);
+    if (result.success) {
+      // Update table rows with new data from the server
+      updateTableRows(result.data); 
+
+      // Redirect to datlich.php (or your desired page)
+      if (action === 'add') {
+        window.location.href = 'datlich.blade.php'; // Thay 'datlich.php' bằng đường dẫn thực tế
+      }
+    }
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('Error:', error);
+  });
+}
+
+
+  // ... (Your existing formatPrice, handleBookNow, and updateTableRows functions)
+
+  // Get elements
+  const formAdd = document.querySelector('.form-add');
+  const bookNowButton = document.querySelector('input[name="datlich"]');
+  const myTable = document.getElementById('myTable');
+  const addModalEl = document.getElementById('addModal');
+  const exampleModalEl = document.getElementById('exampleModal');
+  const addModal = new bootstrap.Modal(addModalEl);
+  const exampleModal = new bootstrap.Modal(exampleModalEl);
+  const btnAdd = document.getElementById('btnAdd');
+  const btnSave = document.getElementById('btnSave');
+
+  // Event listeners
+  formAdd.addEventListener('click', handleAddModal);
+  bookNowButton.addEventListener('click', handleBookNow);
+  myTable.addEventListener('click', handleTableActions);
+  btnAdd.addEventListener('click', handleAdd); // Add event listener for btnAdd
+  btnSave.addEventListener('click', handleSave); // Add event listener for btnSave
+  
+
+  // ... (handleTableActions function - same as before)
+
+  function handleAdd() {
+    // Collect data from the addModal form
+    const formData = {
+      // ... (Lấy dữ liệu từ các trường input của addModal)
+    };
+
+    sendDataToBackend('add', formData);
+
+    // Close the modal after adding
+    addModal.hide();
+  }
+
+  function handleSave() {
+    // Collect data from the editModal form
+    const formData = {
+      // ... (Lấy dữ liệu từ các trường input của exampleModal)
+    };
+
+    sendDataToBackend('edit', formData);
+
+    // Close the modal after saving
+    exampleModal.hide();
+  }
+
+  function sendDataToBackend(action, data) {
+    fetch('/path/to/your/backend/script.php', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ action: action, data: data })
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.success) {
+        updateTableRows(result.data); 
+      } else {
+        alert('Đã xảy ra lỗi: ' + result.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Đã xảy ra lỗi khi kết nối đến máy chủ.');
+    });
+  }
+
+
+</script>
+
+</html>
+<?php
+// Database connection...
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $requestData = json_decode(file_get_contents('php://input'), true);
+    $action = $requestData['action'];
+    $data = $requestData['data'];
+
+    if ($action === 'add') {
+        // Insert data into the database
+        // ... 
+        $response = ['success' => true, 'data' => $newBookingData];
+    }
+    elseif ($action === 'edit') {
+        // Update data in the database
+        // ...
+        $response = ['success' => true, 'data' => $updatedBookingData];
+    } elseif ($action === 'delete') {
+        // Process delete data
+        // ...
+        $response = ['success' => true, 'message' => 'Xóa lịch thành công.'];
+    } elseif ($action === 'getBookingData') {
+        // Get data booking by ID
+        // ...
+        $response = ['success' => true, 'data' => $bookingData];
+    }
+    
+    else {
+        $response = ['success' => false, 'message' => 'Invalid action'];
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
+}
+?>
 @endsection

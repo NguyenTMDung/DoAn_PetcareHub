@@ -118,3 +118,27 @@ Route::delete('/quan-ly-lich-hen/{id}', [AppointController::class, 'destroy']);
 
 //admin khung gio
 Route::get('/khung-gio', [AppointController::class, 'timeslot']);
+
+
+// 'datlich'
+use App\Http\Controllers\DatLichController;
+use App\Http\Controllers\AppointmentController;
+
+
+Route::get('/datlich', [DatLichController::class, 'index']);
+
+
+
+Route::get('/sanpham', [ProductController::class, 'index']);
+
+
+Route::post('/luu-thong-tin-dat-lich', [DatLichController::class, 'luuThongTin'])->name('luu-thong-tin-dat-lich');
+Route::post('/admin/quanlichlichhen', 'AdminController@xuLyDatLich');
+
+use App\Http\Controllers\LichHenController;
+
+
+Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);
+
+
+Route::post('/appointments', [AppointmentController::class, 'store']);

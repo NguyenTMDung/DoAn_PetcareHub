@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/sanpham.css')}}">
     <div class="poster" style="margin-top: 1vw">
-        <img src="{{asset('public/frontend/image/poster.png')}}" alt="poster">
+        <img src="{{asset('public/frontend/image/banner-gt.png')}}" alt="poster">
     </div>
     <div>
         <br>
@@ -78,10 +78,32 @@
                         </div>
                         <div style="display: flex;justify-content: space-between;">
                             <div style="display: flex;">
-                                <p class="star-rating" style="color: #000;">5</p>
-                                <p class="star-rating">★★★★★</p>
+                                <p class="star-rating" style="color: #000;">{{ number_format($prodata->rating, 1)}}</p>
+                                <p class="star-rating">
+                                    @php
+                                        // Làm tròn số với 1 chữ số thập phân
+                                        $roundedRating = round($prodata->rating, 1);
+                                        // Số sao đầy
+                                        $fullStars = floor($roundedRating);
+                                        // Kiểm tra nếu có sao nửa
+                                        $halfStar = ($roundedRating - $fullStars) >= 0.5;
+                                    @endphp
+
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $fullStars)
+                                            {{-- Đổ sao đầy --}}
+                                            <i class="fas fa-star"></i>
+                                        @elseif ($halfStar && $i == $fullStars + 1)
+                                            {{-- Đổ sao nửa --}}
+                                            <i class="fas fa-star-half-alt"></i>
+                                        @else
+                                            {{-- Đổ sao rỗng --}}
+                                            <i class="far fa-star"></i>
+                                        @endif
+                                    @endfor
+                                </p>
                             </div>
-                            <p class="number-of-sales">Lượt bán: 88</p>
+                            Lượt bán:<p class="number-of-sales"> {{$prodata->number_of_sale}}</p>
                         </div>
                     </div>
                 </a>

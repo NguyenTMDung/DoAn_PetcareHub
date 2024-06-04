@@ -408,7 +408,6 @@ function validateAndSubmit(event) {
         }
     } else {
         errorMessage2.innerHTML = '';
-        hasError = false;
     }
 
     // Submit the form if no errors

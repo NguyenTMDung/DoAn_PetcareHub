@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<style>
+    nav li.active a{
+    text-decoration-line: underline;
+    }
+</style>
 </head>
 <body>
     <div class="header">
@@ -65,7 +70,7 @@
                         @include('category')
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dịch vụ
                         </a>
@@ -195,6 +200,7 @@
             menuItems.forEach(item => {
                 if (item.href === currentUrl) {
                     item.parentElement.classList.add('active');
+                    console.log(currentUrl);
                 }
     });
 

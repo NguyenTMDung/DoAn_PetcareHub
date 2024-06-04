@@ -195,11 +195,11 @@
                         <option value="" selected>Chọn phường xã</option>
                     </select>
                     <p>Chi tiết*</p>
-                    <input type="text" id="address" name="addressDetail" placeholder="Số 34, Tân Lập">
+                    <input type="text" id="addressA" name="addressDetail" placeholder="Số 34, Tân Lập">
                     <div id="error-message2">
                     </div>`
                 getAPI();
-                getCheck();
+                // getCheck();
             }
             else if (radio.id === 'store' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `<h2 class='title'>Địa điểm nhận hàng</h2>
@@ -234,133 +234,47 @@
     const fee = TransFee.textContent;
     const formatted = Number(fee).toLocaleString();
     TransFee.textContent = formatted;
-    //
-    const addressOption = document.getElementById('address');
-    const storeOption = document.getElementById('store');
-    const errorMessage1 = document.getElementById('error-message1');
-    const complete1 = document.getElementById('complete');
-    complete1.addEventListener('click', (event) => {
-        if (!addressOption.checked && !storeOption.checked) {
-            errorMessage1.textContent = '*Vui lòng chọn một tùy chọn hình thức nhận hàng!';
-            event.preventDefault();
-        } else {
-            errorMessage.textContent = '';
-        }
-    });
-    //
-    const cashOption = document.getElementById('cash');
-    const bankingOption = document.getElementById('banking');
-    const errorMessage = document.getElementById('error-message');
-    const completeButton = document.getElementById('complete');
-    completeButton.addEventListener('click', (event) => {
-        if (!cashOption.checked && !bankingOption.checked) {
-            errorMessage.textContent = '*Vui lòng chọn một tùy chọn thanh toán!';
-            event.preventDefault();
-        } else {
-            errorMessage.textContent = '';
-        }
-        
-    });
-    document.getElementById('complete').addEventListener('click', function (event) {
-        event.preventDefault();
-
-        var name = document.getElementById('name');
-        var tel = document.getElementById('tel');
-        var email = document.getElementById('email');
-
-        if (name.value === '') {
-            document.getElementById('error-name').innerHTML = '*Không được để trống tên';
-        } else {
-            document.getElementById('error-name').innerHTML = '';
-        }
-        if (tel.value === '') {
-            document.getElementById('error-tel').innerHTML = '*Không được để trống số điện thoại';
-        } else {
-            document.getElementById('error-tel').innerHTML = '';
-        }
-        if (email.value === '') {
-            document.getElementById('error-mail').innerHTML = '*Không được để trống email';
-        } else {
-            document.getElementById('error-mail').innerHTML = '';
-        }
-
-        if (document.getElementById('error-mail').innerHTML === '') {
-        document.getElementById('customer-form').submit();
-        }
-    });
+   
     function getAPI() {
-        var citis = document.getElementById("city");
-        var districts = document.getElementById("district");
-        var wards = document.getElementById("ward");
-        var Parameter = {
-            url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
-            method: "GET",
-            responseType: "application/json",
-        };
-        var promise = axios(Parameter);
-        promise.then(function (result) {
-            renderCity(result.data);
-        });
+    var citis = document.getElementById("city");
+    var districts = document.getElementById("district");
+    var wards = document.getElementById("ward");
+    var Parameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+        method: "GET",
+        responseType: "application/json",
+    };
+    var promise = axios(Parameter);
+    promise.then(function (result) {
+        renderCity(result.data);
+    });
 
-        function renderCity(data) {
-            for (const x of data) {
-                citis.options[citis.options.length] = new Option(x.Name, x.Name);
-            }
-            citis.onchange = function () {
-                district.length = 1;
-                ward.length = 1;
-                if (this.value != "") {
-                    const result = data.filter(n => n.Name === this.value);
-
-                    for (const k of result[0].Districts) {
-                        district.options[district.options.length] = new Option(k.Name, k.Name);
-                    }
-                }
-            };
-            district.onchange = function () {
-                ward.length = 1;
-                const dataCity = data.filter((n) => n.Name === citis.value);
-                if (this.value != "") {
-                    const dataWards = dataCity[0].Districts.filter(n => n.Name === this.value)[0].Wards;
-
-                    for (const w of dataWards) {
-                        wards.options[wards.options.length] = new Option(w.Name, w.Name);
-                    }
-                }
-            };
+    function renderCity(data) {
+        for (const x of data) {
+            citis.options[citis.options.length] = new Option(x.Name, x.Name);
         }
+        citis.onchange = function () {
+            districts.length = 1;  // Đặt lại độ dài của districts để xóa các options cũ
+            wards.length = 1;      // Đặt lại độ dài của wards để xóa các options cũ
+            if (this.value != "") {
+                const result = data.filter(n => n.Name === this.value);
+                for (const k of result[0].Districts) {
+                    districts.options[districts.options.length] = new Option(k.Name, k.Name);
+                }
+            }
+        };
+        districts.onchange = function () {
+            wards.length = 1;  // Đặt lại độ dài của wards để xóa các options cũ
+            const dataCity = data.filter((n) => n.Name === citis.value);
+            if (this.value != "") {
+                const dataWards = dataCity[0].Districts.filter(n => n.Name === this.value)[0].Wards;
+                for (const w of dataWards) {
+                    wards.options[wards.options.length] = new Option(w.Name, w.Name);
+                }
+            }
+        };
     }
-
-    document.getElementById('complete').addEventListener('click', function (event) {
-    event.preventDefault();
-
-    var city = document.getElementById('city').value;
-    var district = document.getElementById('district').value;
-    var ward = document.getElementById('ward').value;
-    var address = document.getElementById('address').value;
-
-    var errorMessage2 = document.getElementById('error-message2');
-    errorMessage2.innerHTML = ''; // Xóa bất kỳ thông báo lỗi cũ nào trước đó
-
-    // Kiểm tra xem các trường có rỗng không và hiển thị thông báo lỗi tương ứng
-    if (city === '') {
-        errorMessage2.innerHTML += '*Tỉnh/Thành phố không thể trống<br>';
-    }
-    if (district === '') {
-        errorMessage2.innerHTML += '*Quận/Huyện không thể trống<br>';
-    }
-    if (ward === '') {
-        errorMessage2.innerHTML += '*Phường/Xã không thể trống<br>';
-    }
-    if (address === '') {
-        errorMessage2.innerHTML += '*Địa chỉ chi tiết không thể trống<br>';
-    }
-
-    // Nếu không có lỗi, gửi form
-    if (errorMessage2.innerHTML === '') {
-        document.getElementById('customer-form').submit();
-    }
-});
+}
 
     document.addEventListener('DOMContentLoaded', function() {
 
@@ -384,6 +298,125 @@
         document.querySelector('input[name="total_price"]').value = totalPrice;
 
     });
+
+const addressOption = document.getElementById('address');
+const storeOption = document.getElementById('store');
+const errorMessage1 = document.getElementById('error-message1');
+
+const cashOption = document.getElementById('cash');
+const bankingOption = document.getElementById('banking');
+const errorMessage = document.getElementById('error-message');
+
+const name = document.getElementById('name');
+const tel = document.getElementById('tel');
+const email = document.getElementById('email');
+const errorName = document.getElementById('error-name');
+const errorTel = document.getElementById('error-tel');
+const errorMail = document.getElementById('error-mail');
+
+const city = document.getElementById('city');
+const district = document.getElementById('district');
+const ward = document.getElementById('ward');
+const addressInput = document.getElementById('addressA');
+const errorMessage2 = document.getElementById('error-message2');
+
+const completeButton = document.getElementById('complete');
+function validateDeliveryOption() {
+    if (!addressOption.checked && !storeOption.checked) {
+        errorMessage1.textContent = '*Vui lòng chọn một tùy chọn hình thức nhận hàng!';
+        return false;
+    } else {
+        errorMessage1.textContent = '';
+        return true;
+    }
+}
+
+function validatePaymentOption(event) {
+    if (!cashOption.checked && !bankingOption.checked) {
+        errorMessage.textContent = '*Vui lòng chọn một tùy chọn thanh toán!';
+        return false;
+    } else {
+        errorMessage.textContent = '';
+        return true;
+    }
+}
+
+function validateAndSubmit(event) {
+    event.preventDefault();
+
+    let hasError = false;
+
+    if (!validateDeliveryOption()) hasError = true;
+
+    // Validate payment option
+    if (!validatePaymentOption()) hasError = true;
+
+    // Validate name
+    if (name.value === '') {
+        errorName.innerHTML = '*Không được để trống tên';
+        hasError = true;
+    } else {
+        errorName.innerHTML = '';
+    }
+
+    if (tel.value === '') {
+        errorTel.innerHTML = '*Không được để trống số điện thoại';
+        hasError = true;
+    }else if (!/^\d{10}$/.test(tel.value)) {
+        errorTel.innerHTML = '*Số điện thoại phải có 10 chữ số';
+        hasError = true;
+    } else {
+        errorTel.innerHTML = '';
+    }
+
+    // Validate email
+    if (email.value === '') {
+        errorMail.innerHTML = '*Không được để trống email';
+        hasError = true;
+    } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+        errorMail.innerHTML = '*Email không hợp lệ';
+        hasError = true;
+    } else {
+        errorMail.innerHTML = '';
+    }
+
+    if (addressOption.checked) {
+        var city = document.getElementById('city').value;
+        var district = document.getElementById('district').value;
+        var ward = document.getElementById('ward').value;
+        var addressA = document.getElementById('addressA').value;
+        var errorMessage2 = document.getElementById('error-message2');
+        
+        errorMessage2.innerHTML = ''; // Xóa bất kỳ thông báo lỗi cũ nào trước đó
+
+        // Kiểm tra xem các trường có rỗng không và hiển thị thông báo lỗi tương ứng
+        if (city === '') {
+            errorMessage2.innerHTML += '*Tỉnh/Thành phố không thể trống<br>';
+            hasError = true;
+        }
+        if (district === '') {
+            errorMessage2.innerHTML += '*Quận/Huyện không thể trống<br>';
+            hasError = true;
+        }
+        if (ward === '') {
+            errorMessage2.innerHTML += '*Phường/Xã không thể trống<br>';
+            hasError = true;
+        }
+        if (addressA === '') {
+            errorMessage2.innerHTML += '*Địa chỉ chi tiết không thể trống<br>';
+            hasError = true;
+        }
+    } else {
+        errorMessage2.innerHTML = '';
+    }
+
+    // Submit the form if no errors
+    if (!hasError) {
+        document.getElementById('customer-form').submit();
+    }
+}
+
+completeButton.addEventListener('click', validateAndSubmit);
 </script>
 <?php 
 // include("css/styleOrder.php"); 

@@ -73,10 +73,11 @@ body {
     margin-top: -1px;
     width: 17em;
 }
-.sub-menu li
-{
+
+.sub-menu li {
     font-size: 1em;
 }
+
 #menu li {
     list-style: none;
     margin-bottom: 1vw;
@@ -87,6 +88,18 @@ body {
 
 #menu li:hover {
     text-decoration-line: underline;
+}
+
+.active,
+li:hover,
+a:active {
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+#nav li.active {
+    background-color: antiquewhite;
+    border-radius: 10px;
 }
 
 #menu a {
@@ -100,7 +113,7 @@ body {
 }
 
 .sub-menu li {
-    margin-left: -2vw;
+    margin-left: -1.7em;
 }
 
 .sub-menu a {
@@ -109,8 +122,8 @@ body {
 
 #menu .sub-menu {
     position: absolute;
-    margin-left: 13.9vw;
-    margin-top: -3vw;
+    margin-left: 11.5em;
+    margin-top: -2.1em;
     background-color: #ffffff;
     box-shadow: 5px 5px 5px rgb(134, 134, 134);
     border: 1px solid #D9D7D7;
@@ -436,21 +449,23 @@ table p {
     #content {
         display: block;
     }
-    #menu
-    {
+
+    #menu {
         background-color: #ffffff00;
         border: none;
     }
+
     #nav.show {
         z-index: 99;
         position: absolute;
     }
+
     #container {
         width: 25.5em;
         margin: auto;
     }
-    #menu .sub-menu
-    {
+
+    #menu .sub-menu {
         display: block;
         position: unset;
         margin: 0;
@@ -458,37 +473,58 @@ table p {
         padding-left: 2em;
         box-shadow: none;
     }
-    .sub-menu a
-    {
+
+    .sub-menu a {
         font-weight: 400;
         font-size: 0.9em;
     }
+
     .logo img {
         width: 2em;
     }
+
     #part-1 {
         display: block;
     }
-    #statistic, #best-seller {
+
+    #statistic,
+    #best-seller {
         width: 100%;
         padding: 1em 0.5em;
         margin-left: 0;
         margin-bottom: 1em;
     }
-    #date
-    {
+
+    #date {
         margin-bottom: 1em;
     }
-    .chartRevenue .title, .chartOrder .title
-    {
+
+    .chartRevenue .title,
+    .chartOrder .title {
         font-size: 1.3em;
     }
-    #total-revenue, #total-order, #new-customer {
+
+    #total-revenue,
+    #total-order,
+    #new-customer {
         padding: 0.5em;
         width: 32%;
     }
-    #status 
-    {
+
+    #status {
         display: none;
+    }
+
+    .active,
+    li:hover,
+    a:active {
+        background-color: #ffffff00;
+        border-radius: 10px;
+    }
+
+    #nav li.active {
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 10px;
+        text-decoration-line: underline;
     }
 }

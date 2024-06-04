@@ -2,11 +2,6 @@
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
-<div id="container" >
-    <div >
-       
-    </div>
-    
     <table id="myTable">
         <thead>
             <tr class="head">

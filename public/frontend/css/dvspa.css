@@ -39,7 +39,7 @@
     margin-top: 1.5vw;
 }
 .title h3 {
-    font-size: 1.8em;
+    font-size: 1.3em;
 }
 .form-container {
     background-color: #ffffff;
@@ -226,6 +226,7 @@ input[type=submit] {
 .item img {
     border-radius: 12px;
     margin-bottom: 1vw;
+    height: 14em;
 }
 
 .item img:hover {
@@ -265,7 +266,10 @@ input[type=submit] {
     text-align: left;
     font-weight: 500;
 }
-
+.text-truncate-container
+{
+    height: 3.5em;
+}
 .products-list {
     display: flex;
     justify-content: space-between;
@@ -339,6 +343,10 @@ body h4
     font-size: 1.1em;
     font-weight: 700;
 }
+#ks
+{
+    height: 205em;;
+}
 @media only screen and (max-width: 768px) {
     /* .menu {
         display: none;
@@ -399,7 +407,10 @@ input[type=submit] {
 {
     height: 42em;
 }
-
+#ks
+{
+    height: 205em;;
+}
 .chitiet
 {
     display: unset;
@@ -425,5 +436,10 @@ input[type=submit] {
 .column .gia {
     width: 48%;
     padding: 2vw;
+}
+.item img {
+    border-radius: 12px;
+    margin-bottom: 1vw;
+    height: 10.5em;
 }
 }

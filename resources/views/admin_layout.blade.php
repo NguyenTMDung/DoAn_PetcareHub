@@ -19,21 +19,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
     <style>
-    .active, li:hover, a:active{
-    background-color: antiquewhite;
-    border-radius: 10px;
-    }
-
-    #nav li.active a{
-    background-color: antiquewhite;
-    border-radius: 10px;
-    }
-    #nav li.active
-    {
-        background-color: antiquewhite;
-        border-radius: 10px;
-    }
-    
     </style>
 </head>
 
@@ -76,7 +61,7 @@
                 </li>
                 <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
                 <li class="action" >
-                    <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
+                    <a >Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
 <<<<<<< HEAD
                     <li>

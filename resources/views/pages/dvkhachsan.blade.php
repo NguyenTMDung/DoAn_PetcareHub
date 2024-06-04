@@ -69,7 +69,7 @@
         </div>
     </div>
     <br><br><br>
-    <div class="banner">
+    <div class="banner1">
         <h4><br><b>💲 BẢNG GIÁ PHÒNG KHÁCH SẠN THÚ CƯNG</b></h4>
         <hr style="border: 1px solid black;opacity: 1;">
         <div class="menu-hotel">

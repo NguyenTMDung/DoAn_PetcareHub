@@ -113,52 +113,51 @@
         <div id="container-body">
             <div id="filter-button" onclick="toggleFilter()"><i class="bi bi-funnel"></i></div>
             <div id="filter">
-                <form action="" class="tieu_de_loc">
-                    <p><b>Kích Thước</b></p>
-                    <input type="checkbox" id="size_nho" name="size1" value="Nhỏ" />
-                    <label for="size_nho">Nhỏ</label><br />
-                    <input type="checkbox" id="size_lon" name="size2" value="Trưởng thành" />
-                    <label for="size_lon">Trưởng thành</label><br />
-                </form>
-                <form class="tieu_de_loc">
-                    <b>
-                        <p>Phân loại
-                    </b></p>
-                    <input type="checkbox" id="phan_loai_cho" name="Chó" value="Chó" />
-                    <label for="phan_loai_cho">Chó</label><br />
-                    <input type="checkbox" id="phan_loai_meo" name="Mèo" value="Mèo" />
-                    <label for="phan_loai_meo">Mèo</label><br />
-                </form>
-                <form class="tieu_de_loc">
-                    <b>
-                        <p>Giá
-                    </b></p>
+                <form action="{{URL::to('/loc-san-pham-'.$cate_id)}}" class="tieu_de_loc" method="POST" id="filterForm"> 
+                    {{ csrf_field() }}
+                    <b>Loại Sản phẩm</b><br> <br>
+                    @foreach( $types as $typPro)
+                            <input type="checkbox" 
+                            name="typeProduct[]" value="{{$typPro->id}}" id="loai"/>
+                            <label for="loai">{{$typPro->name}} 
+                        </label><br>  
+                    @endforeach
+                    <br>
+                    <b>Phân loại pet</b> <br> <br>
+                        <input type="checkbox" name="pett[]" value="Chó" id="cho"/>
+                        <label for="cho">Chó</label><br />
+                        <input type="checkbox" name="pett[]" value="Mèo" id="meo"/>
+                        <label for="meo">Mèo
+                    </label><br> <br>
+    
+                    <b>Giá</b><br>
                     <td>
-                        <input type="number" id="quanlity_tu" name="quanlity" placeholder="Từ" min="0" max="1000000"
-                            step="10000" value="Từ" />
+                        <input type="number" id="quanlity_tu" name="min_price" placeholder="Từ" min="0" 
+                            placeholder="Từ" value="0" oninput="validateMinMaxPrice()"/>
                     </td>
                     <td>
-                        <input type="number" id="quanlity_den" name="quanlity" placeholder="Đến" min="0" max="1000000"
-                            step="100000" value="Đến" />
-                    </td>
-                </form>
-
-                <form class="tieu_de_loc"> <br>
-                    <b>
-                        <p>Sắp xếp theo
-                    </b></p>
-                    <input type="radio" id="sap_xep_theo_mac_dinh" name="arrange" value="Mặc định" />
+                        <input type="number" id="quanlity_den" name="max_price" placeholder="Đến" min="0" max="1000000"
+                            step="100000" placeholder="Đến" value="500000" oninput="validateMinMaxPrice()"/>
+                    </td><br><br> <br>
+                    <b>Sắp xếp theo</b><br />
+    
+                    <input type="radio" id="sap_xep_theo_mac_dinh" name="sap_xep" value="Mặc định" checked />
                     <label for="sap_xep_theo_mac_dinh">Mặc định</label><br />
-                    <input type="radio" id="sap_xep_theo_a_den_z" name="arrange" value="A đến Z" />
+    
+                    <input type="radio" id="sap_xep_theo_a_den_z" name="sap_xep" value="A đến Z" />
                     <label for="sap_xep_theo_a_den_z">A<span>&#10230; </span>Z</label><br />
-                    <input type="radio" id="sap_xep_theo_z_den_a" name="arrange" value="Z đến A" />
+    
+                    <input type="radio" id="sap_xep_theo_z_den_a" name="sap_xep" value="Z đến A" />
                     <label for="sap_xep_theo_z_den_a">Z<span>&#10230; </span>A</label><br />
-                    <input type="radio" id="sap_xep_theo_giam_dan" name="arrange" value="giảm dần" />
+    
+                    <input type="radio" id="sap_xep_theo_giam_dan" name="sap_xep" value="Giảm dần" />
                     <label for="sap_xep_theo_giam_dan">Giảm dần</label><br />
-                    <input type="radio" id="sap_xep_theo_tang_dan" name="arrange" value="tăng dần" />
-                    <label for="sap_xep_theo_tang_dan">Tăng dần</label><br />
+    
+                    <input type="radio" id="sap_xep_theo_tang_dan" name="sap_xep" value="Tăng dần" />
+                    <label for="sap_xep_theo_tang_dan">Tăng dần</label><br><br> <br>
+    
+                    <button id="loc" type="submit">Lọc</button>
                 </form>
-                <button id="loc">Lọc</button>
             </div>
             <!-------------------------------------------------------------------------sản phẩm-------------------------------------------------------------------->
             <div class="container-item">

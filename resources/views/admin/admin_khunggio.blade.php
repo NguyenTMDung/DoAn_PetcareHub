@@ -1,9 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
-<div class="container">
-    <div class="container" style="justify-content: space-between; margin-top: 1vw;">
-        <!--------------------------------------------------------------------------->
+    <div style="justify-content: space-between; margin-top: 1vw;">
             <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">

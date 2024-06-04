@@ -1,7 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
-<div id="container">
     <div>
         <button class="add-employee-button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
                 class="bi bi-plus-square-fill"></i> Thêm sản phẩm </button>

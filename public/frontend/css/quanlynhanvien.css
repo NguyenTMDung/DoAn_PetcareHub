@@ -1,90 +1,6 @@
 #container
 {
     background-color: #fff;
-    width: 85%;
-}
-#style-1 {
-    display: flex;
-    margin-top: 2vw;
-    justify-content: space-between;
-}
-
-#total-revenue,
-#total-order,
-#new-customer {
-    padding: 0.8vw 1vw;
-}
-
-#total-revenue {
-    background-color: #FFE2E5;
-    border-radius: 10px;
-    width: 9vw;
-}
-
-#total-order {
-    background-color: #FFF4DE;
-    border-radius: 10px;
-    width: 9vw;
-}
-
-#new-customer {
-    background-color: #F3E8FF;
-    border-radius: 10px;
-    width: 9vw;
-}
-
-#detail-revenue,
-#detail-order,
-#detail-customer {
-    margin-top: 1vw;
-}
-
-#statistic {
-    background-color: #ffffff;
-    width: 47%;
-    padding: 2vw;
-    border-radius: 10px;
-}
-
-
-#date p {
-    font-size: 24px;
-    font-weight: 600;
-    display: inline;
-}
-
-#ratio-1,
-#ratio-2,
-#ratio-3,
-#ratio-4,
-#ratio-5 {
-    width: 10%;
-    text-align: center;
-}
-
-#part-1 {
-    display: flex;
-}
-
-#best-seller {
-    width: 47%;
-    margin-left: 3%;
-    background-color: #ffffff;
-    padding: 1vw 3vw;
-}
-.text-truncate-container p {
-    -webkit-line-clamp: 1;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 18px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.text-truncate-container {
-    margin: auto;
-    width: 100%;
 }
 
 table {
@@ -104,7 +20,7 @@ table,th,td {
     padding: 10px 5px;
     border-radius: 1vw;
     width: 15vw;
-    font-size: 20px;
+    font-size: 1.2em;
     margin-top: 1vw;
     margin-left: 1vw;
 }
@@ -121,7 +37,7 @@ table,th,td {
     border: 1px solid #ccc;
     padding: 10px;
     width: 20vw;
-    font-size: 14px;
+    font-size: 0.8em;
 }
 
 .search-button {
@@ -129,7 +45,7 @@ table,th,td {
     background-color: white;
     padding: 10px;
     border: 1px solid #ccc;
-    font-size: 18px;
+    font-size: 1.1em;
 }
 
 .search-button:hover {
@@ -156,14 +72,14 @@ tr:nth-child(even) {
     border: 1px solid #ccc;
     padding: 10px;
     width: 100%;
-    font-size: 14px;
+    font-size: 0.8em;
 }
 .sbutton {
     color:darkblue;
     background-color:#D9D7D7;
     padding: 10px;
     border: 1px solid #ccc;
-    font-size: 18px;
+    font-size: 1.1em;
 }
 .sbutton:hover {
     text-decoration: underline;
@@ -177,10 +93,6 @@ tr:nth-child(even) {
 }
 #style-link a:hover {
     text-decoration-line: underline;
-}
-#myTable
-{
-    width: 98% !important;
 }
 #myTable img {
     width: 70%;
@@ -198,13 +110,13 @@ tr:nth-child(even) {
 .dt-search label
 {
     margin-right: 1vw;
-    font-size: 1.3vw;
+    font-size: 1.2em;
     font-weight: 600;
     color: #103559;
 }
 .dt-search input
 {
-    font-size: 1.1vw;
+    font-size: 1.1em;
 }
 .dt-length
 {
@@ -223,17 +135,17 @@ tr:nth-child(even) {
 }
 thead .dt-column-title
 {
-    font-size: 1.3vw;
+    font-size: 1.1em;
     font-weight: 600;
     color: black;
 }
 tfoot .dt-column-title
 {
-    font-size: 1vw;
+    font-size: 0.9em;
 }
 tbody td
 {
-    font-size: 1.25vw;
+    font-size: 1em;
 }
 .pagination
 {
@@ -241,7 +153,7 @@ tbody td
 }
 .pagination a
 {
-    font-size: 1.2vw;
+    font-size: 1em;
 }
 .active>.page-link, .page-link.active
 {
@@ -258,10 +170,10 @@ tbody td
 }
 .dt-length label
 {
-    font-size: 1vw;
+    font-size: 1em;
     margin-top: 0.4vw;
 }
 .dt-length select
 {
-    font-size: 1vw;
+    font-size: 1em;
 }

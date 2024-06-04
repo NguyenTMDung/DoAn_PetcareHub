@@ -218,7 +218,6 @@ input[type=checkbox]:checked+label:before {
   text-align: center;
   line-height: 1.2vw;
 }
-
 input[type=radio]:checked+label:before {
   content: "\2713";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
@@ -231,7 +230,7 @@ input[type=radio]:checked+label:before {
 input[type=radio] {
   display: none;
   border-radius: 0.3vw;
-}
+} 
 
 #filter-button {
   display: none;
@@ -239,12 +238,13 @@ input[type=radio] {
   color: #333;
   font-size: 1.5em;
 }
-#filter {
-  display: none;
-}
-
 #filter.show {
   display: block;
+}
+#container-body
+{
+  display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .link-pickeat {

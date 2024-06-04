@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
 <div id="head-container">
                 <div id="arrange">
                     <label for="arrange-price">Sắp xếp theo tổng tiền: </label>

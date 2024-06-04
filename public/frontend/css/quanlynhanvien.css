@@ -1,12 +1,7 @@
-
-#container {
-    width: 100%;
-    margin-left:   1vw;
-    margin-top: 1vw;
-    background-color: white;
-    padding-top: 10px;
+#container
+{
+    background-color: #fff;
 }
-
 #style-1 {
     display: flex;
     margin-top: 2vw;

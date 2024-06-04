@@ -58,8 +58,9 @@
             </div>
         </a>
     </div>
-    <div style="display: flex;">
+    <div id="content">
         <div id="menu">
+        <div id="menu-button" onclick="toggleMenu()">☰</div>
             <ul id="nav">
                 <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>
@@ -68,17 +69,17 @@
                 <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-san-pham')}}" >Sản phẩm</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
-                        <li><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
+                        <li style="font-size: 1em;"><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                        <li style="font-size: 1em;"><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
                     </ul>
                 </li>
                 <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
-                <li class="action">
+                <li class="action" >
                     <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
+                        <li style="font-size: 1em;"><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
+                        <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
                                 khung
                                 giờ</a></li>
                     </ul>
@@ -113,4 +114,11 @@ const menuItems1 = document.querySelectorAll('#nav li');
         });
 
 </script>
+<script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('show');
+        }
+    
+    </script>
 </html>

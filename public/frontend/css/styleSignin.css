@@ -7,7 +7,7 @@
 }
 
 #title-header a {
-    font-size: 1.4vw;
+    font-size: 1.4em;
     font-weight: 700;
     text-decoration-line: none;
     color: var(--Primary-Color-Dark-Blue, #003459);
@@ -43,7 +43,7 @@ input[type=email] {
 #infor-customer p {
     margin-bottom: -1px;
     margin-top: 2vw;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
@@ -53,7 +53,7 @@ input[type=email] {
 
 #forgot-password a {
     color: #003459;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
     font-style: italic;
 }
@@ -61,15 +61,15 @@ input[type=email] {
 #infor-customer #submit {
     width: max-content;
     text-align: center;
-    padding: 0.5vw 2vw;
+    padding: 0.2em 1em;
     background-color: var(--Primary-Color-Dark-Blue, #003459);
-    color: #FCEED5;
-    font-size: 1.3vw;
+    color: #ffffff;
+    font-size: 1.3em;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 25px;
+    margin: auto;
     margin-top: 2vw;
-    margin-left: 10vw;
-    width: 13vw;
+    display: flex;
 }
 
 #frame {
@@ -104,13 +104,15 @@ input[type=email] {
 
 #frame input[type=submit] {
     width: max-content;
-    padding: 0.5vw 2vw;
+    text-align: center;
+    padding: 0.2em 1em;
     background-color: var(--Primary-Color-Dark-Blue, #003459);
-    color: #FCEED5;
+    color: #ffffff;
     font-size: 1.3em;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-top: 2vw;
+    margin-left: 0;
 }
 
 #frame input[type=text],
@@ -157,6 +159,13 @@ input[type=email] {
     font-weight: 600;
     margin: 0;
 }
+ hr {
+    width: 35%;
+    border: 1px solid rgb(0, 0, 0);
+    margin: auto;
+    margin-top: 1vw;
+    opacity: 1;
+}
 
 @media only screen and (max-width: 768px) {
     .menu {
@@ -173,6 +182,7 @@ input[type=email] {
 
     #frame {
         width: 100%;
+        border: none;
     }
 
     #frame h5 {
@@ -207,5 +217,32 @@ input[type=email] {
     #confirm-password {
         height: 2.5em;
         margin-bottom: 0.5em;
+    }
+
+    #title-header {
+        width: 70%;
+    }
+
+    hr {
+        width: 80%;
+        margin-top: 1em;
+    }
+    #title-header a {
+        font-size: 1.2em;
+    }
+    #infor-customer {
+        width: 100%;
+        margin-top: 1.5em;
+    }
+    #infor-customer input[type=text], input[type=password], input[type=date], input[type=tel], input[type=email] {
+        width: 100%;
+        padding: 0.6em 0.5em;
+        border: 1px solid #AFAFAF;
+        border-radius: 4px;
+        font-size: 1.1em;
+    }
+    #infor-customer p
+    {
+        margin: 0.5em 0;
     }
 }

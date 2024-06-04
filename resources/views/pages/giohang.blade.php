@@ -104,12 +104,36 @@
             success: function(response) {
                 // Nếu yêu cầu thành công, làm mới trang để cập nhật giỏ hàng
                 location.reload();
+
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
             }
         });
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const updateCartCount = () => {
+            fetch('{{ route("cartCount") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cartCount').innerText = data.cartCount;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+        // Gọi hàm updateCartCount khi trang được tải
+        updateCartCount();
+    });
 
 </script>
 @endsection

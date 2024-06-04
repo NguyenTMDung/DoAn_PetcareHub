@@ -21,13 +21,14 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/frontend/css/styleHome.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <style>
     nav li.active a{
     text-decoration-line: underline;
     }
 </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
 </head>
 <body>
 <div class="header">

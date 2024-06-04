@@ -63,10 +63,10 @@
       <p class="name-product">{{$pro->name}}</p>
       <div class="evaluate" style="display: flex;">
         <div class="img-evaluate" style="display: flex;">
-          {{ number_format($averageRating, 1) }} <p class="star-rating1">
+          {{ number_format($pro->rating, 1) }} <p class="star-rating1">
             @php
                 // Làm tròn số với 1 chữ số thập phân
-                $roundedRating = round($averageRating, 1);
+                $roundedRating = round($pro->rating, 1);
                 // Số sao đầy
                 $fullStars = floor($roundedRating);
                 // Kiểm tra nếu có sao nửa
@@ -88,7 +88,7 @@
           </p>
         </div>
         <p class="text-evaluate">| {{$numRating}} đánh giá</p>
-        <p class="text-evaluate">| Đã bán 100</p>
+        <p class="text-evaluate">| Đã bán {{ $pro->number_of_sale}}</p>
       </div>
       <div class="price-container">
         <p class="text-price" id= "priceRange">
@@ -163,14 +163,14 @@
     <div class="list-start">
       <div>
         <div class="fiveUpfive">
-          <p class="text-quantity-big">{{ number_format($averageRating, 1) }}</p>
+          <p class="text-quantity-big">{{ number_format($pro->rating, 1) }}</p>
           <p class="text-quantity-small">trên 5 sao</p>
         </div>
         <div style="display: flex; padding-left: 8vw">
         <p class="star-rating1">
             @php
                 // Làm tròn số với 1 chữ số thập phân
-                $roundedRating = round($averageRating, 1);
+                $roundedRating = round($pro->rating, 1);
                 // Số sao đầy
                 $fullStars = floor($roundedRating);
                 // Kiểm tra nếu có sao nửa
@@ -194,12 +194,13 @@
       </div>
     </div>
     <div class="reviews-comment-container" >
-      <p>Kieumoquanh</p>
+      @forEach($feedback as $feed)
+      <p>{{$feed->name}}</p>
       <div style="display: flex;">
         <p class="star-rating2">
             @php
                 // Làm tròn số với 1 chữ số thập phân
-                $roundedRating = round($averageRating, 1);
+                $roundedRating = round($feed->rating, 1);
                 // Số sao đầy
                 $fullStars = floor($roundedRating);
                 // Kiểm tra nếu có sao nửa
@@ -221,34 +222,60 @@
         </p>
       </div>
       <div class="evaluate" style="display: flex;margin-left: 0vw;" >
-        <p class="text-evaluate">2024-01-31 06:24</p>
-        <p class="text-evaluate">|</p>
-        <p class="text-evaluate">Phân loại hàng: 105-Mái đơn-Xám-L</p>
+        <p class="text-evaluate">Phân loại hàng: {{$feed->size}}</p>
       </div>
-      <p>Lúc đầu thì cậu khoái chui vào nằm, sau thấy nằm bẹp ra nhà lun @@. Tuy 2 con cún nhà em dùng sai cách nma ok nhe cách bảnh ơi. Lâu lâu thích quá em còn chui vào nằm chung cơ :)))</p>
-      <img  src="image/nhadem06.jpg" alt="">
+      <p>{{$feed->feedback}}</p>
+      <br>
+      @endforeach
     </div>
   </div>
   <!------------------------------------------------------ other products -------------------------------------------------------------------->
   <div class="container-item">
     @foreach( $relatedProducts as $relatedProductsData)
-    <div class="item ">
-        <a href="">
+        <div class="item ">
+          <a href="{{URL::to('/chi-tiet-san-pham-'.$relatedProductsData->id)}}" method="GET">
             <div>
                 <img src="{{asset('public/storage/products/' . $relatedProductsData->image)}}" alt="">
                 <div class="text-truncate-container">
                     <p>{{$relatedProductsData->name}}</p>
                 </div>
             </div>
-        </a>
         <div class="pro-price">
-          {{$relatedProductsData->min_price}} - {{$relatedProductsData->max_price}} VNĐ
+          @if ($relatedProductsData->min_price == $relatedProductsData->max_price)
+              {{ number_format($relatedProductsData->min_price, 0, '.', '.') }} VNĐ
+          @else
+              {{ number_format($relatedProductsData->min_price, 0, '.', '.') }} - {{ number_format($relatedProductsData->max_price, 0, '.', '.') }} VNĐ
+          @endif  
         </div>
         <div style="display: flex;">
-           <p style="display: flex; margin-left:0.5vw ;"></p><p class="star-rating1">★★★★★</p>
-            <p class="number-of-sales">Lượt bán: 88</p>
+           <p style="display: flex; margin-left:0.5vw ;">{{ number_format($relatedProductsData->rating, 1) }}</p>
+           <p class="star-rating1">
+            @php
+                // Làm tròn số với 1 chữ số thập phân
+                $roundedRating = round($relatedProductsData->rating, 1);
+                // Số sao đầy
+                $fullStars = floor($roundedRating);
+                // Kiểm tra nếu có sao nửa
+                $halfStar = ($roundedRating - $fullStars) >= 0.5;
+            @endphp
+
+            @for ($i = 1; $i <= 5; $i++)
+                @if ($i <= $fullStars)
+                    {{-- Đổ sao đầy --}}
+                    <i class="fas fa-star"></i>
+                @elseif ($halfStar && $i == $fullStars + 1)
+                    {{-- Đổ sao nửa --}}
+                    <i class="fas fa-star-half-alt"></i>
+                @else
+                    {{-- Đổ sao rỗng --}}
+                    <i class="far fa-star"></i>
+                @endif
+            @endfor
+           </p>
+           <span>Lượt bán: <p class="number-of-sales">{{ number_format($relatedProductsData->number_of_sale, 0) }}</p></span>
         </div>
-    </div>
+      </a>
+      </div>
     @endforeach
   </div>
 <script>

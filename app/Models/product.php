@@ -52,5 +52,11 @@ class product extends Model
         $this->rating = $averageRating;
         $this->save();
     }
+    public function updateNumOfSale()
+    {
+        $Num = OrderDetail::calculateNumOfSale($this->id);
+        $this->number_of_sale = $Num;
+        $this->save();
+    }
 
 }

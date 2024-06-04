@@ -1,6 +1,7 @@
 #container
 {
     background-color: #fff;
+    width: 85%;
 }
 #style-1 {
     display: flex;

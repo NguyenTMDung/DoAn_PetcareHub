@@ -111,7 +111,8 @@
             <img src="image_task2/poster.png" alt="poster">
         </div>
         <div id="container-body">
-            <div class="filter">
+            <div id="filter-button" onclick="toggleFilter()"><i class="bi bi-funnel"></i></div>
+            <div id="filter">
                 <form action="" class="tieu_de_loc">
                     <p><b>Kích Thước</b></p>
                     <input type="checkbox" id="size_nho" name="size1" value="Nhỏ" />
@@ -120,14 +121,18 @@
                     <label for="size_lon">Trưởng thành</label><br />
                 </form>
                 <form class="tieu_de_loc">
-                    <b> <p>Phân loại</b></p>
+                    <b>
+                        <p>Phân loại
+                    </b></p>
                     <input type="checkbox" id="phan_loai_cho" name="Chó" value="Chó" />
                     <label for="phan_loai_cho">Chó</label><br />
                     <input type="checkbox" id="phan_loai_meo" name="Mèo" value="Mèo" />
                     <label for="phan_loai_meo">Mèo</label><br />
                 </form>
                 <form class="tieu_de_loc">
-                    <b><p>Giá</b></p>
+                    <b>
+                        <p>Giá
+                    </b></p>
                     <td>
                         <input type="number" id="quanlity_tu" name="quanlity" placeholder="Từ" min="0" max="1000000"
                             step="10000" value="Từ" />
@@ -139,7 +144,9 @@
                 </form>
 
                 <form class="tieu_de_loc"> <br>
-                    <b><p>Sắp xếp theo</b></p>
+                    <b>
+                        <p>Sắp xếp theo
+                    </b></p>
                     <input type="radio" id="sap_xep_theo_mac_dinh" name="arrange" value="Mặc định" />
                     <label for="sap_xep_theo_mac_dinh">Mặc định</label><br />
                     <input type="radio" id="sap_xep_theo_a_den_z" name="arrange" value="A đến Z" />
@@ -459,5 +466,11 @@
         </table>
     </div>
 </body>
+<script>
+    function toggleFilter() {
+        const filter = document.getElementById('filter');
+        filter.classList.toggle('show');
+    }
+</script>
 
 </html>

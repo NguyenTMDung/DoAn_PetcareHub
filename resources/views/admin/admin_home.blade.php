@@ -130,7 +130,7 @@
             }
             else if(response.total<1000000000)
             {
-                $('#detail-revenue').text((response.total/1000).toFixed(2) + ' Triệu');
+                $('#detail-revenue').text((response.total/1000000).toFixed(2) + ' Triệu');
             }
             else if(response.total<1000000000000)
             {
@@ -220,6 +220,7 @@
     }
     $.ajax({
        
+       
     url: '/DoAn_PetcareHub/thong-ke-don-hang/' + formattedStartOfWeek + '/' + formattedEndOfWeek,
     method: 'GET',
     success: function(response) {
@@ -288,9 +289,9 @@ countsArray1.sort(function(a, b) {
 });
 
 // In ra mỗi ngày và số lượng tương ứng
-countsArray.forEach(function(item) {
-    console.log(item[0] + ': ' + item[1]);
-});
+// countsArray.forEach(function(item) {
+//     console.log(item[0] + ': ' + item[1]);
+// });
 countsArray1.forEach(function(item) {
     console.log(item[0] + ': ' + item[1]);
 });
@@ -321,7 +322,7 @@ data2 = countsArray.map(function(item) {
         }]
     };
     console.log(data1);
-    // console.log("Tao xong du lieu cho bieu do 2");
+    console.log("Tao xong du lieu cho bieu do 2");
     var config2 = {
         data: dataOrder,
         type :'bar',

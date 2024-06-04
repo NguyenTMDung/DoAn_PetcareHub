@@ -27,6 +27,7 @@ Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
 Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+Route::get('/admin-signin', [AdminController::class,'Signin']);
 Route::get('/admin-login', [AdminController::class,'Login']);
 Route::post('/admin-login', [AdminController::class,'AuthLogin']);
 Route::get('/admin-logout', [AdminController::class,'Logout']);

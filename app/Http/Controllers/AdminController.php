@@ -31,6 +31,9 @@ class AdminController extends Controller
         return view('admin.admin_home');
        
     }
+    public function Signin(){
+        return view('pages.signin');
+    }
     public function Login(){
         return view('pages.login');
     }
@@ -84,7 +87,6 @@ class AdminController extends Controller
         $total = DB::table('order')
           
             ->where('order.created_at', 'like', '%'.$date.'%')
-            ->groupBy('order.id')
             ->sum('order.total');
         $user= DB::table('users')
             ->where('date_join', 'like', '%'.$date.'%')
@@ -98,7 +100,10 @@ class AdminController extends Controller
         return response()->json($response);
     }
     public function ThongKeDH($startOfWeek, $endOfWeek){
-        
+       
+
+
+        $endOfWeek = \Carbon\Carbon::parse($endOfWeek)->addDay();
         Log::info('ThongKeDH function was called with startOfWeek: ' . $startOfWeek . ' and endOfWeek: ' . $endOfWeek);
         if(!$this->checkadmin()) {
             return redirect('/admin-login');
@@ -109,23 +114,10 @@ class AdminController extends Controller
                     ->select(DB::raw('DATE(order.created_at) as date'), DB::raw('count(*) as count'))
                     ->whereBetween('order.created_at', [$startOfWeek, $endOfWeek])
                     ->groupBy(DB::raw('DATE(order.created_at)'))
-                    ->get();
-       
-                    
-         $totalPerDay = DB::table('order')
-                     ->select(DB::raw('DATE(order.created_at) as date'), DB::raw('SUM(order.total) as total'))
-                     ->whereBetween('order.created_at', [$startOfWeek, $endOfWeek])
-                     ->groupBy('date')
-                     ->get();
-                    
-        $user= DB::table('users')
-            ->whereBetween('date_join', [$startOfWeek, $endOfWeek])
-        ->count(); 
+                    ->get(); 
+    
         $response = [
             'orderofweek' => $orderofweek,
-            'totalPerDay' => $totalPerDay,
-            // 'total' => $total,
-            // 'user' => $user,
         ];
         
         return response()->json($response);
@@ -140,7 +132,7 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
         return redirect('/admin-login');
     }
     
-   
+    $endOfWeek = \Carbon\Carbon::parse($endOfWeek)->addDay();
                 
      $totalPerDay = DB::table('order')
                  ->select(DB::raw('DATE(order.created_at) as date'), DB::raw('SUM(order.total) as total'))
@@ -148,9 +140,6 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
                  ->groupBy('date')
                  ->get();
                 
-    $user= DB::table('users')
-        ->whereBetween('date_join', [$startOfWeek, $endOfWeek])
-    ->count(); 
     $response = [
         'totalPerDay' => $totalPerDay,
         // 'total' => $total,

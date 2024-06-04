@@ -118,10 +118,13 @@ Route::delete('/quan-ly-lich-hen/{id}', [AppointController::class, 'destroy']);
 
 //admin khung gio
 Route::get('/khung-gio', [AppointController::class, 'timeslot']);
-<<<<<<< HEAD
 
 
 // 'datlich'
+use App\Http\Controllers\DatLichController;
+use App\Http\Controllers\AppointmentController;
+
+
 Route::get('/datlich', [DatLichController::class, 'index']);
 
 
@@ -139,5 +142,3 @@ Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);
 
 
 Route::post('/appointments', [AppointmentController::class, 'store']);
-=======
->>>>>>> a539cf27428891c05c00f97128a3a80c820d0aa6

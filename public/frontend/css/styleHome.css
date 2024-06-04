@@ -48,7 +48,7 @@
 .header #input_search {
     width: 90%;
     border: none;
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 .header #isearch {
@@ -78,7 +78,7 @@
 .header #infor {
     display: inline-flex;
     margin-left: 10vw;
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 .menu {
@@ -90,7 +90,7 @@
 
 .menu .nav-link {
     font-family: 'inter';
-    font-size: 1.4vw;
+    font-size: 1.5em;
     font-weight: bold;
     font-style: normal;
     color: var(--Primary-Color-Dark-Blue, #003459);
@@ -172,13 +172,13 @@ td {
 
 #infor-shop h3,
 #policy h3 {
-    font-size: 1.35vw;
+    font-size: 1.5em;
 }
 
 #infor-shop p {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1vw;
+    font-size: 1.2em;
 }
 
 #infor-shop i {
@@ -193,7 +193,7 @@ td {
 
 #footer a {
     color: #000;
-    font-size: 1vw;
+    font-size: 1.2em;
 }
 
 #footer-body {
@@ -263,7 +263,7 @@ td {
 }
 
 .sub-menu li a {
-    font-size: 1.25vw;
+    font-size: 1.2em;
     color: #000;
     text-decoration: none;
     margin: 8%;
@@ -281,7 +281,7 @@ td {
 }
 
 .dropdown-menu a {
-    font-size: 1.25vw;
+    font-size: 1.2em;
     padding: 0;
 }
 .navbar
@@ -324,7 +324,7 @@ td {
 }
 
 .title {
-    font-size: 1.4vw;
+    font-size: 1.5em;
     font-weight: 600;
     color: var(--Primary-Color-Dark-Blue, #003459);
 }
@@ -380,13 +380,13 @@ td {
 }
 
 #shop-address p {
-    font-size: 1.2vw;
+    font-size: 1.1em;
 }
 
 #shop-address input {
     background-color: #003459;
     color: #FCEED5;
-    font-size: 1.3vw;
+    font-size: 1.4em;
     font-weight: 600;
     width: 10vw;
     padding: 0.5vw;
@@ -399,7 +399,7 @@ td {
 }
 
 #shop-address-detail h3 {
-    font-size: 1.6vw;
+    font-size: 1.5em;
 }
 
 #slider-text {
@@ -617,7 +617,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 .pro-price {
     color: #FF0E0E;
     font-family: 'Inter';
-    font-size: 1.3vw;
+    font-size: 1.3em;
     font-style: normal;
     font-weight: 600;
     line-height: 5px;
@@ -629,7 +629,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     display: flex;
     justify-content: end;
     margin-top: 1.5vw;
-    font-size: 0.9vw;
+    font-size: 0.9em;
 }
 
 .number-of-sales {
@@ -651,7 +651,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 1vw;
+    font-size: 1.1em;
     text-align: left;
     font-weight: 500;
 }
@@ -680,6 +680,9 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
         width: 100%;
         margin-top: 2vw;
         text-align: center;
+        padding-bottom: 1em;
+        border: solid;
+        border-width: 0 0 1px 0;
     }
     #footer
     {

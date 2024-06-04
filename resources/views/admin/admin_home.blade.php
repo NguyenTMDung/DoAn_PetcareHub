@@ -18,7 +18,9 @@
                                         border-radius: 20px;
                                     "
                                 ></i>
-                                <h4 id="detail-revenue">1 Tỷ</h4>
+                                <h4 id="detail-revenue">20000000
+                                    {{-- {{$totalRevenue}} --}}
+                                </h4>
                                 <p>Tổng doanh thu</p>
                             </div>
                             <div id="total-order">
@@ -31,7 +33,9 @@
                                         border-radius: 20px;
                                     "
                                 ></i>
-                                <h4 id="detail-order">1000</h4>
+                                <h4 id="detail-order">300
+                                    {{-- {{$totalBills}} --}}
+                                </h4>
                                 <p>Tổng đơn</p>
                             </div>
                             <div id="new-customer">
@@ -44,7 +48,10 @@
                                         border-radius: 20px;
                                     "
                                 ></i>
-                                <h4 id="detail-customer">8</h4>
+                                <h4 id="detail-customer">
+                                    30
+                                    {{-- {{$newCustomersCount}} --}}
+                                </h4>
                                 <p>Khách hàng mới</p>
                             </div>
                         </div>

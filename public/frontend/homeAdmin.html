@@ -59,25 +59,32 @@
                 </div>
             </a>
         </div>
-        <div style="display: flex">
+        <div id="content">
             <div id="menu">
+                <div id="menu-button" onclick="toggleMenu()">☰</div>
                 <ul id="nav">
                     <li id="action"><a href="">Trang chủ</a></li>
                     <li><a href="">Hóa đơn</a></li>
                     <li><a href="">Khách hàng</a></li>
                     <li><a href="">Đơn hàng</a></li>
                     <li><a href="">Quản lý nhân viên</a></li>
-                    <li><a href="">Sản phẩm</a></li>
+                    <li><a href="">Sản phẩm</a>
+                        <ul class="sub-menu" style="width: max-content;">
+                            <li style="font-size: 1em;"><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                            <li style="font-size: 1em;"><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
+                            <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
+                        </ul>
+                    </li>
                     <li><a href="">Quản lý slider</a></li>
                     <li>
                         <a href="">Lịch hẹn</a>
                         <ul class="sub-menu" style="width: max-content">
-                            <li>
+                            <li style="font-size: 1em;">
                                 <a href="#" style="margin-left: 1vw"
                                     >Danh sách lịch hẹn</a
                                 >
                             </li>
-                            <li style="margin-bottom: 0">
+                            <li style="margin-bottom: 0;font-size: 1em;">
                                 <a
                                     href="#"
                                     style="margin-left: 1vw; padding-bottom: 0"
@@ -388,5 +395,12 @@
         chartVersion.innerText = Chart.version;
         //
         document.getElementById("status").innerHTML = "<h3>Trang chủ</h3>";
+    </script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('show');
+        }
+    
     </script>
 </html>

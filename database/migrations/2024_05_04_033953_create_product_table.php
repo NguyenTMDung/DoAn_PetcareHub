@@ -14,20 +14,26 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('name')->unique;
-            $table->string ('typeProduct_name')->references('name')->on('typeProduct')->onDelete('set null');
-            $table->integer('price');
-            $table->integer ('discount_price')->nullable();
-            $table->integer ('inventory');
+            $table->string('typeProduct_name')->references('name')->on('typeProduct')->onDelete('set null');
+            $table->integer('typeProduct_id')->references('id')->on('typeProduct')->onDelete('set null');
+            $table->integer('min_price')->default(0);
+            $table->integer('max_price')->default(0);
+            $table->integer('discount_price')->nullable();
+            $table->integer('inventory');
             $table->string('image');
-            $table->integer ('bestseller')->default(0);
-            $table->integer ('new')->default(0);
-            $table->string('size')->nullable();;
-            $table->enum('pet',['Chó', 'Mèo']);
+            $table->float('rating')->default(0);
+            $table->integer('sales')->default(0);
+            $table->integer('bestseller')->default(0);
+            $table->integer('new')->default(1);
+            $table->integer('number_of_sale')->default(0);
+            $table->string('size')->nullable();
+            $table->text('gallery')->nullable();
+            $table->enum('pet', ['Chó', 'Mèo']);
             $table->longtext('description');
             // $table->integer('id_user_created')->references('id')->on('users')->onDelete('set null');
             // $table->integer('id_user_updated')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
-            $table->softDeletes(); 
+            $table->softDeletes();
         });
     }
 

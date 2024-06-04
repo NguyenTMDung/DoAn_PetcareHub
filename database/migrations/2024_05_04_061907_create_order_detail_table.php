@@ -15,10 +15,11 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->integer('order_id')->references('id')->on('order')->onDelete('cascade');
             $table->integer('product_id')->references('id')->on('product')->onDelete('cascade');
+            $table->string('size');
             $table->integer('price');
             $table->integer('num');
-            $table->enum('vote', ['1','2','3','4','5']);
-            $table->text('feedback');
+            $table->enum('rating', ['1','2','3','4','5'])->default(5);
+            $table->text('feedback')->default('null');
         });
     }
     /**

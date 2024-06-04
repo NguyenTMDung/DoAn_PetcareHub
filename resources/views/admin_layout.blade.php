@@ -7,8 +7,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{asset('public/frontend/library/font-awesome/fontawesome-free-6.5.2-web/css/all.css')}}">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/js/bootstrap.js">
+    {{-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/js/bootstrap.js"> --}}
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -58,8 +58,9 @@
             </div>
         </a>
     </div>
-    <div style="display: flex;">
+    <div id="content">
         <div id="menu">
+        <div id="menu-button" onclick="toggleMenu()">☰</div>
             <ul id="nav">
                 <li class="action "><a href="{{URL::to('/admin-trang-chu')}}" >Trang chủ</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-hoa-don')}}" >Hóa đơn</a></li>
@@ -68,25 +69,30 @@
                 <li class="action"><a href="{{URL::to('/quan-ly-nhan-vien')}}" >Quản lý nhân viên</a></li>
                 <li class="action"><a href="{{URL::to('/quan-ly-san-pham')}}" >Sản phẩm</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
-                        <li><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
+                        <li style="font-size: 1em;"><a href="{{URL::to('/danh-muc-san-pham')}}" style="margin-left: 1vw;">Danh mục sản phẩm</a></li>
+                        <li style="font-size: 1em;"><a href="{{URL::to('/loai-san-pham')}}" style="margin-left: 1vw;">Loại sản phẩm</a></li>
+                        <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/quan-ly-san-pham')}}" style="margin-left: 1vw; padding-bottom: 0;">Sản phẩm</a></li>
                     </ul>
                 </li>
                 <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
-                <li class="action">
+                <li class="action" >
                     <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
+<<<<<<< HEAD
                     <li>
                         <a href="{{ url('/danh-sach-lich-hen') }}" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
                     </li>
 
                         <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
+=======
+                        <li style="font-size: 1em;"><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
+                        <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
+>>>>>>> a539cf27428891c05c00f97128a3a80c820d0aa6
                                 khung
                                 giờ</a></li>
                     </ul>
                 </li>
-                <li class="action"><a href="{{URL::to('/dang-xuat')}}" >Sign out</a></li>
+                <li class="action"><a href="{{URL::to('/admin-logout')}}" >Sign out</a></li>
             </ul>
         </div>
 
@@ -116,4 +122,11 @@ const menuItems1 = document.querySelectorAll('#nav li');
         });
 
 </script>
+<script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('show');
+        }
+    
+    </script>
 </html>

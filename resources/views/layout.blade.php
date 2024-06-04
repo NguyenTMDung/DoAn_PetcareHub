@@ -26,6 +26,8 @@
     text-decoration-line: underline;
     }
 </style>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
 <div class="header">
@@ -65,24 +67,7 @@
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sản Phẩm
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{URL::to('/san-pham')}}">Thức ăn</a></li>
-                                    <li><a href="#">Đồ dùng thú cưng</a></li>
-                                    <li><a href="#">Thời trang</a></li>
-                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
-                                <ul class="sub-menu" style="margin-top: 2.7vw;">
-                                    <li><a href="#">Thức ăn</a></li>
-                                    <li><a href="#">Đồ dùng thú cưng</a></li>
-                                    <li><a href="#">Thời trang</a></li>
-                                    <li><a href="#">Sản Phẩm làm đẹp</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        @include('category')
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{URL::to('/dich-vu')}}" id="navbarDropdownMenuLink"
@@ -108,7 +93,9 @@
             <li>
                 <a href="#account" id="account"><i class="fas fa-user fa-2x"
                         style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                <a href="{{URL::to("/gio-hang")}}" id="cart">
+                    <span><span id="cartCount" style="color: red">0</span><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></span>
+                </a>
             </li>
         </div>
     </div>
@@ -215,8 +202,30 @@
             menuItems.forEach(item => {
                 if (item.href === currentUrl) {
                     item.parentElement.classList.add('active');
-                    console.log(currentUrl);
                 }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const updateCartCount = () => {
+            fetch('{{ route("cartCount") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cartCount').innerText = data.cartCount;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+        // Gọi hàm updateCartCount khi trang được tải
+        updateCartCount();
     });
     </script>
 </body>

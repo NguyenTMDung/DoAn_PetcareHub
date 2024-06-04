@@ -35,10 +35,11 @@ input[type=tel],
 input[type=email] {
     width: 100%;
     padding: 1vw 1.5vw;
-    border: 1px solid #AFAFAF;
+    border: 1px solid #afafaf;
     border-radius: 4px;
     font-size: 1.1em;
 }
+#infor-customer p {
 
 #infor-customer p {
     margin-bottom: -1px;
@@ -71,6 +72,7 @@ input[type=email] {
     margin-top: 2vw;
     display: flex;
 }
+#frame {
 
 #frame {
     width: 60%;
@@ -82,6 +84,7 @@ input[type=email] {
     padding: 1vw 2vw 2vw 2vw;
     margin-bottom: 3vw;
 }
+#frame h2 {
 
 #frame h2 {
     color: var(--Primary-Color-Dark-Blue, #003459);
@@ -92,6 +95,7 @@ input[type=email] {
 #frame input[type=button] {
     width: max-content;
     padding: 0.5vw 2vw;
+    background-color: white;
     background-color: white;
     color: var(--Primary-Color-Dark-Blue, #003459);
     font-size: 1.3em;
@@ -119,7 +123,7 @@ input[type=email] {
 #email-cus {
     width: 100%;
     padding: 1vw 1.5vw;
-    border: 1px solid #AFAFAF;
+    border: 1px solid #afafaf;
     border-radius: 4px;
     font-size: 1.1em;
     text-align: center;

@@ -11,31 +11,30 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('bill', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('code');
-            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
+            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable;
+            $table->integer('order_id')->references('id')->on('orders')->onDelete('null')->nullable;
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('address')->default('Pet Care Hub');
-            $table->text('note')->nullable();
-            $table->double('shipcost')->default('30000');
-            $table->integer('discount')->default('0');
+            $table->string('address');
+            $table->text('note');
+            $table->double('shipcost');
+            $table->integer('discount');
+            $table->enum('type_discount', ['Tiền mặt', 'Phần trăm']);
             $table->double('total');
             $table->enum('method_payment', ['Tiền mặt', 'Thanh toán online']);
-            $table->enum('status', ['Đang xử lý', 'Đang giao hàng', 'Đã giao hàng', 'Hủy']);
-            $table->text('cancelllation_reason')->nullable();
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('order');
+        Schema::dropIfExists('bill');
     }
 };

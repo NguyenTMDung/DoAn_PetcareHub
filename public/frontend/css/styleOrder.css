@@ -81,7 +81,7 @@
 }
 
 #infor-customer input[type=text],
-input[type=tel] {
+input[type=tel], input[type=email]  {
     width: 100%;
     padding: 1vw;
     border-bottom: 1px solid #AFAFAF;
@@ -193,7 +193,8 @@ input[type=tel] {
 #error-message1,
 #error-message2, 
 #error-name,
-#error-tel 
+#error-tel,
+error-mail
 {
     color: red;
     margin-left: 1vw;

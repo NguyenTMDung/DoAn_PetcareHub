@@ -11,10 +11,46 @@ class product extends Model
 
     protected $table = 'product';
     protected $fillable = [
-        'name', 'pet' ,'typeProduct_name', 'price', 'image', 'inventory', 'description', 'new'
+        'name', 'pet' ,'typeProduct_name','typeProduct_id', 'image', 'inventory', 'description'
     ];
-    public function typeProduct(){
-        return $this->belongsTo(type_product::class,'typeProduct_name');
+
+    public function typeProduct()
+    {
+        return $this->belongsTo(Type_Product::class, 'typeProduct_id');
+    }
+
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
+    public function sizes()
+    {
+        return $this->hasMany(ProductSize::class);
+    }
+
+    public function calculateMinMaxPrice()
+    {
+        $minPrice = $this->sizes()->min('price');
+        $maxPrice = $this->sizes()->max('price');
+
+        $this->min_price = $minPrice;
+        $this->max_price = $maxPrice;
+
+        $this->save();
+    }
+
+    public function getPriceForSize($size)
+    {
+        $productSize = $this->sizes()->where('size', $size)->first();
+        return $productSize ? $productSize->price : null;
+    }
+
+    public function updateAverageRating()
+    {
+        $averageRating = OrderDetail::calculateAverageRating($this->id);
+        $this->rating = $averageRating;
+        $this->save();
     }
 
 }

@@ -15,7 +15,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                    <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST">
+                    <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="mb-3">
@@ -39,13 +39,22 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="price">Nhập giá</label>
                                 <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá"></input>
+                            </div> --}}
+                            <div class="mb-3">
+                                <label for="image" class="col-form-label">Ảnh chính</label>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*"></input>
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="col-form-label">Ảnh</label>
-                                <input type="file" class="form-control" id="image" name="image"></input>
+                                <label for="gallery" class="col-form-label">Ảnh phụ</label>
+                                <input type="file" class="form-control" name="gallery[]" id="gallery" multiple></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="sizes">Phân loại và Giá</label> <br>
+                                <button type="button" class="btn btn-success" id="addSize">Thêm Phân loại</button>
+                                <div id="sizeFields"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="inventory" class="col-form-label">Số lượng</label>
@@ -53,7 +62,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="col-form-label">Mô tả</label>
-                                <textarea type="number" class="form-control" id="description" name="description"></textarea>
+                                <textarea type="text" class="form-control" id="description" name="description"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -99,13 +108,18 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="price">Nhập giá</label>
                             <input type="number" class="form-control" id="priceEdit" name="price" placeholder="Nhập giá"></input>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
-                            <label for="image" class="col-form-label">Ảnh</label>
+                            <label for="image" class="col-form-label">Ảnh</label> <br>
+                            <img id="currentImage" src="" alt="Current Image" style="max-width: 100px; margin-bottom:0.5vw"> <br>
                             <input type="file" class="form-control" id="imageEdit" name="image"></input>
+                        </div>
+                        <div class="form-group" id="sizeField">
+                            <label for="sizes">Phân loại và Giá</label>
+                            <button type="button" class="btn btn-success" id="addSizeEdit">Thêm Phân loại</button>
                         </div>
                         <div class="mb-3">
                             <label for="inventory" class="col-form-label">Số lượng</label>
@@ -113,7 +127,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="col-form-label">Mô tả</label>
-                            <textarea type="number" class="form-control" id="descriptionEdit" name="description"></textarea>
+                            <textarea type="text" class="form-control" id="descriptionEdit" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -170,9 +184,9 @@
                 <td><input type="checkbox" class="new" name="new" style="width: 100%;" data-id="{{$prodata->id }}"
                     {{$prodata->new == 1 ? 'checked': ''}}></td>
                 <td>{{$prodata->name}}</td>
-                <td ><img src="{{$prodata->image}}" alt="Hình Ảnh"></td>
+                <td><img src=" public/storage/products/{{$prodata->image}}" alt="{{$prodata->name}}"></td>
                 <td>{{$prodata->inventory}}</td>
-                <td>{{$prodata->price}}</td>
+                <td>{{$prodata->min_price}}</td>
                 <td>{{$prodata->typeProduct_name}}</td>
                 <td >
                     <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
@@ -193,6 +207,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        let sizeEdit = 0;
         var table = $('#myTable').DataTable();
 
         $('.edit').on('click', function() {
@@ -201,14 +216,45 @@
             $.ajax({
                 url: 'san-pham/' + id,
                 type: 'GET',
-                success: function(data) {
+                success: function(response) {
+                    var data = response.product;
                     $('#nameEdit').val(data.name);
                     $('#petEdit').val(data.pet);
                     $('#typeProduct_nameEdit').val(data.typeProduct_name);
                     $('#priceEdit').val(data.price);
+                    $('#sizeEdit').val(data.size);
                     $('#inventoryEdit').val(data.inventory);
                     $('#descriptionEdit').val(data.description);
 
+                    if (data.image) {
+                        $('#currentImage').attr('src', 'public/storage/products/' + data.image);
+                    } else {
+                        $('#currentImage').attr('src', '');
+                    }
+
+                    var sizes = response.sizes;
+                    // Duyệt qua mảng sizes và in dữ liệu ra
+                    let sizeInd = 0;
+
+                    sizes.forEach(function(size, index) {
+                        // console.log("Size: " + size.size + ", Giá: " + size.price);
+                        var sizeField = document.getElementById('sizeField');
+                        var sizeF = document.createElement('div');
+                        sizeF.classList.add('form-row');
+                        sizeF.innerHTML = 
+                            `<div class="row">
+                                <div class="col" style="width: 50%">
+                                    <input type="text" name="sizesEdit[${sizeInd}][size]" class="form-control" placeholder="Phân loại" value = "${size.size}" required>
+                                </div>
+                                <div class="col" style="width: 50%">
+                                    <input type="number" name="sizesEdit[${sizeInd}][price]" class="form-control" placeholder="Giá" value = "${size.price}" required>
+                                </div>
+                            </div>`;
+                        $('#sizeField').append(sizeF);
+                        sizeInd++;
+                    });
+                    sizeEdit = sizeInd;
+                    console.log(sizeEdit);
                     $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-san-pham/' + id);
                     $('#editModal').modal('show');
                 },
@@ -216,8 +262,57 @@
                     console.error('Không tải được dữ liệu sản phẩm: ', error);
                 }
             });
-
         });
+
+        document.getElementById('addSizeEdit').addEventListener('click', function() {
+        var sizeField = document.getElementById('sizeField');
+        var sizeF = document.createElement('div');
+        sizeF.classList.add('form-row');
+        sizeF.innerHTML = `
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="sizesEdit[${sizeEdit}][size]" class="form-control" placeholder="Phân loại" required>
+                </div>
+                <div class="col">
+                    <input type="number" name="sizesEdit[${sizeEdit}][price]" class="form-control" placeholder="Giá" required>
+                </div>
+            </div>
+        `;
+        sizeField.appendChild(sizeF);
+        sizeEdit++;
+    });
+
+        $('#imageEdit').on('change', function() {
+        if (this.files.length > 0) {
+            var fileName = this.files[0].name;
+
+            // Tải lên file ảnh mới và xóa file ảnh cũ
+            var formData = new FormData();
+            formData.append('image', this.files[0]);
+            var productId = $('#editForm').attr('action').split('/').pop();
+            formData.append('id', productId);
+
+            $.ajax({
+                url: 'quan-ly-san-pham/update-image',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    // Cập nhật ảnh mới
+                    $('#currentImage').attr('src', 'public/storage/products/' + response.new_image);
+                    $('#imageEdit').attr('data-value', response.new_image);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Không thể cập nhật ảnh: ', error);
+                }
+            });
+        } 
+    });
+
 
         table.on('click', '.delete', function(){
             $tr = $(this).closest('tr')
@@ -277,6 +372,25 @@
         });
     });
 
+    let sizeIndex = 0;
+    document.getElementById('addSize').addEventListener('click', function() {
+        var sizeFields = document.getElementById('sizeFields');
+        var sizeField = document.createElement('div');
+        sizeField.classList.add('form-row');
+        sizeField.innerHTML = `
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="sizes[${sizeIndex}][size]" class="form-control" placeholder="Phân loại" required>
+                </div>
+                <div class="col">
+                    <input type="number" name="sizes[${sizeIndex}][price]" class="form-control" placeholder="Giá" required>
+                </div>
+            </div>
+        `;
+        sizeFields.appendChild(sizeField);
+        sizeIndex++;
+    });
+           
 </script>
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -287,7 +401,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-            <form action="{{URL::to('/quan-ly-nhan-vien')}}" method="POST" id="deleteForm">
+            <form action="{{URL::to('/quan-ly-san-pham')}}" method="POST" id="deleteForm">
                 {{ csrf_field() }}
                 {{ method_field('DELETE')}}
                 <div class="modal-body">

@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('importBill', function (Blueprint $table) {
+        Schema::create('product_sizes', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->integer('supplier_id')->references('id')->on('supplier')->onDelete('no action');
-            $table->string('code');
-            $table->datetime('date_import');
-            $table->float('total');
-            $table->enum('method_payment',['Tiền mặt', 'Chuyển khoản']);
+            $table->integer('product_id')->references('id')->on('product')->onDelete('cascade');
+            $table->string('size');
+            $table->integer('price');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('importBill');
+        Schema::dropIfExists('product_sizes');
     }
 };

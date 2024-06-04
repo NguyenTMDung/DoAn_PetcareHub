@@ -16,6 +16,7 @@ class CustomerController extends Controller
         $cus = customer::all();
         return view('admin.admin_quanlykhachhang')->with('cus', $cus);
     }
+    
 
     public function update(Request $request, $id)
     {

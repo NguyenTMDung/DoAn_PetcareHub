@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('code');
-            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable;
+            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('address');
-            $table->text('note');
+            $table->string('address')->default('Pet Care Hub');
+            $table->text('note')->nullable();
             $table->double('shipcost')->default('30000');
             $table->integer('discount')->default('0');
             $table->double('total');
             $table->enum('method_payment', ['Tiền mặt', 'Thanh toán online']);
-            $table->enum('status', ['Đang chờ xử lý', 'Đang xử lý', 'Đang giao hàng', 'Đã giao hàng', 'Hủy']);
+            $table->enum('status', ['Đang xử lý', 'Đang giao hàng', 'Đã giao hàng', 'Hủy']);
             $table->text('cancelllation_reason')->nullable();
             $table->timestamps();
         });

@@ -34,7 +34,6 @@ Route::get('/chinh-sach-bao-mat', [FootController::class, 'ChinhSachBaoMat']);
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
-// Route::get('/san-pham-{cate_id}', [ProductController::class, 'showAfterfilter']);
 
 //Gio hang
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
@@ -45,8 +44,7 @@ Route::post('/delete-cart-item', [CartController::class, 'deleteCartItem'])->nam
 
 //Thanh toán
 Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name('checkout');
-
-
+Route::post('/buy-now', [CheckoutController::class, 'buy']);
 
 //Page Dịch vụ
 Route::get('/dich-vu-khach-san', [HotelServiceController::class, 'index']);

@@ -39,10 +39,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="price">Nhập giá</label>
                                 <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá"></input>
-                            </div>
+                            </div> --}}
                             <div class="mb-3">
                                 <label for="image" class="col-form-label">Ảnh chính</label>
                                 <input type="file" class="form-control" id="image" name="image" accept="image/*"></input>
@@ -108,10 +108,10 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="price">Nhập giá</label>
                             <input type="number" class="form-control" id="priceEdit" name="price" placeholder="Nhập giá"></input>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <label for="image" class="col-form-label">Ảnh</label> <br>
                             <img id="currentImage" src="" alt="Current Image" style="max-width: 100px; margin-bottom:0.5vw"> <br>
@@ -186,7 +186,7 @@
                 <td>{{$prodata->name}}</td>
                 <td><img src=" public/storage/products/{{$prodata->image}}" alt="{{$prodata->name}}"></td>
                 <td>{{$prodata->inventory}}</td>
-                <td>{{$prodata->price}}</td>
+                <td>{{$prodata->min_price}}</td>
                 <td>{{$prodata->typeProduct_name}}</td>
                 <td >
                     <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"

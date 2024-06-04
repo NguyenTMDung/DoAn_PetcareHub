@@ -245,7 +245,7 @@
           {{$relatedProductsData->min_price}} - {{$relatedProductsData->max_price}} VNĐ
         </div>
         <div style="display: flex;">
-           <p style="display: flex; margin-left:0.5vw ;">{{$relatedProducts}}</p><p class="star-rating1">★★★★★</p>
+           <p style="display: flex; margin-left:0.5vw ;"></p><p class="star-rating1">★★★★★</p>
             <p class="number-of-sales">Lượt bán: 88</p>
         </div>
     </div>

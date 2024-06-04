@@ -11,7 +11,7 @@ class order extends Model
     use HasFactory;
     protected $table = 'orders';
     protected $fillable = [
-        'id', 'user_id','created_at', 'total', 'status'
+        'id', 'user_id','created_at','updated_at', 'total', 'status', 'name', 'email', 'phone', 'address'
     ];
 
     protected static function boot()
@@ -20,7 +20,12 @@ class order extends Model
 
         // Generate UUID before creating the order
         static::creating(function ($order) {
-            $order->order_code = Uuid::uuid4()->toString();
+            $order->code = Uuid::uuid4()->toString();
         });
+    }
+
+    public function orderDetail()
+    {
+        return $this->hasMany(OrderDetail::class);
     }
 }

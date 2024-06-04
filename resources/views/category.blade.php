@@ -1,10 +1,10 @@
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item" href="#" style="padding: 0;">Chó </a>
+    <li><a class="dropdown-item" href="#" style="padding: 0; pointer-events: none;">Chó </a>
         <ul class="sub-menu" id="dog">
             {{-- menu chó --}}
         </ul>
     </li>
-    <li><a class="dropdown-item" href="#" style="padding: 0;">Mèo</a>
+    <li><a class="dropdown-item" href="#" style="padding: 0; pointer-events: none;">Mèo</a>
         <ul class="sub-menu" id="meow">
             {{-- menu meow --}}
         </ul>

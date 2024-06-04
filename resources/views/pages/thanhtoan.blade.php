@@ -30,34 +30,58 @@
     </div>
     <div class="orders">
         <div id="detail-order">
-            <form>
+            <form action="{{URL::to('/buy-now')}}" method="POST" id="customer-form">
+                {{csrf_field()}}
+                {{ method_field('POST')}}
+
                 <div id="customer">
                     <h2 class="title">Vận chuyển</h2>
                     <p>Họ và Tên*</p>
-                    <input type="text" id="name" placeholder="Nguyễn Văn A">
+                    <input type="text" id="name" name="name" placeholder="Nguyễn Văn A">
                     <div id="error-name">
 
                     </div>
                     <p>Điện thoại*</p>
-                    <input type="tel" id="tel" placeholder="098xxxxxxx">
+                    <input type="tel" id="tel" name="phone" placeholder="098xxxxxxx">
                     <div id="error-tel">
 
                     </div>
                     <p>Email*</p>
-                    <input type="email" id="email" placeholder="abc@gmail.com">
+                    <input type="email" id="email" name ="email" placeholder="abc@gmail.com">
                     <div id="error-mail">
 
+                    </div> 
+                    <br>
+                    <div>
+                        <label for="note" class="col-form-label">Ghi chú</label>
+                        <textarea type="text" class="form-control" id="note" name="note"></textarea>
                     </div>
                 </div>
-                <div id="location" onclick="choose(this)">
-                    <div class="options ship">
-                        <input type="radio" id="addresss" name="loca" value="1">
+                {{-- <div id="pay" onclick="choose(this)">
+                    <div class="options pay">
+                        <input type="radio" id="address" name="locate" value="home">
                         <p>Giao đến địa chỉ của bạn</p>
                         <i class="bi bi-truck"></i>
                     </div>
-                    <div class="options ship">
-                        <input type="radio" id="store" name="loca" value="2">
+                    <div class="options pay">
+                        <input type="radio" id="store" name="locate" value="store">
                         <p>Nhận tại cửa hàng</p>
+                        <i class="bi bi-shop"></i>
+                        <div id="bank">
+
+                        </div>
+                    </div>
+
+                </div> --}}
+                <div id="location" onclick="choose(this)">
+                    <div class="options ship">
+                        <input type="radio" id="address" name="loca" value="delivery">
+                        <label for="address">Giao đến địa chỉ của bạn</label>
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <div class="options ship">
+                        <input type="radio" id="store" name="loca" value="pickup">
+                        <label for="store">Nhận tại cửa hàng</label>
                         <i class="bi bi-shop"></i>
                     </div>
                 </div>
@@ -69,13 +93,13 @@
                 <p id="note">Toàn bộ các giao dịch được bảo mật và mã
                     hóa.</p>
                 <div id="pay" onclick="choose(this)">
-                    <div class="options pay" onclick="bg">
-                        <input type="radio" id="cash" name="method" value="1">
+                    <div class="options pay">
+                        <input type="radio" id="cash" name="method_payment" value="Tiền mặt">
                         <p>Thanh toán khi nhận hàng</p>
                         <i class="bi bi-cash-coin"></i>
                     </div>
                     <div class="options pay">
-                        <input type="radio" id="banking" name="method" value="2">
+                        <input type="radio" id="banking" name="method_payment" value="Thanh toán online">
                         <p>Thanh toán qua ngân hàng</p>
                         <i class="bi bi-bank"></i>
                         <div id="bank">
@@ -87,50 +111,59 @@
                 <div id="error-message">
 
                 </div>
-                <input type="submit" name="complete" id="complete" value="Thanh toán">
-            </form>
-        </div>
-        <div id="products">
-            <h2 class="title">Sản phẩm</h2>
-            @foreach( $cartItems as $item)
-            <div class="product" style="display: flex;">
-                <div style="width: 6vw;">
-                    <img src="public/storage/products/{{$item->image}}" alt="" class="img-product">
+                {{-- <button type="submit" name="complete" id="complete" value="Thanh toán">Thanh toán</button>
+            </form> --}}
+            </div>
+            <div id="products">
+                <h2 class="title">Sản phẩm</h2>
+                @foreach( $cartItems as $index => $item)
+                <div class="product" style="display: flex;">
+                    <div style="width: 6vw;">
+                        <img src="public/storage/products/{{$item->image}}" alt="" class="img-product">
+                    </div>
+                    <div class="detail-product">
+                        <div class="text-truncate-container">
+                            <p>{{$item->name}}</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>Phân loại:</p>
+                            <p class="classify" style="margin-left:5px ;">{{$item->size}}</p>
+                        </div>
+                        <div style="display: flex;">
+                            <p>SL: </p>
+                            <p class="quantity" style="margin-left:5px ;">{{$item->num}}</p>
+                        </div>
+                    </div>
+                    <div class="pro-price">
+                        {{$item->price * $item->num}}
+                    </div>
                 </div>
-                <div class="detail-product">
-                    <div class="text-truncate-container">
-                        <p>{{$item->name}}</p>
+                <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                <input type="hidden" name="products[{{ $index }}][id]" value="{{ $item->id }}">
+                <input type="hidden" name="products[{{ $index }}][product_id]" value="{{ $item->product_id }}">
+                <input type="hidden" name="products[{{ $index }}][name]" value="{{ $item->name }}">
+                <input type="hidden" name="products[{{ $index }}][size]" value="{{ $item->size }}">
+                <input type="hidden" name="products[{{ $index }}][num]" value="{{ $item->num }}">
+                <input type="hidden" name="products[{{ $index }}][price]" value="{{ $item->price * $item->num}}">
+                @endforeach
+                <div id="detail-pay">
+                    <div style="display: flex;">
+                        <h5 style="width: 75%;">Số lượng</h5>
+                        <h5 id="quantity" style="text-align: end;width:25% ;"></h5>
                     </div>
                     <div style="display: flex;">
-                        <p>Phân loại:</p>
-                        <p class="classify" style="margin-left:5px ;">{{$item->size}}</p>
+                        <h5 style="width: 75%;">Phí vận chuyển</h5>
+                        <h5 id="transport-fee" style="text-align: end;width:25% ;">30000</h5>
                     </div>
                     <div style="display: flex;">
-                        <p>SL: </p>
-                        <p class="quantity" style="margin-left:5px ;">{{$item->num}}</p>
+                        <h3 style="width: 75%;">Tổng tiền</h3>
+                        <h3 id="total-products" style="text-align: end;width:25%  ;"></h3>
                     </div>
-                </div>
-                <div class="pro-price">
-                    {{$item->price * $item->num}}
-                </div>
-            </div>
-            <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
-            @endforeach
-            <div id="detail-pay">
-                <div style="display: flex;">
-                    <h5 style="width: 75%;">Số lượng</h5>
-                    <h5 id="quantity" style="text-align: end;width:25% ;"> </h5>
-                </div>
-                <div style="display: flex;">
-                    <h5 style="width: 75%;">Phí vận chuyển</h5>
-                    <h5 id="transport-fee" style="text-align: end;width:25% ;">30000</h5>
-                </div>
-                <div style="display: flex;">
-                    <h3 style="width: 75%;">Tổng tiền</h3>
-                    <h3 id="total-products" style="text-align: end;width:25%  ;">90000</h3>
+                    <input type="hidden" name="total_price" value="">
+                    <button type="submit" name="complete" id="complete" value="Thanh toán">Thanh toán</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </body>
@@ -149,20 +182,20 @@
     }
     document.querySelectorAll('input[type=radio]').forEach(radio => {
         radio.addEventListener('change', () => {
-            if (radio.id === 'addresss' && radio.checked) {
+            if (radio.id === 'address' && radio.checked) {
                 document.getElementById('infor-customer').innerHTML = `
                     <p>Địa chỉ giao hàng*</p>
-                    <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                    <select class="form-select form-select-sm mb-3" id="city" name="city" aria-label=".form-select-sm">
                         <option value="" selected>Chọn tỉnh thành</option>
                     </select>
-                    <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                    <select class="form-select form-select-sm mb-3" id="district" name="district" aria-label=".form-select-sm">
                         <option value="" selected>Chọn quận huyện</option>
                     </select>
-                    <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                    <select class="form-select form-select-sm" id="ward" name="ward" aria-label=".form-select-sm">
                         <option value="" selected>Chọn phường xã</option>
                     </select>
                     <p>Chi tiết*</p>
-                    <input type="text" id="address" placeholder="Số 34, Tân Lập">
+                    <input type="text" id="address" name="addressDetail" placeholder="Số 34, Tân Lập">
                     <div id="error-message2">
                     </div>`
                 getAPI();
@@ -197,12 +230,6 @@
         const price = formatPrice(originalValue);
         proPrice[i].textContent = price;
     }
-    //
-    const totalPro = document.getElementById("total-products");
-    const total = totalPro.textContent;
-    const formattedNumber = Number(total).toLocaleString();
-    totalPro.textContent = formattedNumber;
-    //
     const TransFee = document.getElementById("transport-fee");
     const fee = TransFee.textContent;
     const formatted = Number(fee).toLocaleString();
@@ -232,6 +259,7 @@
         } else {
             errorMessage.textContent = '';
         }
+        
     });
     document.getElementById('complete').addEventListener('click', function (event) {
         event.preventDefault();
@@ -255,6 +283,10 @@
         } else {
             document.getElementById('error-mail').innerHTML = '';
         }
+
+        if (document.getElementById('error-mail').innerHTML === '') {
+        document.getElementById('customer-form').submit();
+        }
     });
     function getAPI() {
         var citis = document.getElementById("city");
@@ -272,51 +304,67 @@
 
         function renderCity(data) {
             for (const x of data) {
-                citis.options[citis.options.length] = new Option(x.Name, x.Id);
+                citis.options[citis.options.length] = new Option(x.Name, x.Name);
             }
             citis.onchange = function () {
                 district.length = 1;
                 ward.length = 1;
                 if (this.value != "") {
-                    const result = data.filter(n => n.Id === this.value);
+                    const result = data.filter(n => n.Name === this.value);
 
                     for (const k of result[0].Districts) {
-                        district.options[district.options.length] = new Option(k.Name, k.Id);
+                        district.options[district.options.length] = new Option(k.Name, k.Name);
                     }
                 }
             };
             district.onchange = function () {
                 ward.length = 1;
-                const dataCity = data.filter((n) => n.Id === citis.value);
+                const dataCity = data.filter((n) => n.Name === citis.value);
                 if (this.value != "") {
-                    const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+                    const dataWards = dataCity[0].Districts.filter(n => n.Name === this.value)[0].Wards;
 
                     for (const w of dataWards) {
-                        wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                        wards.options[wards.options.length] = new Option(w.Name, w.Name);
                     }
                 }
             };
         }
     }
-    function getCheck() {
-        document.getElementById('complete').addEventListener('click', function (event) {
-            event.preventDefault();
-            var city = document.getElementById('city');
-            var district = document.getElementById('district');
-            var ward = document.getElementById('ward');
-            var address = document.getElementById('address');
 
-            if (city.value === '' || district.value === '' || ward.value === '' || address.value === ' ') {
-                document.getElementById('error-message2').innerHTML = '*Không được để trống thông tin';
-            } else {
-                document.getElementById('error-message2').innerHTML = '';
-            }
-        });
+    document.getElementById('complete').addEventListener('click', function (event) {
+    event.preventDefault();
 
+    var city = document.getElementById('city').value;
+    var district = document.getElementById('district').value;
+    var ward = document.getElementById('ward').value;
+    var address = document.getElementById('address').value;
+
+    var errorMessage2 = document.getElementById('error-message2');
+    errorMessage2.innerHTML = ''; // Xóa bất kỳ thông báo lỗi cũ nào trước đó
+
+    // Kiểm tra xem các trường có rỗng không và hiển thị thông báo lỗi tương ứng
+    if (city === '') {
+        errorMessage2.innerHTML += '*Tỉnh/Thành phố không thể trống<br>';
     }
+    if (district === '') {
+        errorMessage2.innerHTML += '*Quận/Huyện không thể trống<br>';
+    }
+    if (ward === '') {
+        errorMessage2.innerHTML += '*Phường/Xã không thể trống<br>';
+    }
+    if (address === '') {
+        errorMessage2.innerHTML += '*Địa chỉ chi tiết không thể trống<br>';
+    }
+
+    // Nếu không có lỗi, gửi form
+    if (errorMessage2.innerHTML === '') {
+        document.getElementById('customer-form').submit();
+    }
+});
 
     document.addEventListener('DOMContentLoaded', function() {
 
+        //Số lượng
         var selectedCount = {{ $cartItems->count() }};
         document.getElementById('quantity').innerText = selectedCount;
 
@@ -333,6 +381,8 @@
         // Tính tổng tiền cuối cùng
         var totalPrice = totalProductPrice + transportFee;
         document.getElementById('total-products').innerText = (totalPrice*1000).toLocaleString('vi-VN');
+        document.querySelector('input[name="total_price"]').value = totalPrice;
+
     });
 </script>
 <?php 

@@ -104,3 +104,8 @@ Route::get('/sanpham', [ProductController::class, 'index']);
 
 Route::post('/luu-thong-tin-dat-lich', [DatLichController::class, 'luuThongTin'])->name('luu-thong-tin-dat-lich');
 Route::post('/admin/quanlichlichhen', 'AdminController@xuLyDatLich');
+
+use App\Http\Controllers\LichHenController;
+
+
+Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);

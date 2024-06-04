@@ -7,8 +7,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{asset('public/frontend/library/font-awesome/fontawesome-free-6.5.2-web/css/all.css')}}">
-    {{-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/js/bootstrap.js"> --}}
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/js/bootstrap.js">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -77,13 +77,16 @@
                 <li class="action">
                     <a href="{{URL::to('/quan-ly-lich-hen')}}">Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
-                        <li><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
+                    <li>
+                        <a href="{{ url('/danh-sach-lich-hen') }}" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
+                    </li>
+
                         <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
                                 khung
                                 giờ</a></li>
                     </ul>
                 </li>
-                <li class="action"><a href="{{URL::to('/admin-logout')}}" >Sign out</a></li>
+                <li class="action"><a href="{{URL::to('/dang-xuat')}}" >Sign out</a></li>
             </ul>
         </div>
 

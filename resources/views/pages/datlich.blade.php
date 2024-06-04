@@ -1,7 +1,9 @@
 @extends('layout')
 @section('content')
+
 <link rel="stylesheet" href="{{asset('public/frontend/css/datlich.css')}}">
-    <div class="container">
+
+<div class="container">
         <div class="form-container">
             <div class="form-header">
                 <h3>THÔNG TIN CÁ NHÂN</h3>
@@ -37,8 +39,6 @@
                 </div>
             </div>
         </div>
-        <br><br><br>
-
         <div class="form-container">
             <div class="form-head">
                 <h3>THÔNG TIN ĐẶT LỊCH</h3>
@@ -102,7 +102,7 @@
                                     </div>
                                     <h5 ><strong>Chọn dịch vụ :</strong></h5>
                                     <div id="body">
-                                        <div>
+                                        <div class="spa">
                                             <p><strong>Spa :</strong></p>
                                             <form>
                                                 <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ
@@ -187,18 +187,18 @@
                 <table class="board">
                     <tr>
                         <td>
-                            <p><strong>Tổng số dịch vụ:</strong></p>
+                            <h5>Tổng số dịch vụ:</h5>
                         </td>
                         <td>
-                            <p><strong class="quantity-service">3</strong></p>
+                            <h5 class="quantity-service">3</h5>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p><strong>Tổng tiền:</strong></p>
+                            <h4>Tổng tiền:</h4>
                         </td>
                         <td>
-                            <p><strong class="total-price" >150000</strong></p>
+                            <h4 class="total-price">150000</h4>
                         </td>
                     </tr>
                 </table>
@@ -207,7 +207,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4>Ngày/Giờ/Nội dung mong muốn</h4>
+                            <h4>Thông tin đặt lịch</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body2">
@@ -241,7 +241,7 @@
                             </div>
                             <h5 ><strong>Chọn dịch vụ :</strong></h5>
                             <div id="body">
-                                <div>
+                                <div class="spa">
                                     <p><strong>Spa :</strong></p>
                                     <form>
                                         <input type="checkbox" name="spa1" value="Spa tắm, vệ sinh">Spa tắm, vệ
@@ -270,7 +270,7 @@
                             </div>
                             <h5 ><strong>Kích thước thú cưng:</strong></h5>
                             <div id="foot">
-                                <div>
+                                <div class ="spa">
                                     <p><strong>Spa :</strong></p>
                                     <select name="size" id="size-spa" >
                                         <option value="size1">Dưới 2kg</option>
@@ -311,44 +311,56 @@
                 name="datlich">
         </div>
         <br><br>
- <!-- JavaScript code for sending data via Ajax -->
+        <div id="footer">
+            <table>
+                <tr>
+                    <td id="infor-shop">
+                        <h3>Liên hệ</h3>
+                        CỬA HÀNG SẢN PHẨM VÀ DỊCH VỤ THÚ CƯNG PET CARE HUB <br>
+                        Địa chỉ: 116 Nguyễn Văn Thủ, Phường Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam <br>
+                        <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
+                        <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                        <div id="connect_shop">
+                            <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#youtube" id="youtube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </td>
+                    <td style="width: 30%;"> &nbsp;</td>
+                    <td id="policy">
+                        <h3>Chính sách khách hàng</h3>
+                        <a href="#">Chính sách đổi trả.</a><br>
+                        <a href="#">Chính sách bảo mật.</a><br>
+                        <a href="#">Phương thức thanh toán.</a><br>
+                        <a href="#">Chính sách hoàn tiền</a><br>
+                        <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center;" class="logo"><img src="image/logo.png" alt="logo"></td>
+                </tr>
+            </table>
+        </div>
+</body>
 <script>
-    document.getElementById('sub').addEventListener('click', function() {
-        // Lấy giá trị từ các trường nhập liệu
-        var fullName = document.getElementsByName('fullname')[0].value;
-        var email = document.getElementsByName('email')[0].value;
-        var address = document.getElementsByName('address')[0].value;
-        var birthdate = document.getElementsByName('birthdate')[0].value;
-        var confirmEmail = document.getElementsByName('confirm_email')[0].value;
-        var phone = document.getElementsByName('phone')[0].value;
+    const totalPrice = document.getElementsByClassName('total-price');
+    const intoMoney = document.getElementsByClassName('into-money');
+    function formatPrice(price) {
+        return price.toLocaleString('en-US', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+    }
+    for (let i = 0; i < totalPrice.length; i++) {
+        const originalValue = parseInt(totalPrice[i].textContent);
+        const price = formatPrice(originalValue);
+        totalPrice[i].textContent = price;
+    }
+    for (let i = 0; i < intoMoney.length; i++) {
+        const originalValue = parseInt(intoMoney[i].textContent);
+        const price = formatPrice(originalValue);
+        intoMoney[i].textContent = price;
+    }
 
-        // Chuẩn bị dữ liệu để gửi
-        var data = {
-            fullname: fullName,
-            email: email,
-            address: address,
-            birthdate: birthdate,
-            confirm_email: confirmEmail,
-            phone: phone
-        };
-
-        // Gửi dữ liệu qua Ajax POST request
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/admin_quanlichlichhen', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Xử lý phản hồi thành công
-                    console.log('Dữ liệu đã được gửi thành công!');
-                } else {
-                    // Xử lý phản hồi lỗi
-                    console.error('Lỗi:', xhr.statusText);
-                }
-            }
-        };
-        xhr.send(JSON.stringify(data));
-    });
 </script>
-
 @endsection

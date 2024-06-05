@@ -111,4 +111,8 @@ use App\Http\Controllers\LichHenController;
 Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);
 
 
+
+Route::get('/appointments', [AppointmentController::class, 'create']);
 Route::post('/appointments', [AppointmentController::class, 'store']);
+
+Route::get('/admin/appointments', [AdminController::class, 'index']);

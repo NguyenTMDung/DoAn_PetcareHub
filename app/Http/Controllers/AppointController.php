@@ -30,7 +30,10 @@ class AppointController extends Controller
         Session::put('message', 'Đã xóa lịch hẹn!');
         return Redirect::to('/quan-ly-lich-hen');
     }
-
+    public function create()
+    {
+        return view('appointments.create');
+    }
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -46,7 +49,36 @@ class AppointController extends Controller
         $appointment->save();
 
         return response()->json(['status' => 'success', 'message' => 'Thêm lịch thành công']);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:customers,email',
+            'phone' => 'required|string|max:15',
+            'appointment_date' => 'required|date',
+            'services' => 'required|array',
+        ]);
+
+        $customer = Customer::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+        ]);
+
+        foreach ($request->services as $service) {
+            Appointment::create([
+                'customer_id' => $customer->id,
+                'appointment_date' => $request->appointment_date,
+                'service' => $service,
+                'notes' => $request->notes,
+            ]);
+        }
+
+        return redirect('/appointments')->with('success', 'Lịch hẹn đã được đặt thành công!');
     }
+
+    
+
+    
 }
+
 
     

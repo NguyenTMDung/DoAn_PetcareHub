@@ -25,5 +25,11 @@ class AdminController extends Controller
     return response()->json(['message' => 'Đặt lịch thành công']);
 }
 
-
+    public function index()
+    {
+        $appointments = Appointment::with('customer')->get();
+        return view('admin.appointments.index', compact('appointments'));
+    }
 }
+
+

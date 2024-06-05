@@ -46,6 +46,10 @@ Route::post('/delete-cart-item', [CartController::class, 'deleteCartItem'])->nam
 Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name('checkout');
 Route::post('/buy-now', [CheckoutController::class, 'buy']);
 
+//Lịch sử giao dịch
+Route::get('/da-giao', [OrderController::class,'daGiao']);
+
+
 //Page Dịch vụ
 Route::get('/dich-vu-khach-san', [HotelServiceController::class, 'index']);
 //dich vu spa

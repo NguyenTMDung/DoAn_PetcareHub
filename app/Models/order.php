@@ -9,7 +9,7 @@ use Ramsey\Uuid\Uuid;
 class order extends Model
 {
     use HasFactory;
-    protected $table = 'orders';
+    protected $table = 'order';
     protected $fillable = [
         'id', 'user_id','created_at','updated_at', 'total', 'status', 'name', 'email', 'phone', 'address'
     ];

@@ -5,14 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
-use App\Models\Appointment;
-
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
- use App\Http\Controllers\console;
- use Illuminate\Support\Facades\Log;
-  
+use App\Http\Controllers\console;
+use Illuminate\Support\Facades\Log;
 
 
 class AdminController extends Controller
@@ -25,24 +22,6 @@ class AdminController extends Controller
         }
         return false;
     }
-
-
-    public function xuLyDatLich(Request $request)
-{
-    // Validate dữ liệu
-    $validatedData = $request->validate([
-        'fullname' => 'required',
-        // ... (các quy tắc validate khác)
-    ]);
-
-    // Lưu vào database
-    Appointment::create($validatedData);
-
-    // Trả về phản hồi (nếu cần)
-    return response()->json(['message' => 'Đặt lịch thành công']);
-}
-
-
 
     public function trangchu(){
         if(!$this->checkadmin()) {
@@ -142,13 +121,13 @@ class AdminController extends Controller
         }
         
         $date = $date;
-        $count = DB::table('order')
-            ->where('order.created_at', 'like', '%'.$date.'%')
+        $count = DB::table('orders')
+            ->where('orders.created_at', 'like', '%'.$date.'%')
             ->count();
-        $total = DB::table('order')
+        $total = DB::table('orders')
           
-            ->where('order.created_at', 'like', '%'.$date.'%')
-            ->sum('order.total');
+            ->where('orders.created_at', 'like', '%'.$date.'%')
+            ->sum('orders.total');
         $user= DB::table('users')
             ->where('date_join', 'like', '%'.$date.'%')
         ->count(); 
@@ -171,16 +150,15 @@ class AdminController extends Controller
         }
         
        
-        $orderofweek = DB::table('order')
-                    ->select(DB::raw('DATE(order.created_at) as date'), DB::raw('count(*) as count'))
-                    ->whereBetween('order.created_at', [$startOfWeek, $endOfWeek])
-                    ->groupBy(DB::raw('DATE(order.created_at)'))
+        $orderofweek = DB::table('orders')
+                    ->select(DB::raw('DATE(orders.created_at) as date'), DB::raw('count(*) as count'))
+                    ->whereBetween('orders.created_at', [$startOfWeek, $endOfWeek])
+                    ->groupBy(DB::raw('DATE(orders.created_at)'))
                     ->get(); 
     
 
 
         $response = [
-            'orderofweek' => $orderofweek,
         ];
         
         return response()->json($response);
@@ -197,9 +175,9 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
     
     $endOfWeek = \Carbon\Carbon::parse($endOfWeek)->addDay();
                 
-     $totalPerDay = DB::table('order')
-                 ->select(DB::raw('DATE(order.created_at) as date'), DB::raw('SUM(order.total) as total'))
-                 ->whereBetween('order.created_at', [$startOfWeek, $endOfWeek])
+     $totalPerDay = DB::table('orders')
+                 ->select(DB::raw('DATE(orders.created_at) as date'), DB::raw('SUM(orders.total) as total'))
+                 ->whereBetween('orders.created_at', [$startOfWeek, $endOfWeek])
                  ->groupBy('date')
                  ->get();
                 

@@ -51,8 +51,6 @@
                     </tr>
                     @endforeach
                 </tbody>
->>>>>>> task1
-
             </table>
             <?php
             $message = Session::get('message');

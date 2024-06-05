@@ -30,7 +30,7 @@
     </div>
     <div class="orders">
         <div id="detail-order">
-            <form action="{{URL::to('/buy-now')}}" method="POST" id="customer-form">
+            <form action="{{URL::to('/mua-ngay')}}" method="POST" id="customer-form">
                 {{csrf_field()}}
                 {{ method_field('POST')}}
 
@@ -57,22 +57,7 @@
                         <textarea type="text" class="form-control" id="note" name="note"></textarea>
                     </div>
                 </div>
-                {{-- <div id="pay" onclick="choose(this)">
-                    <div class="options pay">
-                        <input type="radio" id="address" name="locate" value="home">
-                        <p>Giao đến địa chỉ của bạn</p>
-                        <i class="bi bi-truck"></i>
-                    </div>
-                    <div class="options pay">
-                        <input type="radio" id="store" name="locate" value="store">
-                        <p>Nhận tại cửa hàng</p>
-                        <i class="bi bi-shop"></i>
-                        <div id="bank">
-
-                        </div>
-                    </div>
-
-                </div> --}}
+                
                 <div id="location" onclick="choose(this)">
                     <div class="options ship">
                         <input type="radio" id="address" name="loca" value="delivery">
@@ -207,15 +192,6 @@
                         <h5>Pet Care Hub</h5>
                     <p style="margin-top: -1px;color: #353535;">Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh</p></div>`
             }
-            else if (radio.id === 'banking' && radio.checked) {
-                document.getElementById('bank').innerHTML = `<h6>Chuyển Khoản Ngân Hàng</h6>
-                            <p>Ngân Hàng : TP bank</p>
-                            <p>Số Tài Khoản: 0987654321</p>
-                            <p style="margin-bottom: 1vw;">Nội Dung: Tên Người Mua Hàng + Số Điện Thoại</p>`
-            }
-            else if (radio.id === 'cash' && radio.checked) {
-                document.getElementById('bank').innerHTML = ``
-            }
         });
     });
     const proPrice = document.getElementsByClassName('pro-price');
@@ -314,12 +290,6 @@ const errorName = document.getElementById('error-name');
 const errorTel = document.getElementById('error-tel');
 const errorMail = document.getElementById('error-mail');
 
-const city = document.getElementById('city');
-const district = document.getElementById('district');
-const ward = document.getElementById('ward');
-const addressInput = document.getElementById('addressA');
-const errorMessage2 = document.getElementById('error-message2');
-
 const completeButton = document.getElementById('complete');
 function validateDeliveryOption() {
     if (!addressOption.checked && !storeOption.checked) {
@@ -380,7 +350,7 @@ function validateAndSubmit(event) {
         errorMail.innerHTML = '';
     }
 
-    if (addressOption.checked) {
+    if(addressOption.checked){
         var city = document.getElementById('city').value;
         var district = document.getElementById('district').value;
         var ward = document.getElementById('ward').value;
@@ -406,9 +376,7 @@ function validateAndSubmit(event) {
             errorMessage2.innerHTML += '*Địa chỉ chi tiết không thể trống<br>';
             hasError = true;
         }
-    } else {
-        errorMessage2.innerHTML = '';
-    }
+    } 
 
     // Submit the form if no errors
     if (!hasError) {

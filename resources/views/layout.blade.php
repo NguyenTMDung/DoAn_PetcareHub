@@ -227,7 +227,6 @@
             });
         };
 
-        // Gọi hàm updateCartCount khi trang được tải
         updateCartCount();
     });
     </script>

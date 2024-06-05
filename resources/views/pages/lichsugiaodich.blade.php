@@ -38,9 +38,11 @@
                                         <i class="bi bi-x-circle"></i>
                         </button>
                         @endif
-                        <a href="">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#detailModal" style="background-color: #1eff00;">
+                                        <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </div>
                     </td>
                 </tr>
                 @endforeach
@@ -67,13 +69,18 @@
                 </tr>
                 <tr>
                     <th>Chi tiết</th>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" >
-                        <i class="bi bi-x-circle"></i>
+                    <td><div id="btn-detail">
+                        @if($orderData->status === "Chờ xác nhận")
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
+                                        <i class="bi bi-x-circle"></i>
                         </button>
-                        <a href="">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                        @endif
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#detailModal" style="background-color: #1eff00;">
+                                        <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </div>
                     </td>
                 </tr>
             </table>
@@ -95,12 +102,95 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                  <button type="button" class="btn btn-primary">Xác nhận</button>
                 </div>
               </div>
             </div>
         </div>
+        <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true" style="background-color: rgba(255, 0, 0, 0.326);">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Chi tiết</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h4>
+                                    Sản phẩm
+                                </h4>
+                                <div id="products1">
+                                    <div class="product" style="display: flex;">
+                                        <div class="img-pro">
+                                            <img src="image/best_seller3.png" alt="" class="img-product">
+                                        </div>
+                                        <div class="detail-product">
+                                            <div class="text-truncate-container">
+                                                <p>Quần Áo Mùa Hè Teddy Thú Cưng Giải Phóng Mặt Bằng Áo Cầu Vồng Puff
+                                                    Tay Chống Trơn Mỏng
+                                                    Phong Cách Chó Mèo Mùa Hè</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p>Phân loại:</p>
+                                                <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p>SL: </p>
+                                                <p class="quantity" style="margin-left:5px ;">1</p>
+                                            </div>
+                                        </div>
+                                        <div class="pro-price">
+                                            50000
+                                        </div>
+                                    </div>
+                                    <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                                    <div class="product" style="display: flex;">
+                                        <div class="img-pro">
+                                            <img src="image/best_seller2.png" alt="" class="img-product">
+                                        </div>
+                                        <div class="detail-product">
+                                            <div class="text-truncate-container">
+                                                <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p>Phân loại:</p>
+                                                <p class="classify" style="margin-left:5px ;">Size XXL</p>
+                                            </div>
+                                            <div style="display: flex;">
+                                                <p>SL: </p>
+                                                <p class="quantity" style="margin-left:5px ;">1</p>
+                                            </div>
+                                        </div>
+                                        <div class="pro-price">
+                                            40000
+                                        </div>
+                                    </div>
+                                    <hr style="border: 1px solid #656565;width: 90%;margin: auto;margin-bottom: 1vw;">
+                                    <div style="margin: 5vw 2vw;margin-top: 2vw; color: #003459;">
+                                        <div style="display: flex;">
+                                            <h5 style="width: 75%;">Số lượng</h5>
+                                            <h5 id="quantity" style="text-align: end;width:25% ;">2</h5>
+                                        </div>
+                                        <div style="display: flex;">
+                                            <h5 style="width: 75%;">Phí vận chuyển</h5>
+                                            <h5 id="transport-fee" style="text-align: end;width:25% ;">40000</h5>
+                                        </div>
+                                        <div style="display: flex;">
+                                            <h3 style="width: 75%;">Tổng tiền</h3>
+                                            <h3 id="total-products" style="text-align: end;width:25%  ;">90000</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>  
 </div>
 <script>

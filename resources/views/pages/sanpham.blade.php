@@ -17,8 +17,8 @@
                 {{ csrf_field() }}
                 <b>Loại Sản phẩm</b><br> <br>
                 @foreach($types as $typPro)
-                    <input type="checkbox" name="typeProduct[]" value="{{$typPro->id}}" id="loai"/>
-                    <label for="loai">{{$typPro->name}} </label><br>  
+                    <input type="checkbox" name="typeProduct[]" value="{{$typPro->id}}" id="loai{{$typPro->id}}"/>
+                    <label for="loai{{$typPro->id}}">{{$typPro->name}} </label><br>  
                 @endforeach
                 <br>
                 <b>Phân loại pet</b> <br> <br>

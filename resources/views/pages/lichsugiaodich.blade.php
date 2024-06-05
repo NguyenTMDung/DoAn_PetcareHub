@@ -7,12 +7,12 @@
 </div>
 <div id="detail-purchase">
     <div id="menu-purchase">
-        <ul>
-            <li class="menuItem"><a href="{{URL::to('/da-giao')}}">Đã giao</a></li>
-            <li class="menuItem"><a href="{{URL::to('/cho-xac-nhan')}}">Chờ xác nhận</a></li>
-            <li class="menuItem"><a href="{{URL::to('/dang-giao')}}">Đang giao</a></li>
-            <li class="menuItem"><a href="{{URL::to('/da-huy')}}">Đã hủy</a></li>
-        </ul>
+    <ul>
+        <li class="menuItem"><a href="{{URL::to('/da-giao')}}">Đã giao</a></li>
+        <li class="menuItem"><a href="{{URL::to('/cho-xac-nhan')}}">Chờ xác nhận</a></li>
+        <li class="menuItem"><a href="{{URL::to('/dang-giao')}}">Đang giao</a></li>
+        <li class="menuItem"><a href="{{URL::to('/da-huy')}}">Đã hủy</a></li>
+    </ul>
     </div>
     <div class="detai-order">
         <div id="web">
@@ -27,12 +27,12 @@
                 @foreach($order as $orderData)
                 <tr>
                     <td class="id-order">{{$orderData->code}}</td>
-                    <td class="date">{{ $orderData->created_at->format('H:i:s d/m/Y') }}</td>
+                    <td class="date">{{$orderData->created_at->format('H:i:s d/m/Y')}}</td>
                     <td class="address">{{$orderData->address}}</td>
                     <td class="total">{{$orderData->total}}</td>
                     <td><a href="">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                            <i class="bi bi-pencil-square" ></i>
+                        </a> 
                     </td>
                 </tr>
                 @endforeach
@@ -67,6 +67,6 @@
             </table>
         </div>
         @endforeach
-    </div>
+    </div>  
 </div>
 @endsection

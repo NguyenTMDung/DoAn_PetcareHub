@@ -314,11 +314,11 @@ const errorName = document.getElementById('error-name');
 const errorTel = document.getElementById('error-tel');
 const errorMail = document.getElementById('error-mail');
 
-const city = document.getElementById('city');
-const district = document.getElementById('district');
-const ward = document.getElementById('ward');
-const addressInput = document.getElementById('addressA');
-const errorMessage2 = document.getElementById('error-message2');
+// const city = document.getElementById('city');
+// const district = document.getElementById('district');
+// const ward = document.getElementById('ward');
+// const addressInput = document.getElementById('addressA');
+// const errorMessage2 = document.getElementById('error-message2');
 
 const completeButton = document.getElementById('complete');
 function validateDeliveryOption() {
@@ -380,7 +380,7 @@ function validateAndSubmit(event) {
         errorMail.innerHTML = '';
     }
 
-    if (addressOption.checked) {
+    if(addressOption.checked){
         var city = document.getElementById('city').value;
         var district = document.getElementById('district').value;
         var ward = document.getElementById('ward').value;

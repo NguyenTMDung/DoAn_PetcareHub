@@ -51,7 +51,9 @@ class CheckoutController extends Controller
 
         if (auth()->check()) {
             $user_id = auth()->id();
-        } 
+        } else{
+            $user_id = session()->get('user_id', '');
+        }
         DB::transaction(function () use ($request, $user_id) {
             $orderData = [
                 'name' => $request->name,

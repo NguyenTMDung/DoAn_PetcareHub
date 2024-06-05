@@ -198,6 +198,7 @@ class ProductController extends Controller
     //Page KH
     public function showByPetandCateId($pet, $cate_id)
     {
+
         if ($pet == 'dog') $pet = 'Chó';
         else $pet = 'Mèo';
         $pro = DB::table('product')
@@ -216,6 +217,16 @@ class ProductController extends Controller
 
     public function filterProduct(Request $request, $cate_id)
     {
+        $filterData = [
+            'typeProduct' => $request->input('typeProduct', []),
+            'pett' => $request->input('pett', []),
+            'min_price' => $request->input('min_price'),
+            'max_price' => $request->input('max_price'),
+            'sap_xep' => $request->input('sap_xep')
+        ];
+
+        session()->put('filterData', $filterData);
+
         $pro = DB::table('product')
             ->join('typeProduct', 'product.typeProduct_id', '=', 'typeProduct.id')
             ->select('product.*')
@@ -275,7 +286,7 @@ class ProductController extends Controller
             ->where('category_id', '=', $cate_id)
             ->get();
 
-        return view('pages.sanpham', ['pro' => $pro, 'cate_id' => $cate_id, 'types' => $types]);
+        return view('pages.sanpham', ['pro' => $pro, 'cate_id' => $cate_id, 'types' => $types])->with('filterData', $filterData);;
     }
     public function detailProduct($id)
     {

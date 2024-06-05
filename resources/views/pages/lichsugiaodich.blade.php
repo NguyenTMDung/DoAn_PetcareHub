@@ -31,17 +31,11 @@
                     <td class="address">{{$orderData->address}}</td>
                     <td class="total">{{$orderData->total}}</td>
                     <td>
-<<<<<<< HEAD
                     <div id="btn-detail">
                         @if($orderData->status === "Chờ xác nhận")
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
                                         <i class="bi bi-x-circle"></i>
-=======
-                        @if($orderData->status === "Chờ xác nhận")
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="bi bi-x-circle"></i> Hủy
->>>>>>> fa169787c6c218a8fbd5697948cfc8753c37fb7b
                         </button>
                         @endif
                         <a href="">
@@ -85,11 +79,7 @@
             </table>
         </div>
         @endforeach
-<<<<<<< HEAD
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(148, 148, 148, 0.326);">
-=======
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
->>>>>>> fa169787c6c218a8fbd5697948cfc8753c37fb7b
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">

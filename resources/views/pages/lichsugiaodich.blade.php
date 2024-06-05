@@ -1,7 +1,6 @@
 @extends('layout')
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleAccount.css')}}">
-
 <div id="title">
     <h4>LỊCH SỬ MUA HÀNG</h4>
 </div>
@@ -24,19 +23,22 @@
                     <th style="width: 10%;">Tổng</th>
                     <th style="width: 5%;">Chi tiết</th>
                 </tr>
-                @foreach($order as $orderData)
-                <tr>
-                    <td class="id-order">{{$orderData->code}}</td>
-                    <td class="date">{{$orderData->created_at->format('H:i:s d/m/Y')}}</td>
-                    <td class="address">{{$orderData->address}}</td>
-                    <td class="total">{{$orderData->total}}</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" >
-                        <i class="bi bi-x-circle"></i>
-                    </button> 
-                    </td>
-                </tr>
-                @endforeach
+                <td class="id-order">DH012</td>
+                            <td class="date">22/12/2023</td>
+                            <td class="address">35 Tân Lập, Đông Hòa, Dĩ An, Bình Dương</td>
+                            <td class="total">1000000</td>
+                            <td>
+                                <div id="btn-detail">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#detailModal" style="background-color: #1eff00;margin-right: 1em;">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
+                                        <i class="bi bi-x-circle"></i>
+                                    </button>
+                                </div>
+                            </td>
             </table>
         </div>
         @foreach($order as $orderData)
@@ -44,36 +46,45 @@
             <table>
                 <tr>
                     <th>Mã đơn hàng</th>
-                    <td class="id-order">{{$orderData->code}}</td>
+                    <td class="id-order">DH012</td>
                 </tr>
                 <tr>
                     <th >Ngày đặt</th>
-                    <td class="date">{{$orderData->created_at->format('H:i:s d/m/Y') }}</td>
+                    <td class="date">x</td>
                 </tr>
                 <tr>
                     <th>Nhận hàng</th>
-                    <td class="address">{{$orderData->address}}</td>
+                    <td class="total">1000000</td>
                 </tr>
                 <tr>
                     <th>Tổng</th>
-                    <td class="total">{{$orderData->total}}</td>
+                    <td class="total">1000000</td>
                 </tr>
                 <tr>
                     <th>Chi tiết</th>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" >
-                        <i class="bi bi-x-circle"></i>
-                        </button>
+                    <td><div id="btn-detail">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#detailModal" style="background-color: #1eff00;margin-right: 1em;">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
+                                        <i class="bi bi-x-circle"></i>
+                                    </button>
+                                </div>
                     </td>
                 </tr>
             </table>
         </div>
+        
         @endforeach
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>  
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(148, 148, 148, 0.326);">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
+                  <h3 class="modal-title" id="exampleModalLabel">Hủy đơn hàng</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -85,14 +96,12 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                  <button type="button" class="btn btn-primary">Lưu</button>
                 </div>
               </div>
             </div>
         </div>
-    </div>  
-</div>
 <script>
     const currentUrl = window.location.href;
     const menuItems = document.querySelectorAll('.menuItem a');

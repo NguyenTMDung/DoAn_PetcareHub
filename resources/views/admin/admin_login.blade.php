@@ -149,8 +149,8 @@
         </div>
         <div id="container">
             <div id="title-header">
-                <a href="{{URL::to('/login')}}" class="set-active">Đăng Nhập</a>
-            <a href="{{URL::to('/signin')}}" class="set-active">Đăng Kí</a>
+                <a href="{{URL::to('/admin-login')}}" class="set-active">Đăng Nhập</a>
+            {{-- <a href="{{URL::to('/admin-signin')}}" class="set-active">Đăng Kí</a> --}}
             </div>
             <hr
                 style="
@@ -162,7 +162,7 @@
                 "
             />
             <div id="infor-customer">
-                <form action="{{ url('/login') }}" method="POST">
+                <form action="{{ url('/admin-login') }}" method="POST">
                     @csrf
                     <p>Email</p>
                     <input

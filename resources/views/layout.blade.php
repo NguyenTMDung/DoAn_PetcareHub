@@ -92,7 +92,7 @@
         </ul>
         <ul id="sty-user" style="flex-grow: 1;">
             <li>
-                <a href="#account" id="account"><i class="fas fa-user fa-2x"
+                <a href="{{URL::to('/account')}}" id="account"><i class="fas fa-user fa-2x"
                         style="color: #003459;padding: 2vw;font-size : 1.7vw;"></i></a>
                 <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;font-size : 1.7vw;"></i></a>
             </li>

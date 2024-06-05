@@ -14,10 +14,15 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
-
+//Page Home
 Route::get('/',[HomeController::class,'index']);
 Route::get('/trang-chu', [HomeController::class,'index']);
-
+Route::get('/account', [HomeController::class,'Account']);
+Route::get('/login', [HomeController::class,'Login']);
+Route::post('/login', [HomeController::class,'AuthLogin']);
+Route::post('/logout', [HomeController::class,'Logout']);
+Route::get('/signin', [HomeController::class,'Signin']);
+Route::post('/signin', [HomeController::class,'Register']);
 //Page SP
 Route::get('/san-pham',[ProductController::class,'pagesanpham']);
 
@@ -27,7 +32,8 @@ Route::get('/dich-vu-khach-san',[HotelServiceController::class,'index']);
 // admin
 Route::get('/admin', [AdminController::class,'trangchu']);
 Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
-Route::get('/admin-signin', [AdminController::class,'Signin']);
+// Route::get('/admin-signin', [AdminController::class,'Signin']);
+// Route::post('/admin-signin', [AdminController::class,'Register']);
 Route::get('/admin-login', [AdminController::class,'Login']);
 Route::post('/admin-login', [AdminController::class,'AuthLogin']);
 Route::get('/admin-logout', [AdminController::class,'Logout']);

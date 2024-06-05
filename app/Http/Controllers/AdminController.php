@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
+
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -30,14 +31,11 @@ class AdminController extends Controller
         }
         return view('admin.admin_home');
     }
-    public function Signin(){
-        return view('pages.signin');
-    }
+   
     public function Login(){
-        return view('pages.login');
+        return view('admin.admin_login');
     }
 
-   
     public function AuthLogin(Request $request){
         $admin_email = $request->email;
         $admin_password = $request->password;

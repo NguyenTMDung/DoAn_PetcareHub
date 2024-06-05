@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function  ForgetPassword()
+    {
+       return view('pages.forgetpass');
+    }
     public function checkCustomer() {
         if (session('isLoggedIn')) {
            return true;

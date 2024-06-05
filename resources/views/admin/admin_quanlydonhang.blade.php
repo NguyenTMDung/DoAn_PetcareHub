@@ -9,6 +9,7 @@
                 <th style="width:10%;">Mã khách hàng</th>
                 <th style="width:10%;">Ngày đặt </th>
                 <th style="width:10%;">Tổng tiền</th>
+                <th style="width:18%;">Cập nhật</th>
                 <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
@@ -20,8 +21,20 @@
                         <td style="width:12%;">{{$empdata->user_id}}</td>
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
-                            <td style="width:15%;">{{$empdata->status}}</td>
-                            <td style="width:10%;">
+                        <td class="update">
+                            <button class="confirm">
+                                <i class="fas fa-check-circle"
+                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
+                                <p>Xác nhận</p>
+                            </button>
+                            <button class="cancel">
+                                <i class="fas fa-times-circle"
+                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
+                                <p>Hủy</p>
+                            </button>
+                        </td>
+                        <td style="width:15%;">{{$empdata->status}}</td>
+                        <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                                     data-bs-target="#editModal" style="background-color:green">
                                     <i class="bi bi-pencil-square"></i>
@@ -128,8 +141,31 @@ $('#detail-order').modal('show');
        console.error("An error occurred:", error);
    }
         });
-      
+        
 </script>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa đơn hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+            <form  method="POST" id="deleteForm">
+                {{ csrf_field() }}
+                {{ method_field('DELETE')}}
+                <div class="modal-body">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <p>Bạn chắc chắc chắn muốn xóa?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Xóa!</button>
+                </div>
+            </form>
+        </div>
+    </div>
 <div class="modal fade" id="detail-order" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl">

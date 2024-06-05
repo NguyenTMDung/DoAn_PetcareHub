@@ -17,41 +17,49 @@
                 {{ csrf_field() }}
                 <b>Loại Sản phẩm</b><br> <br>
                 @foreach($types as $typPro)
-                    <input type="checkbox" name="typeProduct[]" value="{{$typPro->id}}" id="loai"/>
-                    <label for="loai">{{$typPro->name}} </label><br>  
+                    <input type="checkbox" name="typeProduct[]" value="{{$typPro->id}}" id="loai{{$typPro->id}}"
+                    @if(in_array($typPro->id, old('typeProduct', $filterData['typeProduct'] ?? []))) checked @endif/>
+                    <label for="loai{{$typPro->id}}">{{$typPro->name}} </label><br>  
                 @endforeach
                 <br>
                 <b>Phân loại pet</b> <br> <br>
-                    <input type="checkbox" name="pett[]" value="Chó"  id="cho"/>
+                    <input type="checkbox" name="pett[]" value="Chó"  id="cho"
+                    @if(in_array('Chó', old('pett', $filterData['pett'] ?? []))) checked @endif />
                     <label for="cho">Chó</label><br />
-                    <input type="checkbox" name="pett[]" value="Mèo" id="meo"/>
+                    <input type="checkbox" name="pett[]" value="Mèo" id="meo"
+                    @if(in_array('Mèo', old('pett', $filterData['pett'] ?? []))) checked @endif/>
                     <label for="meo">Mèo
                 </label><br> <br>
 
                 <b>Giá</b><br>
                 <td>
-                    <input type="number" id="quanlity_tu" name="min_price" placeholder="Từ" min="0" 
-                        placeholder="Từ" value="0" oninput="validateMinMaxPrice()"/>
+                    <input type="number" id="quanlity_tu" name="min_price" min="0" 
+                        placeholder="Từ" value="{{ old('min_price', $filterData['min_price'] ?? '0') }}" oninput="validateMinMaxPrice()"/>
                 </td>
                 <td>
-                    <input type="number" id="quanlity_den" name="max_price" placeholder="Đến" min="0" max="1000000"
-                        step="100000" placeholder="Đến" value="500000" oninput="validateMinMaxPrice()"/>
+                    <input type="number" id="quanlity_den" name="max_price" placeholder="Đến" min="0"
+                        step="1000" placeholder="Đến" value="{{ old('max_price', $filterData['max_price'] ?? '1000000') }}" oninput="validateMinMaxPrice()"/>
                 </td><br><br> <br>
                 <b>Sắp xếp theo</b><br />
 
-                <input type="radio" id="sap_xep_theo_mac_dinh" name="sap_xep" value="Mặc định" checked />
+                <input type="radio" id="sap_xep_theo_mac_dinh" name="sap_xep" value="Mặc định" 
+                @if(old('sap_xep', $filterData['sap_xep'] ?? '') == 'Mặc định') checked @endif/>
                 <label for="sap_xep_theo_mac_dinh">Mặc định</label><br />
 
-                <input type="radio" id="sap_xep_theo_a_den_z" name="sap_xep" value="A đến Z" />
+                <input type="radio" id="sap_xep_theo_a_den_z" name="sap_xep" value="A đến Z" 
+                @if(old('sap_xep', $filterData['sap_xep'] ?? '') == 'A đến Z') checked @endif/>
                 <label for="sap_xep_theo_a_den_z">A<span>&#10230; </span>Z</label><br />
 
-                <input type="radio" id="sap_xep_theo_z_den_a" name="sap_xep" value="Z đến A" />
+                <input type="radio" id="sap_xep_theo_z_den_a" name="sap_xep" value="Z đến A" 
+                @if(old('sap_xep', $filterData['sap_xep'] ?? '') == 'Z đến A') checked @endif/>
                 <label for="sap_xep_theo_z_den_a">Z<span>&#10230; </span>A</label><br />
 
-                <input type="radio" id="sap_xep_theo_giam_dan" name="sap_xep" value="Giảm dần" />
+                <input type="radio" id="sap_xep_theo_giam_dan" name="sap_xep" value="Giảm dần" 
+                @if(old('sap_xep', $filterData['sap_xep'] ?? '') == 'Giảm dần') checked @endif/>
                 <label for="sap_xep_theo_giam_dan">Giảm dần</label><br />
 
-                <input type="radio" id="sap_xep_theo_tang_dan" name="sap_xep" value="Tăng dần" />
+                <input type="radio" id="sap_xep_theo_tang_dan" name="sap_xep" value="Tăng dần" 
+                @if(old('sap_xep', $filterData['sap_xep'] ?? '') == 'Tăng dần') checked @endif/>
                 <label for="sap_xep_theo_tang_dan">Tăng dần</label><br><br> <br>
 
                 <button id="loc" type="submit">Lọc</button>

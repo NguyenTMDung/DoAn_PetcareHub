@@ -211,16 +211,16 @@ a {
 
 .modal-body input {
     width: 100%;
-    padding: 0.5vw;
+    padding: 0.7em;
     border: 1px solid #AFAFAF;
     border-radius: 10px;
-    font-size: 1vw;
+    font-size: 1.1em;
 }
 
 .btn-secondary {
     background-color: antiquewhite;
     color: #003459;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
     --bs-btn-hover-border-color: #FCEED5;
     --bs-btn-hover-bg: #FCEED5;
@@ -230,7 +230,7 @@ a {
 .btn-primary {
     background-color: #003459;
     color: white;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
     --bs-btn-hover-border-color: #003459;
     --bs-btn-hover-bg: #003459;
@@ -272,7 +272,7 @@ li.active a {
 #menu-purchase li {
     list-style-type: none;
     display: inline-block;
-    width: 13vw;
+    width: 25%;
     height: 3vw;
     margin-left: -5px;
     text-align: center;
@@ -441,6 +441,33 @@ h3 {
 
 #mobile {
     display: none;
+}
+#menu-purchase .active {
+    text-decoration-line: underline;
+}
+#btn-detail
+{
+    display: flex;
+}
+#btn-detail button
+{
+    background-color: #ffffff;
+    padding: 0.2em 0.5em;
+    color: #000;
+    border: none;
+}
+.modal-body h4
+{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+#products1
+{
+    width: 100%;
+}
+.modal-title
+{
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {
@@ -671,6 +698,7 @@ h3 {
     {
         margin-top: -1em;
         margin-bottom: 2em;
+        width: 100%;
     }
     #mobile th
     {
@@ -688,4 +716,66 @@ h3 {
     {
         display: none;
     }
+    #btn-detail button
+    {
+        margin-right: 1em;
+    }
+}
+.modal {
+    --bs-modal-zindex: 1055;
+    --bs-modal-width: 500px;
+    --bs-modal-padding: 1rem;
+    --bs-modal-margin: 0.5rem;
+    --bs-modal-color: ;
+    --bs-modal-bg: var(--bs-body-bg);
+    --bs-modal-border-color: var(--bs-border-color-translucent);
+    --bs-modal-border-width: var(--bs-border-width);
+    --bs-modal-border-radius: var(--bs-border-radius-lg);
+    --bs-modal-box-shadow: var(--bs-box-shadow-sm);
+    --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
+    --bs-modal-header-padding-x: 1rem;
+    --bs-modal-header-padding-y: 1rem;
+    --bs-modal-header-padding: 1rem 1rem;
+    --bs-modal-header-border-color: var(--bs-border-color);
+    --bs-modal-header-border-width: var(--bs-border-width);
+    --bs-modal-title-line-height: 1.5;
+    --bs-modal-footer-gap: 0.5rem;
+    --bs-modal-footer-bg: ;
+    --bs-modal-footer-border-color: var(--bs-border-color);
+    --bs-modal-footer-border-width: var(--bs-border-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--bs-modal-zindex);
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+.fade {
+    transition: opacity .15s linear;
+}
+.modal.show .modal-dialog {
+    transform: none;
+}
+.modal.fade .modal-dialog {
+    transition: transform .3s ease-out;
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: var(--bs-modal-width);
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: auto;
+    pointer-events: none;
+}
+.fade {
+    opacity: 1;
 }

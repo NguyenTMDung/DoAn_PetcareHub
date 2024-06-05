@@ -17,7 +17,7 @@ class BillController extends Controller
         if(!$check) {
             return redirect('/admin-login');
         }
-        $emps = bill::where('status', 'đã giao')->get();
+        $emps = bill::all();
         return view('admin.admin_quanlyhoadon')->with('emps', $emps);
     }
     public function destroy($id)
@@ -36,15 +36,15 @@ class BillController extends Controller
     public function show($id)
     {
        
-        $order = DB::table('order')
+        $order = DB::table('orders')
             ->join('orderdetail', 'orderdetail.order_id', '=', 'order.id')
             ->join('product', 'product.id', '=', 'orderdetail.product_id')
             ->join('typeproduct','typeproduct.id','=','product.typeProduct_id')
-            ->where('order.id', '=', $id)
-            ->select( 'order.total as total','order.ship_cost as ship_cost','orderdetail.num as num'
+            ->where('orders.id', '=', $id)
+            ->select( 'orders.total as total','orders.ship_cost as ship_cost','orderdetail.num as num'
             , 'product.name as product_name','product.price','typeproduct.name as typeproduct_name'
-            ,'order.name as kh_name','order.id as id','order.status as status','order.updated_at as updated_at'
-            ,'order.address as address')
+            ,'orders.name as kh_name','orders.id as id','orders.status as status','orders.updated_at as updated_at'
+            ,'orders.address as address')
             ->get();
         return response()->json($order);
     }

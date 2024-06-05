@@ -47,5 +47,39 @@ class OrderController extends Controller
         ->get();
     return response()->json($order);
 }
+    // {
+    //     $order = DB::table('order')
+    //         ->join('users', 'users.id', '=', 'order.user_id')
+    //         ->join('product', 'products.id', '=', 'order.product_id')
+    //         ->where('order.id', '=', $id)
+    //         ->select('order.*', 'users.name as user_name', 'product.name as product_name')
+    //         ->first();
+
+    //     return response()->json($order);
+    // }
+
+    public function daGiao(){
+        $order= Order::where('status','Đã giao ')->orderBy('created_at','desc')->get();
+        return view('pages.lichsugiaodich', ['order' => $order]);
+    }
+
+    public function choXacNhan(){
+        $order= Order::where('status','Chờ xác nhận')->orderBy('created_at','desc')->get();
+
+        return view('pages.lichsugiaodich', ['order' => $order]);
+    }
+
+    public function dangGiao(){
+        $order= Order::where('status','Đang giao')->orderBy('created_at','desc')->get();
+        return view('pages.lichsugiaodich', ['order' => $order]);
+    }
+
+    public function daHuy(){
+        $order= Order::where('status','Đã hủy')->orderBy('updated_at','desc')->get();
+        return view('pages.lichsugiaodich', ['order' => $order]);
+    }
+    public function orderDetail(){
+        return view('pages.chitietdonhang');
+    }
 
 }

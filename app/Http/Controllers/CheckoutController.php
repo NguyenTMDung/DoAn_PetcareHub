@@ -9,6 +9,8 @@ use App\Models\OrderDetail;
 use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Ramsey\Uuid\Uuid;
+
 
 
 
@@ -34,59 +36,69 @@ class CheckoutController extends Controller
         ->orderBy('carts.id', 'desc')
         ->get();
 
+        session()->put('cartItems', $cartItems);
+
         return view('pages.thanhtoan', compact('cartItems'));
     }
 
-    public function buy(Request $request){
-
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'phone' => 'required|string|max:15',
-        //     'email' => 'required|email|max:255',
-        //     'note' => 'nullable|string',
-        //     // 'location' => 'required|in:1,2',
-        //     'method_payment' => 'required|in:1,2',
-        //     'total_price' => 'required|integer',
-        // ]);
+    public function buyNow(Request $request){
 
         if (auth()->check()) {
             $user_id = auth()->id();
-        }else{
-            $user_id = session()->get('user_id', '');
+        } else{
+            $user_id = session()->getId();
         }
-        DB::transaction(function () use ($request, $user_id) {
-            $orderData = [
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'email' => $request->email,
-                'note' => $request->note,
-                'method_payment' => $request->method_payment,
-                'total' => $request->total_price*1000,
-            ];
-            
-            if ($user_id) {
-                $orderData['user_id'] = $user_id;
-            }
-            if ($request->has('city') && $request->has('district') && $request->has('ward') && $request->has('addressDetail')) {
-                $orderData['address'] = implode('.', [$request->addressDetail, $request->ward, $request->district, $request->city]);
-            }
-    
-            $order = Order::create($orderData);
+        
+        $orderCode = Uuid::uuid4()->toString();
 
-            foreach ($request->products as $productData) {
+        $orderData = [
+            'code' => $orderCode,
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'note' => $request->note,
+            'method_payment' => $request->method_payment,
+            'total' => $request->total_price*1000,
+            'user_id' => $user_id,
+        ];
+        
+        if ($request->has('city') && $request->has('district') && $request->has('ward') && $request->has('addressDetail')) {
+            $orderData['address'] = implode('.', [$request->addressDetail, $request->ward, $request->district, $request->city]);
+        } else{
+            $orderData['address'] = 'Cửa hàng PetCareHub';
+        }
+
+        session()->put('orderData', $orderData);
+
+        $cartItems = session()->get('cartItems');
+
+        return view('pages.chitietdonhang')->with(['orderData'=>$orderData, 'cartItems'=>$cartItems]);
+    }
+    public function confirmOrder(){
+
+        $cartItems = session()->get('cartItems');
+        $orderData = session()->get('orderData');
+
+        //Dùng transaction 
+        DB::transaction(function () use ($orderData, $cartItems) {
+
+            $order = Order::create($orderData);
+    
+            // Lặp qua từng sản phẩm trong giỏ hàng và tạo chi tiết đơn hàng
+            foreach ($cartItems as $cartItem) {
                 OrderDetail::create([
                     'order_id' => $order->id,
-                    'product_id' => $productData['product_id'],
-                    'size' => $productData['size'],
-                    'num' => $productData['num'],
-                    'price' => $productData['price']
+                    'product_id' => $cartItem->product_id,
+                    'size' => $cartItem->size,
+                    'num' => $cartItem->num,
+                    'price' => $cartItem->price,
                 ]);
-
-                Cart::where('id', $productData['id'])->delete();
+    
+                // Xóa sản phẩm khỏi giỏ hàng nếu cần
+                Cart::where('id', $cartItem->id)->delete();
             }
-
         });
 
-        return Redirect::to('/trang-chu');
-    }
+        return Redirect::to('/cho-xac-nhan');
+    }  
 }

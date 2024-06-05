@@ -51,8 +51,6 @@
                     </tr>
                     @endforeach
                 </tbody>
->>>>>>> task1
-
             </table>
             <?php
             $message = Session::get('message');
@@ -159,6 +157,29 @@ $('#detailBill').modal('show');
     });
 });
 </script>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xóa hóa đơn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+            <form  method="POST" id="deleteForm">
+                {{ csrf_field() }}
+                {{ method_field('DELETE')}}
+                <div class="modal-body">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <p>Bạn chắc chắc chắn muốn xóa?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Xóa!</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 <div class="modal fade" id="detailBill" tabindex="-1" aria-labelledby="exampleModalLabel"
 aria-hidden="true">

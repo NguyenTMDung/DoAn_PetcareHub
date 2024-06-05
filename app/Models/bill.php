@@ -11,7 +11,7 @@ class bill extends Model
     use HasFactory;
     protected $table = 'orders';
     protected $fillable = [
-        'id', 'user_id','updated_at', 'total'   
+        'id', 'user_id','updated_at', 'total','status'   
     ];
 
 }

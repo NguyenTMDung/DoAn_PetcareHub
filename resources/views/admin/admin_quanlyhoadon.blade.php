@@ -485,6 +485,67 @@
     } catch (error) {
         console.error("An error occurred:", error);
     }
+    table.on('click', '.edit', function(){
+            $('#detail-product tbody').empty();
+            console.log('Table body emptied');
+            
+            $tr = $(this).closest('tr')
+            if($($tr).hasClass('Child')){
+                $tr = $tr.prev('.parent');
+            }
+            var data = table.row($tr).data();
+            var orderId = data[0];
+            console.log(orderId);
+            $.ajax({
+            url: '/DoAn_PetcareHub/chi-tiet-hoa-don/' + orderId,
+             method: 'GET',
+            success: function(response) {
+                console.log('AJAX call successful');
+                console.log(response);
+                $('#totalpay').text(response[0].total);
+                 $('#fee-transfer').text(response[0].ship_cost);
+                $('#total').text(response[0].total - response[0].ship_cost);
+               
+                $('#deatil-customerName').text(response[0].kh_name);
+                $('#date-bill').text(response[0].updated_at);
+              
+                $('#address').text(response[0].address);
+             
+             var inum=0;
+        
+             response.forEach(function(item) {
+                console.log('Order Total: ' + item.total);
+                console.log('Shipping Cost: ' + item.ship_cost);
+                console.log('Product Name: ' + item.product_name);
+                console.log('Product Price: ' + item.price);
+                console.log('Type Product Name: ' + item.typeproduct_name);
+                console.log('Number of Items: ' + item.num);
+                inum += item.num;
+               
+            
+                var newRow = $('<tr>');
+                    console.log('new row')
+
+
+                // Thêm các cột vào hàng
+                newRow.append('<td><p class="name-product">' + item.product_name + '</p></td>');
+                newRow.append('<td><p class="classify">' + item.typeproduct_name + '</p></td>'); // Sử dụng product_id như một ví dụ
+                newRow.append('<td><p class="price">' + item.price + '</p></td>'); // Giả sử item có thuộc tính price
+                newRow.append('<td><p class="quantity-product">' + item.num + '</p></td>');
+                newRow.append('<td><p class="total-price">' + (item.price * item.num) + '</p></td>'); // Giả sử item có thuộc tính price
+              
+                // Thêm hàng mới vào bảng
+                $('#detail-product tbody').append(newRow);
+                console.log('append new row')
+                // ...
+            });
+            // $('#quantity').text(inum);
+            
+        
+    }
+});
+$('#detailBill').modal('show');
+});
     $('#arrange-price').change(function() {
         var selectedOption = $(this).val();
         if (selectedOption == '2') {
@@ -501,5 +562,95 @@
 });
 </script>
 
-
+<div class="modal fade" id="detailBill" tabindex="-1" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4>Thông tin hóa đơn</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="detail-infor">
+                    <ul>
+                        <li>
+                            <h5>Tên khách hàng: </h5>
+                            <p id="deatil-customerName"></p>
+                        </li>
+                        <li>
+                            <h5>Địa chỉ: </h5>
+                            <p id="address">
+                               </p>
+                        </li>
+                        <li>
+                            <h5>Ngày hóa đơn: </h5>
+                            <p id="date-bill"></p>
+                        </li>
+                    </ul>
+                </div>
+                <hr style="border:1px solid rgb(64, 64, 64);">
+                <h4 id="title-table">Chi tiết hóa đơn</h4>
+                <table id="detail-product">
+                   <thead>
+                        <tr>
+                            <th style="width: 30%;">
+                                <p>Tên sản phẩm</p>
+                            </th>
+                            <th style="width: 15%;">
+                                <p>Phân loại</p>
+                            </th>
+                            <th style="width: 15%;">
+                                <p>Giá</p>
+                            </th>
+                            <th style="width: 13%;">
+                                <p>Số lượng</p>
+                            </th>
+                            <th style="width: 15%;">
+                                <p>Tổng tiền</p>
+                            </th>
+                        </tr>
+                   </thead>
+                   <tbody>
+                    
+                   </tbody>
+                   
+                </table>
+              <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <table id="style-table" style="width: 50%;float: right; border: none;">
+                                <tr>
+                                    <td>
+                                        <p>Tổng cộng</p>
+                                    </td>
+                                    <td>
+                                        <p id="total"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Phí vận chuyển</p>
+                                    </td>
+                                    <td>
+                                        <p id="fee-transfer"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>Tổng</h3>
+                                    </td>
+                                    <td>
+                                        <h3 id="totalpay" class="total-pay"></h3>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+              </tfoot>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 @endsection

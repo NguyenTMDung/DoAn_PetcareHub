@@ -14,6 +14,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
+
 use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
 use App\Http\Controllers\CartController;
@@ -29,6 +30,17 @@ Route::get('/chinh-sach-doi-tra', [FootController::class, 'ChinhSachDoiTra']);
 Route::get('/chinh-sach-hoan-tien', [FootController::class, 'ChinhSachHoanTien']);
 Route::get('/phuong-thuc-thanh-toan', [FootController::class, 'PhuongThucThanhToan']);
 Route::get('/chinh-sach-bao-mat', [FootController::class, 'ChinhSachBaoMat']);
+
+
+//Page Home
+Route::get('/',[HomeController::class,'index']);
+Route::get('/trang-chu', [HomeController::class,'index']);
+Route::get('/account', [HomeController::class,'Account']);
+Route::get('/login', [HomeController::class,'Login']);
+Route::post('/login', [HomeController::class,'AuthLogin']);
+Route::post('/logout', [HomeController::class,'Logout']);
+Route::get('/signin', [HomeController::class,'Signin']);
+Route::post('/signin', [HomeController::class,'Register']);
 
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
@@ -52,13 +64,25 @@ Route::get('/dich-vu-khach-san', [HotelServiceController::class, 'index']);
 Route::get('/dich-vu-spa', [SpaController::class, 'index']);
 
 // admin
-Route::get('/admin', [AdminController::class, 'trangchu']);
-Route::get('/admin-trang-chu', [AdminController::class, 'trangchu']);
-Route::get('/admin-login', [AdminController::class, 'Login']);
-Route::post('/admin-login', [AdminController::class, 'AuthLogin']);
-Route::get('/admin-logout', [AdminController::class, 'Logout']);
+// <<<<<<< HEAD
+// Route::get('/admin', [AdminController::class, 'trangchu']);
+// Route::get('/admin-trang-chu', [AdminController::class, 'trangchu']);
+// Route::get('/admin-login', [AdminController::class, 'Login']);
+// Route::post('/admin-login', [AdminController::class, 'AuthLogin']);
+// Route::get('/admin-logout', [AdminController::class, 'Logout']);
 
 Route::get('/gioi-thieu', [GioithieuController::class, 'index']);
+Route::get('/admin', [AdminController::class,'trangchu']);
+Route::get('/admin-trang-chu', [AdminController::class,'trangchu']);
+// Route::get('/admin-signin', [AdminController::class,'Signin']);
+// Route::post('/admin-signin', [AdminController::class,'Register']);
+Route::get('/admin-login', [AdminController::class,'Login']);
+Route::post('/admin-login', [AdminController::class,'AuthLogin']);
+Route::get('/admin-logout', [AdminController::class,'Logout']);
+Route::get('/thong-ke/{date}', [AdminController::class,'ThongKe']);
+Route::get('/thong-ke-doanh-thu/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDT']);
+Route::get('/thong-ke-don-hang/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDH']);
+
 
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);
@@ -98,12 +122,13 @@ Route::delete('/quan-ly-khach-hang/{id}', [CustomerController::class, 'destroy']
 Route::resource('/quan-ly-hoa-don', BillController::class);
 Route::delete('/quan-ly-hoa-don/{id}', [BillController::class, 'destroy']);
 Route::get('/quan-ly-hoa-don', [BillController::class, 'index']);
+Route::get('/chi-tiet-hoa-don/{id}', [BillController::class, 'show']);
 
 //admin don hang
 Route::resource('/quan-ly-don-hang', OrderController::class);
 Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
-Route::get('/order-detail/{id}', [OrderController::class, 'show']);
+Route::get('/chi-tiet-don-hang/{id}', [OrderController::class, 'show']);
 
 //admin slider
 Route::resource('/quan-ly-slider', SliderController::class);

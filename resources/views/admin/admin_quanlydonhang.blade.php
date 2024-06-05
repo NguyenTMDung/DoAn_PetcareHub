@@ -1,7 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
     <table id="myTable">
         <thead>
             <tr class="head">
@@ -9,7 +9,6 @@
                 <th style="width:10%;">Mã khách hàng</th>
                 <th style="width:10%;">Ngày đặt </th>
                 <th style="width:10%;">Tổng tiền</th>
-                <th style="width:20%;">Cập nhật</th>
                 <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
@@ -21,8 +20,6 @@
                         <td style="width:12%;">{{$empdata->user_id}}</td>
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
-                        <td style="width:18%;"class="update">
-                            </td>
                             <td style="width:15%;">{{$empdata->status}}</td>
                             <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"

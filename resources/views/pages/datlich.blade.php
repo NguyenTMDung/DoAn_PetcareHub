@@ -62,7 +62,7 @@
                         <button class="form-button"><i class="bi bi-dash-circle"></i></button>
                     </td>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                        aria-hidden="true" style="background-color: rgba(148, 148, 148, 0.326);">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -74,10 +74,10 @@
                                     <div id="head">
                                         <div class="pet">
                                             <p><strong>Thú cưng</strong></p>
-                                            <input type="radio" id="pet1" name="group-radio" /><label
-                                                for="pet1">&nbsp;Chó</label>&nbsp;
-                                            <input type="radio" id="pet" name="group-radio" /><label
-                                                for="pet2">&nbsp;Mèo</label><br>
+                                            <input type="radio" id="pet1" name="group-radio" />
+                                            <label for="pet1">Chó</label>
+                                            <input type="radio" id="pet2" name="group-radio" />
+                                            <label for="pet2">Mèo</label><br>
                                         </div>
                                         <div>
                                             <p><strong>Ngày đặt lịch</strong></p>
@@ -202,7 +202,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(148, 148, 148, 0.326);">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -214,9 +214,9 @@
                                 <div class="pet">
                                     <p><strong>Thú cưng</strong></p>
                                     <input type="radio" id="pet1" name="group-radio" /><label
-                                        for="pet1">&nbsp;Chó</label>&nbsp;
+                                        for="pet1">Chó</label>;
                                     <input type="radio" id="pet" name="group-radio" /><label
-                                        for="pet2">&nbsp;Mèo</label><br>
+                                        for="pet2">Mèo</label><br>
                                 </div>
                                 <div>
                                     <p><strong>Ngày đặt lịch</strong></p>

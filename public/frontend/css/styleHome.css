@@ -104,7 +104,25 @@
     color: var(--Primary-Color-Dark-Blue, #003459);
     text-decoration-line: none;
 }
-
+#sty-user a:hover
+{
+    text-decoration-line: none;
+}
+#sty-user span
+{
+color: white;
+    padding: 0.2em 0.5em;
+    font-size: 0.4em;
+    background-color: red;
+    border-radius: 10vw;
+    width: 1.7em;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    margin-top: 2em;
+    height: 1.7em;
+}
 .menu a:hover {
     text-decoration: underline;
 }
@@ -665,7 +683,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 #slide-show
     {
-        height: 22vw;
+        height: 25em;
     }
 .carousel-item img {
     width: 100%;
@@ -781,7 +799,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     }
     #slide-show
     {
-        height: 30vw;
+        height: 30em;
     }
     .title {
         font-size: unset;

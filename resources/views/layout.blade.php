@@ -92,10 +92,9 @@
         </nav>
         <div id="sty-user" style="flex-grow: 1;">
             <li>
-                <a href="#account" id="account"><i class="fas fa-user fa-2x"
-                        style="color: #003459;padding: 2vw;"></i></a>
-                <a href="{{URL::to("/gio-hang")}}" id="cart">
-                    <span><span id="cartCount" style="color: red">0</span><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></span>
+                <a href="#account" id="account"class="fas fa-user fa-2x"
+                        style="color: #003459;padding: 2vw;"></a>
+                <a href="{{URL::to("/gio-hang")}}" id="cart" class="bi bi-cart4  fa-2x" style="color: #003459;"><span id="cartCount">0</span>
                 </a>
             </li>
         </div>

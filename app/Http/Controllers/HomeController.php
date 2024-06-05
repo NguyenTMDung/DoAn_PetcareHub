@@ -89,8 +89,28 @@ class HomeController extends Controller
         // Đăng nhập và chuyển hướng đến trang account
         // Auth::login($customer);
         // $request->session()->put('customer', $customer);
+        $request->session()->put('customer', $customer);
         $request->session()->put('isLoggedIn', true);
+        $request->session()->put('userId', $customer->id);
         return redirect('/trang-chu');
     }
+    public function ChangeInfor(Request $request){
+        $customer = customer::find($request->session()->get('userId'));
+        if ($request->has('name')) {
+            $customer->name = $request->name;
+        }
+        if ($request->has('tel')) {
+            $customer->phone = $request->tel;
+        }
+        if ($request->has('email')) {
+            $customer->email = $request->email;
+        }
+        if ($request->has('date')) {
+            $customer->date_of_birth = $request->date;
+        }
+        $customer->save();
+        return redirect('/account');
+    }
+   
 }
 

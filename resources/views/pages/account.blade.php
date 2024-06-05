@@ -2,34 +2,35 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleAccount.css')}}">
 <div class="container">
-    <form action="">
+    <form action="{{ url('/change-infor') }}" method="POST">
+        @csrf
         <div id="profile">
             <div id="profile-head">
                 <h4>Thông tin cá nhân</h4>
             </div>
             <div id="profile-detail">
-                <div class="sty-profile">
-                    <h5>Họ và Tên khách hàng</h5>
-                    <input type="button" id="name" name="name" value="Nguyễn Văn A">
-                    <h5>Email</h5>
-                    <input type="button" id="emailc" name="emailc" value="abc@gmail.com">
-                </div>
-                <div class="sty-profile">
-                    <h5>Ngày Sinh</h5>
-                    <input type="button" id="date-birth" name="date-birth" value="">
-                    <h5>Số điện thoại</h5>
-                    <input type="button" id="tel" name="tel" value="09875453">
-                </div>
+                @php
+    $user = \App\Models\Customer::find(session('userId'));
+@endphp
+<div class="sty-profile">
+    <h5>Họ và Tên khách hàng</h5>
+    <input type="text" id="name" name="name" value="{{ $user ? $user->name : '' }}">
+    <h5>Email</h5>
+    <input type="text" id="emailc" name="email" value="{{ $user ? $user->email : '' }}">
+</div>
+<div class="sty-profile">
+    <h5>Ngày Sinh</h5>
+    <input type="text" id="date-birth" name="date" value="{{ $user ? $user->date_of_birth : '' }}">
+    <h5>Số điện thoại</h5>
+    <input type="text" id="tel" name="tel" value="{{ $user ? $user->phone : '' }}">
+</div>
             </div>
         </div>
         <div style="width: 15vw;margin: auto;">
             <input type="submit" id="submit" name="submit" value="Chỉnh sửa thông tin">
         </div>
         <div style="width: 15vw;margin: auto;">
-            <form action="/logout" method="POST">
-                @csrf
-                <input type="submit" id="submit" name="submit" value="Đăng xuất">
-            </form>
+            <li class="action"><a href="{{URL::to('/logout')}}" >Sign out</a></li>
         </div>
     </form>
 </div>

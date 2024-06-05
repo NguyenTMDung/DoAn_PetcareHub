@@ -38,9 +38,10 @@ Route::get('/trang-chu', [HomeController::class,'index']);
 Route::get('/account', [HomeController::class,'Account']);
 Route::get('/login', [HomeController::class,'Login']);
 Route::post('/login', [HomeController::class,'AuthLogin']);
-Route::post('/logout', [HomeController::class,'Logout']);
+Route::get('/logout', [HomeController::class,'Logout']);
 Route::get('/signin', [HomeController::class,'Signin']);
 Route::post('/signin', [HomeController::class,'Register']);
+Route::post('/change-infor', [HomeController::class,'ChangeInfor']);
 
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);

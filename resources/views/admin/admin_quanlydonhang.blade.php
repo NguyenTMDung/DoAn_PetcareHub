@@ -9,6 +9,7 @@
                 <th style="width:10%;">Mã khách hàng</th>
                 <th style="width:10%;">Ngày đặt </th>
                 <th style="width:10%;">Tổng tiền</th>
+                <th style="width:18%;">Cập nhật</th>
                 <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
@@ -20,8 +21,20 @@
                         <td style="width:12%;">{{$empdata->user_id}}</td>
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
-                            <td style="width:15%;">{{$empdata->status}}</td>
-                            <td style="width:10%;">
+                        <td class="update">
+                            <button class="confirm">
+                                <i class="fas fa-check-circle"
+                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
+                                <p>Xác nhận</p>
+                            </button>
+                            <button class="cancel">
+                                <i class="fas fa-times-circle"
+                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
+                                <p>Hủy</p>
+                            </button>
+                        </td>
+                        <td style="width:15%;">{{$empdata->status}}</td>
+                        <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                                     data-bs-target="#editModal" style="background-color:green">
                                     <i class="bi bi-pencil-square"></i>

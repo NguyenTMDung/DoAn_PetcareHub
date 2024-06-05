@@ -44,7 +44,9 @@ Route::post('/delete-cart-item', [CartController::class, 'deleteCartItem'])->nam
 
 //Thanh toán
 Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name('checkout');
-Route::post('/buy-now', [CheckoutController::class, 'buy']);
+Route::post('/mua-ngay', [CheckoutController::class, 'buyNow']);
+Route::get('/xac-nhan', [CheckoutController::class, 'confirmOrder']);
+
 
 //Lịch sử giao dịch
 Route::get('/da-giao', [OrderController::class,'daGiao']);

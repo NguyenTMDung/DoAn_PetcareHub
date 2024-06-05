@@ -30,10 +30,15 @@
                     <td class="date">{{$orderData->created_at->format('H:i:s d/m/Y')}}</td>
                     <td class="address">{{$orderData->address}}</td>
                     <td class="total">{{$orderData->total}}</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" >
-                        <i class="bi bi-x-circle"></i>
-                    </button> 
+                    <td>
+                        @if($orderData->status === "Chờ xác nhận")
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-x-circle"></i> Hủy
+                        </button>
+                        @endif
+                        <a href="">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach
@@ -64,6 +69,9 @@
                         data-bs-target="#exampleModal" >
                         <i class="bi bi-x-circle"></i>
                         </button>
+                        <a href="">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
                     </td>
                 </tr>
             </table>

@@ -211,16 +211,16 @@ a {
 
 .modal-body input {
     width: 100%;
-    padding: 0.5vw;
+    padding: 0.7em;
     border: 1px solid #AFAFAF;
     border-radius: 10px;
-    font-size: 1vw;
+    font-size: 1.1em;
 }
 
 .btn-secondary {
     background-color: antiquewhite;
     color: #003459;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
     --bs-btn-hover-border-color: #FCEED5;
     --bs-btn-hover-bg: #FCEED5;
@@ -230,7 +230,7 @@ a {
 .btn-primary {
     background-color: #003459;
     color: white;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     font-weight: 500;
     --bs-btn-hover-border-color: #003459;
     --bs-btn-hover-bg: #003459;
@@ -442,7 +442,25 @@ h3 {
 #mobile {
     display: none;
 }
-
+#menu-purchase .active {
+    text-decoration-line: underline;
+}
+#btn-detail
+{
+    display: flex;
+}
+#btn-detail button
+{
+    background-color: #ffffff;
+    padding: 0.2em 0.5em;
+    color: #000;
+    border: none;
+}
+.modal-body h4
+{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
 @media only screen and (max-width: 768px) {
     .menu {
         display: none;
@@ -688,13 +706,4 @@ h3 {
     {
         display: none;
     }
-}
-.modal-dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.modal {
-    z-index: 9999; /* Hoặc bất kỳ giá trị nào cao hơn */
 }

@@ -69,4 +69,13 @@
         @endforeach
     </div>  
 </div>
+<script>
+       const currentUrl = window.location.href;
+    const menuItems = document.querySelectorAll('.menuItem a');
+    menuItems.forEach(item => {
+        if (item.href === currentUrl) {
+            item.parentElement.classList.add('active');
+        }
+    });
+    </script>
 @endsection

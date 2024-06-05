@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <link rel="stylesheet" href="css/styleAccount.css">
 </head>
+
 <body>
     <div class="header">
         <div class="logo">
@@ -127,9 +128,16 @@
                             <td class="address">35 Tân Lập, Đông Hòa, Dĩ An, Bình Dương</td>
                             <td class="quantity">3</td>
                             <td class="total">1000000</td>
-                            <td><a href="">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
+                            <td>
+                                <div id="btn-detail">
+                                    <a href="">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" >
+                                        <i class="bi bi-x-circle"></i>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -141,7 +149,7 @@
                             <td class="id-order">DH012</td>
                         </tr>
                         <tr>
-                            <th >Ngày đặt</th>
+                            <th>Ngày đặt</th>
                             <td class="date">22/12/2023</td>
                         </tr>
                         <tr>
@@ -162,13 +170,42 @@
                         </tr>
                         <tr>
                             <th>Chi tiết</th>
-                            <td><a href="">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
+                            <td>
+                                <div id="btn-detail">
+                                    <a href="">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" >
+                                        <i class="bi bi-x-circle"></i>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     </table>
                 </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>
+                                Lý do hủy đơn
+                            </h4>
+                            <form action="">
+                                <input type="text" name="">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
@@ -205,10 +242,7 @@
 </body>
 <script>
     const currentUrl = window.location.href;
-    // Lấy danh sách các menu
     const menuItems = document.querySelectorAll('.menuItem a');
-
-    // Kiểm tra và thêm lớp "active" cho menu đang được truy cập
     menuItems.forEach(item => {
         if (item.href === currentUrl) {
             item.parentElement.classList.add('active');

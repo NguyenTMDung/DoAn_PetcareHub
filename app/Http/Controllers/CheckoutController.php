@@ -87,6 +87,6 @@ class CheckoutController extends Controller
 
         });
 
-        return Redirect::to('/trang-chu');
+        return Redirect::to('/cho-xac-nhan');
     }
 }

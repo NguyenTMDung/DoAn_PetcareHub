@@ -7,12 +7,12 @@
 </div>
 <div id="detail-purchase">
     <div id="menu-purchase">
-        <ul>
-            <li class="menuItem"><a href="{{URL::to('/da-giao')}}">Đã giao</a></li>
-            <li class="menuItem"><a href="{{URL::to('/cho-xac-nhan')}}">Chờ xác nhận</a></li>
-            <li class="menuItem"><a href="{{URL::to('/dang-giao')}}">Đang giao</a></li>
-            <li class="menuItem"><a href="{{URL::to('/da-huy')}}">Đã hủy</a></li>
-        </ul>
+    <ul>
+        <li class="menuItem"><a href="{{URL::to('/da-giao')}}">Đã giao</a></li>
+        <li class="menuItem"><a href="{{URL::to('/cho-xac-nhan')}}">Chờ xác nhận</a></li>
+        <li class="menuItem"><a href="{{URL::to('/dang-giao')}}">Đang giao</a></li>
+        <li class="menuItem"><a href="{{URL::to('/da-huy')}}">Đã hủy</a></li>
+    </ul>
     </div>
     <div class="detai-order">
         <div id="web">
@@ -27,12 +27,13 @@
                 @foreach($order as $orderData)
                 <tr>
                     <td class="id-order">{{$orderData->code}}</td>
-                    <td class="date">{{ $orderData->created_at->format('H:i:s d/m/Y') }}</td>
+                    <td class="date">{{$orderData->created_at->format('H:i:s d/m/Y')}}</td>
                     <td class="address">{{$orderData->address}}</td>
                     <td class="total">{{$orderData->total}}</td>
-                    <td><a href="">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" >
+                        <i class="bi bi-x-circle"></i>
+                    </button> 
                     </td>
                 </tr>
                 @endforeach
@@ -59,18 +60,41 @@
                 </tr>
                 <tr>
                     <th>Chi tiết</th>
-                    <td><a href="">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" >
+                        <i class="bi bi-x-circle"></i>
+                        </button>
                     </td>
                 </tr>
             </table>
         </div>
         @endforeach
-    </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>
+                        Lý do hủy đơn
+                    </h4>
+                    <form action="">
+                        <input type="text" name="">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>  
 </div>
 <script>
-       const currentUrl = window.location.href;
+    const currentUrl = window.location.href;
     const menuItems = document.querySelectorAll('.menuItem a');
     menuItems.forEach(item => {
         if (item.href === currentUrl) {

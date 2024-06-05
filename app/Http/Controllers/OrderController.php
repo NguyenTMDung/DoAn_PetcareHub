@@ -65,5 +65,8 @@ class OrderController extends Controller
         $order= Order::where('status','Đã hủy')->orderBy('updated_at','desc')->get();
         return view('pages.lichsugiaodich', ['order' => $order]);
     }
+    public function orderDetail(){
+        return view('pages.chitietdonhang');
+    }
 
 }

@@ -48,9 +48,10 @@ Route::post('/buy-now', [CheckoutController::class, 'buy']);
 
 //Lịch sử giao dịch
 Route::get('/da-giao', [OrderController::class,'daGiao']);
-Route::get('/cho-xac-nhan', [OrderController::class,'ChoXacNhan']);
+Route::get('/cho-xac-nhan', [OrderController::class,'choXacNhan']);
 Route::get('/dang-giao', [OrderController::class,'dangGiao']);
 Route::get('/da-huy', [OrderController::class,'daHuy']);
+Route::get('/chi-tiet-don-hang', [OrderController::class,'orderDetail']);
 
 
 

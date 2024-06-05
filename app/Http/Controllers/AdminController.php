@@ -8,6 +8,8 @@ use App\Models\Admin;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Appointment;
+
 
 
 class AdminController extends Controller
@@ -20,7 +22,6 @@ class AdminController extends Controller
         }
         return false;
     }
-<<<<<<< HEAD
 
     public function xuLyDatLich(Request $request)
 {
@@ -31,14 +32,13 @@ class AdminController extends Controller
     ]);
 
     // Lưu vào database
-    Appointment::create($validatedData);
+    // Appointment::create($validatedData);
 
     // Trả về phản hồi (nếu cần)
     return response()->json(['message' => 'Đặt lịch thành công']);
 }
 
 
-=======
     public function trangchu(){
         if(!$this->checkadmin()) {
             return redirect('/admin-login');
@@ -129,5 +129,4 @@ class AdminController extends Controller
         return redirect('/admin-login');
     }
     
->>>>>>> a539cf27428891c05c00f97128a3a80c820d0aa6
 }

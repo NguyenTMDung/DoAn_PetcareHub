@@ -103,7 +103,7 @@
                 <h2 class="title">Sản phẩm</h2>
                 @foreach( $cartItems as $index => $item)
                 <div class="product" style="display: flex;">
-                    <div style="width: 6vw;">
+                    <div class="img-pro">
                         <img src="public/storage/products/{{$item->image}}" alt="" class="img-product">
                     </div>
                     <div class="detail-product">

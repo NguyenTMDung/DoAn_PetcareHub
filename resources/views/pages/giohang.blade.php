@@ -12,8 +12,8 @@
                 <tr>
                     <td style="flex-grow: 1;"><input type="checkbox" name="tick" class="tick" value="{{$item->id}}"></td>
                     <td class="product" style="flex-grow: 4;">
-                        <div style="width: 10vw;">
-                            <img src="public/storage/products/{{$item->image}}" alt="" class="img-product" style="width: 10vw;">
+                        <div class="img-pro">
+                            <img src="public/storage/products/{{$item->image}}" alt="" class="img-product" >
                         </div>
                         <div class="detail-product">
                             <div class="text-truncate-container">
@@ -27,8 +27,8 @@
                             <div class="pro-price" id="selected-price-{{$item->id}}">
                                Giá: {{ number_format($item->price, 0, '.','.') }} VNĐ
                             </div>
-                            <div class="quantitys" style="width: 1vw;">
-                                <input type="number" name="id2" id="quantity" value="{{$item->num}}" min="1" max="20" onchange="updateCart(this)" data-product-id="{{ $item->product_id }}" data-id="{{ $item->id }}">
+                            <div class="quantitys" ">
+                                            <input type="number" name="id2" id="quantity" value="{{$item->num}}" min="1" max="20" onchange="updateCart(this)" data-product-id="{{ $item->product_id }}" data-id="{{ $item->id }}">
                             </div>
                         </div>
                     </td>

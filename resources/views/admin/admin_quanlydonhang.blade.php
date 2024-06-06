@@ -2,7 +2,7 @@
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
-    <table id="myTable">
+    <table id="myTable" style="width:100%;">
         <thead>
             <tr class="head">
                 <th style="width:10%;">Mã đơn hàng</th>

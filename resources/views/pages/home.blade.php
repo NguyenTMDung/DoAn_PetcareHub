@@ -48,6 +48,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
                             <div class="carousel-inner">
                                 <div class="item active">
+                                    @if(isset($first->id))
                                     <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="{{URL::to('/chi-tiet-san-pham-'.$first->id)}}">
@@ -72,6 +73,7 @@
                                             </a>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 @foreach($topSales as $top)
                                 <div class="item">
@@ -123,6 +125,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemsliderx">
                             <div class="carousel-inner">
                                 <div class="item active">
+                                    @if(isset($second->id))
                                     <div class="col-md-3 col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="{{URL::to('/chi-tiet-san-pham-'.$second->id)}}">
@@ -145,6 +148,7 @@
                                             </a>
                                         </div>
                                     </div>
+                                    @endif;
                                 </div>
                                 @foreach($newProducts as $new)
                                 <div class="item">

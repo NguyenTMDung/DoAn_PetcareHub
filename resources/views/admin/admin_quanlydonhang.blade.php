@@ -22,7 +22,7 @@
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
                         <td class="update">
-                            <button class="confirm">
+                            <button class="confirm" data-id="{{$empdata->id}}">
                                 <i class="fas fa-check-circle"
                                     style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
                                 <p>Xác nhận</p>
@@ -277,5 +277,53 @@ $('#detail-order').modal('show');
                     </div>
                 </div>
             </div>
+
+<script>
+    $(document).ready(function() {
+    // Xác nhận đơn hàng
+    $('.confirm').click(function() {
+        var orderId = $(this).data('id');
+        $.ajax({
+            url: '/confirm-order', // Đường dẫn đến route xử lý xác nhận đơn hàng
+            method: 'POST',
+            data: {
+                orderId: orderId,
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                // Xử lý phản hồi từ server (nếu cần)
+                console.log(response);
+                // Cập nhật giao diện hoặc thông báo cho người dùng
+            },
+            error: function(xhr, status, error) {
+                // Xử lý khi có lỗi
+                console.error(error);
+            }
+        });
+    });
+
+    // Hủy đơn hàng
+    $('.cancel').click(function() {
+        var orderId = $(this).data('id');
+        $.ajax({
+            url: '/cancel-order', // Đường dẫn đến route xử lý hủy đơn hàng
+            method: 'POST',
+            data: {
+                orderId: orderId,
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                // Xử lý phản hồi từ server (nếu cần)
+                console.log(response);
+                // Cập nhật giao diện hoặc thông báo cho người dùng
+            },
+            error: function(xhr, status, error) {
+                // Xử lý khi có lỗi
+                console.error(error);
+            }
+        });
+    });
+});
+</script>
     
 @endsection 

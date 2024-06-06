@@ -18,6 +18,8 @@ use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\HistoryController;
+
 
 
 
@@ -47,14 +49,16 @@ Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name
 Route::post('/mua-ngay', [CheckoutController::class, 'buyNow']);
 Route::get('/xac-nhan', [CheckoutController::class, 'confirmOrder']);
 
+//Order
+Route::get('/chi-tiet-don-hang', [OrderController::class, 'orderDetail']);
+
 
 //Lịch sử giao dịch
-Route::get('/da-giao', [OrderController::class,'daGiao']);
-Route::get('/cho-xac-nhan', [OrderController::class,'choXacNhan']);
-Route::get('/dang-giao', [OrderController::class,'dangGiao']);
-Route::get('/da-huy', [OrderController::class,'daHuy']);
-Route::get('/chi-tiet-don-hang', [OrderController::class,'orderDetail']);
-
+// Route::post('/cho-xac-nhan', [HistoryController::class, 'choXacNhan']);
+Route::get('/da-giao', [HistoryController::class, 'daGiao']);
+Route::get('/dang-giao', [HistoryController::class, 'dangGiao']);
+Route::get('/da-huy', [HistoryController::class, 'daHuy']);
+Route::match(['get','post'],'/cho-xac-nhan', [HistoryController::class, 'handleRequest']);
 
 
 //Page Dịch vụ
@@ -115,6 +119,9 @@ Route::resource('/quan-ly-don-hang', OrderController::class);
 Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
 Route::get('/order-detail/{id}', [OrderController::class, 'show']);
+Route::get('/don-hang-{id}', [OrderController::class, 'detail']);
+
+// Route::resource('/cancel-order', OrderController::class);
 
 //admin slider
 Route::resource('/quan-ly-slider', SliderController::class);
@@ -145,11 +152,3 @@ Route::get('/sanpham', [ProductController::class, 'index']);
 
 Route::post('/luu-thong-tin-dat-lich', [DatLichController::class, 'luuThongTin'])->name('luu-thong-tin-dat-lich');
 Route::post('/admin/quanlichlichhen', 'AdminController@xuLyDatLich');
-
-use App\Http\Controllers\LichHenController;
-
-
-Route::get('/danh-sach-lich-hen', [LichHenController::class, 'index']);
-
-
-Route::post('/appointments', [AppointmentController::class, 'store']);

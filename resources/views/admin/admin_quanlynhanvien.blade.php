@@ -131,7 +131,7 @@
                 <th style="width:15%;">Ngày vào làm</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
-        </thfoot>
+        </tfoot>
         <tbody>
             @foreach ($emps as $empdata)
             <tr>
@@ -203,7 +203,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-            <form  method="POST" id="deleteForm">
+            <form method="POST" id="deleteForm">
                 {{ csrf_field() }}
                 {{ method_field('DELETE')}}
                 <div class="modal-body">

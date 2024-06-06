@@ -63,16 +63,8 @@
                 <li class="action" >
                     <a >Lịch hẹn</a>
                     <ul class="sub-menu" style="width: max-content;">
-<<<<<<< HEAD
-                    <li>
-                        <a href="{{ url('/danh-sach-lich-hen') }}" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
-                    </li>
-
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
-=======
                         <li style="font-size: 1em;"><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
                         <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
->>>>>>> a539cf27428891c05c00f97128a3a80c820d0aa6
                                 khung
                                 giờ</a></li>
                     </ul>

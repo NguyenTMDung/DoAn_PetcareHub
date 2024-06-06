@@ -49,6 +49,8 @@ Route::get('/forget', [HomeController::class,'ForgetPassword']);
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
+Route::get('/san-pham-{id}', [ProductController::class, 'allProduct']);
+
 
 //Gio hang
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');

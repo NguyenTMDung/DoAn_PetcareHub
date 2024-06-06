@@ -16,7 +16,7 @@
     </div>
     <div class="detai-order">
         <div id="web">
-            <table id="myTable">
+            <table id="myTable" style="width:100%">
                 <thead id="thead">
                     <tr>
                         <th style="width: 20%;">Mã đơn hàng</th>
@@ -45,10 +45,10 @@
                     <td>
                     <div id="btn-detail">
                         @if($orderData->status === "Chờ xác nhận")
-                        <button type="button" class="btn btn-primary delete" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
                                         <i class="bi bi-x-circle"></i>
-                        </button>
+                                    </button>
                         @endif
                         <a href="{{URL::to('/don-hang-'. $orderData->id)}}"><button type="button" class="btn btn-primary detail" data-bs-toggle="modal"
                                         style="background-color: #1eff00;">

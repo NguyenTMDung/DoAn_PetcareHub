@@ -451,6 +451,11 @@ h3 {
 #btn-detail
 {
     display: flex;
+    align-items: center;
+}
+#btn-detail a
+{
+    font-size: unset;
 }
 #btn-detail button
 {
@@ -459,6 +464,7 @@ h3 {
     color: #000;
     border: none;
 }
+
 .modal-body h4
 {
     font-size: 1.2em;
@@ -474,7 +480,7 @@ h3 {
 }
 
 @media only screen and (max-width: 768px) {
-    .menu {
+    /* .menu {
         display: none;
     }
 
@@ -484,7 +490,7 @@ h3 {
 
     #footer {
         display: none;
-    }
+    } */
 
     #profile {
         width: 100%;
@@ -781,4 +787,8 @@ h3 {
 }
 .fade {
     opacity: 1;
+}
+.dt-search
+{
+    display: none;
 }

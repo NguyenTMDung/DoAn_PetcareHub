@@ -126,12 +126,9 @@
     }
    
 });
-<<<<<<< HEAD
 
+$('#detailorder').modal('show');
 
-=======
-$('#detailOrder').modal('show');
->>>>>>> 8d0a951eb84bbacba28ea7096e837fe89081014b
 });
            
             try {

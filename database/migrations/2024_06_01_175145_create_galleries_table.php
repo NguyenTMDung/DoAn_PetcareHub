@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->integer('product_id')->references('id')->on('product')->onDelete('cascade');
-            $table->string('image');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+                        $table->string('image');
             $table->timestamps(); 
         });
     }

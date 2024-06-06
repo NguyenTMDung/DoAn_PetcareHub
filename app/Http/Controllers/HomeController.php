@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\customer;
+use App\Models\Product;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,7 +22,15 @@ class HomeController extends Controller
         }
     }
     public function index(){
-        return view('pages.home');
+
+        $topSales = Product::orderBy('number_of_sale', 'desc')->where('id','!=','1')->take(10)->get();
+
+        $first = Product::where('id', '1')->first();
+        $second = Product::where('id', '2')->first();
+
+        $newProducts = Product::where('new', 1)->inRandomOrder()->take(10)->get();
+
+        return view('pages.home',compact('topSales', 'newProducts', 'first', 'second'));
     }
     public function Account(){
       if(!$this->checkCustomer()) {

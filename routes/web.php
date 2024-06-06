@@ -53,6 +53,8 @@ Route::post('/resetpass', [HomeController::class,'NewPass']);
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
+Route::get('/san-pham-{id}', [ProductController::class, 'allProduct']);
+
 
 //Gio hang
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
@@ -150,8 +152,9 @@ Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
 Route::get('/chi-tiet-don-hang/{id}', [OrderController::class, 'show']);
 Route::get('/don-hang-{id}', [OrderController::class, 'detail']);
+Route::post('/confirm-order', [OrderController::class, 'confirmOrder']);
+Route::post('/cancel-order', [OrderController::class, 'cancel']);
 
-// Route::resource('/cancel-order', OrderController::class);
 
 //admin slider
 Route::resource('/quan-ly-slider', SliderController::class);

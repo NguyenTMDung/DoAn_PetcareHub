@@ -109,7 +109,7 @@
             Session::put('message',null);
         }
     ?>
-    <table id="myTable">
+    <table id="myTable" style="width:100%;">
         <thead>
             <tr class="head">
                 <th style="width:3%;">Id</th>

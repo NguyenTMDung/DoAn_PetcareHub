@@ -14,12 +14,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
-                    <form action="{{URL::to('/quan-ly-slider')}}" method="POST">
+                    <form action="{{URL::to('/quan-ly-slider')}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="image" class="col-form-label">Hình ảnh</label>
-                                <input type="file" class="form-control" id="image" name="image"></input>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*"></input>
                             </div>
                             <div class="mb-3">
                                 <label for="message-text" class="col-form-label">Vị trí</label>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-            <!--------------------------------------------------------------------------->
+        
         <!------------------------------------------------------------------------------->
     <br>
     <?php
@@ -46,7 +46,7 @@
             Session::put('message',null);
         }
     ?>
-    <table id="myTable">
+    <table id="myTable" style="width:100%;">
         <thead>
             <tr class="head">
                 <th style="width:5%;">ID</th>
@@ -69,7 +69,9 @@
             @foreach ($sli as $slidata)
             <tr>
                 <td style="width:5%;">{{$slidata->id}}</td>
-                <td style="width:35%;">{{$slidata->image}}</td>
+                <td style="width:35%;">
+                    <img src="public/storage/sliders/{{$slidata->image}}" alt=" {{$slidata->image}}">
+                </td>
                 <td style="width:25%;">{{$slidata->place}}</td>
                 <td style="width:10%;">{{$slidata->created_at->format('d-m-Y')}}</td>
                 <td style="width:15%;">
@@ -102,8 +104,8 @@
 
             var data = table.row($tr).data();
             console.log(data);
-            $('#imageEdit').val(''); //Không có dữ liệu tệp hình ảnh nên nếu sửa vị trí thì không lưu được
             $('#placeEdit').val(data[2]);
+            $('#currentImage').append(data[1]);
 
             $('#editForm').attr('action','/DoAn_PetcareHub/quan-ly-slider/' + data[0]);
             $('#editModal').modal('show');
@@ -137,7 +139,7 @@
             {{ method_field('PUT')}}
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="image" class="col-form-label">Hình ảnh</label>
+                    <label for="image" class="col-form-label">Ảnh</label> <br>
                     <input type="file" class="form-control" id="imageEdit" name="image"></input>
                 </div>
                 <div class="mb-3">

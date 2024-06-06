@@ -109,6 +109,36 @@ class OrderController extends Controller
 
         return view('pages.chitietdonhanggd', ['total' => $total, 'details' => $details]);
     }
+
+    public function confirmOrder(Request $request)
+    {
+        $orderId = $request->orderId;
+
+        // Thực hiện xác nhận đơn hàng
+        $order = Order::findOrFail($orderId);
+        $order->status = 'Đang giao'; 
+        $order->save();
+
+        // Phản hồi JSON về client (nếu cần)
+        return response()->json(['message' => 'Xác nhận đơn hàng thành công']);
+    }
+
+    public function cancel(Request $request)
+    {
+        // Lấy id của đơn hàng từ request
+        $orderId = $request->orderId;
+
+        // Thực hiện hủy đơn hàng
+        $order = Order::findOrFail($orderId);
+        $order->status = 'Đã hủy'; // Đặt trạng thái là "Đã hủy"
+        $order->save();
+
+        // Xóa đơn hàng khỏi cơ sở dữ liệu (nếu cần)
+        $order->delete();
+
+        // Phản hồi JSON về client (nếu cần)
+        return response()->json(['message' => 'Hủy đơn hàng thành công']);
+    }
     
 }
 

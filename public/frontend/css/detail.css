@@ -80,7 +80,10 @@
   color: #000;
   text-decoration: none;
 }
-
+.image-product-container .mySlides
+{
+  height: 25em;
+}
 .text-truncate-container p {
   -webkit-line-clamp: 2;
   display: -webkit-box;
@@ -651,4 +654,9 @@ input[type="radio"].btn-check:checked+.btn-outline-primary {
   .item {
     width: 48%;
   }
+}
+@media only screen and (min-width: 768px) and (max-width: 1050px){
+  .image-product-container .mySlides {
+    height: 17em;
+}
 }

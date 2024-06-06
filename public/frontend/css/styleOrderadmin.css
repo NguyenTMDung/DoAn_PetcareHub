@@ -46,6 +46,7 @@ tr {
     width: 95%;
     border-collapse: collapse;
     margin-top: 1vw;
+    border: solid;
 }
 
 #detail-product p {
@@ -64,6 +65,8 @@ td {
 #detail-product th 
 {
     text-align: center;
+    color: black;
+    font-size: 1.1em;
 }
 
 #style-table td {
@@ -80,7 +83,6 @@ td {
 
 #detail-infor li {
     display: flex;
-    margin-bottom: -5px;
 }
 #detail-infor h5 {
     font-size: 1.2em;
@@ -127,7 +129,18 @@ td {
     justify-content: space-between;
     padding: 1vw;
 }
-
+#style-table h3
+{
+    text-align: left;
+}
+#style-table p
+{
+    font-size: 1.2em;
+}
+#style-table tr
+{
+    background-color: #ffffff00;
+}
 .search {
     display: flex;
     height: fit-content;

@@ -108,6 +108,10 @@
 {
     text-decoration-line: none;
 }
+#sty-user a
+{
+    font-size: 1.8em;
+}
 #sty-user span
 {
 color: white;
@@ -758,8 +762,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
         height: 10vw;
         background-color: #ffffff00;
     }
-    #sty-user i {
-        font-size: 3.5vw;
+    #sty-user a {
+        font-size: 1.2em;
     }
     .header #infor {
         display: none;
@@ -866,3 +870,42 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
         height: 10.5em;
     }
   }
+  @media only screen and (min-width: 768px) and (max-width: 1050px){
+    .menu {
+        display: flex;
+        justify-content: center;
+        background-color: #FCEED5;
+        height: 5vw;
+    }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        width: 50em;
+        margin-top: -0.6em;
+    }
+    .navbar-toggler 
+    {
+        display: none;
+    }
+    .menu .nav-link {
+        font-family: 'inter';
+        font-size: 1.25em;
+        font-weight: bold;
+        font-style: normal;
+        color: var(--Primary-Color-Dark-Blue, #003459);
+    }
+    #slide-show {
+        height: 15em;
+    }
+    .product img {
+        width: 100%;
+        height: 16em;
+    }
+    #shop-address .title p {
+        font-size: 1em;
+        width: 17em;
+        text-align: center;
+    }
+    #shop-address input {
+        width: unset;
+    }
+}

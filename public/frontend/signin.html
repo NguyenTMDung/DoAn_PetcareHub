@@ -33,6 +33,11 @@
         ></script>
         <link rel="stylesheet" href="css/styleSignin.css" />
     </head>
+    <style>
+        a.active {
+            color: #FCEED5;
+        }
+    </style>
 
 <body>
     <div class="header">
@@ -158,6 +163,15 @@
         </table>
     </div>
 </body>
-<?php include("css/styleSignin.php"); ?>
+<script>
+    const currentUrl = window.location.href;
+const menuItems = document.querySelectorAll('#title-header a');
 
+// Kiểm tra và thêm lớp "active" cho menu đang được truy cập
+menuItems.forEach(item => {
+    if (item.href === currentUrl) {
+        item.parentElement.classList.add('active');
+    }
+});
+</script>
 </html>

@@ -1,7 +1,6 @@
 @extends('layout')
 @section('content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/styleAccount.css')}}">
-<div class="container">
+<link rel="stylesheet" href="{{asset('public/frontend/css/styleSignin.css')}}">
     <div id="frame">
         <form action="{{ url('/getpass') }}" method="POST">
             @csrf
@@ -16,8 +15,4 @@
             </div>
         </form>
     </div>
-</div>
-    
-               
-
 @endsection

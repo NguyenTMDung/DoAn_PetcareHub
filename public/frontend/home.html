@@ -102,9 +102,11 @@
         </nav>
         <div id="sty-user" style="flex-grow: 1;">
             <li>
-                <a href="#account" id="account"><i class="fas fa-user fa-2x"
-                        style="color: #003459;padding: 2vw;"></i></a>
-                <a href="#cart" id="cart"><i class="bi bi-cart4  fa-2x" style="color: #003459;"></i></a>
+                <a href="{{URL::to('/account')}}" id="account" class="fas fa-user fa-2x"
+                style="color: #003459;padding: 2vw;"></a>
+               <a href="{{URL::to("/gio-hang")}}" id="cart" class="bi bi-cart4  fa-2x" style="color: #003459;">
+                   <span id="cartCount" >0</span>
+               </a>
             </li>
         </div>
     </div>
@@ -156,7 +158,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemslider">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -177,7 +179,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -197,7 +199,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -219,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -241,7 +243,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -262,7 +264,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -308,7 +310,7 @@
                         <div class="carousel carousel-showmanymoveone slide" id="itemsliderx">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <div class="col-md-3 col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-md-3 col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -332,7 +334,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -355,7 +357,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -377,7 +379,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -399,7 +401,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -422,7 +424,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="">
                                                 <div class="img-products">
@@ -575,7 +577,7 @@
                 });
             }
         }
-        var x = window.matchMedia("(max-width: 700px)")
+        var x = window.matchMedia("(max-width: 900px)")
 
         // Call listener function at run time
         myFunction(x);

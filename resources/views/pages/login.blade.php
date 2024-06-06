@@ -3,18 +3,10 @@
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleSignin.css')}}">
 <div id="container">
     <div id="title-header">
-        <a href="{{URL::to('/login')}}" class="set-active">Đăng Nhập</a>
+        <a href="{{URL::to('/login')}}" class="set-active active">Đăng Nhập</a>
     <a href="{{URL::to('/signin')}}" class="set-active">Đăng Kí</a>
     </div>
-    <hr
-        style="
-            width: 35%;
-            border: 1px solid rgb(0, 0, 0);
-            margin: auto;
-            margin-top: 1vw;
-            opacity: 1;
-        "
-    />
+    <hr/>
     <div id="infor-customer">
         <form action="{{ url('/login') }}" method="POST">
             @csrf
@@ -57,7 +49,6 @@
         </form>
     </div>
 </div>
-    
                
 
 @endsection

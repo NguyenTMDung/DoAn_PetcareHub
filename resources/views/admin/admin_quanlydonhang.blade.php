@@ -64,6 +64,7 @@
         var table = $('#myTable').DataTable();
 
         table.on('click', '.edit', function(){
+            $('#detail-order').modal('show');
             $('#detail-product tbody').empty();
             
             $tr = $(this).closest('tr')
@@ -86,8 +87,7 @@
                 $('#detail-date').text(response[0].created_at);
                 $('#status-order').text(response[0].status);
                 $('#totalpay').text(response[0].total);
-
-
+                console.log('1');
                 var inum=0;
         
             response.forEach(function(item) {
@@ -98,7 +98,6 @@
                 console.log('Type Product Name: ' + item.typeproduct_name);
                 console.log('Number of Items: ' + item.num);
                 inum += item.num;
-               
             
                 var newRow = $('<tr>');
 
@@ -111,15 +110,17 @@
 
                 // Thêm hàng mới vào bảng
                 $('#detail-product tbody').append(newRow);
+                console.log('2');
    
                 // ...
             });
             $('#quantity').text(inum);
+            console.log('3');
             
-        
     }
 });
-$('#detail-order').modal('show');
+
+
 });
            
             try {

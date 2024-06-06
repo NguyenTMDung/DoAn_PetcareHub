@@ -48,9 +48,7 @@
                         </ul>
                     </div>
                 @endif
-                    <div id="forgot-password">
-                        <a href="#">Quên mật khẩu</a>
-                    </div>
+                  
                     <input
                         type="submit"
                         name="submit"

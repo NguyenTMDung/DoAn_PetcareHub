@@ -159,6 +159,9 @@ class AdminController extends Controller
 
 
         $response = [
+            'orderofweek' => $orderofweek,
+            // 'total' => $total,
+            // 'user' => $user,
         ];
         
         return response()->json($response);

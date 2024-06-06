@@ -9,9 +9,12 @@
             <h5>Email</h5>
             <br>
             <input type="email" name="email" id="email-cus" placeholder="Vui lòng nhập email của bạn">
+            @if ($errors->has('email'))
+            <span class="text-danger">{{ $errors->first('email') }}</span>
+             @endif
             <div id="sub">
                 <input type="submit" id="send-code" value="Gửi">
-                <a href="#"><input type="button" id="cancel" value="Hủy"></a>
+                <a href="{{ url('/login') }}"><input type="button" id="cancel" value="Hủy"></a>
             </div>
         </form>
     </div>

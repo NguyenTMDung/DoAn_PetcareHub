@@ -45,7 +45,10 @@ Route::post('/signin', [HomeController::class,'Register']);
 Route::post('/change-infor', [HomeController::class,'ChangeInfor']);
 Route::get('/forget', [HomeController::class,'ForgetPassword']);
 Route::post('/getpass', [HomeController::class,'GetPass']);
-
+Route::get('/entercode', [HomeController::class,'EnterCode']);
+Route::post('/checkcode', [HomeController::class,'CheckCode']);
+Route::get('/resetpass', [HomeController::class,'ResetPass']);
+Route::post('/resetpass', [HomeController::class,'NewPass']);
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);

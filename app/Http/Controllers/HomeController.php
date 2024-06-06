@@ -118,11 +118,29 @@ class HomeController extends Controller
     }
     public function GetPass(Request $request){
         $email = $request->email;
-    
+        $request->session()->put('email', $email);
+        if(empty($email)){
+            return back()->withErrors([
+                'email' => 'Vui lòng nhập email.',
+            ]);
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return back()->withErrors([
+                'email' => 'Email không hợp lệ.',
+            ]);
+        }
+        if (!customer::where('email', $email)->exists()) {
+            return back()->withErrors([
+                'email' => 'Email không tồn tại.',
+            ]);
+        }
+        $random_number = rand(100000, 999999);
+      
+        $request->session()->put('random_number', $random_number);
         $data = [
             'title' => 'Forget Password',
             'body'  => 'This is your code:',
-            'random_number' => rand(100000, 999999),
+            'random_number' => $random_number,
         ];
     
         Mail::send('emails.reset_password', $data, function($message) use ($email) {
@@ -130,13 +148,53 @@ class HomeController extends Controller
                     ->subject('Reset Password')
                     ->from('PetcareHub@gmail.com', 'Petcare Hub');
         });
-    
         // if (count(Mail::failures()) > 0) {
         //     // handle failed emails
         //     return response()->json(['message' => 'Mail Sent Fail'], 500);
         // } else {
         //     return response()->json(['message' => 'Mail Sent Successfully'], 200);
         // }
+        return redirect('/entercode');
+    }
+    public function EnterCode(){
+        return view('pages.entercode');
+    }
+    public function CheckCode(Request $request){
+        // dd($request->session()->get('random_number'));
+        $code = $request->code;
+        // dd($code);
+        if (empty($code)) {
+            return back()->withErrors([
+                'code' => 'Vui lòng nhập mã xác nhận.',
+            ]);
+        }
+        if ($code != $request->session()->get('random_number')) {
+            return back()->withErrors([
+                'code' => 'Mã xác nhận không đúng.',
+            ]);
+        }
+        return redirect('/resetpass');
+    }
+    public function ResetPass(){
+        return view('pages.newpass');
+    }
+    public function NewPass(Request $request){
+        $password = $request->password;
+        $repassword = $request->repassword;
+        if (empty($password) || empty($repassword)) {
+            return back()->withErrors([
+                'repassword' => 'Vui lòng nhập đủ thông in.',
+            ]);
+        }
+        if ($password != $repassword) {
+            return back()->withErrors([
+                'repassword' => 'Mật khẩu không khớp.',
+            ]);
+        }
+        $customer = customer::where('email', $request->session()->get('email'))->first();
+        $customer->password = $password;
+        $customer->save();
+        return redirect('/login');
     }
 }
 

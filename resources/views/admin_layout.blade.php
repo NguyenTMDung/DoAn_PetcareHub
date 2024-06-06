@@ -60,24 +60,6 @@
                     </ul>
                 </li>
                 <li class="action"><a href="{{URL::to('/quan-ly-slider')}}">Quản lý slider</a></li>
-                <li class="action" >
-                    <a >Lịch hẹn</a>
-                    <ul class="sub-menu" style="width: max-content;">
-<<<<<<< HEAD
-                    <li>
-                        <a href="{{ url('/danh-sach-lich-hen') }}" style="margin-left: 1vw;">Danh sách lịch hẹn</a>
-                    </li>
-
-                        <li style="margin-bottom: 0;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
-
-=======
-                        <li style="font-size: 1em;"><a href="{{URL::to('/quan-ly-lich-hen')}}" style="margin-left: 1vw;" >Danh sách lịch hẹn</a></li>
-                        <li style="margin-bottom: 0;font-size: 1em;"><a href="{{URL::to('/khung-gio')}}" style="margin-left: 1vw;padding-bottom: 0;">Quản lý
->>>>>>> 951a22ca35f23e1c5e1b8154a8ad82c1a5692384
-                                khung
-                                giờ</a></li>
-                    </ul>
-                </li>
                 <li class="action"><a href="{{URL::to('/admin-logout')}}" >Sign out</a></li>
             </ul>
         </div>

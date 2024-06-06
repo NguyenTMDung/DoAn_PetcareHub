@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->string('code');
-            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
+            $table->string('user_id')->references('id')->on('users')->onDelete('cascade')->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('phone');

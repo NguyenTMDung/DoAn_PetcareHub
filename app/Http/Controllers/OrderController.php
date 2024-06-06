@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Models\order;
+use App\Models\orderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -58,28 +59,38 @@ class OrderController extends Controller
     //     return response()->json($order);
     // }
 
-    public function daGiao(){
-        $order= Order::where('status','Đã giao ')->orderBy('created_at','desc')->get();
-        return view('pages.lichsugiaodich', ['order' => $order]);
-    }
-
-    public function choXacNhan(){
-        $order= Order::where('status','Chờ xác nhận')->orderBy('created_at','desc')->get();
-
-        return view('pages.lichsugiaodich', ['order' => $order]);
-    }
-
-    public function dangGiao(){
-        $order= Order::where('status','Đang giao')->orderBy('created_at','desc')->get();
-        return view('pages.lichsugiaodich', ['order' => $order]);
-    }
-
-    public function daHuy(){
-        $order= Order::where('status','Đã hủy')->orderBy('updated_at','desc')->get();
-        return view('pages.lichsugiaodich', ['order' => $order]);
-    }
+    
     public function orderDetail(){
         return view('pages.chitietdonhang');
     }
 
+    public function cancelOrder(Request $request, $code)
+    {
+
+        $order = Order::find('order_code', $code);
+
+        $order->status = 'Đã hủy';
+        $order->cancelllation_reason = $request->reason; 
+        $order->save();
+
+        Session::put('message', 'Hủy đơn hàng thành công!');
+        return Redirect::to('/cho-xac-nhan');
+    }
+
+    public function detail($id){
+        $total = DB::table('orders')
+                ->select('total')
+                ->where('id', $id)
+                ->first();
+        // dd($total);
+        $details = DB::table('orderDetail')
+            ->join('product', 'orderDetail.product_id', '=', 'product.id') // Join bảng product
+            ->select('orderDetail.*', 'product.image', 'product.name') // Chọn các cột cần lấy
+            ->where('order_id', $id)
+            ->get();
+
+        return view('pages.chitietdonhanggd', ['total' => $total, 'details' => $details]);
+    }
+    
 }
+

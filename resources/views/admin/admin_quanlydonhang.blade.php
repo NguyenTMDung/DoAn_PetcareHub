@@ -36,7 +36,7 @@
                         <td style="width:15%;">{{$empdata->status}}</td>
                         <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
-                                    data-bs-target="#editModal" style="background-color:green">
+                                    data-bs-target="#detailOrder" style="background-color:green">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
                                 <button class="btn btn-block btn-danger delete" data-bs-toggle="modal"
@@ -119,7 +119,7 @@
         
     }
 });
-$('#detail-order').modal('show');
+$('#detailOrder').modal('show');
 });
            
             try {
@@ -165,8 +165,8 @@ $('#detail-order').modal('show');
                 </div>
             </form>
         </div>
-    </div>
-<div class="modal fade" id="detail-order" tabindex="-1" aria-labelledby="exampleModalLabel"
+</div>
+<div class="modal fade" id="detailOrder" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">

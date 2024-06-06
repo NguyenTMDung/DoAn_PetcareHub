@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleSignin.css')}}">
 <div id="container">
     <div id="title-header">
-        <a href="{{URL::to('/login')}}" class="set-active">Đăng Nhập</a>
+        <a href="{{URL::to('/login')}}" class="set-active active">Đăng Nhập</a>
     <a href="{{URL::to('/signin')}}" class="set-active">Đăng Kí</a>
     </div>
     <hr
@@ -57,7 +57,6 @@
         </form>
     </div>
 </div>
-    
                
 
 @endsection

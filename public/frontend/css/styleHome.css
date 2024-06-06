@@ -108,6 +108,10 @@
 {
     text-decoration-line: none;
 }
+#sty-user a
+{
+    font-size: 1.8em;
+}
 #sty-user span
 {
 color: white;
@@ -758,8 +762,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
         height: 10vw;
         background-color: #ffffff00;
     }
-    #sty-user i {
-        font-size: 3.5vw;
+    #sty-user a {
+        font-size: 1.2em;
     }
     .header #infor {
         display: none;

@@ -15,9 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call([bill::class]);
-        $this->call([
-            GallerySeeder::class,
-        ]);
+        $this->call([galleries::class]);
+        
 
 
 

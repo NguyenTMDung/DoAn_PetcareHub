@@ -261,6 +261,8 @@ h3 {
 }
 .img-pro {
     width: 7.5vw;
+    display: flex;
+    align-items: center;
 }
 #product-mobile {
     margin-bottom: 2vw;

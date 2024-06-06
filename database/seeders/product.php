@@ -16,21 +16,11 @@ class product extends Seeder
         // thức ăn cho chó
         DB::table('product')->insert([
             [
-                'id' => '01',
                 'name' => 'Product 1',
                 'typeProduct_name' => 'Thức ăn',
-                'typeProduct_id' => 1,
-                'min_price' => 100,
-                'max_price' => 200,
-                'discount_price' => 150,
                 'inventory' => 50,
-                'image' => 'product1.jpg',
-                'rating' => 4.5,
-                'bestseller' => 1,
-                'new' => 1,
-                'number_of_sale' => 100,
-                'size' => 'Large',
-                'gallery' => '["image1.jpg", "image2.jpg"]',
+                'image' => 'product1.jpg', //phải có file hình tên như này trong public/storage/products
+                'gallery' => '["image1.jpg", "image2.jpg"]', //phải có file hình tên như này trong public/storage/gallery
                 'pet' => 'Chó',
                 'description' => 'Description for product 1',
                 'created_at' => now(),

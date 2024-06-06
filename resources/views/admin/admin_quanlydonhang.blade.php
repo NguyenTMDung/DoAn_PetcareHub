@@ -36,7 +36,7 @@
                         <td style="width:15%;">{{$empdata->status}}</td>
                         <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
-                                    data-bs-target="#editModal" style="background-color:green">
+                                    data-bs-target="#detailorder" style="background-color:green">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
                                 <button class="btn btn-block btn-danger delete" data-bs-toggle="modal"
@@ -62,9 +62,14 @@
 
     $(document).ready(function(){
         var table = $('#myTable').DataTable();
-
-        table.on('click', '.edit', function(){
-            $('#detail-order').modal('show');
+        table.on('click', '.edit', function(){  
+          console.log('chuan bi hien thi');
+            try {
+    $('#detailorder').modal('show');
+} catch (error) {
+    console.error('Loi khi hien thi modal:', error);
+}
+            console.log('hien thi');
             $('#detail-product tbody').empty();
             
             $tr = $(this).closest('tr')
@@ -115,9 +120,10 @@
                 // ...
             });
             $('#quantity').text(inum);
-            console.log('3');
-            
+           
+                 
     }
+   
 });
 
 
@@ -167,7 +173,8 @@
             </form>
         </div>
     </div>
-<div class="modal fade" id="detail-order" tabindex="-1" aria-labelledby="exampleModalLabel"
+</div>  
+<div class="modal fade" id="detailorder" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
@@ -200,10 +207,6 @@
                                         <li>
                                             <h5>Tổng tiền: </h5>
                                             <p id ="totalpay" class="total-pay"></p>
-                                        </li>
-                                        <li>
-                                            <h5>Trạng thái thanh toán: </h5>
-                                            <p id="status-pay"></p>
                                         </li>
                                         <li>
                                             <h5>Trạng thái đơn hàng: </h5>

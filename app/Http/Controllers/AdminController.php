@@ -127,6 +127,7 @@ class AdminController extends Controller
         $total = DB::table('orders')
           
             ->where('orders.created_at', 'like', '%'.$date.'%')
+            ->where('orders.status', '=', 'Đã giao')
             ->sum('orders.total');
         $user= DB::table('users')
             ->where('date_join', 'like', '%'.$date.'%')

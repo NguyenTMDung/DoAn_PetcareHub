@@ -207,12 +207,23 @@ class ProductController extends Controller
             ->where('typeProduct.category_id', '=', $cate_id)
             ->where('pet', '=', $pet)
             ->get();
-
         $types = DB::table('typeProduct')
             ->select('typeProduct.*')
             ->where('category_id', '=', $cate_id)
             ->get();
         return view('pages.sanpham', ['pro' => $pro, 'types' => $types, 'cate_id' => $cate_id, 'pet' => $pet]);
+    }
+    public function allProduct($cate_id){
+        $pro = DB::table('product')
+            ->join('typeProduct', 'product.typeProduct_id', '=', 'typeProduct.id')
+            ->select('Product.*')
+            ->where('typeProduct.category_id', '=', $cate_id)
+            ->get();
+        $types = DB::table('typeProduct')
+            ->select('typeProduct.*')
+            ->where('category_id', '=', $cate_id)
+            ->get();
+        return view('pages.sanpham', ['pro' => $pro, 'types' => $types, 'cate_id' => $cate_id]);
     }
 
     public function filterProduct(Request $request, $cate_id)

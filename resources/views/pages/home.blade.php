@@ -50,132 +50,55 @@
                                 <div class="item active">
                                     <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
-                                            <a href="">
+                                            <a href="{{URL::to('/chi-tiet-san-pham-'.$first->id)}}">
                                                 <div class="img-products">
-                                                    <img src="{{('public/frontend/image/vn-11134207-7r98o-lnlnqr6vpyp918.jpg')}}" alt="">
+                                                    <img src="public/storage/products/{{$first->image}}" alt="">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Nhà đệm cho chó mèo có thể gấp gọn tháo rời ổ ấm cho thú cưng
+                                                    <p>{{$first->name}}
                                                     </p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    179.000 VND
+                                                    @if ($first->min_price == $first->max_price)
+                                                        {{ number_format($first->min_price, 0, '.', '.') }} VNĐ
+                                                    @else
+                                                        {{ number_format($first->min_price, 0, '.', '.') }} - {{ number_format($first->max_price, 0, '.', '.') }} VNĐ
+                                                    @endif
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 100</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/best_seller2.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Đầm họa tiết trái đào dễ thương cho thú cưng size S-XL</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    45.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 101</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/best_seller3.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Quần Áo Mùa Hè 4599 Teddy ins Thú Cưng Giải Phóng Mặt Bằng Áo
-                                                        Cầu
-                                                        Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    50.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 200</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/best_seller4.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Đồ chơi gặm nhai phát ra âm thanh kiểu dáng ngộ nghĩnh dành
-                                                        cho
-                                                        thú cưng</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    20.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 500</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/best_seller5.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Thú Cưng Vui Halloween Mũ Mèo Chó Gấu Trúc Gấu Lợn Mũ Đội Đầu
+                                                    Lượt bán: <p class="number-of-sales">{{ number_format($first->number_of_sale, 0, '.', '.') }}
                                                     </p>
                                                 </div>
-                                                <div class="pro-price">
-                                                    69.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 150</p>
-                                                </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
+                                @foreach($topSales as $top)
                                 <div class="item">
                                     <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
-                                            <a href="">
+                                            <a href="{{URL::to('/chi-tiet-san-pham-'.$top->id)}}">
                                                 <div class="img-products">
-                                                    <img src="{{('public/frontend/image/best_seller6.png')}}" alt="">
+                                                    <img src="public/storage/products/{{$top->image}}" alt="">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Xúc Xích Cho Chó Thức Ăn Cho Chó Thú Cưng Mèo Xúc Xích Điều
-                                                        Trị
-                                                        Cho Thú Cưng Chó Ăn Nhẹ</p>
+                                                    <p>{{$top->name}}</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    3.000 VND
+                                                    @if ($top->min_price == $top->max_price)
+                                                        {{ number_format($top->min_price, 0, '.', '.') }} VNĐ
+                                                    @else
+                                                        {{ number_format($top->min_price, 0, '.', '.') }} - {{ number_format($top->max_price, 0, '.', '.') }} VNĐ
+                                                    @endif
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 1000</p>
+                                                    Lượt bán: <p class="number-of-sales"> {{ number_format($top->number_of_sale, 0, '.', '.') }}</p>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                @endforeach
                             <!-- left,right control -->
                             <div id="slider-control">
                                 <a class="left carousel-control" href="#itemslider" data-slide="prev"><i
@@ -202,141 +125,53 @@
                                 <div class="item active">
                                     <div class="col-md-3 col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
-                                            <a href="">
+                                            <a href="{{URL::to('/chi-tiet-san-pham-'.$second->id)}}">
                                                 <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro1.png')}}" alt="">
+                                                    <img src="public/storage/products/{{$second->image}}" alt="">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Khăn Cho Chó Tay Đan Ins Phong Cách Yếm Mèo Cổ Dễ Thương
-                                                        Thú
-                                                        Cưng
-                                                        Đan Nước Bọt Khăn Đồ Dùng Cho Thú Cưng</p>
+                                                    <p>{{$second->name}}</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    20.000 VND
+                                                    @if ($second->min_price == $second->max_price)
+                                                        {{ number_format($second->min_price, 0, '.', '.') }} VNĐ
+                                                    @else
+                                                        {{ number_format($second->min_price, 0, '.', '.') }} - {{ number_format($second->max_price, 0, '.', '.') }} VNĐ
+                                                    @endif
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 10</p>
+                                                    Lượt bán: <p class="number-of-sales"> {{ number_format($second->number_of_sale, 0, '.', '.') }}</p>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-
+                                @foreach($newProducts as $new)
                                 <div class="item">
                                     <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
-                                            <a href="">
+                                            <a href="{{URL::to('/chi-tiet-san-pham-'.$new->id)}}">
                                                 <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro2.png')}}" alt="">
+                                                    <img src="public/storage/products/{{$new->image}}" alt="">
                                                 </div>
                                                 <div class="text-truncate-container">
-                                                    <p>Khô miếng gà mèo chó đồ ăn nhẹ răng hàm làm sạch răng
-                                                        thơm
-                                                        giòn
-                                                        gà khô đồ ăn nhẹ</p>
+                                                    <p>{{$new->name}}</p>
                                                 </div>
                                                 <div class="pro-price">
-                                                    8.000 VND
+                                                    @if ($new->min_price == $new->max_price)
+                                                    {{ number_format($new->min_price, 0, '.', '.') }} VNĐ
+                                                @else
+                                                    {{ number_format($new->min_price, 0, '.', '.') }} - {{ number_format($new->max_price, 0, '.', '.') }} VNĐ
+                                                @endif
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 5 </p>
+                                                    Lượt bán: <p class="number-of-sales"> {{ number_format($second->number_of_sale, 0, '.', '.') }} </p>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro3.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Lá bạc hà mèo bóng lông làm tăng sự thèm ăn lá bạc hà mèo
-                                                        tự
-                                                        nhiên</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    20.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 3</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro4.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Thức ăn chủ yếu cho chó đóng hộp thức ăn ướt đồ ăn nhẹ
-                                                        mousse
-                                                        thịt bùn thành chó con đóng hộp chung</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    13.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 7</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro5.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>Gel tắm cho thú cưng khử mùi chống ngứa lâu dài gel tắm
-                                                        đặc
-                                                        biệt
-                                                        cho thú cưng 500m</p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    50.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 11</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="col-xs-6 col-sm-6 col-md-3">
-                                        <div class="product">
-                                            <a href="">
-                                                <div class="img-products">
-                                                    <img src="{{('public/frontend/image/new_pro6.png')}}" alt="">
-                                                </div>
-                                                <div class="text-truncate-container">
-                                                    <p>✨Tám phong cách✨Độ đàn hồi cao mèo móng vuốt đồ chơi,
-                                                        mini
-                                                        palm
-                                                        kéo, đá, tát găng tay, khéo léo và ngộ nghĩnh cao su mềm
-                                                    </p>
-                                                </div>
-                                                <div class="pro-price">
-                                                    6.000 VND
-                                                </div>
-                                                <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> 17</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <!-- left,right control -->
                             <div id="slider-control">

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('slider', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->binary ('image');
+            $table->string ('image');
             $table->string('place');
             $table->timestamps();
         });

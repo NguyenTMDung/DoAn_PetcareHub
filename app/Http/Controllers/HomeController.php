@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -115,6 +116,27 @@ class HomeController extends Controller
         $customer->save();
         return redirect('/account');
     }
-   
+    public function GetPass(Request $request){
+        $email = $request->email;
+    
+        $data = [
+            'title' => 'Forget Password',
+            'body'  => 'This is your code:',
+            'random_number' => rand(100000, 999999),
+        ];
+    
+        Mail::send('emails.reset_password', $data, function($message) use ($email) {
+            $message->to($email)
+                    ->subject('Reset Password')
+                    ->from('PetcareHub@gmail.com', 'Petcare Hub');
+        });
+    
+        // if (count(Mail::failures()) > 0) {
+        //     // handle failed emails
+        //     return response()->json(['message' => 'Mail Sent Fail'], 500);
+        // } else {
+        //     return response()->json(['message' => 'Mail Sent Successfully'], 200);
+        // }
+    }
 }
 

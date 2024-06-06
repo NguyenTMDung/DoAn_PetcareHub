@@ -42,6 +42,7 @@ Route::get('/signin', [HomeController::class,'Signin']);
 Route::post('/signin', [HomeController::class,'Register']);
 Route::post('/change-infor', [HomeController::class,'ChangeInfor']);
 Route::get('/forget', [HomeController::class,'ForgetPassword']);
+Route::post('/getpass', [HomeController::class,'GetPass']);
 
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);

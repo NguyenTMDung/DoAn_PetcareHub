@@ -22,12 +22,12 @@
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
                         <td class="update">
-                            <button class="confirm" data-id="{{$empdata->id}}">
+                            <button type="button" class="confirm" data-id="{{$empdata->id}}">
                                 <i class="fas fa-check-circle"
                                     style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
                                 <p>Xác nhận</p>
                             </button>
-                            <button class="cancel">
+                            <button type="button" class="cancel" data-id="{{$empdata->id}}">
                                 <i class="fas fa-times-circle"
                                     style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
                                 <p>Hủy</p>
@@ -291,9 +291,7 @@ $('#detail-order').modal('show');
                 _token: '{{ csrf_token() }}'
             },
             success: function(response) {
-                // Xử lý phản hồi từ server (nếu cần)
                 console.log(response);
-                // Cập nhật giao diện hoặc thông báo cho người dùng
             },
             error: function(xhr, status, error) {
                 // Xử lý khi có lỗi

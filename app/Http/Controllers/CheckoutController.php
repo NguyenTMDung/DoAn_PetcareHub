@@ -23,6 +23,10 @@ class CheckoutController extends Controller
         // Lấy danh sách các id_cart đã chọn từ giỏ hàng
         $selectedItems = $request->input('selected_items');
 
+        if (session()->has('cartItems')) {
+            session()->forget('cartItems');
+        }
+
         $selectedItemsArray = explode(',', $selectedItems);
 
 
@@ -36,7 +40,48 @@ class CheckoutController extends Controller
         ->orderBy('carts.id', 'desc')
         ->get();
 
+
         session()->put('cartItems', $cartItems);
+
+        return view('pages.thanhtoan', compact('cartItems'));
+    }
+
+    public function processCheckoutBuyNow(Request $request)
+    {
+        // Lấy danh sách các id_cart đã chọn từ giỏ hàng
+        $selectedItems = $request->input('selected_items');
+
+        if (session()->has('cartItems')) {
+            session()->forget('cartItems');
+        }
+
+        // dd($selectedItems);
+        // Lấy thông tin đơn hàng từ session
+        $orderInfo = session()->get('order_info');
+        // dd($orderInfo);
+
+        // Lấy thông tin sản phẩm từ đơn hàng
+        $productId = $orderInfo['product_id'];
+        $size = $orderInfo['size'];
+        $quantity = $orderInfo['quantity'];
+
+
+        $cartItems = product::select('product.id as product_id','product.name', 'product.image', 'product_sizes.price','product_sizes.size')
+        ->join('product_sizes', 'product.id', '=', 'product_sizes.product_id')
+        ->where('product.id', $productId)
+        ->where('product_sizes.size', $size)
+        ->get();
+
+        $cartItems->map(function ($item) use ($quantity, $size) {
+            $item->num = $quantity;
+            $item->size = $size;
+            return $item;
+        });
+
+        //     // dd($cartItems);
+
+        session()->put('cartItems', $cartItems);
+        // dd($cartItems);
 
         return view('pages.thanhtoan', compact('cartItems'));
     }

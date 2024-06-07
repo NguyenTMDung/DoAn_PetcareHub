@@ -45,10 +45,10 @@
                     <td>
                     <div id="btn-detail">
                         @if($orderData->status === "Chờ xác nhận")
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary delete" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" style="background-color: rgb(255, 0, 0);color: white;">
                                         <i class="bi bi-x-circle"></i>
-                                    </button>
+                        </button>
                         @endif
                         <a href="{{URL::to('/don-hang-'. $orderData->id)}}"><button type="button" class="btn btn-primary detail" data-bs-toggle="modal"
                                         style="background-color: #1eff00;">
@@ -290,6 +290,28 @@
         });
     }
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+        const updateCartCount = () => {
+            fetch('{{ route("cartCount") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cartCount').innerText = data.cartCount;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+        updateCartCount();
+    });
 
 </script>
 @endsection

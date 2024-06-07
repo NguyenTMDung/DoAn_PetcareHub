@@ -196,11 +196,6 @@
             </div>
         </div>
     </div>
-
-    <div id="sub">
-     <a href="{{ url('/datlich') }}" style="color:aliceblue">
-        <input type="Submit" value="Đặt lịch ngay" name="Submit">
-</a> </div>
     <br><br><br>
     <div class="form-container">
         <div class="form-column1">
@@ -306,33 +301,6 @@
         <input type="Submit" value="Sản phẩm"> 
     </a>
 </div>
-    <br><br><br>
-    <div class="review-section">
-        <h4><b>📮 ĐÁNH GIÁ CỦA KHÁCH HÀNG</b></h4>
-        <hr style="border: 1px solid black;opacity: 1;">
-        <h4 style="color: red;"><strong>PET CARE HUB</strong></h4>
-        <div class="star-rating">★★★★★</div>
-        <p>Based on 3 reviews</p>
-        <hr style="border: 1px solid black;opacity: 1;">
-        <div class="review">
-            <h5>Trịnh Thiên Hoàng</h5>
-            <div class="star-rating">★★★★★</div>
-            <p>Dịch vụ chăm sóc thú cưng mà mình thích nhất luôn. Như cái siêu thị thu nhỏ cho cún mèo vậy.</p>
-        </div>
-
-        <div class="review">
-            <h5>Nguyễn Huy Hoàng</h5>
-            <div class="star-rating">★★★★★</div>
-            <p>Shop bán hàng cực kì có tâm luôn nè, giá cả hợp lý và sản phẩm chất lượng.</p>
-        </div>
-
-        <div class="review">
-            <h5>Lê Hà My Ngọc</h5>
-            <div class="star-rating">★★★★★</div>
-            <p>Nhân viên rất chuyên nghiệp và tận tình. Chó nhà tôi luôn trở về với bộ lông bóng mượt và thơm tho.
-                Dịch vụ tuyệt vời!</p>
-        </div>
-    </div>
     <br><br><br>
 </div>
 </body>

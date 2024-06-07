@@ -69,5 +69,28 @@
 
     });
 
+    window.addEventListener('DOMContentLoaded', () => {
+        const updateCartCount = () => {
+            fetch('{{ route("cartCount") }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cartCount').innerText = data.cartCount;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        };
+
+        updateCartCount();
+    });
+
+
 </script>
 @endsection

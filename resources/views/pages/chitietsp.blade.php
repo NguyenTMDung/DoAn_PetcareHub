@@ -146,9 +146,14 @@
           <button type="button" class="cart-button" onclick="addToCart(event)" value="add_to_cart">Thêm vào giỏ hàng</button>
         </div>
         <div class="buy-container" style="margin-left: 1vw">
-          <button type="submit" class="buy-button" name="action" value="buy_now">Mua ngay</button>
+          <button  type="button" class="buy-button" onclick="buyNow(event)" name="action" value="buy_now" >Mua ngay</button>
         </div>
       </div>
+    </form>
+    <form id="checkout-form" action="{{ route('checkoutnow') }}" method="POST" hidden="true">
+      {{csrf_field()}}
+      <input name="selected_items" id="selected_items" value={{$pro->id}}>
+      <button type="submit" name="pay" id="pay">Mua hàng</button>
     </form>
     </div>
   </div>
@@ -394,6 +399,36 @@
           console.error('Error:', error);
     });
 }
+    function buyNow(event) {
+      event.preventDefault();
+
+      let form = document.getElementById('cartForm');
+      let formData = new FormData(form);
+      formData.append('cart_action', 'buy_now');
+
+      let url = '{{ route("addToCart", ["id" => $pro->id]) }}';
+
+      let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+      fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-TOKEN': csrfToken
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('checkout-form').submit();
+        } else {
+          alert('Có lỗi xảy ra, vui lòng thử lại.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
 </script>
   
 @endsection

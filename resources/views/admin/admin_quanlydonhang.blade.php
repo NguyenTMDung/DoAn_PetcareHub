@@ -357,9 +357,7 @@ $('#detailorder').modal('show');
                 _token: '{{ csrf_token() }}'
             },
             success: function(response) {
-                // Xử lý phản hồi từ server (nếu cần)
                 console.log(response);
-                // Cập nhật giao diện hoặc thông báo cho người dùng
             },
             error: function(xhr, status, error) {
                 // Xử lý khi có lỗi

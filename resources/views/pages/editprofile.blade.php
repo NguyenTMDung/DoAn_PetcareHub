@@ -20,13 +20,14 @@
 </div>
 <div class="sty-profile">
     <h5>Ngày Sinh</h5>
-    <input type="text" id="date-birth" name="date" value="{{ $user ? $user->date_of_birth : '' }}">
+    <input type="date" id="date-birth" name="date" value="{{ $user ? $user->date_of_birth : '' }}">
     <h5>Số điện thoại</h5>
     <input type="text" id="tel" name="tel" value="{{ $user ? $user->phone : '' }}">
 </div>
             </div>
         </div>
-        <div style="width: 15vw;margin: auto;margin-bottom: 2em;">
+        <div id="edit-complete">
+            <a href="{{ url('/profile') }}">Hủy</a>
             <input type="submit" id="complete" name="submit" value="Lưu">
         </div>
     </form>

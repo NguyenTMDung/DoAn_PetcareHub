@@ -50,37 +50,38 @@ class CartController extends Controller
         $quantity = $request->input('quantity');
         $userId = $request->input('user_id');
 
-        $existingCartItem = Cart::where('user_id', $userId)
-        ->where('product_id', $id)
-        ->where('size', $size)
-        ->first();
+        if ($cart_action === 'add_to_cart') {
+            $existingCartItem = Cart::where('user_id', $userId)
+            ->where('product_id', $id)
+            ->where('size', $size)
+            ->first();
 
-        if ($existingCartItem) {
+            if ($existingCartItem) {
 
-            $existingCartItem->num += $quantity;
-            $existingCartItem->save();
+                $existingCartItem->num += $quantity;
+                $existingCartItem->save();
 
-            $cartCount = Cart::where('user_id', $userId)->count('id');
-        } else {
+            } else {
+                    $cart = new Cart();
+                    $cart->user_id = $userId;
+                    $cart->product_id = $id;
+                    $cart->size = $size;
+                    $cart->num = $quantity;
 
-        // Tạo một đối tượng Cart mới
-            if ($cart_action === 'add_to_cart') {
-                $cart = new Cart();
-                $cart->user_id = $userId;
-                $cart->product_id = $id;
-                $cart->size = $size;
-                $cart->num = $quantity;
-                $cart->save();
-
-                $cartCount = Cart::where('user_id', $userId)->count('id');
-
-            } 
-            elseif ($cart_action === 'buy_now') {
-            }
+                    $cart->save();
+                } 
+         }elseif ($cart_action === 'buy_now') {
+            // Lưu thông tin đơn hàng vào session và chuyển hướng đến trang thanh toán
+            $orderInfo = [
+                'product_id' => $id,
+                'size' => $size,
+                'quantity' => $quantity,
+            ];
+            session()->put('order_info', $orderInfo);
+            return response()->json(['success' => true]);
         }
+        $cartCount = Cart::where('user_id', $userId)->count('id');
         return response()->json(['success' => true,'message' => 'Thêm sản phẩm vào giỏ hàng thành công!', 'cartCount' => $cartCount]);
-
-        return response()->json(['success' => false]);
     }
 
     public function getCartCount(Request $request){

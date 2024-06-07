@@ -124,7 +124,7 @@
       <div class="quantity-container">
         <p class="text-quantity">Số lượng:</p>
         <div class="quantity-box">
-          <button type="button" class="quantity-button" onclick="decreaseQuantity()">
+          <button type="button" class="quantity-button" onclick="decreaseQuantity()" style="border-radius: 10px 0 0 10px;">
             -
           </button>
           <input
@@ -135,7 +135,7 @@
             value="1"
             style="width: 50px"
           />
-          <button type="button" class="quantity-button" onclick="increaseQuantity()">
+          <button type="button" class="quantity-button" onclick="increaseQuantity()" style="border-radius: 0 10px 10px 0;">
             +
           </button>
         </div>
@@ -160,7 +160,7 @@
   <!----------------------------------- detail infor -------------------------------------------------------------------------->
   <div class="detail-infor-container">
     <p class="text-detail-in">Chi tiết sản phẩm</p>
-    <p class="text-detail-in-size"><pre>{{ $pro->description }}</pre></p>
+    <p class="text-detail-in-size">{{ $pro->description }}</p>
   </div>
   <!-------------------------------------------------------- product reviews----------------------------------------------------------- -->
   <div class="product-reviews-container">
@@ -171,7 +171,7 @@
           <p class="text-quantity-big">{{ number_format($pro->rating, 1) }}</p>
           <p class="text-quantity-small">trên 5 sao</p>
         </div>
-        <div style="display: flex; padding-left: 8vw">
+        <div style="display: flex;">
         <p class="star-rating1">
             @php
                 // Làm tròn số với 1 chữ số thập phân

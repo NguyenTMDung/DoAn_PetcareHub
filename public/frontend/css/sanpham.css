@@ -50,7 +50,10 @@
   text-align: left;
   margin: auto;
 }
-
+.far, .fa-regular {
+  font-weight: 400;
+  font-size: 0.9em;
+}
 .pro-price {
   color: #ff0e0e;
   font-family: "Inter";

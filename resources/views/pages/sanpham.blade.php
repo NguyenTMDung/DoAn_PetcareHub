@@ -83,7 +83,7 @@
                             @endif                        
                         </div>
                         <div style="display: flex;justify-content: space-between;">
-                            <div style="display: flex;">
+                            <div style="display: flex;width:8em">
                                 <p class="star-rating" style="color: #000;">{{ number_format($prodata->rating, 1)}}</p>
                                 <p class="star-rating">
                                     @php

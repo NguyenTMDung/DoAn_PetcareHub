@@ -124,6 +124,17 @@ tr:nth-child(even) {
     width: 30vw;
     color: #667479;
 }
+.modal-body input[type=number], input[type=text]
+{
+    margin: 0;
+    padding: .375rem .75rem;
+}
+
+.form-group button
+{
+    display: block;
+    margin: 0.5em 0;
+}
 .form-select ,.form-select-sm
 {
     width: 10vw;

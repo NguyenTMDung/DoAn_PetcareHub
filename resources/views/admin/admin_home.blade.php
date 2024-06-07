@@ -39,11 +39,11 @@
                     style="padding: 5px;font-size: 20px;font-weight: 600;color: #003459;">
             </div>
         </div>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <th style="width: 10%;">#</th>
-                <th>Sản Phẩm</th>
-                <th>Số lượng</th>
+                <th style="width: 70%;">Sản Phẩm</th>
+                <th style="width: 20%;">Số lượng</th>
             </tr>
             <tr>
                 <td>
@@ -112,7 +112,7 @@
             style="padding: 5px;font-size: 20px;font-weight: 600;color: #003459;">
     </div>
     <h5 class="title">Tổng doanh thu</h5>
-    <p style="color: #96A5B8;">(Triệu đồng)</p>
+    <p style="color: #96A5B8;">(VNĐ)</p>
     <div class="chartBox">
         <canvas id="venueChart"></canvas>
     </div>

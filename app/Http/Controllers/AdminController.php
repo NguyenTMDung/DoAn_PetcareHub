@@ -182,6 +182,7 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
      $totalPerDay = DB::table('orders')
                  ->select(DB::raw('DATE(orders.created_at) as date'), DB::raw('SUM(orders.total) as total'))
                  ->whereBetween('orders.created_at', [$startOfWeek, $endOfWeek])
+                 ->where('orders.status', '=', 'Đã giao')
                  ->groupBy('date')
                  ->get();
                 
@@ -196,4 +197,5 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
 
 // }
 }
+
 }

@@ -17,7 +17,7 @@ class BillController extends Controller
         if(!$check) {
             return redirect('/admin-login');
         }
-        $emps = bill::all();
+        $emps = bill::where('status', 'đã giao')->get();
         return view('admin.admin_quanlyhoadon')->with('emps', $emps);
     }
     public function destroy($id)

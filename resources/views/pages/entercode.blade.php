@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<link rel="stylesheet" href="{{asset('public/frontend/css/styleAccount.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/styleSignin.css')}}">
 <div class="container">
     <div id="frame">
         <form action="{{ url('/checkcode') }}" method="POST">

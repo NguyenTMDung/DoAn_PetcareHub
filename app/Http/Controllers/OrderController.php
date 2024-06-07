@@ -18,7 +18,7 @@ class OrderController extends Controller
         if(!$check) {
            return redirect('/admin-login');
         }
-        $emps = order::get();
+        $emps = Order::get();
         return view('admin.admin_quanlydonhang')->with('emps', $emps);
     }
     public function destroy($id)
@@ -28,7 +28,7 @@ class OrderController extends Controller
         if(!$check) {
             return redirect('/admin-login');
          }
-        $emps = order::find($id);
+        $emps = Order::find($id);
         $emps->delete();
 
         Session::put('message', 'Đã xóa đơn hàng!');
@@ -138,6 +138,10 @@ class OrderController extends Controller
 
         // Phản hồi JSON về client (nếu cần)
         return response()->json(['message' => 'Hủy đơn hàng thành công']);
+    }
+    public function updateStatus()
+    {
+        return view('/admin');
     }
     
 }

@@ -49,12 +49,19 @@ Route::get('/entercode', [HomeController::class,'EnterCode']);
 Route::post('/checkcode', [HomeController::class,'CheckCode']);
 Route::get('/resetpass', [HomeController::class,'ResetPass']);
 Route::post('/resetpass', [HomeController::class,'NewPass']);
+Route::get('/profile', [HomeController::class,'Profile']);
+Route::get('/security', [HomeController::class,'Security']);
+Route::get('/address', [HomeController::class,'Address']);
+Route::get('/edit-profile', [HomeController::class,'EditProfile']);
+Route::post('/change-pass', [HomeController::class,'ChangePass']);
+
+
+
+
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
 Route::POST('/loc-san-pham-{cate_id}', [ProductController::class, 'filterProduct']);
-Route::get('/san-pham-{id}', [ProductController::class, 'allProduct']);
-
 
 //Gio hang
 Route::get('/gio-hang', [CartController::class, 'index'])->middleware('checkUser');
@@ -106,6 +113,7 @@ Route::get('/thong-ke-doanh-thu/{startOfWeek}/{endOfWeek}', [AdminController::cl
 Route::get('/thong-ke-don-hang/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDH']);
 
 
+
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);
 Route::post('/danh-muc-san-pham', [CategoryProductController::class, 'store']);
@@ -152,9 +160,9 @@ Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
 Route::get('/chi-tiet-don-hang/{id}', [OrderController::class, 'show']);
 Route::get('/don-hang-{id}', [OrderController::class, 'detail']);
-Route::post('/confirm-order', [OrderController::class, 'confirmOrder']);
-Route::post('/cancel-order', [OrderController::class, 'cancel']);
+Route::get('/update-status', [OrderController::class,'updateStatus']);
 
+// Route::resource('/cancel-order', OrderController::class);
 
 //admin slider
 Route::resource('/quan-ly-slider', SliderController::class);

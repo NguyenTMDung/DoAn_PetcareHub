@@ -9,11 +9,40 @@
                 <th style="width:10%;">Mã khách hàng</th>
                 <th style="width:10%;">Ngày đặt </th>
                 <th style="width:10%;">Tổng tiền</th>
-                <th style="width:18%;">Cập nhật</th>
+
                 <th style="width:20%;">Trạng thái</th>
                 <th style="width:20%;">Chi tiết</th>
             </tr>
         </thead>
+        <script>
+//         function handleSelectChange(selectElement) {
+//             console.log('click');
+//             var id = selectElement.getAttribute('data-id');
+//             var status = selectElement.value;
+//             console.log(id);
+//                 console.log('Starting fetch request');
+//                 $.ajax({
+//     url: '/update-status',
+//     type: 'GET',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+//     },
+//     data: JSON.stringify({
+//         status: status
+//     }),
+//     success: function(response) {
+//         console.log('Received response');
+//         console.log('Status updated successfully');
+//     },
+//     error: function(error) {
+//         console.error('Error updating status');
+//         console.error('Request failed', error);
+//     }
+// });
+//                 // Thực hiện các hành động khác tại đây
+//             }
+        </script>
         <tbody>
                 @foreach ($emps as $empdata)
                     <tr>
@@ -21,19 +50,14 @@
                         <td style="width:12%;">{{$empdata->user_id}}</td>
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
-                        <td class="update">
-                            <button class="confirm" data-id="{{$empdata->id}}">
-                                <i class="fas fa-check-circle"
-                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(0, 181, 0);"></i>
-                                <p>Xác nhận</p>
-                            </button>
-                            <button class="cancel">
-                                <i class="fas fa-times-circle"
-                                    style="margin-top: 5px;margin-right: 0.5vw;color: rgb(216, 0, 0);"></i>
-                                <p>Hủy</p>
-                            </button>
+                        <td style="width:15%;">
+                            {{-- <select name="status" id="status" data-id="{{ $empdata->id }}" onchange="handleSelectChange(this)">
+                                <option value="Chờ xác nhận" {{ $empdata->status == 'Chờ xác nhận' ? 'selected' : '' }}>Chờ xác nhận</option>
+                                <option value="Đang giao" {{ $empdata->status == 'Đang giao' ? 'selected' : '' }}>Đang giao</option>
+                                <option value="Đã giao" {{ $empdata->status == 'Đã giao' ? 'selected' : '' }}>Đã giao</option>
+                                <option value="Đã hủy" {{ $empdata->status == 'Đã hủy' ? 'selected' : '' }}>Đã hủy</option>
+                            </select> --}}
                         </td>
-                        <td style="width:15%;">{{$empdata->status}}</td>
                         <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
                                     data-bs-target="#detailorder" style="background-color:green">
@@ -62,6 +86,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        console.log($('#status').length);
         var table = $('#myTable').DataTable();
         table.on('click', '.edit', function(){  
           console.log('chuan bi hien thi');
@@ -131,7 +156,7 @@ $('#detailorder').modal('show');
 
 });
            
-            try {
+        try {
        
        table.on('click', '.delete', function(){
            $tr = $(this).closest('tr')
@@ -149,7 +174,39 @@ $('#detailorder').modal('show');
    } catch (error) {
        console.error("An error occurred:", error);
    }
+//    $('#status').change( function() {
+//     console.log('click');
+//     var id = this.getAttribute('data-id');
+//     var status = this.value;
+//     console.log(id);
+//     console.log('Starting fetch request');
+//     fetch('/update-status/'+id, {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+//     },
+//     body: JSON.stringify({
+//         status: status
+//     })
+//     }).then(function(response) {
+//     console.log('Received response');
+//     if (response.ok) {
+//         console.log('Status updated successfully');
+//     } else {
+//         console.error('Error updating status');
+//     }
+// }).catch(function(error) {
+//     console.error('Fetch request failed', error);
+// });
+// });
+
+
         });
+    
+
+
+        //Update Trạng thái đơn hàng
         
 </script>
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"

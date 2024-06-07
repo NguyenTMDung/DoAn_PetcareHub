@@ -14,6 +14,7 @@ class HomeController extends Controller
     {
        return view('pages.forgetpass');
     }
+   
     public function checkCustomer() {
         if (session('isLoggedIn')) {
            return true;
@@ -32,10 +33,14 @@ class HomeController extends Controller
 
         return view('pages.home',compact('topSales', 'newProducts', 'first', 'second'));
     }
-    public function Account(){
-      if(!$this->checkCustomer()) {
+    public function Profile(){
+        if(!$this->checkCustomer()) {
             return redirect('/login');
         }
+        return view('pages.profile');
+    }
+    public function Account(){
+     
         return view('pages.account');
     }
     public function Login(){
@@ -205,6 +210,47 @@ class HomeController extends Controller
         $customer->password = $password;
         $customer->save();
         return redirect('/login');
+    }
+    public function Security(){
+        return view('pages.changepass');
+    }
+    public function Address(){
+        return view('pages.address');
+    }
+    public function EditProfile(){
+        return view('pages.editprofile');
+    }
+    public function ChangePass(Request $request)
+    {
+        $customer = customer::find($request->session()->get('userId'));
+        $old_password = $request->old_password;
+        $new_password = $request->new_password;
+        $re_password = $request->re_password;
+        if (empty($old_password) || empty($new_password) || empty($re_password)) {
+            return back()->withErrors([
+                're_password' => 'Vui lòng nhập đủ thông tin.',
+            ]);
+        }
+       
+        if ($old_password != $customer->password) {
+            return back()->withErrors([
+                'old_password' => 'Mật khẩu cũ không đúng.',
+            ]);
+        }
+        if ($new_password != $re_password) {
+            return back()->withErrors([
+                're_password' => 'Mật khẩu mới không khớp.',
+            ]);
+        }
+        if($old_password == $new_password){
+            return back()->withErrors([
+                're_password' => 'Mật khẩu mới không được trùng với mật khẩu cũ.',
+            ]);
+        }
+        $customer->password = $new_password;
+        $customer->save();
+        return redirect('/profile');
+
     }
 }
 

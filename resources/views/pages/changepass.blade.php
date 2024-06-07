@@ -18,7 +18,6 @@
                                 <tr>
                                     <td><h5>Nhập mật khẩu cũ </h5></td>
                                     <td><input name="old_password" type="password" id="old-password"></td>
-                                   
                                 </tr>
                                 <tr>
                                     <td><h5>Nhập mật khẩu mới </h5></td>
@@ -30,6 +29,9 @@
                                    
                                 </tr>
                             </table>
+                            @if ($errors->has('old_password'))
+                                    <span class="text-danger">{{ $errors->first('old_password') }}</span>
+                             @endif
                             @if ($errors->has('re_password'))
                             <span class="text-danger">{{ $errors->first('re_password') }}</span>
                              @endif

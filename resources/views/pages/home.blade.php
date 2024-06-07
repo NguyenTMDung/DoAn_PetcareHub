@@ -169,7 +169,7 @@
                                                 @endif
                                                 </div>
                                                 <div class="sales">
-                                                    Lượt bán: <p class="number-of-sales"> {{ number_format($second->number_of_sale, 0, '.', '.') }} </p>
+                                                    Lượt bán: <p class="number-of-sales"> {{ number_format($new->number_of_sale, 0, '.', '.') }} </p>
                                                 </div>
                                             </a>
                                         </div>

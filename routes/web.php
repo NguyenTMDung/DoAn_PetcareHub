@@ -161,7 +161,7 @@ Route::put('/quan-ly-don-hang/{id}', [OrderController::class, 'update']);
 Route::delete('/quan-ly-don-hang/{id}', [OrderController::class, 'destroy']);
 Route::get('/chi-tiet-don-hang/{id}', [OrderController::class, 'show']);
 Route::get('/don-hang-{id}', [OrderController::class, 'detail']);
-Route::get('/update-status', [OrderController::class,'updateStatus']);
+Route::post('/update-status', [OrderController::class,'UpdateStatus']);
 
 // Route::resource('/cancel-order', OrderController::class);
 

@@ -138,6 +138,10 @@ hr {
     display: flex;
     justify-content: center;
 }
+.text-danger
+{
+    margin-left: 9.5em;
+}
 a {
     font-size: 1.4vw;
     font-weight: 600;
@@ -157,7 +161,7 @@ a {
 
 #change-password h5 {
     font-size: 1.1em;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 #change-password input {
@@ -171,10 +175,12 @@ a {
 
 #forgot-password a {
     color: #003459;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 600;
     font-style: italic;
-    margin-left: 9vw;
+    margin-left: 7.2em;
+    text-decoration-line: underline;
+
 }
 
 #address-detail tr {

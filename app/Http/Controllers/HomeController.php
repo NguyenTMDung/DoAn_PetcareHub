@@ -28,28 +28,16 @@ class HomeController extends Controller
         $second = Product::where('new', 1)->first();
         if ($first) {
             $topSales = Product::where('bestseller', '1')
-                ->where('id', '!=', $first->id)
-                ->inRandomOrder()
-                ->take(6)
-                ->get();
+                ->where('id', '!=', $first->id)->get();
         } else {
-            $topSales = Product::where('bestseller', '1')
-                ->inRandomOrder()
-                ->take(6)
-                ->get();
+            $topSales = Product::where('bestseller', '1');
         }
         
         if ($second) {
             $newProducts = Product::where('new', 1)
-                ->where('id', '!=', $second->id)
-                ->inRandomOrder()
-                ->take(6)
-                ->get();
+                ->where('id', '!=', $second->id)->get();
         } else {
-            $newProducts = Product::where('new', 1)
-                ->inRandomOrder()
-                ->take(6)
-                ->get();
+            $newProducts = Product::where('new', 1)->get();
         }
         return view('pages.home',compact('topSales', 'newProducts', 'first', 'second'));
     }

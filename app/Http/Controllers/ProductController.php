@@ -316,6 +316,7 @@ class ProductController extends Controller
             ->where('typeProduct.category_id', $categoryId)
             ->where('product.id', '!=', $id)
             ->select('product.*')
+            ->take(4)
             ->get();
         // dd($pro);
         $sizes = ProductSize::where('product_id', $id)->get(['id', 'size', 'price']);

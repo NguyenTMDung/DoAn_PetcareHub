@@ -2,6 +2,7 @@
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleOrderadmin.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/quanlynhanvien.css')}}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <table id="myTable" style="width:100%;">
         <thead>
             <tr class="head">
@@ -14,35 +15,7 @@
                 <th style="width:20%;">Chi tiết</th>
             </tr>
         </thead>
-        <script>
-//         function handleSelectChange(selectElement) {
-//             console.log('click');
-//             var id = selectElement.getAttribute('data-id');
-//             var status = selectElement.value;
-//             console.log(id);
-//                 console.log('Starting fetch request');
-//                 $.ajax({
-//     url: '/update-status',
-//     type: 'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'X-CSRF-TOKEN': '{{ csrf_token() }}'
-//     },
-//     data: JSON.stringify({
-//         status: status
-//     }),
-//     success: function(response) {
-//         console.log('Received response');
-//         console.log('Status updated successfully');
-//     },
-//     error: function(error) {
-//         console.error('Error updating status');
-//         console.error('Request failed', error);
-//     }
-// });
-//                 // Thực hiện các hành động khác tại đây
-//             }
-        </script>
+       
         <tbody>
                 @foreach ($emps as $empdata)
                     <tr>
@@ -51,12 +24,12 @@
                         <td style="width:12%;">{{$empdata->created_at}}</td>
                         <td style="width:12%;">{{$empdata->total}}</td>
                         <td style="width:15%;">
-                            {{-- <select name="status" id="status" data-id="{{ $empdata->id }}" onchange="handleSelectChange(this)">
+                            <select name="status" id="status" data-id="{{ $empdata->id }}" onchange="handleSelectChange(this)">
                                 <option value="Chờ xác nhận" {{ $empdata->status == 'Chờ xác nhận' ? 'selected' : '' }}>Chờ xác nhận</option>
                                 <option value="Đang giao" {{ $empdata->status == 'Đang giao' ? 'selected' : '' }}>Đang giao</option>
                                 <option value="Đã giao" {{ $empdata->status == 'Đã giao' ? 'selected' : '' }}>Đã giao</option>
                                 <option value="Đã hủy" {{ $empdata->status == 'Đã hủy' ? 'selected' : '' }}>Đã hủy</option>
-                            </select> --}}
+                            </select>
                         </td>
                         <td style="width:10%;">
                                 <button type="button" class="btn btn-primary edit" data-bs-toggle="modal"
@@ -72,6 +45,34 @@
             </tr>
         </tbody>
     </table>
+    <script>
+        function handleSelectChange(selectElement) {
+            console.log('click');
+            var id = selectElement.getAttribute('data-id');
+            var status = selectElement.value;
+            console.log(id);
+            console.log(status);
+                console.log('Starting fetch request');
+                $.ajax({
+                    url: '/DoAn_PetcareHub/update-status',
+                    type: 'POST',
+                    data: {
+                    id: id,
+                    status: status,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+        },
+                 success: function(response) {
+                console.log('Received response');
+                                            },
+                                            error: function(xhr, status, error) {
+            console.log('AJAX error:', status, error);
+            console.log(xhr.responseText);
+        }
+    
+});
+                // Thực hiện các hành động khác tại đây
+            }
+        </script>
     <?php
     $message = Session::get('message');
     if($message){

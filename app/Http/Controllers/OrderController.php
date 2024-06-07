@@ -8,6 +8,7 @@ use App\Models\order;
 use App\Models\orderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller
 {
@@ -139,9 +140,15 @@ class OrderController extends Controller
         // Phản hồi JSON về client (nếu cần)
         return response()->json(['message' => 'Hủy đơn hàng thành công']);
     }
-    public function updateStatus()
+    public function UpdateStatus( Request $request)
     {
-        return view('/admin');
+        Log::info('Request data:', $request->all());
+        $id = $request->input('id');
+        $status = $request->input('status');
+         $order = Order::find($id);
+         $order->status = $status;
+         $order->save();
+         
     }
     
 }

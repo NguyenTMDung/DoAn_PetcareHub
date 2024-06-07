@@ -27,6 +27,9 @@
     nav li.active a{
     text-decoration-line: underline;
     }
+    ::selection {
+    background-color: yellow;
+    }
 </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -232,6 +235,20 @@
 
         updateCartCount();
     });
+
+    $(document).ready(function(){
+            $("#submit").click(function(){
+                event.preventDefault(); 
+                var searchTerm = $("#input_search").val().toLowerCase();
+
+                var searchPopup = window.find(searchTerm);
+
+                // Nếu không tìm thấy từ khóa, hiển thị thông báo
+                if (!searchPopup) {
+                    alert("Không tìm thấy từ khóa: " + searchTerm);
+                }
+            });
+        });
     </script>
 </body>
 </html>

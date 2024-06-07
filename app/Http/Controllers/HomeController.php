@@ -24,13 +24,33 @@ class HomeController extends Controller
     }
     public function index(){
 
-        $topSales = Product::orderBy('number_of_sale', 'desc')->where('id','!=','1')->take(10)->get();
-
-        $first = Product::where('id', '1')->first();
-        $second = Product::where('id', '2')->first();
-
-        $newProducts = Product::where('new', 1)->inRandomOrder()->take(10)->get();
-
+        $first = Product::where('bestseller', '1')->first();
+        $second = Product::where('new', 1)->first();
+        if ($first) {
+            $topSales = Product::where('bestseller', '1')
+                ->where('id', '!=', $first->id)
+                ->inRandomOrder()
+                ->take(6)
+                ->get();
+        } else {
+            $topSales = Product::where('bestseller', '1')
+                ->inRandomOrder()
+                ->take(6)
+                ->get();
+        }
+        
+        if ($second) {
+            $newProducts = Product::where('new', 1)
+                ->where('id', '!=', $second->id)
+                ->inRandomOrder()
+                ->take(6)
+                ->get();
+        } else {
+            $newProducts = Product::where('new', 1)
+                ->inRandomOrder()
+                ->take(6)
+                ->get();
+        }
         return view('pages.home',compact('topSales', 'newProducts', 'first', 'second'));
     }
     public function Profile(){

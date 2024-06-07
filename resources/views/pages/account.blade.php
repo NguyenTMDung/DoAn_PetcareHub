@@ -2,7 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleAccount.css')}}">
 <div class="container">
-    <form action="{{ url('/change-infor') }}" method="POST">
+    <form action="{{URL::to('/edit-profile')}}" method="GET">
         @csrf
         <div id="profile">
             <div id="profile-head">
@@ -26,11 +26,10 @@
 </div>
             </div>
         </div>
-        <div style="width: 15vw;margin: auto;">
+        <div  id="edit-complete">
+            <a href="{{ url('/profile') }}">Hủy</a>
             <input type="submit" id="submit" name="submit" value="Chỉnh sửa thông tin">
-        </div>
-        <div style="width: 15vw;margin: auto;">
-            <li class="action"><a href="{{URL::to('/logout')}}" >Sign out</a></li>
+        
         </div>
     </form>
 </div>

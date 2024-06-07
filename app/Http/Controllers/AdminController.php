@@ -127,6 +127,7 @@ class AdminController extends Controller
         $total = DB::table('orders')
           
             ->where('orders.created_at', 'like', '%'.$date.'%')
+            ->where('orders.status', '=', 'Đã giao')
             ->sum('orders.total');
         $user= DB::table('users')
             ->where('date_join', 'like', '%'.$date.'%')
@@ -159,6 +160,9 @@ class AdminController extends Controller
 
 
         $response = [
+            'orderofweek' => $orderofweek,
+            // 'total' => $total,
+            // 'user' => $user,
         ];
         
         return response()->json($response);
@@ -178,6 +182,7 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
      $totalPerDay = DB::table('orders')
                  ->select(DB::raw('DATE(orders.created_at) as date'), DB::raw('SUM(orders.total) as total'))
                  ->whereBetween('orders.created_at', [$startOfWeek, $endOfWeek])
+                 ->where('orders.status', '=', 'Đã giao')
                  ->groupBy('date')
                  ->get();
                 
@@ -192,4 +197,5 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
 
 // }
 }
+
 }

@@ -19,7 +19,8 @@
     width: 100%;
     height: 7em;
 }
-#sign-out {
+
+#sign-out,.container  #submit {
     width: max-content;
     text-align: center;
     padding: 0.2em 1em;
@@ -36,6 +37,7 @@
 #btn-signout {
     width: 15vw;
     margin: auto;
+    text-align: center;
 }
 
 #detail-account a {
@@ -86,22 +88,32 @@
     padding: 0.7vw;
     margin-top: 0.5vw;
     margin-bottom: 1.5vw;
-    font-size: 1.1vw;
+    font-size: 1.1em;
     border-radius: 10px;
     border: 1px solid #afafaf;
     background-color: #ffffff;
     text-align: left;
+    line-height: unset;
 }
 
 .sty-profile p {
-    font-size: 1.2vw;
+    font-size: 1.1em;
+}
+.sty-profile h5 {
+    font-weight: 600;
 }
 
 #edit-complete #complete {
     margin: unset;
 }
-
-#complete {
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #000;
+    opacity: 1;
+}
+#complete{
     width: 15vw;
     font-size: 1.4vw;
     font-weight: 600;
@@ -115,6 +127,17 @@
     justify-content: center;
 }
 
+.container  #submit{
+    width: 15vw;
+    font-size: 1.4vw;
+    font-weight: 600;
+    background-color: #003459;
+    color: #ffffff;
+    padding: 0.7vw;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
 a {
     font-size: 1.4vw;
     font-weight: 600;
@@ -464,7 +487,6 @@ h3 {
     color: #000;
     border: none;
 }
-
 .modal-body h4
 {
     font-size: 1.2em;
@@ -663,11 +685,6 @@ h3 {
     #detail-account a {
         font-size: 1.1em;
     }
-
-    #btn-signout {
-        width: 9em;
-    }
-
     #sign-out {
         font-size: 1.2em;
     }

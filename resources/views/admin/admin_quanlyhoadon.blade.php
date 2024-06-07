@@ -180,6 +180,7 @@ $('#detailBill').modal('show');
             </form>
         </div>
     </div>
+</div>
 
 <div class="modal fade" id="detailBill" tabindex="-1" aria-labelledby="exampleModalLabel"
 aria-hidden="true">

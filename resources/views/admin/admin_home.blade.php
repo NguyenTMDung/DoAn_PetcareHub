@@ -459,18 +459,6 @@ const dataRevenue = {
             borderWidth: 1,
             barPercentage: 0.9,
             categoryPercentage: 0.5
-        }, {
-            label: 'Dịch vụ',
-            data: [4, 8, 10, 6, 11, 7, 11],
-            backgroundColor: [
-                'rgba(255, 26, 104, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 26, 104, 1)'
-            ],
-            borderWidth: 1,
-            barPercentage: 0.9,
-            categoryPercentage: 0.5
         },]
     };
     console.log("Tao xong du lieu cho bieu do 1");

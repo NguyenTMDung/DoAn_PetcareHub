@@ -18,7 +18,7 @@ class OrderController extends Controller
         if(!$check) {
            return redirect('/admin-login');
         }
-        $emps = order::get();
+        $emps = Order::get();
         return view('admin.admin_quanlydonhang')->with('emps', $emps);
     }
     public function destroy($id)
@@ -28,7 +28,7 @@ class OrderController extends Controller
         if(!$check) {
             return redirect('/admin-login');
          }
-        $emps = order::find($id);
+        $emps = Order::find($id);
         $emps->delete();
 
         Session::put('message', 'Đã xóa đơn hàng!');
@@ -37,16 +37,34 @@ class OrderController extends Controller
     public function show($id)
 {
    
-    $order = DB::table('order')
-        ->join('orderdetail', 'orderdetail.order_id', '=', 'order.id')
+    // $order = DB::table('orders')
+    //     ->join('orderdetail', 'orderdetail.order_id', '=', 'orders.id')
+    //     ->join('product', 'product.id', '=', 'orderdetail.product_id')
+    //     ->join('typeproduct','typeproduct.id','=','product.typeProduct_id')
+    //     ->join('product_sizes','product_sizes.product_id','=','product.id')
+    //     ->where('orders.id', '=', $id)
+    //     ->whereColumn('product.size', 'product_sizes.size')
+    //     ->select( 'orders.total as total','orders.shipcost as ship_cost','orderdetail.num as num'
+    //     , 'product.name as product_name','product_sizes.price as price' ,'typeproduct.name as typeproduct_name'
+    //     ,'orders.name as kh_name','orders.id as id','orders.status as status','orders.created_at as created_at')
+    //     ->get();
+    // return response()->json($order);
+    try {
+        $order = DB::table('orders')
+        ->join('orderdetail', 'orderdetail.order_id', '=', 'orders.id')
         ->join('product', 'product.id', '=', 'orderdetail.product_id')
         ->join('typeproduct','typeproduct.id','=','product.typeProduct_id')
-        ->where('order.id', '=', $id)
-        ->select( 'order.total as total','order.ship_cost as ship_cost','orderdetail.num as num'
-        , 'product.name as product_name','product.price','typeproduct.name as typeproduct_name'
-        ,'order.name as kh_name','order.id as id','order.status as status','order.created_at as created_at')
-        ->get();
-    return response()->json($order);
+        ->join('product_sizes','product_sizes.product_id','=','product.id')
+        ->where('orders.id', '=', $id)
+        ->whereColumn('product.size', 'product_sizes.size')
+        ->select( 'orders.total as total','orders.shipcost as ship_cost','orderdetail.num as num'
+        , 'product.name as product_name','product_sizes.price as price' ,'typeproduct.name as typeproduct_name'
+        ,'orders.name as kh_name','orders.id as id','orders.status as status','orders.created_at as created_at')
+            ->get();
+        return response()->json($order);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
 }
     // {
     //     $order = DB::table('order')
@@ -120,6 +138,10 @@ class OrderController extends Controller
 
         // Phản hồi JSON về client (nếu cần)
         return response()->json(['message' => 'Hủy đơn hàng thành công']);
+    }
+    public function updateStatus()
+    {
+        return view('/admin');
     }
     
 }

@@ -22,8 +22,6 @@
                 <hr>
                 <a href="{{URL::to('/security')}}">Tài khoản & Bảo mật</a>
                 <hr>
-                <a href="{{URL::to('/address')}}">Địa chỉ</a>
-                <hr>
                 <a href="{{URL::to('/cho-xac-nhan')}}">Lịch sử mua hàng</a>
                 <hr>
             </div>

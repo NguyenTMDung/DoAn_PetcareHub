@@ -26,8 +26,8 @@
 </div>
             </div>
         </div>
-        <div style="width: 15vw;margin: auto;">
-           
+        <div  id="edit-complete">
+            <a href="{{ url('/profile') }}">Hủy</a>
             <input type="submit" id="submit" name="submit" value="Chỉnh sửa thông tin">
         
         </div>

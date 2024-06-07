@@ -126,7 +126,7 @@
                             <div class="carousel-inner">
                                 <div class="item active">
                                     @if(isset($second->id))
-                                    <div class="col-md-3 col-xs-6 col-sm-6 col-md-3">
+                                    <div class="col-xs-6 col-sm-6 col-md-3">
                                         <div class="product">
                                             <a href="{{URL::to('/chi-tiet-san-pham-'.$second->id)}}">
                                                 <div class="img-products">
@@ -212,6 +212,7 @@
         <div id="map">
 
         </div>
+    </div>
     </div>
     <script>
         function ggmap() {

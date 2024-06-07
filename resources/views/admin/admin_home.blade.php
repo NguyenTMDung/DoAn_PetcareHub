@@ -1,6 +1,7 @@
 @extends('admin_layout')
 @section('admin_content')
 <link rel="stylesheet" href="{{asset('public/frontend/css/styleHomeadmin.css')}}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div id="part-1">
 
     <div id="statistic">
@@ -31,22 +32,28 @@
         </div>
     </div>
     <div id="best-seller">
-        <h5 class="title">Sản phẩm bán chạy</h5>
+        <div style="display: flex; align-items: center;">
+            <h5 class="title">Sản phẩm bán chạy</h5>
+            <div id="date" style="margin-bottom: 10px; margin-left:20px">
+                <input type="month" id="top" name="a"
+                    style="padding: 5px;font-size: 20px;font-weight: 600;color: #003459;">
+            </div>
+        </div>
         <table>
             <tr>
                 <th style="width: 10%;">#</th>
                 <th>Sản Phẩm</th>
-                <th>Tỉ lệ</th>
+                <th>Số lượng</th>
             </tr>
             <tr>
                 <td>
                     <p>1</p>
                 </td>
                 <td>
-                    <p id="product-1" class="text-truncate-container">Thức ăn cho chó</p>
+                    <p id="product-1" class="text-truncate-container"></p>
                 </td>
                 <td>
-                    <p id="ratio-1">10%</p>
+                    <p id="ratio-1"></p>
                 </td>
             </tr>
             <tr>
@@ -54,11 +61,10 @@
                     <p>2</p>
                 </td>
                 <td>
-                    <p id="product-2" class="text-truncate-container">Quần Áo Mùa Hè Teddy Thú Cưng Giải
-                        Phóng Mặt Bằng Áo Cầu Vồng Puff Tay Chống Trơn Mỏng Phong Cách Chó Mèo Mùa Hè</p>
+                    <p id="product-2" class="text-truncate-container"></p>
                 </td>
                 <td>
-                    <p id="ratio-2">8%</p>
+                    <p id="ratio-2"></p>
                 </td>
             </tr>
             <tr>
@@ -66,10 +72,10 @@
                     <p>3</p>
                 </td>
                 <td>
-                    <p id="product-3" class="text-truncate-container">Thanh mài răng</p>
+                    <p id="product-3" class="text-truncate-container"></p>
                 </td>
                 <td>
-                    <p id="ratio-3">5%</p>
+                    <p id="ratio-3"></p>
                 </td>
             </tr>
             <tr>
@@ -77,10 +83,10 @@
                     <p>4</p>
                 </td>
                 <td>
-                    <p id="product-4" class="text-truncate-container">Xúc xích</p>
+                    <p id="product-4" class="text-truncate-container"></p>
                 </td>
                 <td>
-                    <p id="ratio-4">4%</p>
+                    <p id="ratio-4"></p>
                 </td>
             </tr>
             <tr>
@@ -88,10 +94,10 @@
                     <p>5</p>
                 </td>
                 <td>
-                    <p id="product-5" class="text-truncate-container">Sữa tắm</p>
+                    <p id="product-5" class="text-truncate-container"></p>
                 </td>
                 <td>
-                    <p id="ratio-5">2.5%</p>
+                    <p id="ratio-5"></p>
                 </td>
             </tr>
         </table>
@@ -165,22 +171,43 @@
             </div>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
 <script>
-    window.onload = (function loadDate() {
-        let date = new Date(),
-            day = date.getDate(),
-            month = date.getMonth() + 1,
-            year = date.getFullYear();
+    // window.onload = (function loadDate() {
+    //     let date = new Date(),
+    //         day = date.getDate(),
+    //         month = date.getMonth() + 1,
+    //         year = date.getFullYear();
 
-        if (month < 10) month = "0" + month;
-        if (day < 10) day = "0" + day;
+    //     if (month < 10) month = "0" + month;
+    //     if (day < 10) day = "0" + day;
 
-        const todayDate = `${year}-${month}-${day}`;
+    //     const todayDate = `${year}-${month}-${day}`;
+    //     const currentMonthYear = `${year}-${month}`;
 
-        document.getElementById("current-time").value = todayDate;
-        document.getElementById("current-time-doanhthu").value = todayDate;
-        document.getElementById("current-time-donhang").value = todayDate;
-        document.getElementById("current-year").innerHTML = year;
-    });
+    //     document.getElementById("current-time").value = todayDate;
+    //     document.getElementById("current-time-doanhthu").value = todayDate;
+    //     document.getElementById("current-time-donhang").value = todayDate;
+    //     document.getElementById("current-year").innerHTML = year;
+    //     document.getElementById("top").value = currentMonthYear;
+    // });
+    window.onload = function() {
+    let date = new Date(),
+        day = date.getDate(),
+        month = date.getMonth() + 1,
+        year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    const todayDate = `${year}-${month}-${day}`;
+    const currentMonthYear = `${year}-${month}`;
+    document.getElementById("top").value = currentMonthYear;
+    document.getElementById("current-time").value = todayDate;
+    document.getElementById("current-time-doanhthu").value = todayDate;
+    document.getElementById("current-time-donhang").value = todayDate;
+    document.getElementById("current-year").innerHTML = year;
+
+    
+};
 
 
     
@@ -493,7 +520,32 @@ const dataRevenue = {
    console.log("chay xong ajax cho doanh thu");
    
     });
-
+$('#top').on('change', function() {
+    let selectedMonth = document.getElementById("top").value;
+    console.log("Selected month: " + selectedMonth);
+    $.ajax({
+       
+       url: '/DoAn_PetcareHub/top',
+       method: 'POST',
+       data: {
+              month: selectedMonth,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+        },
+       success: function(response) {
+        console.log(response);
+        for (let i = 1; i <= 5; i++) {
+        if (response[i - 1]) {
+            document.getElementById(`product-${i}`).innerHTML = response[i - 1].product_name;
+            document.getElementById(`ratio-${i}`).innerHTML = response[i - 1].total;
+        } else {
+            document.getElementById(`product-${i}`).innerHTML = "";
+            document.getElementById(`ratio-${i}`).innerHTML = "";
+        }
+    }
+        
+       }
+    });
+})
     document.getElementById('status').innerHTML= '<h3>Trang chủ</h3>'
 </script>
 @endsection

@@ -27,7 +27,7 @@
                 <thead>
                     <tr class="head">
                         <th style="width:20%;">Số hóa đơn</th>
-                        <th style="width:20%;">Mã khách hàng</th>
+                        <th style="width:20%;">Tên khách hàng</th>
                         <th style="width:20%;">Ngày hóa đơn</th>
                         <th style="width:20%;">Tổng tiền</th>
                         <th style="width:10%;">Chi tiết</th>
@@ -37,7 +37,7 @@
                     @foreach ($emps as $empdata)
                     <tr>
                         <td style="width:20%;">{{$empdata->id}}</td>
-                        <td style="width:20%;">{{$empdata->user_id}}</td>
+                        <td style="width:20%;">{{$empdata->name}}</td>
                         <td style="width:20%;">{{$empdata->updated_at}}</td>
                         <td style="width:20%;">{{$empdata->total}}</td>
                         <td style="width:10%;">

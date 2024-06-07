@@ -197,5 +197,39 @@ public function ThongKeDT($startOfWeek, $endOfWeek){
 
 // }
 }
+public function Top(Request $request){
+    if(!$this->checkadmin()) {
+        return redirect('/admin-login');
+    }
 
+    // Ghi lại dữ liệu yêu cầu vào nhật ký
+    Log::info('Dữ liệu yêu cầu: ', $request->all());
+
+    $month = $request->input('month');
+    $month = $request->input('month');
+    if (!$month) {
+        return response()->json(['error' => 'Tháng không hợp lệ'], 400);
+    }
+
+    // Tách năm và tháng từ chuỗi month
+    $year = substr($month, 0, 4);
+    $monthOnly = substr($month, 5, 2);
+    // Đảm bảo $month là giá trị hợp lệ
+    if(!$month) {
+        Log::error('Tháng không hợp lệ hoặc bị thiếu');
+        return response()->json(['error' => 'Tháng không hợp lệ'], 400);
+    }
+
+    $top = DB::table('orderdetail')
+    ->join('product', 'product.id', '=', 'orderdetail.product_id')
+    ->join('orders', 'orders.id', '=', 'orderdetail.order_id')
+    ->select('product.name as product_name', DB::raw('SUM(orderdetail.num) as total'))
+    ->whereYear('orders.created_at', $year)
+     ->whereMonth('orders.created_at', $monthOnly)
+    ->groupBy('product.name')
+    ->orderBy('total', 'desc')
+    ->limit(5)
+    ->get();
+    return response()->json($top);
+}
 }

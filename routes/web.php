@@ -112,6 +112,7 @@ Route::get('/admin-logout', [AdminController::class,'Logout']);
 Route::get('/thong-ke/{date}', [AdminController::class,'ThongKe']);
 Route::get('/thong-ke-doanh-thu/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDT']);
 Route::get('/thong-ke-don-hang/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDH']);
+Route::post('/top', [AdminController::class,'Top']);
 
 
 

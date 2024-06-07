@@ -44,25 +44,15 @@
         <div id="infor">
             <div id="phone">
                 <p id="sty_phone">Phone</p>
-                @if(session('isLoggedIn'))
-                    @php
-                        $user = \App\Models\Customer::find(session('userId'));
-                    @endphp
-                    <p id="phone_number">{{ $user ? $user->phone : '' }}</p>
-                @else
-                    <p id="phone_number"></p>
-                @endif
+              
+                    <p id="phone_number">19006068</p>
+             
             </div>
             <div id="email">
                 <p id="sty_email">Email</p>
-                @if(session('isLoggedIn'))
-                    @php
-                        $user = \App\Models\Customer::find(session('userId'));
-                    @endphp
-                    <p id="email_addr">{{ $user ? $user->email : '' }}</p>
-                @else
-                    <p id="email_addr"></p>
-                @endif
+              
+                    <p id="email_addr">petcarehub@gmail.com</p>
+                
             </div>
         </div>
     </div>

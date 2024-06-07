@@ -122,8 +122,8 @@
                 <p>
                     Địa chỉ: Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam.
                 </p>
-                <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline:+84 9123123123</a><br>
-                <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: abc@gmail.com</a>
+                <a href="#hotline"><i class="fas fa-phone-alt"></i>Hotline: 19006068</a><br>
+                <a href="#shop_email"><i class="bi bi-envelope-fill"></i>Email: petcarehub@gmail.com</a>
                 <div id="connect_shop">
                     <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="#facebook" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>

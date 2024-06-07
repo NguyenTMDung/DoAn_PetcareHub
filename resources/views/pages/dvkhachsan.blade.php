@@ -224,86 +224,34 @@
             bạn sạch sẽ và đẹp hơn. Nhưng đừng quên việc chải lông, vệ sinh tai hàng ngày cho các bé khi ở nhà. Việc
             đó sẽ giúp cho thú cưng luôn duy trì được sự sạch sẽ, khỏe mạnh. Hãy tham khảo các mẹo và sản phẩm mà
             chúng tôi sử dụng để chăm sóc cho thú cưng của bạn tại nhà.</p>
-        <div class="products-list">
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp1.jpg')}}" alt="">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Sữa tắm Oliver cho chó mèo dưỡng mượt lông khử mùi 450ml</p>
-                    </div>
-                    <div class="pro-price">
-                        30.000 VND
-                    </div>
-                    <div class="sales">
-                        <p>Lượt bán:</p> 
-                        <p class="number-of-sales"> 1232</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp2.jpg')}}" alt="" >
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Dung Dịch Vệ Sinh Tai, Nước Rửa Tai Cho Chó Mèo TRIXIE Ear Care 50ML</p>
-                    </div>
-                    <div class="pro-price">
-                        59.000 VND
-                    </div>
-                    <div class="sales">
-                        <p>Lượt bán:</p> 
-                        <p class="number-of-sales"> 1232</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp3.jpg')}}" alt="">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Lược chải lông thú cưng tẩy lông cho mèo và chó</p>
-                    </div>
-                    <div class="pro-price">
-                        37.000 VND
-                    </div>
-                    <div class="sales">
-                        <p>Lượt bán:</p> 
-                        <p class="number-of-sales"> 1232</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="img-products">
-                        <img src="{{asset('public/frontend/image/sp5.jpg')}}" alt="">
-                    </div>
-                    <div class="text-truncate-container">
-                        <p>Khăn Tắm Siêu Thấm Hút Cho Chó Mèo Kích Thước 44x32cm</p>
-                    </div>
-                    <div class="pro-price">
-                        35.000 VND
-                    </div>
-                    <div class="sales">
-                        <p>Lượt bán:</p> 
-                        <p class="number-of-sales"> 1232</p>
-                    </div>
-                </a>
-            </div>
+            <div class="products-list">
+        @foreach($topSales as $top)
+        <div class="item">
+            <a href="{{URL::to('/chi-tiet-san-pham-'.$top->id)}}">
+                <div class="img-products">
+                    <img src="public/storage/products/{{$top->image}}" alt="" >
+                </div>
+                <div class="text-truncate-container">
+                    <p>{{$top->name}}</p>
+                </div>
+                <div class="pro-price">
+                    @if ($top->min_price == $top->max_price)
+                        {{ number_format($top->min_price, 0, '.', '.') }} VNĐ
+                    @else
+                        {{ number_format($top->min_price, 0, '.', '.') }} - {{ number_format($top->max_price, 0, '.', '.') }} VNĐ
+                    @endif
+                </div>
+                <div class="sales">
+                    <p>Lượt bán:</p> 
+                    <p class="number-of-sales">{{ number_format($top->number_of_sale, 0, '.', '.') }}</p>
+                </div>
+            </a>
         </div>
-    </div>
-   
-    <div id="sub">
-    <a href="{{ url('/sanpham') }}" style="color:aliceblue">
-        <input type="Submit" value="Sản phẩm"> 
-    </a>
+        @endforeach
+        </div>
 </div>
-    <br><br><br>
-</div>
-</body>
+<br>
+<br><br><br>
 
 <script>
 function toggleDetails1() {

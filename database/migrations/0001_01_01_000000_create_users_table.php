@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('code');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone');
             $table->date('date_of_birth')->nullable();
             $table->string('role')->default('Customer');

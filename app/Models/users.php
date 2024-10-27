@@ -17,7 +17,7 @@ class users extends Model
         parent::boot();
 
         static::addGlobalScope('admin', function ($builder) {
-            $builder->where('role', '!=', 'customer');
+            $builder->where('role', '!=', 'Customer');
         });
 
         static::creating(function ($users) {

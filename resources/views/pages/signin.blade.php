@@ -31,7 +31,18 @@
                 <span class="text-danger">{{ $errors->first('password') }}</span>
                 @endif
 
-                <input type="submit" name="submit" id="submit" value="Đăng ký">
+                <input type="submit" name="submit" id="submittSigin" value="Đăng ký" style="
+                width: max-content;
+                text-align: center;
+                padding: 0.2em 1em;
+                background-color: var(--Primary-Color-Dark-Blue, #003459);
+                color: #ffffff;
+                font-size: 1.3em;
+                font-weight: 700;
+                border-radius: 25px;
+                margin: auto;
+                margin-top: 2vw;
+                display: flex;">
             </form>
         </div>
     </div>

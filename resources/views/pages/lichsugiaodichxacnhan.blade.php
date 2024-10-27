@@ -50,10 +50,17 @@
                                         <i class="bi bi-x-circle"></i>
                         </button>
                         @endif
+    
                         <a href="{{URL::to('/don-hang-'. $orderData->id)}}"><button type="button" class="btn btn-primary detail" data-bs-toggle="modal"
                                         style="background-color: #1eff00;">
                                         <i class="bi bi-pencil-square"></i>
                         </button></a>
+
+                        @if($orderData->status === "Đã giao")
+                        <button type="button" class="btn btn-primary vote" data-bs-toggle="modal"
+                                        data-bs-target="#voteModal" style="background-color: yellow; color: black">Đánh giá
+                        </button>
+                        @endif
                     </div>
                     </td>
                 </tr>
@@ -109,6 +116,31 @@
                 </div>
                 <div class="modal-body">
                     <h4>Lý do hủy đơn</h4>
+                    <form action="" method="POST" id="deleteForm">
+                        {{csrf_field()}}
+                        {{ method_field('POST')}}
+                        <input type="hidden" name="code" id="order_code" value="">
+                        <input type="text" name="reason" id="reason">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                  <button type="submit" class="btn btn-primary" id="submit">Xác nhận</button>
+                </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- form đánh giá -->
+        <div class="modal fade" id="voteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(148, 148, 148, 0.326);">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Đánh giá đơn hàng</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4></h4>
                     <form action="" method="POST" id="deleteForm">
                         {{csrf_field()}}
                         {{ method_field('POST')}}

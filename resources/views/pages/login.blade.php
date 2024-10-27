@@ -43,8 +43,20 @@
             <input
                 type="submit"
                 name="submit"
-                id="submit"
+                id="submitt"
                 value="Đăng Nhập"
+                style="
+                width: max-content;
+                text-align: center;
+                padding: 0.2em 1em;
+                background-color: var(--Primary-Color-Dark-Blue, #003459);
+                color: #ffffff;
+                font-size: 1.3em;
+                font-weight: 700;
+                border-radius: 25px;
+                margin: auto;
+                margin-top: 2vw;
+                display: flex;">
             />
         </form>
     </div>

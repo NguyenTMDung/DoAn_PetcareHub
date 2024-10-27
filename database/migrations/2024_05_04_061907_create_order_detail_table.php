@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('num');
             $table->enum('rating', ['1','2','3','4','5'])->default(5);
-            $table->text('feedback');
+            $table->text('feedback')->nullable();
         });
     }
     /**

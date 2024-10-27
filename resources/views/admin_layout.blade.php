@@ -31,7 +31,7 @@
         </div>
         <form>
             <div id="search-container">
-                <div type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></div>
+                <div type="submit" id="submitSearch"><i class="bi bi-search" id="isearch"></i></div>
                 <input type="search" name="search" id="input_search" placeholder="Search...">
             </div>
         </form>

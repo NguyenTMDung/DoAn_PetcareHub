@@ -40,7 +40,7 @@
         </div>
         <form>
             <div id="search-container">
-                <button type="submit" id="submit"><i class="bi bi-search" id="isearch"></i></button>
+                <button type="submit" id="submitSearch"><i class="bi bi-search" id="isearch"></i></button>
                 <input type="search" name="search" id="input_search" placeholder="Search...">
             </div>
         </form>

@@ -14,14 +14,12 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\AppointController;
 use App\Http\Controllers\TypeProductController;
-
 use App\Http\Controllers\SpaController;
 use App\Http\Controllers\FootController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HistoryController;
-
-
+use App\Http\Controllers\ScanQRController;
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -56,8 +54,6 @@ Route::get('/edit-profile', [HomeController::class,'EditProfile']);
 Route::post('/change-pass', [HomeController::class,'ChangePass']);
 
 
-
-
 //Page SP
 Route::get('/san-pham-{pet}-{cate_id}', [ProductController::class, 'showByPetandCateId']);
 Route::get('/chi-tiet-san-pham-{id}', [ProductController::class, 'detailProduct']);
@@ -76,17 +72,17 @@ Route::post('/thanh-toan-ngay', [CheckoutController::class, 'processCheckoutBuyN
 Route::post('/mua-ngay', [CheckoutController::class, 'buyNow']);
 Route::get('/xac-nhan', [CheckoutController::class, 'confirmOrder']);
 
+//Quét mã
+Route::post('/quet-ma', [ScanQRController::class, 'index']);
+
 //Order
 Route::get('/chi-tiet-don-hang', [OrderController::class, 'orderDetail']);
 
-
 //Lịch sử giao dịch
-// Route::post('/cho-xac-nhan', [HistoryController::class, 'choXacNhan']);
 Route::get('/da-giao', [HistoryController::class, 'daGiao']);
 Route::get('/dang-giao', [HistoryController::class, 'dangGiao']);
 Route::get('/da-huy', [HistoryController::class, 'daHuy']);
 Route::match(['get','post'],'/cho-xac-nhan', [HistoryController::class, 'handleRequest']);
-
 
 //Page Dịch vụ
 Route::get('/dich-vu-khach-san', [HotelServiceController::class, 'index']);
@@ -114,8 +110,6 @@ Route::get('/thong-ke-doanh-thu/{startOfWeek}/{endOfWeek}', [AdminController::cl
 Route::get('/thong-ke-don-hang/{startOfWeek}/{endOfWeek}', [AdminController::class,'ThongKeDH']);
 Route::post('/top', [AdminController::class,'Top']);
 
-
-
 //admin danh muc san pham
 Route::resource('/danh-muc-san-pham', CategoryProductController::class);
 Route::post('/danh-muc-san-pham', [CategoryProductController::class, 'store']);
@@ -137,7 +131,6 @@ Route::get('/san-pham/{id}', [ProductController::class, 'getProduct']);
 Route::POST('/update_new_status/{id}', [ProductController::class, 'updateNewStatus']);
 Route::POST('/update_best_seller_status/{id}', [ProductController::class, 'updateBestSellerStatus']);
 Route::post('/quan-ly-san-pham/update-image', [ProductController::class, 'updateImage']);
-
 
 //admin employee
 Route::resource('/quan-ly-nhan-vien', QLNVController::class);
@@ -185,13 +178,9 @@ Route::get('/khung-gio', [AppointController::class, 'timeslot']);
 use App\Http\Controllers\DatLichController;
 use App\Http\Controllers\AppointmentController;
 
-
 Route::get('/datlich', [DatLichController::class, 'index']);
 
-
-
 Route::get('/sanpham', [ProductController::class, 'index']);
-
 
 Route::post('/luu-thong-tin-dat-lich', [DatLichController::class, 'luuThongTin'])->name('luu-thong-tin-dat-lich');
 Route::post('/admin/quanlichlichhen', 'AdminController@xuLyDatLich');

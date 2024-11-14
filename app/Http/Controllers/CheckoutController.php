@@ -94,7 +94,7 @@ class CheckoutController extends Controller
             $user_id = session()->getId();
         }
         
-        $orderCode = Uuid::uuid4()->toString();
+        $orderCode = substr(bin2hex(random_bytes(4)), 0, 8); //Sử dụng random_bytes để tạo chuỗi ngẫu nhiên, rồi chuyển đổi sang định dạng hexadecimal.
 
         $orderData = [
             'code' => $orderCode,
@@ -124,9 +124,11 @@ class CheckoutController extends Controller
         $cartItems = session()->get('cartItems');
         $orderData = session()->get('orderData');
 
-        //Dùng transaction 
-        DB::transaction(function () use ($orderData, $cartItems) {
+        $order = Order::create($orderData);
 
+        //Dùng transaction 
+        $order = DB::transaction(function () use ($orderData, $cartItems) {
+            // Tạo đơn hàng
             $order = Order::create($orderData);
     
             // Lặp qua từng sản phẩm trong giỏ hàng và tạo chi tiết đơn hàng
@@ -142,8 +144,18 @@ class CheckoutController extends Controller
                 // Xóa sản phẩm khỏi giỏ hàng nếu cần
                 Cart::where('id', $cartItem->id)->delete();
             }
+    
+            return $order; // Trả về đối tượng đơn hàng để tiếp tục xử lý
         });
-
-        return Redirect::to('/cho-xac-nhan');
+    
+        // Kiểm tra phương thức thanh toán và cập nhật trạng thái đơn hàng
+        if($order->method_payment === 'Tiền mặt'){
+            return Redirect::to('/cho-xac-nhan');
+        } else {
+            // $order->status_payment = 1;
+            $order->status = "Đang giao";
+            $order->save();  // Lưu lại trạng thái mới của đơn hàng
+            return Redirect::to('/dang-giao');
+        }
     }  
 }

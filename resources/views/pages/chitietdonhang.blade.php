@@ -6,7 +6,9 @@
     <h4>Chi tiết đơn hàng</h4>
 </div>
 <div class="orders">
-    <div id="detail-order">
+    <div id="infor"></div>
+
+        <div id="detail-order">
         <div style="display: flex;">
             <p><strong>Khách hàng: </strong> </p>
             <p id="name">{{$orderData['name']}}</p>
@@ -27,23 +29,34 @@
             <div style="background-color:rgb(252, 241, 230); padding: 2vw; border-radius: 10px">
             <b> Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Thành phố Hồ Chí Minh</b> 
             </div>
-            @endif
+        @endif
         <div style="display: flex; margin-top: 1vw"> 
             <p><strong>Phương thức thanh toán:</strong>  </p>
             <p id="method">{{$orderData['method_payment']}}</p>
             
         </div>
-            @if ($orderData['method_payment'] == 'Thanh toán online')
-            <div style="display: block; background-color:rgb(252, 241, 230); padding: 2vw; border-radius: 10px">
-            <b> <p>THÔNG TIN CHUYỂN KHOẢN</p></b>
-                <p><b>Chủ Tài Khoản:</b> NGUYEN THI MY DUNG</p>  
-                <p><b>Ngân Hàng: </b> VietComBank</p>
-                <p><b>Số Tài Khoản:</b> 1028363484</p>
-                <p style="margin-bottom: 1vw;"><b>Nội Dung:</b> </p>
-            </div>
-            @endif
         <br>
-        <a href="{{URL::to('/xac-nhan')}}"><button type="button" name="complete" id="complete" value="Thanh toán">Xác nhận</button> </a>
+        <!-- @if ($orderData['method_payment'] == 'Thanh toán online')
+            <a href="{{ URL::to('/quet-ma') }}">
+                <button type="button" name="complete" id="complete" value="Thanh toán">Xác nhận</button>
+            </a>
+        @elseif ($orderData['method_payment'] == 'Tiền mặt')
+            <a href="{{ URL::to('/xac-nhan') }}">
+                <button type="button" name="complete" id="complete" value="Thanh toán">Xác nhận</button>
+            </a>
+        @endif -->
+        
+        <button type="button" name="complete" id="complete" value="Thanh toán">Xác nhận</button>
+        <div id="qrCheckOut" style = "padding-left: 50px; display: none">
+            <hr>
+            <div id="countdown">Mã sẽ hết hiệu lực sau: <span id="timer"></span></div>
+            <img id = "img_qr" src="https://img.vietqr.io/image/970415-113366668888-qr_only.png" alt="" style ="width: 300px;
+                padding-bottom: 30px; padding-top: 10px;}">
+            <p>Chủ tài khoản: NGUYỄN THỊ MỸ DUNG</p>
+            <P>Ngân hàng: VietCombank</P>
+            <p>Nội dung chuyển khoản: <span id = "paid_content"></span></p>
+            <p>Số tiền: <span id = "paid_price"></span></p>
+        </div>
     </div>
     <div id="products">
         <h2 class="title">Sản phẩm</h2>
@@ -86,6 +99,7 @@
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
@@ -94,5 +108,80 @@
         document.getElementById('quantity').innerText = selectedCount;
 
     });
+    let MY_BANK ={
+        BANK_ID: "Vietcombank",
+        ACCOUNT_NO: "1026363484"
+    }
+    let timeLeft = 3 * 60;
+
+    function startCountdown() {
+        const timerElement = document.getElementById("timer");
+
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            timerElement.innerHTML = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                timerElement.innerHTML = "Mã đã hết hiệu lực";
+
+                // Hiển thị thông báo và buộc người dùng quay lại
+                setTimeout(() => {
+                    alert("Mã đã hết hiệu lực. Vui lòng quay lại trang trước.");
+                    window.history.back(); 
+                }, 500); 
+            }
+        }, 1000);
+    }
+
+    var orderData = @json($orderData); // Chuyển dữ liệu PHP sang JSON
+    document.getElementById('complete').addEventListener('click', function() {
+        if (orderData.method_payment === 'Tiền mặt') {
+            window.location.href = "{{ url('/xac-nhan') }}";
+        } else {
+            document.getElementById("complete").style.display= "none";
+            document.getElementById("qrCheckOut").style.display= "block";
+            const paid_content = document.getElementById("paid_content");
+            const paid_price = document.getElementById("paid_price");
+            const img_qr = document.getElementById("img_qr");
+            startCountdown();
+            let QR = `https://img.vietqr.io/image/${MY_BANK.BANK_ID}-${MY_BANK.ACCOUNT_NO}-qr_only.png?amount=${orderData.total}&addInfo=${orderData.code}`;
+            paid_content.innerHTML = orderData.code;
+            paid_price.innerHTML = orderData.total;
+            img_qr.src = QR;
+        }
+    });
+
+//     function readExcelFromURL() {
+//     const fileUrl = "https://example.com/path/to/your/file.xlsx"; // Đặt link file Excel ở đây
+
+//     fetch(fileUrl)
+//       .then(response => response.arrayBuffer())  // Tải file Excel dưới dạng ArrayBuffer
+//       .then(data => {
+//         const workbook = XLSX.read(data, { type: 'array' });
+
+//         const sheetName = workbook.SheetNames[0];
+//         const sheet = workbook.Sheets[sheetName];
+
+//         // Chuyển đổi sheet thành JSON
+//         const jsonData = XLSX.utils.sheet_to_json(sheet);
+
+//         const filteredData = jsonData.filter(row => row['Name'] === orderData.name && row => row['NDCK'] === orderData.code); 
+
+//         if (filteredData.length > 0) {
+//           alert("Chuyển khoản thành công! ");
+//           window.location.href = "{{ url('/xac-nhan') }}";
+//         } else {
+//           alert("Thất bại!");
+//           window.history.back(); 
+//         }
+//       })
+//       .catch(error => {
+//         console.error("Error loading Excel file:", error);
+//       });
+//   }
 </script>
 @endsection

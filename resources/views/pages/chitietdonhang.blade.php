@@ -108,10 +108,14 @@
         document.getElementById('quantity').innerText = selectedCount;
 
     });
+
+    //Thông Tin TK Ngân Hàng
     let MY_BANK ={
         BANK_ID: "Vietcombank",
         ACCOUNT_NO: "1026363484"
     }
+
+    // Giới hạn hiệu lực mã trong vòng 3p
     let timeLeft = 3 * 60;
 
     function startCountdown() {
@@ -136,22 +140,36 @@
             }
         }, 1000);
     }
-
+    // Lấy dữ liệu đơn hàng từ Controller 
     var orderData = @json($orderData); // Chuyển dữ liệu PHP sang JSON
+
+    // Lắng nghe sự kiện nút 'Xác nhận' được click
     document.getElementById('complete').addEventListener('click', function() {
+
+        //Nếu phương thức thanh toán là 'Tiền mặt' thì đưa đơn hàng vào trạng thái chờ xác nhận
         if (orderData.method_payment === 'Tiền mặt') {
             window.location.href = "{{ url('/xac-nhan') }}";
-        } else {
+        } 
+        // Nếu ngược lại thì ẩn nút xác nhận, hiện phần thanh toán
+        else {                
             document.getElementById("complete").style.display= "none";
             document.getElementById("qrCheckOut").style.display= "block";
+
+            //Lấy ra các phần tử trong html
             const paid_content = document.getElementById("paid_content");
             const paid_price = document.getElementById("paid_price");
             const img_qr = document.getElementById("img_qr");
+
+            //Bật đếm ngược 3 phút
             startCountdown();
+
+            //Truyền Thông tin thanh toán vào mã QR
             let QR = `https://img.vietqr.io/image/${MY_BANK.BANK_ID}-${MY_BANK.ACCOUNT_NO}-qr_only.png?amount=${orderData.total}&addInfo=${orderData.code}`;
-            paid_content.innerHTML = orderData.code;
-            paid_price.innerHTML = orderData.total;
-            img_qr.src = QR;
+
+            //Gán các giá trị để hiển thị lên màn hình
+            paid_content.innerHTML = orderData.code;    //Nội dung thanh toán là Mã Đơn Hàng
+            paid_price.innerHTML = orderData.total;     //Giá đơn hàng
+            img_qr.src = QR;                            //Mã QR đc gắn thông tin
         }
     });
 

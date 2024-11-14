@@ -14,23 +14,23 @@ class ProductSizeSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('product_sizes')->insert([
-            [
-                'product_id' => '1',
-                'size' => '5kg',
-                'price' => 100000,
-            ],
-            [
-                'product_id' => '1',
-                'size' => '7kg',
-                'price' => 140000,
-            ],
-            [
-                'product_id' => '1',
-                'size' => '10kg',
-                'price' => 170000,
-            ],
+        // DB::table('product_sizes')->insert([
+        //     [
+        //         'product_id' => '1',
+        //         'size' => '5kg',
+        //         'price' => 100000,
+        //     ],
+        //     [
+        //         'product_id' => '1',
+        //         'size' => '7kg',
+        //         'price' => 140000,
+        //     ],
+        //     [
+        //         'product_id' => '1',
+        //         'size' => '10kg',
+        //         'price' => 170000,
+        //     ],
             
-        ]);
+        // ]);
     }
 }

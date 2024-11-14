@@ -19,8 +19,6 @@ use App\Http\Controllers\FootController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HistoryController;
-use App\Http\Controllers\ScanQRController;
-
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/trang-chu', [HomeController::class, 'index']);
@@ -71,9 +69,6 @@ Route::post('/thanh-toan', [CheckoutController::class, 'processCheckout'])->name
 Route::post('/thanh-toan-ngay', [CheckoutController::class, 'processCheckoutBuyNow'])->name('checkoutnow');
 Route::post('/mua-ngay', [CheckoutController::class, 'buyNow']);
 Route::get('/xac-nhan', [CheckoutController::class, 'confirmOrder']);
-
-//Quét mã
-Route::post('/quet-ma', [ScanQRController::class, 'index']);
 
 //Order
 Route::get('/chi-tiet-don-hang', [OrderController::class, 'orderDetail']);

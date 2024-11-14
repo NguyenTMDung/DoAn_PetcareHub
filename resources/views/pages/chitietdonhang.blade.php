@@ -155,33 +155,5 @@
         }
     });
 
-//     function readExcelFromURL() {
-//     const fileUrl = "https://example.com/path/to/your/file.xlsx"; // Đặt link file Excel ở đây
-
-//     fetch(fileUrl)
-//       .then(response => response.arrayBuffer())  // Tải file Excel dưới dạng ArrayBuffer
-//       .then(data => {
-//         const workbook = XLSX.read(data, { type: 'array' });
-
-//         const sheetName = workbook.SheetNames[0];
-//         const sheet = workbook.Sheets[sheetName];
-
-//         // Chuyển đổi sheet thành JSON
-//         const jsonData = XLSX.utils.sheet_to_json(sheet);
-
-//         const filteredData = jsonData.filter(row => row['Name'] === orderData.name && row => row['NDCK'] === orderData.code); 
-
-//         if (filteredData.length > 0) {
-//           alert("Chuyển khoản thành công! ");
-//           window.location.href = "{{ url('/xac-nhan') }}";
-//         } else {
-//           alert("Thất bại!");
-//           window.history.back(); 
-//         }
-//       })
-//       .catch(error => {
-//         console.error("Error loading Excel file:", error);
-//       });
-//   }
 </script>
 @endsection
